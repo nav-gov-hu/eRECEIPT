@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 sp1 (x64) (http://www.altova.com) by NAV (Hungarian Tax Authority) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:reportMessage="http://schemas.nav.gov.hu/ERECEIPT/1.0/reportMessage" xmlns:invoiceData="http://schemas.nav.gov.hu/OSA/3.0/data" xmlns:base="http://schemas.nav.gov.hu/ERECEIPT/1.0/base" xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common" xmlns:documentData="http://schemas.nav.gov.hu/ERECEIPT/1.0/documentData" xmlns:xml="http://www.w3.org/XML/1998/namespace" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1">
+	<xs:import namespace="http://schemas.nav.gov.hu/OSA/3.0/data" schemaLocation="../../eReceipt/1.0/invoiceData.xsd"/>
+	<xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/base" schemaLocation="../../eReceipt/1.0/eReceiptBase.xsd"/>
+	<xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/reportMessage" schemaLocation="../../eReceipt/1.0/reportMessage.xsd"/>
+	<xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" schemaLocation="../../eReceipt/1.0/common.xsd"/>
+	<xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/documentData" schemaLocation="../../eReceipt/1.0/documentData.xsd"/>
+	<xs:complexType name="SecretType">
+		<xs:sequence>
+			<xs:element name="secretNumber" type="xs:nonNegativeInteger">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">A kulcspár export belső azonosító száma, amire a secretReferenceNumber hivatkozik. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="publicKey" type="xs:base64Binary">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">ECC Publikus kulcs</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="privateKey" type="xs:base64Binary">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">ECC privát kulcs</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ExportDocumentDataType">
+		<xs:choice>
+			<xs:element name="invoiceData" type="invoiceData:InvoiceDataType">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Számal típusú bizonylat</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="documentData" type="documentData:DocumentDataType">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Dokument típusú bizonylat</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="receiptData" type="documentData:ReceiptCoreDataType">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Nyugat típusú bizonylat</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="ExportDataType">
+		<xs:annotation>
+			<xs:documentation>Export elem típus</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="exportCounter" type="xs:nonNegativeInteger">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Az exportálandó elemek számozása 1-től monotonan nővekvő módon</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="elementVersion" type="xs:nonNegativeInteger">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Az exportálandó bizonylat típus verzió száma</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exportData" type="ExportDocumentDataType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Exportálandó bizonylat</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="searchKey" type="xs:string">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Keresőkulcs</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="searchKeyTimestamp" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Keresőkulcs időbélyege</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="supplierName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Kibocsájtó megnevezése</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="documentNumber" type="xs:string">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Bizonylat sorszáma</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="documentAmmount" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Bizonylat végösszege</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="documentDate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Bizonylatt kiállítás dátuma</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="secretReferenceNumber" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Titkosító kulcspár referencia száma</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ExportEnvelopeType">
+		<xs:annotation>
+			<xs:documentation xml:lang="hu">Export boríték típus</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="exportTimestamp" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Exportálás időpontja</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="numberOfElements" type="xs:nonNegativeInteger">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Kiexportált elemek darabszáma</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exportElements" type="ExportDataType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Exportálandó elemek</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exportVersion" type="xs:nonNegativeInteger">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Export verziószáma</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exportName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Export állomány neve</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="secrets" type="SecretType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">A vevői alkalmazás által generált és tárolt kulcsok.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExportEnvelope" type="ExportEnvelopeType">
+		<xs:annotation>
+			<xs:documentation xml:lang="hu">Export boríték</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema targetNamespace="http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.0/api" elementFormDefault="qualified"
+           attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.0/api"
+           xmlns:communication="http://schemas.nav.gov.hu/ERECEIPT/1.0/communicationData"
+           xmlns:base="http://schemas.nav.gov.hu/ERECEIPT/1.0/base"
+           xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common"
+           xmlns:message="http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.0/message"
+           xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.0/message"
+             schemaLocation="eDocumentStoreMessage.xsd"/>
+  <xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/communicationData"
+             schemaLocation="../../eReceipt/1.0/communicationData.xsd"/>
+  <xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/base"
+             schemaLocation="../../eReceipt/1.0/eReceiptBase.xsd"/>
+  <xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" schemaLocation="../../eReceipt/1.0/common.xsd"/>
+  <xs:annotation>
+    <xs:documentation xml:lang="hu">A vevői alkalmazások által hívható szolgáltatások kérés-válasz objektumait leíró XSD</xs:documentation>
+    <xs:documentation xml:lang="en">XSD describing the request-response objects of services that can be called by customer applications</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="AppRegistrationRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Vevői alkalmazás regisztrációját megvalósító szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">Type of service request for customer application registration.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:BasicHeaderType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">General response type data used in the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="software" minOccurs="0" type="communication:SoftwareType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A vevői alkalmazás fejlesztői és verzió adatai</xs:documentation>
+              <xs:documentation xml:lang="en">Customer application development and version details</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AppRegistrationResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Vevői alkalmazás regisztrációját megvalósító szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">Type of response to the service implementing the registration of the customer application.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:BasicResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">General response type data used in the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="appToken" type="common:SimpleText50NotBlankType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A vevői alkalmazás számára generált egyedi azonosító token, mellyel a nyugtatár szolgáltatásokat kell hívni.</xs:documentation>
+              <xs:documentation xml:lang="en">Unique identification token generated for the customer application to call the receipt services</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetArchiveDocumentRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Archivált dokumentum (nyugta, egyszerűsített számla ...) letöltést megvalósító szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">Request type for the service to download an archived document (receipt, simplified invoice, ...).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="message:BasicEDocumentStoreRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">General request type data used in the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="archiveKey" type="xs:base64Binary">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Archivált dokumentum letöltési azonosítója.</xs:documentation>
+              <xs:documentation xml:lang="en">Download identifier of the archived document.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetArchiveDocumentResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Archivált dokumentum (nyugta, egyszerűsített számla ...) letöltést megvalósító szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">Response type of the service implementing the download of an archived document (receipt, simplified invoice ...).
+
+
+
+
+
+</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:BasicResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">General response type data used in the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="taxNumber" type="common:TaxpayerIdType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A bizonylatot kiállító adózó adószámának első 8 karaktere.</xs:documentation>
+              <xs:documentation xml:lang="en">First 8 characters of the tax number of the taxable person issuing the document.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="isOfflineCreated" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Amennyiben a dokumentum on-line beküldés valamilyen okból megvalósult, a kapcsolat helyrállása után kell beküldeni, ebben az esetben a mezőben jelezni kell, hogy a dokumentum off-line került beküldésre.</xs:documentation>
+              <xs:documentation xml:lang="en">If for some reason the document was submitted on-line, it should be submitted after the connection has been established, in which case the field should indicate that the document was submitted off-line.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="searchKeyTimestamp" type="common:GenericTimestampType" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A vevői alkalmazában generált keresőkulcs előállításának időpontja.</xs:documentation>
+              <xs:documentation xml:lang="en">The time of generation of the search key generated in the customer's application.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="searchKey" type="xs:base64Binary">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A vevői alkalmazában generált keresőkulcs értéke. </xs:documentation>
+              <xs:documentation xml:lang="en">The value of the search key generated in the customer's application. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ntcaVerificationCode" type="common:SHA256Type">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">NAV ellenőrző kód. Leírását lásd a Fejlesztői dokumentáció „NAV ellenőrző kód képzése” fejezetében.</xs:documentation>
+              <xs:documentation xml:lang="en">Ntca verification code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:choice>
+            <xs:sequence>
+              <xs:element name="documentClass" type="base:DocumentClassType">
+                <xs:annotation>
+                  <xs:documentation xml:lang="hu">A beküldött bizonylat típusa (nyugta, egyszerűsített számla, stb.)</xs:documentation>
+                  <xs:documentation xml:lang="en">Type of document submitted (receipt, simplified invoice, etc.)</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="coreEnvelope" type="base:SignedEnvelopeType">
+                <xs:annotation>
+                  <xs:documentation xml:lang="hu">A bizonylat adatai a Fejlesztői dokumentációban meghatározott formátumban.</xs:documentation>
+                  <xs:documentation xml:lang="en">Voucher data in the format specified in the Developer documentation.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="cashRegisterEncryptionPublicKey" type="xs:base64Binary" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation xml:lang="hu">Amennyiben a dokumentum rendelkezik csatolmánnyal, a kititkosításhoz szükséges ePénztárgép publikus titkosító kulcsa base64 formátumban.</xs:documentation>
+                  <xs:documentation xml:lang="en">If the document has an additional envelope, the public encryption key  in base64 format is required.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="additionalEnvelope" type="base:SignedEnvelopeType" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation xml:lang="hu">A bizonylat melléklet adatai a Fejlesztői dokumentációban meghatározott formátumban.</xs:documentation>
+                  <xs:documentation xml:lang="en">Data in the annex to the voucher in the format specified in the Developer documentation.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="reportClass" type="base:ReportClassType">
+                <xs:annotation>
+                  <xs:documentation xml:lang="hu">A beküldött bizonylat típusa (pénztárjelentés, pénzmozgás bizonylat, stb.)</xs:documentation>
+                  <xs:documentation xml:lang="en">The type of voucher submitted (cash report, cash flow voucher, etc.)</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="reportEnvelope" type="base:SignedEnvelopeType">
+                <xs:annotation>
+                  <xs:documentation xml:lang="hu">A bizonylat adatai a Fejlesztői dokumentációban előírt formátumban.</xs:documentation>
+                  <xs:documentation xml:lang="en">A bizonylat adatai a Fejlesztői dokumentációban előírt formátumban.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetDocumentRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Dokumentum (nyugta, egyszerűsített számla ...) letöltést megvalósító szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">Type of service request to download a document (receipt, simplified invoice ...).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="message:BasicEDocumentStoreRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">General response type data used in the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="searchKeyTimestamp" type="common:GenericTimestampType" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A vevői alkalmazában generált keresőkulcs előállításának időpontja.</xs:documentation>
+              <xs:documentation xml:lang="en">The time of generation of the search key generated in the customer's application.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="searchKey" type="xs:base64Binary">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A vevői alkalmazában generált keresőkulcs értéke. </xs:documentation>
+              <xs:documentation xml:lang="en">The value of the search key generated in the customer's application. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetDocumentResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Dokumentum (nyugta, egyszerűsített számla ...) letöltést megvalósító szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">Response type of the service implementing the download of the document (receipt, simplified invoice ...).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:BasicResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">General response type data used in the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:choice>
+            <xs:sequence>
+              <xs:element name="archiveKey" type="xs:base64Binary">
+                <xs:annotation>
+                  <xs:documentation xml:lang="hu">Amennyiben már archiválásra került a dokumentum a szolgáltatás archiveKey-t ad vissza, amelyre hívatkozva a dokumentum letölthető lesz. </xs:documentation>
+                  <xs:documentation xml:lang="en">If the document has already been archived, the service will return an archiveKey, which will be invoked to retrieve the document.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="taxNumber" type="common:TaxpayerIdType">
+                <xs:annotation>
+                  <xs:documentation xml:lang="hu">A bizonylatot kiállító adózó adószámának első 8 karaktere.</xs:documentation>
+                  <xs:documentation xml:lang="en">First 8 characters of the tax number of the taxable person issuing the document.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="isOfflineCreated" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation xml:lang="hu">Amennyiben a dokumentum on-line beküldés valamilyen okból megvalósult, a kapcsolat helyrállása után kell beküldeni, ebben az esetben a mezőben jelezni kell, hogy a dokumentum off-line került beküldésre.</xs:documentation>
+                  <xs:documentation xml:lang="en">If for some reason the document was submitted on-line, it should be submitted after the connection has been established, in which case the field should indicate that the document was submitted off-line.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="searchKeyTimestamp" type="common:GenericTimestampType" minOccurs="1">
+                <xs:annotation>
+                  <xs:documentation xml:lang="hu">A vevői alkalmazában generált keresőkulcs előállításának időpontja.</xs:documentation>
+                  <xs:documentation xml:lang="en">The time of generation of the search key generated in the customer's application.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="searchKey" type="xs:base64Binary">
+                <xs:annotation>
+                  <xs:documentation xml:lang="hu">A vevői alkalmazában generált keresőkulcs értéke. </xs:documentation>
+                  <xs:documentation xml:lang="en">The value of the search key generated in the customer's application. </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="ntcaVerificationCode" type="common:SHA256Type">
+                <xs:annotation>
+                  <xs:documentation xml:lang="hu">NAV ellenőrző kód. Leírását lásd a Fejlesztői dokumentáció „NAV ellenőrző kód képzése” fejezetében.</xs:documentation>
+                  <xs:documentation xml:lang="en">Ntca verification code</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:choice>
+                <xs:sequence>
+                  <xs:element name="documentClass" type="base:DocumentClassType">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="hu">A beküldött bizonylat típusa (nyugta, egyszerűsített számla, stb.)</xs:documentation>
+                      <xs:documentation xml:lang="en">Type of document submitted (receipt, simplified invoice, etc.)</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="coreEnvelope" type="base:SignedEnvelopeType">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="hu">A bizonylat adatai a Fejlesztői dokumentációban meghatározott formátumban.</xs:documentation>
+                      <xs:documentation xml:lang="en">Voucher data in the format specified in the Developer documentation.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="cashRegisterEncryptionPublicKey" type="xs:base64Binary" minOccurs="0">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="hu">Amennyiben a dokumentum rendelkezik csatolmánnyal, a kititkosításhoz szükséges ePénztárgép publikus titkosító kulcsa base64 formátumban.</xs:documentation>
+                      <xs:documentation xml:lang="en">If the document has an additional envelope, the public encryption key  in base64 format is required.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="additionalEnvelope" type="base:SignedEnvelopeType" minOccurs="0">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="hu">A bizonylat melléklet adatai a Fejlesztői dokumentációban meghatározott formátumban.</xs:documentation>
+                      <xs:documentation xml:lang="en">Data in the annex to the voucher in the format specified in the Developer documentation.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+                <xs:sequence>
+                  <xs:element name="reportClass" type="base:ReportClassType">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="hu">A beküldött bizonylat típusa (pénztárjelentés, pénzmozgás bizonylat, stb.)</xs:documentation>
+                      <xs:documentation xml:lang="en">The type of voucher submitted (cash report, cash flow voucher, etc.)</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="reportEnvelope" type="base:SignedEnvelopeType">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="hu">A bizonylat adatai a Fejlesztői dokumentációban előírt formátumban.</xs:documentation>
+                      <xs:documentation xml:lang="en">A bizonylat adatai a Fejlesztői dokumentációban előírt formátumban.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:choice>
+            </xs:sequence>
+          </xs:choice>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AppRegistrationRequest" type="AppRegistrationRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Vevői alkalmazás regisztrációját megvalósító szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">Request object for customer application registration.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AppRegistrationResponse" type="AppRegistrationResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Vevői alkalmazás regisztrációját megvalósító szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">Response object for customer application registration.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="GetArchiveDocumentRequest" type="GetArchiveDocumentRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Archivált dokumentum (nyugta, egyszerűsített számla ...) letöltést megvalósító szolgáltatás kérés  objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">Object of a request for a service to download an archived document (receipt, simplified invoice ...)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="GetArchiveDocumentResponse" type="GetArchiveDocumentResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Archivált dokumentum (nyugta, egyszerűsített számla ...) letöltést megvalósító szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The response object of a service to download an archived document (receipt, simplified invoice ...).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="GetDocumentRequest" type="GetDocumentRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Dokumentum (nyugta, egyszerűsített számla ...) letöltést megvalósító szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">Object of a service request for downloading a document (receipt, simplified invoice ...).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="GetDocumentResponse" type="GetDocumentResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Dokumentum (nyugta, egyszerűsített számla ...) letöltést megvalósító szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">Document (receipt, simplified invoice ...) download service response object.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

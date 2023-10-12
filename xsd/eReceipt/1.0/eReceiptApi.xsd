@@ -1,0 +1,1068 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema targetNamespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/api" elementFormDefault="qualified"
+           attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://schemas.nav.gov.hu/ERECEIPT/1.0/api" xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common"
+           xmlns:communication="http://schemas.nav.gov.hu/ERECEIPT/1.0/communicationData"
+           xmlns:reportMessage="http://schemas.nav.gov.hu/ERECEIPT/1.0/reportMessage"
+           xmlns:base="http://schemas.nav.gov.hu/ERECEIPT/1.0/base" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" schemaLocation="common.xsd"/>
+  <xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/base" schemaLocation="eReceiptBase.xsd"/>
+  <xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/communicationData"
+             schemaLocation="communicationData.xsd"/>
+  <xs:annotation>
+    <xs:documentation xml:lang="hu">Az e-pénztárgépek által hívható szolgáltatások kérés-válasz objektumait leíró XSD.</xs:documentation>
+    <xs:documentation xml:lang="en">The request and response objects of the services called be e-cash registers.</xs:documentation>
+  </xs:annotation>  
+  <xs:complexType name="BlockUnblockRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép blokkolását vagy blokkolásának feloldását megvalósító szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The e-cash register blocking and unblocking service request type.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="requestedOperation" minOccurs="0" type="communication:BlockUnblockType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Amennyiben az e-pénztárgép blokkolása vagy blokkolásának feloldása az e-pénztárgép kérésére történik, akkor a kért művelet típusa.</xs:documentation>
+              <xs:documentation xml:lang="en">In case the e-cash register request the blocking or unblocking operation then the operation type.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BlockUnblockResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép blokkolását vagy blokkolásának feloldását megvalósító szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The e-cash register blocking and unblocking service response type.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="blockUnblock" type="communication:BlockUnblockType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Utasítás az e-pénztárgép blokkolására vagy blokkolásának feloldására. BLOCK esetén az e-pénztárgépet blokkolt állapotba kell állítani, UNBLOCK esetén az e-pénztárgép blokkolását fel kell oldani.</xs:documentation>
+              <xs:documentation xml:lang="en">Command to block to unblock the e-cash register. In case of BLOCK the e-cash register has to be blocked, in case of UNBLOCK the e-cash register has to be unblocked.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CommMgrRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép által meghívandó szolgáltatások listáját visszaadó szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The request type of the service which lists the services that the e-cash register has to call.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CommMgrResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép által meghívandó szolgáltatások listáját visszaadó szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The response type of the service which lists the services that the e-cash register has to call.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="URLs" type="communication:UrlsListType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az e-pénztárgép által meghívandó szolgáltatások listája.</xs:documentation>
+              <xs:documentation xml:lang="en">The list of the services that the e-cash register has to call.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DocumentRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A nyugta, egyszerűsített számla, és egyes speciális értékesítések bizonylatainak fogadását megvalósító szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The request type of the service which receives receipts, simplified invoices and special sale documents.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="taxNumber" type="common:TaxpayerIdType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A bizonylatot kiállító adózó adószámának első 8 karaktere.</xs:documentation>
+              <xs:documentation xml:lang="en">The first 8 characters of the tax number of the taxpayer who creates the document.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="documentClass" type="base:DocumentClassType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A beküldött bizonylat típusa (nyugta, egyszerűsített számla, stb.)</xs:documentation>
+              <xs:documentation xml:lang="en">The type of the document (recipt, simplified invoce, etc.)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ntcaDocumentEnvelope" type="base:SignedEnvelopeType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A bizonylat NAV-nak átadandó adatai a Fejlesztői dokumentációban meghatározott formátumban.</xs:documentation>
+              <xs:documentation xml:lang="en">The document data for NTCA in the format described in Development Documentation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="customerDocumentEnvelope" type="base:SignedEnvelopeType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A bizonylat vevőnek átadandó adatai a Fejlesztői dokumentációban meghatározott formátumban.</xs:documentation>
+              <xs:documentation xml:lang="en">The document data for the customer in the format described in Development Documentation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="searchKeyTimestamp" type="common:GenericTimestampType" minOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A nyugtatárból ezzel az időbélyeggel kérdezhető le a bizonylat. A bizonylat kiállításának időpontját tartalmazza.</xs:documentation>
+              <xs:documentation xml:lang="en">The document can be queried by this data from the Document Store. It contains the document creation timestamp.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="searchKey" type="xs:base64Binary">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A nyugtatárból ezzel a kulccsal kérdezhető le a bizonylat.</xs:documentation>
+              <xs:documentation xml:lang="en">The document can be queried by this data from the Document Store.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="isQRCodeExpired" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A QR generálása a fejlesztői dokumentációban meghatározott időintervallumnál régebben készült .</xs:documentation>
+              <xs:documentation xml:lang="en">QR code generate timestamp expired.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="isOfflineCreated" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A hírközlő hálózat elérhetetlenségének megszűnése esetén az érintett bizonylatokat és adatszolgáltatásokat haladéktalanul el kell küldeni, a késleltetett küldés tényét ennek a mezőnek a kitöltésével kell jelezni.</xs:documentation>
+              <xs:documentation xml:lang="en">Whether the document was created offline. When the communication network is online again, the document has to be sent immidiately, with this flag.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="cashRegisterSignPublicKey" type="communication:PublicKeyType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az e-pénztárgép aláíró kulcspárjának a publikus kulcsa PEM formátumban. Ezzel a kulccsal kerülnek aláírásra az e-pénztárgép által küldött üzenetek. Az aláíró kulccsal kapcsolatos követelmények a Fejlesztői dokumentáció „Aláírás képzése” fejezetében találhatók.</xs:documentation>
+              <xs:documentation xml:lang="en">The public key of the e-cash register sign key in PEM format. This key has to be used to sign the messages of the e-cash register. The requirements of the sign key can be found in the "Signing" chapter of the Development Documentation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="recordCounter" type="xs:nonNegativeInteger">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az aktuálisan beküldött bizonylat recordCounter értéke. Leírását lásd a Fejlesztői dokumentáció „NAV ellenőrző kód képzése” fejezetében.</xs:documentation>
+              <xs:documentation xml:lang="en">The recordCounter value of the actual document. See further information in the "Generate NAV verification code" chapter of the Development Documentation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="lastRecordCounter" type="xs:nonNegativeInteger">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az e-pénztárgépen utoljára kiállított bizonylat recordCounter értéke. Leírását lásd a Fejlesztői dokumentáció „NAV ellenőrző kód képzése” fejezetében.</xs:documentation>
+              <xs:documentation xml:lang="en">The recordCounter value of the last document in the e-cash register. See further information in the "Generate NAV verification code" chapter of the Development Documentation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ntcaVerificationCode" type="common:SHA256Type">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">NAV ellenőrző kód. Leírását lásd a Fejlesztői dokumentáció „NAV ellenőrző kód képzése” fejezetében.</xs:documentation>
+              <xs:documentation xml:lang="en">Ntca verification code. See further information in the "Generate NAV verification code" chapter of the Development Documentation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DocumentResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A nyugta, egyszerűsített számla, és egyes speciális értékesítések bizonylatainak fogadását megvalósító szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The response type of the service which receives receipts, simplified invoices and special sale documents.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="taxNumber" type="common:TaxpayerIdType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A kérésben szereplő adószám.</xs:documentation>
+              <xs:documentation xml:lang="en">The tax number in the request.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EndOfOperationRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép üzemeltetés befejezés szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The request type of the e-cash register end of operation service.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="lastRecordCounter" type="xs:nonNegativeInteger">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az e-pénztárgépen az utoljára kiállított bizonylat vagy riport recordCounter értéke.</xs:documentation>
+              <xs:documentation xml:lang="en">The recordCounter value of the last receipt or report issued at the e-cash register.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="coTaxpayerLastRecordCounter" minOccurs="0" type="xs:nonNegativeInteger">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Kétadózós e-pénztárgép esetén a társadózó által az e-pénztárgépen utoljára kiállított bizonylat vagy riport recordCounter értéke.</xs:documentation>
+              <xs:documentation xml:lang="en">In case of two taxpayers e-cash register, the recordCounter value of the last receipt or report issued by the co-taxpayer.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="cashRegisterWorkState" type="communication:CashRegisterWorkStateType">
+            <xs:annotation>
+              <xs:appinfo>
+                <legacyMapping/>
+              </xs:appinfo>
+              <xs:documentation xml:lang="hu">Az e-pénztárgép állapota</xs:documentation>
+              <xs:documentation xml:lang="en">The state of the e-cash register</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EndOfOperationResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép üzemeltetés befejezés szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The response type of the e-cash register end of operation service.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HelloRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép regisztrálását vagy átszemélyesítését követően meghívandó szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The request type of the service which has to be called by the e-cash register after the device registration or the owner change.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HelloResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép regisztrálását vagy átszemélyesítését követően meghívandó szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The response type of the service which has to be called by the e-cash register after the device registration or the owner change.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OperatorSiteUpdateRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgépen az üzemeltetői vagy telephely adatok frissítését megvalósító szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The operator or site data update service request type.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OperatorSiteUpdateResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgépen az üzemeltetői vagy telephely adatok frissítését megvalósító szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The operator or site data update service response type.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="OperatorSite" type="communication:OperatorSiteType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az e-pénztárgép üzemeltetői és telephely adatai.</xs:documentation>
+              <xs:documentation xml:lang="en">The operator or site data of the e-cash register.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OwnerChangeRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép átszemélyesítését kezdeményező szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The request type of the e-cash register owner change service.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="registrationNumber" type="communication:RegistrationNumberType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Üzembehelyezési kód. Annak az adózónak az adatait tartalmazza, amelyre az e-pénztárgép szeretne átszemélyesedni.</xs:documentation>
+              <xs:documentation xml:lang="en">Registration number. It belongs to the taxpayer who will be the new owner of the e-cash register.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="lastRecordCounter" type="xs:nonNegativeInteger">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az e-pénztárgépen az utoljára kiállított bizonylat vagy riport recordCounter értéke.</xs:documentation>
+              <xs:documentation xml:lang="en">The recordCounter value of the last receipt or report issued at the e-cash register.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="coTaxpayerLastRecordCounter" minOccurs="0" type="xs:nonNegativeInteger">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Kétadózós e-pénztárgép esetén a társadózó által az e-pénztárgépen utoljára kiállított bizonylat vagy riport recordCounter értéke.</xs:documentation>
+              <xs:documentation xml:lang="en">In case of two taxpayers e-cash register, the recordCounter value of the last receipt or report issued by the co-taxpayer.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="cashRegisterWorkState" type="communication:CashRegisterWorkStateType">
+            <xs:annotation>
+              <xs:appinfo>
+                <legacyMapping/>
+              </xs:appinfo>
+              <xs:documentation xml:lang="hu">Az e-pénztárgép állapota</xs:documentation>
+              <xs:documentation xml:lang="en">The state of the e-cash register.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OwnerChangeResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép átszemélyesítését kezdeményező szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The response type of the e-cash register owner change service.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="OperatorSite" type="communication:OperatorSiteType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az e-pénztárgép üzemeltetői és telephely adatai.</xs:documentation>
+              <xs:documentation xml:lang="en">The operator and site date of the e-cash register.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="blockUnblock" type="communication:BlockUnblockType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Utasítás az e-pénztárgép blokkolásának feloldására. UNBLOCK esetén az e-pénztárgép blokkolását fel kell oldani.</xs:documentation>
+              <xs:documentation xml:lang="en">In case of UNBLOCK the e-cash register has to be unblocked.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PrintTechnicalInfoRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Technikai tájékoztatás bizonylat küldését megvalósító szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The request type of the service which sends technical information document.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PrintTechnicalInfoResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Technikai tájékoztatás bizonylat küldését megvalósító szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The response type of the service which sends technical information document.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="printMessage" type="communication:PrintMessageType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Technikai tájékoztatás bizonylat szövege. Az üzenetben szereplő „\n” karaktersorozatot „új sor” karakterként kell értelmezni a nyomtatáskor és megjelenítéskor.</xs:documentation>
+              <xs:documentation xml:lang="en">The text of the technical information document. At the visualization or print of the document the "\n" character has to be interpreted as "new line".</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProductListRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A terméktörzs frissítését kezdeményező szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The request type of the product list update service of the e-cash register.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="productListHash" type="common:CryptoType">
+            <xs:annotation>
+              <xs:appinfo>
+                <legacyMapping/>
+              </xs:appinfo>
+              <xs:documentation xml:lang="hu">A jelenleg használt terméktörzs hash értéke.</xs:documentation>
+              <xs:documentation xml:lang="en">The hash value of the current product list.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProductListResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A terméktörzs frissítését kezdeményező szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The response type of the product list update service of the e-cash register.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="productListDownloadUrl" type="communication:UrlType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Terméktörzs letöltéséhez szükséges URL</xs:documentation>
+              <xs:documentation xml:lang="en">The product list can be downloaded from this URL.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productListHash" type="common:CryptoType">
+            <xs:annotation>
+              <xs:appinfo>
+                <legacyMapping/>
+              </xs:appinfo>
+              <xs:documentation xml:lang="hu">Letöltött állomány hash, amely segítségével ellenőrizhető, hogy a letöltés során az állomány nem sérült meg.</xs:documentation>
+              <xs:documentation xml:lang="en">The hash value of the product list. The downloaded product list's hash has to be equal with this value.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>  
+  <xs:complexType name="QueryTaxpayerRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Belföldi adószám ellenőrző szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The request type of the check Hungarian tax number service.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="taxNumber" type="common:TaxpayerIdType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A lekérdezendő belföldi adószám első 8 karaktere</xs:documentation>
+              <xs:documentation xml:lang="en">The first 8 characters of the Hungarian tax number to check.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="QueryTaxpayerResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Belföldi adószám ellenőrző szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The response type of the check Hungarian taxpayer service.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="infoDate" type="xs:dateTime" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az adatok utolsó változásának időpontja</xs:documentation>
+              <xs:documentation xml:lang="en">Last date on which the data was changed</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="taxpayerValidity" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Jelzi, hogy a lekérdezett adózó létezik és érvényes-e</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates whether the queried taxpayer is existing and valid</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="taxpayerData" type="communication:TaxpayerDataType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az adózó lekérdezés válasz adatai</xs:documentation>
+              <xs:documentation xml:lang="en">Response data of the taxpayer query</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RegistrationRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Eszközregisztrációt megvalósító szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">Device registration service request type.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="registrationNumber" type="communication:RegistrationNumberType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az e-pénztárgép üzembehelyezéséhez használt üzembehelyezési kód. Ezt a kódot az e-pénztárgép regisztráció előtt már igényelni kell.</xs:documentation>
+              <xs:documentation xml:lang="en">The registration number of the e-cash register. This regsitration number has to be requested before the registration.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="cashRegisterDigitalSignature" type="common:SHA256Type">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az e-pénztárgép digitális ujjlenyomata. Az e-pénztárgép műszaki jellemzői közül a következő adatokat az itt meghatározott sorrendben konkatenálni kell, majd a konkatenált értékből számolt SHA-256 HASH értéket kell beküldeni:
+                  a. IMEI - hardveres e-pénztárgép esetén, Sorozatszám - szoftveres pénztárgép esetén
+                  b. IMSI - hardveres e-pénztárgép esetén, wifi mac cím és modell azonosító - szoftveres pénztárgép esetén
+                  c. cashRegisterSoftware/softwareHash
+                  d. aeTechnicalInfo/aeSoftware/softwareHash
+              </xs:documentation>
+              <xs:documentation xml:lang="en">Digital signature of the e-cash register. The following data has to be concatenated in this order, then the SHA-256 hash value has to be computed and has to be sent in this field:
+                  a. IMEI - for hardware base cash register, Serial number - for software base cash register
+                  b. IMSI - for hardware base cash register, wifi mac address and model ID - for software based cash register
+                  c. cashRegisterSoftware/softwareHash
+                  d. aeTechnicalInfo/aeSoftware/softwareHash
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="cashRegisterSignPublicKey" type="communication:PublicKeyType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az e-pénztárgép aláíró kulcspárjának a publikus kulcsa PEM formátumban. Ezzel a kulccsal kerülnek aláírásra az e-pénztárgép által küldött üzenetek. Az aláíró kulccsal kapcsolatos követelmények a Fejlesztői dokumentáció „Aláírás képzése” fejezetében találhatók.</xs:documentation>
+              <xs:documentation xml:lang="en">The public key of the e-cash register sign key in PEM format. This key has to be used to sign the messages of the e-cash register. The requirements of the sign key can be found in the "Signing" chapter of the Development Documentation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="software" type="communication:SoftwareType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az e-pénztárgép program adatai.</xs:documentation>
+              <xs:documentation xml:lang="en">The software data of the e-cash register.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RegistrationResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Eszközregisztrációt megvalósító szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">Device registration service response type.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="authenticationPrivateKey" type="communication:PrivateKeyType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Authentikációs tanúsítvány privát kulcsa. Ezzel a tanúsítvánnyal tud bejelentkezni az e-pénztárgép. Az eszközregisztrációs szolgáltatáson kívül minden más szolgáltatás esetén használni kell ezt az authentikációs tanúsítványt. Az authentikációs tanúsítvány felhasználásának részletei a Fejlesztői dokumentáció „Authentikáció” fejezetében találhatók.</xs:documentation>
+              <xs:documentation xml:lang="en">The private key of the authentication key. This key has to be used when other services called except the device registration. For further information see "Authentication" chapter in the Development Documentation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="authenticationPublicKey" type="communication:PublicKeyType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Authentikációs tanúsítvány publikus kulcsa.</xs:documentation>
+              <xs:documentation xml:lang="en">The public key of the authentication key.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="vatList" type="communication:VatListType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az e-pénztárgépen alkalmazandó ÁFA kulcsok és gyűjtők listája.</xs:documentation>
+              <xs:documentation xml:lang="en">The VAT key and collector list used by e-cash register.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="teaorList" type="communication:TeaorCodeListType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az üzlet TEÁOR szerinti tevékenységeinek listája.</xs:documentation>
+              <xs:documentation xml:lang="en">The shop function by TEAOR list.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="operatorSite" type="communication:OperatorSiteType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az e-pénztárgép üzemeltetői és telephely adatai.</xs:documentation>
+              <xs:documentation xml:lang="en">The operator and site data of the e-cash register.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RenewCertificateRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Authentikációs tanúsítvány megújítását kezdeményező szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The request type of the renew authentication certificate service.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="taxNumber" type="common:TaxpayerIdType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az e-pénztárgép üzemeltető adószámának első 8 karaktere.</xs:documentation>
+              <xs:documentation xml:lang="en">The first 8 characters of the tax number of the taxpayer who is the owner of the e-cash register.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="renewCertificateCode" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Lejárt authentikációs tanúsítvány esetén az e-pénztárgép üzemeltetőnek a NAV-tól kérnie kell egy authentikációs tanúsítvány megújító kódot, amit ebben a mezőben be kell küldeni.</xs:documentation>
+              <xs:documentation xml:lang="en">If the authentication certificate expired then the operator of the e-cash register has to request an authentication certificate renew number from NTCA, which has to be sent in this field.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RenewCertificateResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Authentikációs tanúsítvány megújítását kezdeményező szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The response type of the renew authentication certificate service.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="authenticationPrivateKey" type="communication:PrivateKeyType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Authentikációs tanúsítvány privát kulcsa. Ezzel a tanúsítvánnyal tud bejelentkezni az e-pénztárgép. Az eszközregisztrációs szolgáltatáson kívül minden más szolgáltatás esetén használni kell ezt az authentikációs tanúsítványt.</xs:documentation>
+              <xs:documentation xml:lang="en">The private key of the authentication key. This key has to be used when other services called except the device registration. For further information see "Authentication" chapter in the Development Documentation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="authenticationPublicKey" type="communication:PublicKeyType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Authentikációs tanúsítvány publikus kulcsa.</xs:documentation>
+              <xs:documentation xml:lang="en">The public key of the authentication key.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReportRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Pénztárnyitás bizonylat, napi forgalmi jelentés, pénztárjelentés, pénzmozgás bizonylat és minden egyéb, nem adóügyi bizonylat fogadását megvalósító szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The request type of the service which receives e-cash register open balance report, daily cashflow report, e-cash register report, cash flow document and all other non tax documents.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="taxNumber" type="common:TaxpayerIdType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A bizonylatot kiállító adózó adószámának első 8 karaktere.</xs:documentation>
+              <xs:documentation xml:lang="en">The first 8 characters of the tax number of the taxpayer who creates the document</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="reportClass" type="base:ReportClassType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A beküldött bizonylat típusa (pénztárjelentés, pénzmozgás bizonylat, stb.)</xs:documentation>
+              <xs:documentation xml:lang="en">The type of the document (cash register report, cash flow document, etc.)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ntcaReportEnvelope" type="base:SignedEnvelopeType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A bizonylat NAV-nak átadandó adatai a Fejlesztői dokumentációban előírt formátumban.</xs:documentation>
+              <xs:documentation xml:lang="en">The document data for NTCA in the format described in Development Documentation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="customerReportEnvelope" type="base:SignedEnvelopeType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A bizonylat vevőnek átadandó adatai a Fejlesztői dokumentációban előírt formátumban. Csak akkor kell kitölteni, ha a vevő is érintett a tranzakcióban.</xs:documentation>
+              <xs:documentation xml:lang="en">The document data for the customer in the format described in Development Documentation. It contains value only if the customer is involved in the transaction.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="searchKeyTimestamp" type="common:GenericTimestampType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A nyugtatárból ezzel az időbélyeggel kérdezhető le a bizonylat. A bizonylat kiállításának időpontja. Csak akkor kell kitölteni, ha a vevő is érintett a tranzakcióban.</xs:documentation>
+              <xs:documentation xml:lang="en">The document can be queried by this data from the Document Store. The document creation timestamp. It contains value only if the customer is involved in the transaction.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="searchKey" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A nyugtatárból ezzel a kulccsal kérdezhető le a bizonylat. Csak akkor kell kitölteni, ha a vevő is érintett a tranzakcióban.</xs:documentation>
+              <xs:documentation xml:lang="en">The document can be queried by this data from the Document Store. It contains value only if the customer is involved in the transaction.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="isQRCodeExpired" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A QR generálása a fejlesztői dokumentációban meghatározott időintervallumnál régebben készült .</xs:documentation>
+              <xs:documentation xml:lang="en">QR code generate timestamp expired.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="isOfflineCreated" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A hírközlő hálózat elérhetetlenségének megszűnése esetén az érintett bizonylatokat és adatszolgáltatásokat haladéktalanul el kell küldeni, a késleltetett küldés tényét ennek a mezőnek a kitöltésével kell jelezni.</xs:documentation>
+              <xs:documentation xml:lang="en">Whether the document was created offline. When the communication network is online again, the document has to be sent immidiately, with this flag.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="cashRegisterSignPublicKey" type="communication:PublicKeyType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az e-pénztárgép aláíró kulcspárjának a publikus kulcsa PEM formátumban. Ezzel a kulccsal kerülnek aláírásra az e-pénztárgép által küldött üzenetek. Az aláíró kulccsal kapcsolatos követelmények a Fejlesztői dokumentáció „Aláírás képzése” fejezetében találhatók.</xs:documentation>
+              <xs:documentation xml:lang="en">The public key of the e-cash register sign key in PEM format. This key has to be used to sign the messages of the e-cash register. The requirements of the sign key can be found in the "Signing" chapter of the Development Documentation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="recordCounter" type="xs:nonNegativeInteger">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az aktuálisan beküldött bizonylat recordCounter értéke. Leírását lásd a Fejlesztői dokumentáció „NAV ellenőrző kód képzése” fejezetében.</xs:documentation>
+              <xs:documentation xml:lang="hu">The recordCounter value of the actual document. See further information in the "Generate NAV verification code" chapter of the Development Documentation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="lastRecordCounter" type="xs:nonNegativeInteger">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az e-pénztárgépen utoljára kiállított bizonylat recordCounter értéke. Leírását lásd a Fejlesztői dokumentáció „NAV ellenőrző kód képzése” fejezetében.</xs:documentation>
+              <xs:documentation xml:lang="en">The recordCounter value of the last document in the e-cash register. See further information in the "Generate NAV verification code" chapter of the Development Documentation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ntcaVerificationCode" type="common:SHA256Type">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">NAV ellenőrző kód. Leírását lásd a Fejlesztői dokumentáció „NAV ellenőrző kód képzése” fejezetében.</xs:documentation>
+              <xs:documentation xml:lang="en">Ntca verification code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReportResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Pénztárnyitás bizonylat, napi forgalmi jelentés, pénztárjelentés, pénzmozgás bizonylat és minden egyéb, nem adóügyi bizonylat fogadását megvalósító szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The response type of the service which receives e-cash register open balance report, daily cashflow report, e-cash register report, cash flow document and all other non tax documents.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="taxNumber" type="common:TaxpayerIdType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A kérésben szereplő adószám.</xs:documentation>
+              <xs:documentation xml:lang="en">The tax number in the request.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SoftwareUpdateRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgépen futó szoftver frissítését kezdeményező szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The request type of the software update service of the e-cash register.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SoftwareUpdateResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgépen futó szoftver frissítését kezdeményező szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The response type of the software update service of the e-cash register.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="firmwareInstallDueDate" type="common:GenericDateType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A letöltött szoftvert telepítését meddig kell végrehajtani.</xs:documentation>
+              <xs:documentation xml:lang="en">The deadline of the installation of the software.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:sequence maxOccurs="unbounded">
+            <xs:element name="firmwareSliceNumber" type="xs:nonNegativeInteger">
+              <xs:annotation>
+                <xs:appinfo>
+                  <legacyMapping/>
+                </xs:appinfo>
+                <xs:documentation xml:lang="hu">Letöltöthető állomány darab sorszáma</xs:documentation>
+                <xs:documentation xml:lang="en">Downloadable file item sequence number</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="firmwareHash" type="common:CryptoType">
+              <xs:annotation>
+                <xs:appinfo>
+                  <legacyMapping/>
+                </xs:appinfo>
+                <xs:documentation xml:lang="hu">Letöltött állomány hash, amely segítségével ellenőrizhető, hogy a letöltötés során az állomány nem sérült meg.</xs:documentation>
+                <xs:documentation xml:lang="en">The hash value of the software. The downloaded software's hash has to be equal with this value.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="firmwareDownloadUrl" type="communication:UrlType">
+              <xs:annotation>
+                <xs:documentation xml:lang="hu">Szoftver letöltéséhez szükséges URL</xs:documentation>
+                <xs:documentation xml:lang="en">The software can be downloaded from this URL.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VatUpdateRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az egyes forgalmi gyűjtőkhöz kapcsolódó ÁFA kulcsok módosítását megvalósító szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The VAT update service request type.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VatUpdateResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az egyes forgalmi gyűjtőkhöz kapcsolódó ÁFA kulcsok módosítását megvalósító szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The VAT update service response type.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="vatList" type="communication:VatListType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az egyes forgalmi gyűjtőkhöz kapcsolódó ÁFA kulcsok listája.</xs:documentation>
+              <xs:documentation xml:lang="en">The VAT keys according to the commercial collector list.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BlockUnblockRequest" type="BlockUnblockRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép blokkolását vagy blokkolásának feloldását megvalósító szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The e-cash register blocking and unblocking service request element.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BlockUnblockResponse" type="BlockUnblockResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép blokkolását vagy blokkolásának feloldását megvalósító szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The e-cash register blocking and unblocking service response element.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CommMgrRequest" type="CommMgrRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép által meghívandó szolgáltatások listáját visszaadó szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The request element of the service which lists the services that the e-cash register has to call.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CommMgrResponse" type="CommMgrResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép által meghívandó szolgáltatások listáját visszaadó szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The request element of the service which lists the services that the e-cash register has to call.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentRequest" type="DocumentRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A nyugta, egyszerűsített számla, és egyes speciális értékesítések bizonylatainak fogadását megvalósító szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The request element of the service which receives receipts, simplified invoices and special sale documents.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentResponse" type="DocumentResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A nyugta, egyszerűsített számla, és egyes speciális értékesítések bizonylatainak fogadását megvalósító szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The response element of the service which receives receipts, simplified invoices and special sale documents.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EndOfOperationRequest" type="EndOfOperationRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép üzemeltetés befejezés szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The request element of the e-cash register end of operation service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EndOfOperationResponse" type="EndOfOperationResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép üzemeltetés befejezés szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The response element of the e-cash register end of operation service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HelloRequest" type="HelloRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép regisztrálását vagy átszemélyesítését követően meghívandó szolgáltatás kérés objektuma. A szolgáltatás hívással jelzi az e-pénztárgép a NAV-I felé, hogy a regisztrációs vagy átszemélyesítési folyamat lezárult.</xs:documentation>
+      <xs:documentation xml:lang="en">The request element of the service which has to be called by the e-cash register after the device registration or the owner change.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HelloResponse" type="HelloResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép regisztrálását vagy átszemélyesítését követően meghívandó szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The response element of the service which has to be called by the e-cash register after the device registration or the owner change.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OperatorSiteUpdateRequest" type="OperatorSiteUpdateRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgépen az üzemeltetői vagy telephely adatok frissítését megvalósító szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The operator or site data update service request element.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OperatorSiteUpdateResponse" type="OperatorSiteUpdateResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgépen az üzemeltetői vagy telephely adatok frissítését megvalósító szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The operator or site data update service response element.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OwnerChangeRequest" type="OwnerChangeRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép átszemélyesítését kezdeményező szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The request element of the e-cash register owner change service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OwnerChangeResponse" type="OwnerChangeResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép átszemélyesítését kezdeményező szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The response element of the e-cash register owner change service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PrintTechnicalInfoRequest" type="PrintTechnicalInfoRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Technikai tájékoztatás bizonylat küldését megvalósító szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The request element of the service which sends technical information document.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PrintTechnicalInfoResponse" type="PrintTechnicalInfoResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Technikai tájékoztatás bizonylat küldését megvalósító szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The response element of the service which sends technical information document.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="QueryTaxpayerRequest" type="QueryTaxpayerRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Belföldi adószám ellenőrző szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The request element of the check Hungarian taxpayer service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="QueryTaxpayerResponse" type="QueryTaxpayerResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Belföldi adószám ellenőrző szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The response element of the check Hungarian taxpayer service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegistrationRequest" type="RegistrationRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Eszközregisztrációt megvalósító szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">Device registration service request element.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegistrationResponse" type="RegistrationResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Eszközregisztrációt megvalósító szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">Device registration service response element.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RenewCertificateRequest" type="RenewCertificateRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Authentikációs tanúsítvány megújítását kezdeményező szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The request element of the renew authentication certificate service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RenewCertificateResponse" type="RenewCertificateResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Authentikációs tanúsítvány megújítását kezdeményező szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The response element of the renew authentication certificate service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportRequest" type="ReportRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Pénztárnyitás bizonylat, napi forgalmi jelentés, pénztárjelentés, pénzmozgás bizonylat és minden egyéb, nem adóügyi bizonylat fogadását megvalósító szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The request element of the service which receives e-cash register open balance report, daily cashflow report, e-cash register report, cash flow document and all other non tax documents.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportResponse" type="ReportResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Pénztárnyitás bizonylat, napi forgalmi jelentés, pénztárjelentés, pénzmozgás bizonylat és minden egyéb, nem adóügyi bizonylat fogadását megvalósító szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The response element of the service which receives e-cash register open balance report, daily cashflow report, e-cash register report, cash flow document and all other non tax documents.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SoftwareUpdateRequest" type="SoftwareUpdateRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgépen futó szoftver frissítését kezdeményező szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The request element of the software update service of the e-cash register.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SoftwareUpdateResponse" type="SoftwareUpdateResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgépen futó szoftver frissítését kezdeményező szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The response element of the software update service of the e-cash register.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VatUpdateRequest" type="VatUpdateRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az egyes forgalmi gyűjtőkhöz kapcsolódó ÁFA kulcsok módosítását megvalósító szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The VAT update service request element.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VatUpdateResponse" type="VatUpdateResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az egyes forgalmi gyűjtőkhöz kapcsolódó ÁFA kulcsok módosítását megvalósító szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The VAT update service response element.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

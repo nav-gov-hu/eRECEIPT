@@ -1,0 +1,1042 @@
+<!--
+# Project: NAV e-Pénztárgép rendszer documentData XML séma
+# Author: NAV Informatikai Intézet
+
+# Version: v1.0 2023/08/23
+-->
+<xs:schema targetNamespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/documentData" elementFormDefault="qualified"
+           attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://schemas.nav.gov.hu/ERECEIPT/1.0/documentData"
+           xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common"
+           xmlns:invoiceData="http://schemas.nav.gov.hu/OSA/3.0/data"
+           xmlns:base="http://schemas.nav.gov.hu/ERECEIPT/1.0/base" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" schemaLocation="common.xsd"/>
+  <xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/base" schemaLocation="eReceiptBase.xsd"/>
+  <xs:import namespace="http://schemas.nav.gov.hu/OSA/3.0/data" schemaLocation="invoiceData.xsd"/>
+  <xs:simpleType name="ExchangeRateType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Árfolyam adat típus</xs:documentation>
+      <xs:documentation xml:lang="en">Exchange rate data type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="14"/>
+      <xs:fractionDigits value="6"/>
+      <xs:minExclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LineNatureIndicatorType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Adott tételsor termékértékesítés vagy szolgáltatás nyújtás jellegének jelzése típus</xs:documentation>
+      <xs:documentation xml:lang="en">Indication of the nature of the supply of goods or services on a given line type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="common:AtomicStringType15">
+      <xs:enumeration value="PRODUCT">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Termékértékesítés</xs:documentation>
+          <xs:documentation xml:lang="en">Supply of goods</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SERVICE">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Szolgáltatás nyújtás</xs:documentation>
+          <xs:documentation xml:lang="en">Supply of services</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Egyéb, nem besorolható</xs:documentation>
+          <xs:documentation xml:lang="en">Other, non-qualifiable</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ProductCodeCategoryType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A termékkód fajtájának jelölésére szolgáló típus</xs:documentation>
+      <xs:documentation xml:lang="en">The type used to mark the kind of product code</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="common:AtomicStringType8">
+      <xs:minLength value="2"/>
+      <xs:maxLength value="6"/>
+      <xs:enumeration value="EAN">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">EAN kód (európai gyártmánykód)</xs:documentation>
+          <xs:documentation xml:lang="en">EAN code (European Article Numbering)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VTSZ">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Vámtarifa szám VTSZ</xs:documentation>
+          <xs:documentation xml:lang="en">Customs tariff number CTN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SZJ">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Szolgáltatás jegyzék szám SZJ</xs:documentation>
+          <xs:documentation xml:lang="en">Business service list number BSL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KN">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">KN kód (Kombinált Nómenklatúra, 2658/87/EGK rendelet I. melléklete)</xs:documentation>
+          <xs:documentation xml:lang="en">CN code (Combined Nomenclature, 2658/87/ECC Annex I)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AHK">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">A Jövedéki törvény (2016. évi LXVIII. tv) szerinti e-TKO adminisztratív hivatkozási kódja AHK</xs:documentation>
+          <xs:documentation xml:lang="en">Administrative reference code of e-TKO defined in the Act LXVIII of 2016 on Excise Duties</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CSK">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">A termék 343/2011. (XII. 29) Korm. rendelet 1. sz. melléklet A) cím szerinti csomagolószer-katalógus kódja (CsK kód)</xs:documentation>
+          <xs:documentation xml:lang="en">Packaging product catalogue code of the product according to the Title A) in the Schedule No.1 of the Government Decree No. 343/2011. (XII. 29.)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KT">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">A termék 343/2011. (XII. 29) Korm. rendelet 1. sz. melléklet B) cím szerinti környezetvédelmi termékkódja (Kt kód)</xs:documentation>
+          <xs:documentation xml:lang="en">Environmental protection product code of the product according to the Title B) in the Schedule No.1 of the Government Decree No. 343/2011. (XII. 29.)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EJ">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Építményjegyzék szám</xs:documentation>
+          <xs:documentation xml:lang="en">Classification of Inventory of Construction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TESZOR">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">A Termékek és Szolgáltatások Osztályozási Rendszere (TESZOR) szerinti termékkód - 451/2008/EK rendelet</xs:documentation>
+          <xs:documentation xml:lang="en">Product code according to the TESZOR (Hungarian Classification of Goods and Services), Classification of Product by Activity, CPA - regulation 451/2008/EC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OWN">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">A vállalkozás által képzett termékkód</xs:documentation>
+          <xs:documentation xml:lang="en">The own product code of the enterprise</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Egyéb termékkód</xs:documentation>
+          <xs:documentation xml:lang="en">Other product code</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ProductCodeValueType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Termékkód típus</xs:documentation>
+      <xs:documentation xml:lang="en">Field type for inputting product codes</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="common:AtomicStringType32">
+      <xs:minLength value="2"/>
+      <xs:maxLength value="30"/>
+      <xs:pattern value="[A-Z0-9]{2,30}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QuantityType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Mennyiségi érték típus. Maximum 22 számjegy, ami 10 tizedesjegyet tartalmazhat</xs:documentation>
+      <xs:documentation xml:lang="en">Field type for quantity values. Maximum 22 digits that may include 10 decimal places</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="common:GenericDecimalType">
+      <xs:totalDigits value="22"/>
+      <xs:fractionDigits value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="UnitOfMeasureType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Mennyiség egység típus</xs:documentation>
+      <xs:documentation xml:lang="en">Unit of measure type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="common:AtomicStringType15">
+      <xs:enumeration value="PIECE">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Darab</xs:documentation>
+          <xs:documentation xml:lang="en">Piece</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KILOGRAM">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Kilogramm</xs:documentation>
+          <xs:documentation xml:lang="en">Kilogram</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TON">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Metrikus tonna</xs:documentation>
+          <xs:documentation xml:lang="en">Metric ton</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KWH">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Kilowatt óra</xs:documentation>
+          <xs:documentation xml:lang="en">Kilowatt hour</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DAY">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Nap</xs:documentation>
+          <xs:documentation xml:lang="en">Day</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HOUR">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Óra</xs:documentation>
+          <xs:documentation xml:lang="en">Hour</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MINUTE">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Perc</xs:documentation>
+          <xs:documentation xml:lang="en">Minute</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MONTH">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Hónap</xs:documentation>
+          <xs:documentation xml:lang="en">Month</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LITER">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Liter</xs:documentation>
+          <xs:documentation xml:lang="en">Liter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KILOMETER">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Kilométer</xs:documentation>
+          <xs:documentation xml:lang="en">Kilometer</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CUBIC_METER">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Köbméter</xs:documentation>
+          <xs:documentation xml:lang="en">Cubic meter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="METER">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Méter</xs:documentation>
+          <xs:documentation xml:lang="en">Meter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LINEAR_METER">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Folyóméter</xs:documentation>
+          <xs:documentation xml:lang="en">Linear meter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CARTON">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Karton</xs:documentation>
+          <xs:documentation xml:lang="en">Carton</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PACK">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Csomag</xs:documentation>
+          <xs:documentation xml:lang="en">Pack</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OWN">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Saját mennyiségi egység megnevezés</xs:documentation>
+          <xs:documentation xml:lang="en">Own unit of measure</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DocumentDataType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A dokumentum adatszolgáltatás adatok típusa</xs:documentation>
+      <xs:documentation xml:lang="en">Document exchange data type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="documentNumber" type="base:DocumentNumberType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>
+              NSZ,IID,ORN,PMS (változott a struktúra)
+            </legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Dokumentum vagy módosító okirat sorszáma</xs:documentation>
+          <xs:documentation xml:lang="en">Sequential number of the original document or modification document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="documentIssueDate" type="base:DocumentDateType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>
+              Új mező
+            </legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Dokumentum vagy módosító okirat kelte</xs:documentation>
+          <xs:documentation xml:lang="en">Date of issue of the document or the modification document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="issueStartDateTime" type="common:GenericTimestampType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>
+              DTS
+            </legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Időbélyeg, a bizonylat nyitásának pontos ideje az AE órája szerint</xs:documentation>
+          <xs:documentation xml:lang="en">Timestamp, the exact time of the document's opening according to the AE clock </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="issueEndDateTime" type="common:GenericTimestampType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>
+              CTS
+            </legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Időbélyeg, a bizonylat zárásának pontos ideje az AE órája szerint</xs:documentation>
+          <xs:documentation xml:lang="en">Timestamp, the exact time of the document's closing according to the AE clock </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:choice>
+        <xs:element name="healthFundInfo" type="base:HealthFundInfoType" minOccurs="0">
+          <xs:annotation>
+            <xs:appinfo>
+              <legacyMapping>
+                Új mező
+              </legacyMapping>
+            </xs:appinfo>
+            <xs:documentation xml:lang="hu">Egészségkártya információk</xs:documentation>
+            <xs:documentation xml:lang="en">Health found information</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="fuelCardInfo" type="base:FuelCardInfoType" minOccurs="0">
+          <xs:annotation>
+            <xs:appinfo>
+              <legacyMapping>
+                Új mező
+              </legacyMapping>
+            </xs:appinfo>
+            <xs:documentation xml:lang="hu">Üzemanyagkártya információk</xs:documentation>
+            <xs:documentation xml:lang="en">Fuel card information</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="consumeSummaryNumber" minOccurs="0" type="xs:string">
+          <xs:annotation>
+            <xs:appinfo>
+              <legacyMapping>
+                WDN
+              </legacyMapping>
+            </xs:appinfo>
+            <xs:documentation xml:lang="hu">Fogyasztásösszesítő egyedi azonosítója</xs:documentation>
+            <xs:documentation xml:lang="en">Consume summary's unique identifier</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:choice>
+      <xs:element name="document" type="DocumentType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>
+              Új mező
+            </legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Dokumentum adatok leírására szolgáló információk</xs:documentation>
+          <xs:documentation xml:lang="en">Information to describe document data</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocumentDetailType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Dokumentum részletező adatok típus</xs:documentation>
+      <xs:documentation xml:lang="en">Document detail data type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="documentCategory" type="base:DocumentCategoryType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A bizonylat típusa, módosító okirat esetén az eredeti bizonylat típusa</xs:documentation>
+          <xs:documentation xml:lang="en">Type of document, in case of amending document, type of original document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="currencyCode" type="common:CurrencyType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>CTY</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A számla pénzneme az ISO 4217 szabvány szerint</xs:documentation>
+          <xs:documentation xml:lang="en">ISO 4217 currency code on the document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="exchangeRate" type="ExchangeRateType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>CRA</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">HUF-tól különböző pénznem esetén az alkalmazott árfolyam: egy egység értéke HUF-ban</xs:documentation>
+          <xs:documentation xml:lang="en">In case any currency is used other than HUF, the applied exchange rate should be mentioned: 1 unit of the foreign currency expressed in HUF</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="paymentInstruments" type="base:PaymentInstrumentsType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Fizetőeszköz típusa</xs:documentation>
+          <xs:documentation xml:lang="en">Payment instruments type</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="additionalDocumentData" type="base:AdditionalDataType" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">További adat leírására szolgáló típus</xs:documentation>
+          <xs:documentation xml:lang="en">Type for additional data description</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocumentHeadType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Dokumentum fejléc adatai típus</xs:documentation>
+      <xs:documentation xml:lang="en">Data in header of document type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="supplierInfo" type="SupplierInfoType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Számla kibocsátó (eladó) adatai</xs:documentation>
+          <xs:documentation xml:lang="en">Data related to the issuer of the document (supplier)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="customerInfo" type="base:CustomerInfoType" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Vevő adatai</xs:documentation>
+          <xs:documentation xml:lang="en">Data related to the customer</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="documentDetail" type="DocumentDetailType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Dokumentum részletező adatok</xs:documentation>
+          <xs:documentation xml:lang="en">Document detail data</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocumentReferenceType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A módosítás vagy érvénytelenítés hivatkozási adatai típus</xs:documentation>
+      <xs:documentation xml:lang="en">Modification or cancellation reference data type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="originalDocumentNumber" type="common:SimpleText50NotBlankType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>SBN,VDB</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Az eredeti dokumentum sorszáma, melyre a módosítás vonatkozik  - ÁFA tv. 170. § (1) c)</xs:documentation>
+          <xs:documentation xml:lang="en">Sequence number of the original document, on which the modification occurs - section 170 (1) c) of the VAT law</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="modificationIndex" type="base:DocumentUnboundedIndexType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A számlára vonatkozó módosító okirat egyedi sorszáma</xs:documentation>
+          <xs:documentation xml:lang="en">The unique sequence number referring to the original document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:choice>
+        <xs:element name="cancellationReason" minOccurs="0" type="base:CancellationReasonType">
+          <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>RSN</legacyMapping>
+          </xs:appinfo>
+            <xs:documentation xml:lang="hu">Sztornózás oka</xs:documentation>
+            <xs:documentation xml:lang="en">Reason of the cancellation</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="modificationReason" minOccurs="0" type="base:ModificationReasonType">
+          <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>RSN</legacyMapping>
+          </xs:appinfo>
+            <xs:documentation xml:lang="hu">Módosítás oka</xs:documentation>
+            <xs:documentation xml:lang="en">Reason of the modification</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocumentType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Egy dokumentum vagy módosító dokumentum adatai típus</xs:documentation>
+      <xs:documentation xml:lang="en">Data of a single document or modification document type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="documentReference" type="DocumentReferenceType" minOccurs="0">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A módosítás vagy érvénytelenítés adatai</xs:documentation>
+          <xs:documentation xml:lang="en">Modification or cancellation data</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="documentHead" type="DocumentHeadType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A dokumentum egészét jellemző adatok</xs:documentation>
+          <xs:documentation xml:lang="en">Data concerning the whole document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="documentLines" type="LinesType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A dokumentumon szereplő tételek adatai</xs:documentation>
+          <xs:documentation xml:lang="en">Product/service data appearing on the document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="documentSummary" type="SummaryType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Az ÁFA törvény szerinti összesítő adatok</xs:documentation>
+          <xs:documentation xml:lang="en">Summary data according to VAT law</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LineAmountsDocumentType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A dokumentum esetén kitöltendő tétel érték adatok típus</xs:documentation>
+      <xs:documentation xml:lang="en">Item value data to be completed in case of document type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="collectorCode" type="base:CollectorCodeType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>VC (új értékek)</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Forgalmi gyűjtő jelölése</xs:documentation>
+          <xs:documentation xml:lang="en">Collector code marking</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="lineGrossAmountDocument" type="base:MonetaryType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Tétel bruttó értéke a dokumentum pénznemében</xs:documentation>
+          <xs:documentation xml:lang="en">Gross amount of the item expressed in the currency of the document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="lineGrossAmountDocumentHUF" type="base:MonetaryType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>SU</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Tétel bruttó értéke forintban</xs:documentation>
+          <xs:documentation xml:lang="en">Gross amount of the item expressed in HUF</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LinesType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Termék/szolgáltatás tételek típus</xs:documentation>
+      <xs:documentation xml:lang="en">Product / service items type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="line" type="LineType" maxOccurs="unbounded">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Termék/szolgáltatás tétel</xs:documentation>
+          <xs:documentation xml:lang="en">Product / service item</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LineType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A dokumentum tételek (termék vagy szolgáltatás) adatait tartalmazó típus</xs:documentation>
+      <xs:documentation xml:lang="en">Field type including data of document items (product or service)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="lineNumber" type="base:LineNumberType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A tétel sorszáma</xs:documentation>
+          <xs:documentation xml:lang="en">Sequential number of the item</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EANCode" type="xs:string" minOccurs="0">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">EAN kód (európai gyártmánykód)</xs:documentation>
+          <xs:documentation xml:lang="en">EAN code (European Article Numbering)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="productCodes" type="ProductCodesType" minOccurs="0">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Termékkódok</xs:documentation>
+          <xs:documentation xml:lang="en">Product codes</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="lineNatureIndicator" type="LineNatureIndicatorType" minOccurs="0">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Adott tételsor termékértékesítés vagy szolgáltatás nyújtás jellegének jelzése</xs:documentation>
+          <xs:documentation xml:lang="en">Indication of the nature of the supply of goods or services on a given line</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="lineDescription" type="common:SimpleText512NotBlankType" minOccurs="1">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>NA</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A termék vagy szolgáltatás megnevezése</xs:documentation>
+          <xs:documentation xml:lang="en">Name / description of the product or service</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="quantity" type="QuantityType" minOccurs="1">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>QY</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Mennyiség</xs:documentation>
+          <xs:documentation xml:lang="en">Quantity</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="unitOfMeasure" type="UnitOfMeasureType" minOccurs="1">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>IU</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A dokumentumon szereplő mennyiségi egység kanonikus kifejezése</xs:documentation>
+          <xs:documentation xml:lang="en">Canonical representation of the unit of measure of the document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="unitOfMeasureOwn" type="common:SimpleText50NotBlankType" minOccurs="0">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A dokumentumon szereplő mennyiségi egység literális kifejezése</xs:documentation>
+          <xs:documentation xml:lang="en">Literal unit of measure of the document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="unitPrice" type="QuantityType" minOccurs="1">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>UN</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Egységár a dokumentum pénznemében</xs:documentation>
+          <xs:documentation xml:lang="en">Unit price expressed in the currency of the document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="unitPriceHUF" type="QuantityType" minOccurs="0">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>SU</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Egységár forintban</xs:documentation>
+          <xs:documentation xml:lang="en">Unit price expressed in HUF</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="lineAmountsDocument" type="LineAmountsDocumentType" minOccurs="1">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Dokumentum esetén kitöltendő tétel érték adatok</xs:documentation>
+          <xs:documentation xml:lang="en">Item value data to be completed in case of document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="itemNature" type="base:ItemNatureType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>TY</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Az adott tétel jellege</xs:documentation>
+          <xs:documentation xml:lang="en">Nature of the current item</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="additionalLineData" type="base:AdditionalDataType" minOccurs="0">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A termék/szolgáltatás tételhez kapcsolódó, további adat</xs:documentation>
+          <xs:documentation xml:lang="en">Other data in relation to the product / service item</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OtherDocumentCoreDataType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az egyéb dokumentum üzleti adatai típus</xs:documentation>
+      <xs:documentation xml:lang="en">The other document core data type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="metaData" type="base:MetaDataType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>
+              Új mező
+            </legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A dokumentum fő üzleti adatai</xs:documentation>
+          <xs:documentation xml:lang="en">The document main core data</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="otherDocumentData" type="DocumentDataType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>
+              Új mező
+            </legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Az egyéb dokumentum üzleti adatai</xs:documentation>
+          <xs:documentation xml:lang="en">The other document core data</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductCodesType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Termékkódok típus</xs:documentation>
+      <xs:documentation xml:lang="en">Product codes types</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="productCode" type="ProductCodeType" maxOccurs="unbounded">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Termékkód</xs:documentation>
+          <xs:documentation xml:lang="en">Product code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductCodeType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Különböző termék- vagy szolgáltatáskódokat tartalmazó típus</xs:documentation>
+      <xs:documentation xml:lang="en">Field type including the different product and service codes</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="productCodeCategory" type="ProductCodeCategoryType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A termékkód fajtájának (pl. VTSZ, CsK, stb.) jelölése</xs:documentation>
+          <xs:documentation xml:lang="en">The kind of product code (f. ex. VTSZ, CsK, etc.)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:choice>
+        <xs:element name="productCodeValue" type="ProductCodeValueType">
+          <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>PN</legacyMapping>
+          </xs:appinfo>
+            <xs:documentation xml:lang="hu">A termékkód értéke nem saját termékkód esetén</xs:documentation>
+            <xs:documentation xml:lang="en">The value of (not own) product code</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="productCodeOwnValue" type="common:SimpleText255NotBlankType">
+          <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+            <xs:documentation xml:lang="hu">Saját termékkód értéke</xs:documentation>
+            <xs:documentation xml:lang="en">Own product code value</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReceiptCoreDataType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A nyugta bizonylat üzleti adatai típus</xs:documentation>
+      <xs:documentation xml:lang="en">The receipt core data type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="metaData" type="base:MetaDataType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>
+              Új mező
+            </legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A dokumentum fő üzleti adatai</xs:documentation>
+          <xs:documentation xml:lang="en">The document main core data</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="receiptData" type="DocumentDataType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>
+              Új mező
+            </legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A nyugta bizonylat üzleti adatai</xs:documentation>
+          <xs:documentation xml:lang="en">The receipt core data</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SimplifiedInvoiceCoreDataType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az egyszerűsített számla üzleti adatai típus</xs:documentation>
+      <xs:documentation xml:lang="en">The simplefied invoice core data type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="metaData" type="base:MetaDataType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>
+              Új mező
+            </legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A dokumentum fő üzleti adatai</xs:documentation>
+          <xs:documentation xml:lang="en">The document main core data</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="simplifiedInvoice" type="invoiceData:InvoiceDataType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>
+              Új mező
+            </legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Az egyszerűsített számla üzleti adatai</xs:documentation>
+          <xs:documentation xml:lang="en">The simplified invoice core data</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SummaryDocumentType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Dokumentum összesítés típus</xs:documentation>
+      <xs:documentation xml:lang="en">Calculation of document totals type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="collectorCode" type="base:CollectorCodeType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>
+              VC
+            </legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Forgalmi gyűjtő jelölése</xs:documentation>
+          <xs:documentation xml:lang="en">Marking the collector code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="vatContentGrossAmount" type="base:MonetaryType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>
+              Új mező
+            </legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Az adott adótartalomhoz tartozó értékesítés vagy szolgáltatásnyújtás bruttó összege a dokumentum pénznemében</xs:documentation>
+          <xs:documentation xml:lang="en">The gross amount of the sale or service for the given tax amount in the currency of the document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="vatContentGrossAmountHUF" type="base:MonetaryType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>
+              Új mező
+            </legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Az adott adótartalomhoz tartozó értékesítés vagy szolgáltatásnyújtás bruttó összege forintban</xs:documentation>
+          <xs:documentation xml:lang="en">The gross amount of the sale or service for the given tax amount in HUF</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SummaryGrossDataType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A dokumentum összesítő bruttó adatai típus</xs:documentation>
+      <xs:documentation xml:lang="en">Gross data of the document summary type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="documentGrossAmount" type="base:MonetaryType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A dokumentum bruttó összege a dokumentum pénznemében</xs:documentation>
+          <xs:documentation xml:lang="en">Gross amount of the document expressed in the currency of the document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="documentGrossAmountHUF" type="base:MonetaryType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>SUM</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A dokumentum bruttó összege forintban</xs:documentation>
+          <xs:documentation xml:lang="en">Gross amount of the document expressed in HUF</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="documentRoundingAmount" type="xs:int" minOccurs="0">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>RND</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">a dokumentumon szereplő kerekítés összege, egész forintban számolva, szükség esetén negatív előjellel, ha van ilyen adat</xs:documentation>
+          <xs:documentation xml:lang="en">The amount of the rounding on the document, in whole HUF, with a negative sign if necessary</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SummaryType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Dokumentum összesítés adatai típus</xs:documentation>
+      <xs:documentation xml:lang="en">Data of calculation of document totals type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="summaryDocument" type="SummaryDocumentType" maxOccurs="unbounded">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Dokumentum összesítés</xs:documentation>
+          <xs:documentation xml:lang="en">Calculation of simplified document totals</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="summaryGrossData" type="SummaryGrossDataType" minOccurs="0">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A dokumentum összesítő bruttó adatai</xs:documentation>
+          <xs:documentation xml:lang="en">Gross data of the document summary</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ntcaControlCode" type="base:NtcaControlCodeType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>NAV</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A bizonylaton szereplő NAV ellenőrző kód</xs:documentation>
+          <xs:documentation xml:lang="en">The control code of Ntca</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SupplierInfoType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A szállító (eladó) adatai</xs:documentation>
+      <xs:documentation xml:lang="en">Receipt supplier (seller) data</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="supplierTaxNumber" type="base:TaxNumberType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>ASZ</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Belföldi adószám vagy csoportazonosító szám</xs:documentation>
+          <xs:documentation xml:lang="en">Tax number or group identification number</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="groupMemberTaxNumber" type="base:TaxNumberType" minOccurs="0">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Csoport tag adószáma, ha a termékbeszerzés vagy szolgáltatás nyújtása csoportazonosító szám alatt történt</xs:documentation>
+          <xs:documentation xml:lang="en">Tax number of group member, when the supply of goods or services is done under group identification number</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="communityVatNumber" type="common:CommunityVatNumberType" minOccurs="0">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Közösségi adószám</xs:documentation>
+          <xs:documentation xml:lang="en">Community tax number</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="supplierName" type="common:SimpleText512NotBlankType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>NAM</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Az eladó (szállító) neve</xs:documentation>
+          <xs:documentation xml:lang="en">Name of the seller (supplier)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="supplierAddress" type="base:AddressType">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Az eladó (szállító) címe</xs:documentation>
+          <xs:documentation xml:lang="en">Address of the seller (supplier)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="supplierBankAccountNumber" type="common:BankAccountNumberType" minOccurs="0">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Az eladó (szállító) bankszámlaszáma</xs:documentation>
+          <xs:documentation xml:lang="en">Bank account number of the seller (supplier)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="individualExemption" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Értéke true, amennyiben az eladó (szállító) alanyi ÁFA mentes</xs:documentation>
+          <xs:documentation xml:lang="en">Value is true if the seller (supplier) is individually exempted from VAT</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="exciseLicenceNum" type="common:SimpleText50NotBlankType" minOccurs="0">
+        <xs:annotation>
+        <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Az eladó adóraktári engedélyének vagy jövedéki engedélyének száma (2016. évi LXVIII. tv.)</xs:documentation>
+          <xs:documentation xml:lang="en">Number of supplier’s tax warehouse license or excise license (Act LXVIII of 2016)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
