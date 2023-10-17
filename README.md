@@ -2,6 +2,17 @@
 
 Üdvözöljük az eNyugta rendszer publikus tárhelyén!
 
+Az e-pénztárgép fejlesztői dokumentáció és hozzá tartozó XSD-sémák feltöltésre kerültek az eNyugta rendszer publikus tárhelyére.
+
+Fontosnak tartjuk, hogy a bevezetés előtt álló e-pénztárgép rendszerrel kapcsolatos részletes műszaki követelményeket a fejlesztők időben megismerhessék és véleményezhessék.
+
+A fejlesztői dokumentáció célja az e-pénztárgépek által használandó szolgáltatások működésének, illetve a szolgáltatások által használt XML üzenetstruktúráknak a bemutatása. Továbbá bemutatja a vevői alkalmazás által használt szolgáltatásokat és azok üzenetstruktúráját is.
+
+A közzétett dokumentáció munkaanyag, a 2023. október 2-ai állapotot tükrözi, tartalma a fejlesztői visszajelzések, valamint a műszaki notifikációs eljárás alatt álló e-pénztárgép rendelet alapján még változhat. Az e-pénztárgép rendelet tervezete az Európai Bizottság által felügyelt műszaki szabályozások információs rendszerében (TRIS), ami itt érhető el: https://technical-regulation-information-system.ec.europa.eu/en/notification/24865
+
+A fejlesztői dokumentációra vonatkozó javaslatokat, észrevételeket a NAV az enyugta@nav.gov.hu e-mail címen, illetve a https://github.com/nav-gov-hu/eRECEIPT/discussions linken várja mindenkitől.
+
+
 ## A tárhely tartalma és célja
 
 A tárhely a NAV eNyugta rendszerrel (eRECEIPT System) kapcsolatos információk publikus megosztásának a helye. A tárhely elsősorban az eNyugta rendszerrel kapcsolatban felmerülő javaslatok, ötletek megosztásának közösségi terét jelenti. 
