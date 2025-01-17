@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 # Project: NAV e-Pénztárgép rendszer communicationData XML séma
 # Author: NAV Informatikai Intézet
 
@@ -15,9 +15,84 @@
       <xs:documentation xml:lang="en">AP number type</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:maxLength value="9"/>
       <xs:minLength value="9"/>
+      <xs:maxLength value="9"/>
       <xs:pattern value="[A-Z][0-9]{8}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CustomerAppEventCodeType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Vevői applikáció eseménykód típus</xs:documentation>
+      <xs:documentation xml:lang="en">Customer application event code type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="5"/>
+      <xs:maxLength value="5"/>
+      <xs:pattern value="[A-Z][0-9]{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Digit4Type">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">4 jegyű szám típus</xs:documentation>
+      <xs:documentation xml:lang="en">4 digit number type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="4"/>
+      <xs:maxLength value="4"/>
+      <xs:pattern value="[0-9]{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EANType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">8 vagy 13 jegyű EAN kód típus</xs:documentation>
+      <xs:documentation xml:lang="en">8 or 13 digit EAN code type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="8"/>
+      <xs:maxLength value="13"/>
+      <xs:pattern value="[0-9]{8}|[0-9]{13}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ProcessIdentifierType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">EPD folyamat azonosító</xs:documentation>
+      <xs:documentation xml:lang="en">EPD process identifier</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+      <xs:minLength value="10"/>
+      <xs:pattern value="[A-Z0-9]{10}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AtomicCsrType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Atomi CSR típus</xs:documentation>
+      <xs:documentation xml:lang="en">Atomic CSR type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:base64Binary">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="8192"/>
+      <xs:pattern value=".*[^\s].*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="File512kBinaryType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Bináris fájl típus, max 512kB</xs:documentation>
+      <xs:documentation xml:lang="en">Binary file type, max 512kB</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:base64Binary">
+      <xs:maxLength value="524288"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FileExtensionType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Fájl kiterjesztés típus</xs:documentation>
+      <xs:documentation xml:lang="en">File extension type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="10"/>
+      <xs:pattern value="[\w,-]*"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="CancellationReasonType">
@@ -222,6 +297,7 @@
       <xs:documentation xml:lang="en">Collector code type</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
+      <xs:maxLength value="3"/>
       <xs:pattern value="[A-E]|N|TAM|AAM|EAM|ATK|TRA|SEC|ART|ANT|EUE|HO"/>
     </xs:restriction>
   </xs:simpleType>
@@ -268,6 +344,7 @@
       <xs:documentation xml:lang="en">Type of document</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
       <xs:enumeration value="RECEIPT">
         <xs:annotation>
           <xs:documentation xml:lang="hu">Nyugta</xs:documentation>
@@ -312,6 +389,7 @@
       <xs:documentation xml:lang="en">Document class type, what document is sent by the e-cash register</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
       <xs:enumeration value="RECEIPT">
         <xs:annotation>
           <xs:documentation xml:lang="hu">Nyugta bizonylat</xs:documentation>
@@ -378,25 +456,30 @@
       <xs:documentation xml:lang="en">Sequential number type of the original document or modification document</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:pattern value="(UK|EK|SZ|NY|PM|NZ|SA|FO|OT)-[A-Z][0-9]{8}/[0-9]{8}/[0-9]{4}/[0-9]{5}">
+      <xs:maxLength value="100"/>
+      <xs:pattern value="((UK|EK|SZ|NY|PM|PJ|SA|FO|OT)-[A-Z][0-9]{8}/[0-9]{8}/[0-9]{4}/[0-9]{5})|((NN|NZ)-[A-Z][0-9]{8}/[0-9]{8}/[0-9]{4})">
         <xs:annotation>
           <xs:documentation xml:lang="hu">
+        NN - Napnyitás bizonylat
         UK - Üzemanyagkártyás értékesítés
         EK - Egészségkártyás értékesítés
-        SZ - Egyszerűsített számla
+        SZ - Számla vagy Egyszerűsített számla
         NY - Nyugta
         PM - Pénzmozgás bizonylat
+        PJ - Pénztár jelentés
         NZ - Napi forgalmi jelentés
         SA - Szállodai átterhelés bizonylat
         FO - Fogyasztási összesítő bizonylat
         OT - Egyéb bizonylat
         </xs:documentation>
           <xs:documentation xml:lang="en">
+        NN - Day open report
         UK - Fuel card sale
         EK - Health Fund sale
-        SZ - Simplified invoice
+        SZ - Invoice or Simplified invoice
         NY - Receipt
         PM - Cashflow document
+        PJ - Cashregister report
         NZ - Daily cashflow report
         SA - Hotel deferred document
         FO - Consumption summary
@@ -461,6 +544,7 @@
       <xs:documentation xml:lang="en">Nature type of the current item</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
       <xs:enumeration value="n">
         <xs:annotation>
           <xs:documentation xml:lang="hu">Értékesítés</xs:documentation>
@@ -591,10 +675,24 @@
   </xs:simpleType>
   <xs:simpleType name="MonetaryType">
     <xs:annotation>
-      <xs:documentation xml:lang="hu">Pénzérték típus</xs:documentation>
-      <xs:documentation xml:lang="en">Field type for money value input</xs:documentation>
+      <xs:documentation xml:lang="hu">Pénzérték típus. Maximum 18 számjegy, ami 2 tizedesjegyet tartalmazhat</xs:documentation>
+      <xs:documentation xml:lang="en">Field type for money value input. Maximum 18 digits that may include 2 decimal places</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer"></xs:restriction>
+    <xs:restriction base="common:GenericDecimalType">
+      <xs:totalDigits value="18"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ExchangeRateType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Árfolyam adat típus</xs:documentation>
+      <xs:documentation xml:lang="en">Exchange rate data type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="14"/>
+      <xs:fractionDigits value="6"/>
+      <xs:minExclusive value="0"/>
+    </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="NtcaControlCodeType">
     <xs:annotation>
@@ -602,6 +700,7 @@
       <xs:documentation xml:lang="en">Ntca control code type on document</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
       <xs:pattern value="[0-9A-F]{5}"/>
     </xs:restriction>
   </xs:simpleType>
@@ -649,6 +748,7 @@
       <xs:documentation xml:lang="en">Report class type (what report is sent by the e-cash register)</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
       <xs:enumeration value="CASHREGISTEROPENBALANCE">
         <xs:annotation>
           <xs:documentation xml:lang="hu">Pénztárnyitás bizonylat</xs:documentation>
@@ -679,12 +779,6 @@
           <xs:documentation xml:lang="en">Other report</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="CASHREGISTERINFO">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">e-Pénztárgép info riport</xs:documentation>
-          <xs:documentation xml:lang="en">e-Cash register info report</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="AdditionalDataType">
@@ -711,14 +805,36 @@
           <xs:documentation xml:lang="en">Description of content of the data field</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="dataValue" type="xs:string">
+      <xs:element name="dataValue" type="common:AtomicStringType1024">
         <xs:annotation>
           <xs:appinfo>
-            <legacyMapping>ZQQ ReceiptAdditional, OtherDocumentAdditional és SimplifiedInvoiceAdditional /
-                           additionalData esetén RM ReceiptCore, OtherDocumentCore és SimplifiedInvoiceCore esetén</legacyMapping>
+            <legacyMapping>
+              ZQQ ReceiptAdditional, OtherDocumentAdditional és InvoiceAdditional /
+              additionalData esetén RM ReceiptCore, OtherDocumentCore és InvoiceCore esetén
+            </legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Az adat értéke</xs:documentation>
           <xs:documentation xml:lang="en">Value of the data</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AttachmentType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Csatoltmány típus</xs:documentation>
+      <xs:documentation xml:lang="en">Attachment type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="fileBinary" type="File512kBinaryType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Csatolt fájl bináris</xs:documentation>
+          <xs:documentation xml:lang="en">Attached file binary</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="fileExtension" type="FileExtensionType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Csatolt kiterjesztés típus (például: doc, pdf, jpg, png, stb.)</xs:documentation>
+          <xs:documentation xml:lang="en">Attached extension type (for example: doc, pdf, jpg, png, etc.)</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -729,7 +845,7 @@
       <xs:documentation xml:lang="en">Other data type for the whole document</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="additionalData" type="AdditionalDataType">
+      <xs:element name="additionalData" type="AdditionalDataType" minOccurs="1" maxOccurs="10">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -739,14 +855,14 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-  </xs:complexType>
+  </xs:complexType>  
   <xs:complexType name="AdditionalLinesType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Dokumentum tételeire vonatkozó egyéb adat típus</xs:documentation>
       <xs:documentation xml:lang="en">Other data type for the document items</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="additionalLine" type="AdditionalLineType" maxOccurs="unbounded">
+      <xs:element name="additionalLine" type="AdditionalLineType" maxOccurs="1000">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -772,7 +888,7 @@
           <xs:documentation xml:lang="en">Sequential number of the item</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="additionalLineData" type="AdditionalDataType">
+      <xs:element name="additionalLineData" type="AdditionalDataType" minOccurs="1" maxOccurs="10">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -809,10 +925,10 @@
       </xs:element>
     </xs:choice>
   </xs:complexType>
-  <xs:complexType name="BasicEReceiptHeaderType">
+  <xs:complexType name="BasicEReceiptRequestType">
     <xs:annotation>
-      <xs:documentation xml:lang="hu">eNyugta rendszer szolgáltatás hívás alap fejléc típus</xs:documentation>
-      <xs:documentation xml:lang="en">eReceipt specific basic header type</xs:documentation>
+      <xs:documentation xml:lang="hu">eNyugta rendszer specifikus általános kérés adatok típus</xs:documentation>
+      <xs:documentation xml:lang="en">eReceipt specific basic request data type</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="common:BasicHeaderType">
@@ -825,15 +941,6 @@
           </xs:element>
         </xs:sequence>
       </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="BasicEReceiptRequestType">
-    <xs:annotation>
-      <xs:documentation xml:lang="hu">eNyugta rendszer specifikus általános kérés adatok típus</xs:documentation>
-      <xs:documentation xml:lang="en">eReceipt specific basic request data type</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BasicEReceiptHeaderType"/>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="BasicEReceiptResponseType">
@@ -866,12 +973,13 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+
   <xs:complexType name="CommerceCollectorListType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Napi forgalmi gyüjtők típus</xs:documentation>
       <xs:documentation xml:lang="en">Daily commerce collectors list type</xs:documentation>
     </xs:annotation>
-    <xs:sequence maxOccurs="unbounded">
+    <xs:sequence maxOccurs="100">
       <xs:element name="commercialCollector" type="CommerceCollectorType">
         <xs:annotation>
           <xs:appinfo>
@@ -1193,6 +1301,12 @@
           <xs:documentation xml:lang="en">Other data for the whole document</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="attachment" type="AttachmentType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">A dokumentumhoz csatolt állomány</xs:documentation>
+          <xs:documentation xml:lang="en">File attached to the document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="additionalLines" type="AdditionalLinesType" minOccurs="0">
         <xs:annotation>
           <xs:appinfo>
@@ -1244,7 +1358,7 @@
       <xs:documentation xml:lang="hu">Valutában befizetett összeg típus</xs:documentation>
       <xs:documentation xml:lang="en">Foreign currency amount type</xs:documentation>
     </xs:annotation>
-    <xs:sequence maxOccurs="10">
+    <xs:sequence>
       <xs:element name="currencyAmount">
         <xs:annotation>
           <xs:appinfo>
@@ -1254,7 +1368,7 @@
           <xs:documentation xml:lang="en">Currency amount</xs:documentation>
         </xs:annotation>
         <xs:simpleType>
-          <xs:restriction base="xs:decimal"/>
+          <xs:restriction base="MonetaryType"/>
         </xs:simpleType>
       </xs:element>
       <xs:element name="currencyCode" type="common:CurrencyType">
@@ -1266,7 +1380,7 @@
           <xs:documentation xml:lang="en">Currency code in 3 characters by MNB</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="exchangeRate" type="xs:decimal" minOccurs="0">
+      <xs:element name="exchangeRate" type="ExchangeRateType" minOccurs="0">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>CRA</legacyMapping>
@@ -1301,7 +1415,8 @@
             <xs:documentation xml:lang="hu">Üzemanyagkártya száma (legalább négy számjegy)</xs:documentation>
             <xs:documentation xml:lang="en">Number of fuel card</xs:documentation>
           </xs:annotation>
-          <xs:restriction base="xs:string">
+          <xs:restriction base="common:SimpleText50NotBlankType">
+            <xs:minLength value="4"/>
             <xs:maxLength value="20"/>
           </xs:restriction>
         </xs:simpleType>
@@ -1315,7 +1430,8 @@
             <xs:documentation xml:lang="hu">Engedélyezési azonosítószám</xs:documentation>
             <xs:documentation xml:lang="en">Authorisation identifier number</xs:documentation>
           </xs:annotation>
-          <xs:restriction base="xs:string">
+          <xs:restriction base="common:SimpleText50NotBlankType">
+            <xs:minLength value="1"/>
             <xs:maxLength value="20"/>
           </xs:restriction>
         </xs:simpleType>
@@ -1329,7 +1445,7 @@
             <xs:documentation xml:lang="hu">A rendszám, kizárólag betűket és számokat feltüntetve</xs:documentation>
             <xs:documentation xml:lang="en">Vehicle registration number, using only letters and numbers</xs:documentation>
           </xs:annotation>
-          <xs:restriction base="xs:string">
+          <xs:restriction base="common:SimpleText50NotBlankType">
             <xs:maxLength value="20"/>
           </xs:restriction>
         </xs:simpleType>
@@ -1351,7 +1467,7 @@
             <xs:documentation xml:lang="hu">Az egészségpénztár neve</xs:documentation>
             <xs:documentation xml:lang="en">Health fund name</xs:documentation>
           </xs:annotation>
-          <xs:restriction base="xs:string">
+          <xs:restriction base="common:SimpleText50NotBlankType">
             <xs:maxLength value="50"/>
           </xs:restriction>
         </xs:simpleType>
@@ -1374,7 +1490,7 @@
             <xs:documentation xml:lang="hu">Az egészségpénztár kódja</xs:documentation>
             <xs:documentation xml:lang="en">Code of the health fund</xs:documentation>
           </xs:annotation>
-          <xs:restriction base="xs:string">
+          <xs:restriction base="common:SimpleText50NotBlankType">
             <xs:maxLength value="50"/>
           </xs:restriction>
         </xs:simpleType>
@@ -1388,7 +1504,7 @@
             <xs:documentation xml:lang="hu">A vevő tagszáma (egészségpénztári azonosítószám)</xs:documentation>
             <xs:documentation xml:lang="en">Member number of customer (health fund identification number)</xs:documentation>
           </xs:annotation>
-          <xs:restriction base="xs:string">
+          <xs:restriction base="common:SimpleText50NotBlankType">
             <xs:maxLength value="50"/>
           </xs:restriction>
         </xs:simpleType>
@@ -1402,7 +1518,7 @@
             <xs:documentation xml:lang="hu">Egészségkártya száma</xs:documentation>
             <xs:documentation xml:lang="en">Health fund card number</xs:documentation>
           </xs:annotation>
-          <xs:restriction base="xs:string">
+          <xs:restriction base="common:SimpleText50NotBlankType">
             <xs:maxLength value="20"/>
           </xs:restriction>
         </xs:simpleType>
@@ -1424,7 +1540,7 @@
           <xs:documentation xml:lang="en">Cash in HUF</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="foreignCurrency" type="ForeignCurrencyType" minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="foreignCurrency" type="ForeignCurrencyType" minOccurs="0" maxOccurs="10">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -1460,7 +1576,7 @@
           <xs:documentation xml:lang="en">Immediate payment</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="otherPayment" type="OtherPaymentType" minOccurs="0">
+      <xs:element name="otherPayment" type="OtherPaymentType" minOccurs="0" maxOccurs="100">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -1520,7 +1636,7 @@
       <xs:documentation xml:lang="hu">Egyéb fizetőeszköz típus</xs:documentation>
       <xs:documentation xml:lang="en">Other payment type</xs:documentation>
     </xs:annotation>
-    <xs:sequence maxOccurs="unbounded">
+    <xs:sequence>
       <xs:element name="otherPaymentCode">
         <xs:annotation>
           <xs:appinfo>
@@ -1531,6 +1647,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
             <xs:pattern value="AJÁND|HŰSÉG|SMART|GÖNGY|KUPON|EGYEB-[a-zA-Z0-9aáeéiíoóöőuúüűAÁEÉIÍOÓÖŐUÚÜŰ]*"/>
           </xs:restriction>
         </xs:simpleType>
@@ -1552,7 +1669,7 @@
       <xs:documentation xml:lang="en">Payment instruments type</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="paymentInstrument" type="PaymentInstrumentType">
+      <xs:element name="paymentInstrument" type="PaymentInstrumentType" maxOccurs="100">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -1578,7 +1695,7 @@
           <xs:documentation xml:lang="en">Method of payment</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="documentPaymentAmount" type="xs:decimal">
+      <xs:element name="documentPaymentAmount" type="MonetaryType">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>FE1,FEV,FE2,FE3 (Új fizetési módok)</legacyMapping>
@@ -1609,15 +1726,6 @@
           <xs:documentation xml:lang="en">Timestamp, the exact time of the document's opening according to the AE clock </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="taxpayerId" type="common:TaxpayerIdType">
-        <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>TSZ</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu">Az adóalany adó törzsszáma. Csoportos adóalany esetén csoportazonosító szám</xs:documentation>
-          <xs:documentation xml:lang="en">Core tax number of the taxable person. In case of group taxation arrangement the group identification number</xs:documentation>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="ntcaControlCode" type="NtcaControlCodeType">
         <xs:annotation>
           <xs:appinfo>
@@ -1627,18 +1735,36 @@
           <xs:documentation xml:lang="en">The control code of Ntca</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="additionalHead" type="AdditionalHeadType" minOccurs="0">
+      <xs:element name="additionalData" type="AdditionalDataType" minOccurs="0" maxOccurs="10">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
-          <xs:documentation xml:lang="hu">Dokumentum egészére vonatkozó egyéb adat</xs:documentation>
-          <xs:documentation xml:lang="en">Other data for the whole document</xs:documentation>
+          <xs:documentation xml:lang="hu">A dokumentumon szereplő egyéb adat</xs:documentation>
+          <xs:documentation xml:lang="en">Other data in relation to the document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="shop" type="ShopType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az e-pénztárgép üzemeltetési helye</xs:documentation>
+          <xs:documentation xml:lang="en">e-Cash register location of operation</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="taxPayer" type="TaxPayerType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">e-Pénztárgép üzemeltető adatai, üzemanyagkúton használt kétvállalkozós e-pénztárgép esetén az üzemanyag tulajdonos adózó adatai</xs:documentation>
+          <xs:documentation xml:lang="en">e-Cash register taxpayer data, in case of a fuel owner two-operator e-cash register used on a fuel well </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="coTaxPayer" type="TaxPayerType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Üzemanyagkúton használt kétvállalkozós e-pénztárgépen az üzemeltető adózó adatai</xs:documentation>
+          <xs:documentation xml:lang="en">In case of a fuel owner two-operator e-cash register used on a fuel well</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="SignedEnvelopeType">
+  <xs:complexType name="SignedDocumentEnvelopeType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Alap boriték tipus</xs:documentation>
       <xs:documentation xml:lang="en">Signed envelope type</xs:documentation>
@@ -1649,17 +1775,26 @@
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
-          <xs:documentation xml:lang="hu">Boriték adatok BASE64-ben kódolt tartalma</xs:documentation>
-          <xs:documentation xml:lang="en">Envelope data in BASE64 encoded form</xs:documentation>
+          <xs:documentation xml:lang="hu">Bizonylat adatok BASE64-ben kódolt tartalma (lásd: CoreDocument)</xs:documentation>
+          <xs:documentation xml:lang="en">Document data in BASE64 encoded form (see: CoreDocument)</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="envelopeHash" type="common:CryptoType" minOccurs="1">
+      <xs:element name="customerEnvelopeData" type="xs:base64Binary">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
-          <xs:documentation xml:lang="hu">Boriték állomány hash lenyomata</xs:documentation>
-          <xs:documentation xml:lang="en">Envelope file hash value</xs:documentation>
+          <xs:documentation xml:lang="hu">Vevői adatok BASE64-ben kódolt tartalma (lásd: CustomerDocument)</xs:documentation>
+          <xs:documentation xml:lang="en">Customer data in BASE64 encoded form (see: CustomerDocument)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="envelopeHash" type="common:CryptoType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Boriték állomány (envelopeData és customerEnvelopeData) hash lenyomata</xs:documentation>
+          <xs:documentation xml:lang="en">Envelope file (envelopeData and customerEnvelopeData) hash value</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="envelopeSignature" type="xs:base64Binary">
@@ -1667,8 +1802,52 @@
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
-          <xs:documentation xml:lang="hu">Boriték adatok BASE64-ben kódolt aláirása</xs:documentation>
-          <xs:documentation xml:lang="en">Envelope signature in BASE64 encoded form</xs:documentation>
+          <xs:documentation xml:lang="hu">Boriték adatok (envelopeData és customerEnvelopeData) BASE64-ben kódolt aláirása</xs:documentation>
+          <xs:documentation xml:lang="en">Envelope signature (envelopeData and customerEnvelopeData) in BASE64 encoded form</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SignedReportEnvelopeType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Alap boriték tipus</xs:documentation>
+      <xs:documentation xml:lang="en">Signed envelope type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="envelopeData" type="xs:base64Binary">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Riport adatok BASE64-ben kódolt tartalma (lásd: CoreReport)</xs:documentation>
+          <xs:documentation xml:lang="en">Report data in BASE64 encoded form (see: CoreReport)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="customerEnvelopeData" type="xs:base64Binary" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Boriték adatok BASE64-ben kódolt tartalma (lásd: CustomerReport)</xs:documentation>
+          <xs:documentation xml:lang="en">Envelope data in BASE64 encoded form (see: CustomerReport)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="envelopeHash" type="common:CryptoType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Boriték állomány (envelopeData és customerEnvelopeData) hash lenyomata</xs:documentation>
+          <xs:documentation xml:lang="en">Envelope file (envelopeData and customerEnvelopeData) hash value</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="envelopeSignature" type="xs:base64Binary">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Boriték adatok (envelopeData és customerEnvelopeData) BASE64-ben kódolt aláirása</xs:documentation>
+          <xs:documentation xml:lang="en">Envelope signature (envelopeData and customerEnvelopeData) in BASE64 encoded form</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -1726,73 +1905,6 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="SimplifiedInvoiceControlDataType">
-    <xs:sequence>
-      <xs:element name="documentNumber" type="DocumentNumberType">
-        <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>NSZ,IID,ORN,PMS (változott a struktúra)</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu">Dokumentum vagy módosító okirat sorszáma</xs:documentation>
-          <xs:documentation xml:lang="en">Sequential number of the original document or modification document</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="recordCounter" type="xs:nonNegativeInteger">
-        <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>Új mező</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu">Bejegyzés sorszám e-pénztárgépen belül (1-től sorszámozva). Szigorúan monoton növekvő sorszám, nem lehet benne kihagyás.</xs:documentation>
-          <xs:documentation xml:lang="en">Serial number within the e-cash register (numbered 1 to 1). Strictly monotonic ascending serial number, no skips</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="balanceChange" type="InstrumentType">
-        <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>Új mező</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu"> A fióktartalom változásának adatai</xs:documentation>
-          <xs:documentation xml:lang="en">Information of balance change</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="issueStartDateTime" type="common:GenericTimestampType">
-        <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>DTS</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu">Időbélyeg, a bizonylat nyitásának pontos ideje az AE órája szerint</xs:documentation>
-          <xs:documentation xml:lang="en">Timestamp, the exact time of the document's opening according to the AE clock </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="issueEndDateTime" type="common:GenericTimestampType">
-        <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>CTS</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu">Időbélyeg, a bizonylat zárásának pontos ideje az AE órája szerint</xs:documentation>
-          <xs:documentation xml:lang="en">Timestamp, the exact time of the document's closing according to the AE clock </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="documentRoundingAmount" type="xs:int" minOccurs="0">
-        <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>RND</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu">a bizonylaton szereplő kerekítés összege, egész forintban számolva, szükség esetén negatív előjellel, ha van ilyen adat</xs:documentation>
-          <xs:documentation xml:lang="en">The amount of the rounding on the document, in whole HUF, with a negative sign if necessary</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ntcaControlCode" type="NtcaControlCodeType">
-        <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>NAV</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu">A bizonylaton szereplő NAV ellenőrző kód</xs:documentation>
-          <xs:documentation xml:lang="en">The control code of Ntca</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="TaxNumberType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Adószám típus</xs:documentation>
@@ -1827,5 +1939,65 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TaxPayerType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Adózó adatai típus</xs:documentation>
+      <xs:documentation xml:lang="en">Tax payer data type</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="AddressType">
+        <xs:sequence>
+          <xs:element name="taxPayerName" type="common:SimpleText100NotBlankType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Adózó neve</xs:documentation>
+              <xs:documentation xml:lang="en">Tax payer name</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="taxPayerShortName" type="common:SimpleText100NotBlankType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Adózó rövid neve</xs:documentation>
+              <xs:documentation xml:lang="en">Tax payer short name</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="taxNumber" type="TaxNumberType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Adózó adószáma, vagy ÁFA-csoport tagság esetén a tagi adószáma.</xs:documentation>
+              <xs:documentation xml:lang="en">Tax payer tax number or member tax number if part of a VAT group.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="groupIdentificationNumber" type="TaxNumberType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">ÁFA-csoport tagság esetén a csoportazonosító szám</xs:documentation>
+              <xs:documentation xml:lang="en">Group identification number if part of a VAT group</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ShopType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Üzlet adatai típus</xs:documentation>
+      <xs:documentation xml:lang="en">Shop data type</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="AddressType">
+        <xs:sequence>
+          <xs:element name="shopName" type="common:SimpleText100NotBlankType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Üzlet neve</xs:documentation>
+              <xs:documentation xml:lang="en">Shop name</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="shopShortName" type="common:SimpleText100NotBlankType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Üzlet rövid neve</xs:documentation>
+              <xs:documentation xml:lang="en">Shop short name</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
 </xs:schema>

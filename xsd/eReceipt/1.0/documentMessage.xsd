@@ -1,4 +1,4 @@
-<xs:schema targetNamespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/documentMessage" elementFormDefault="qualified"
+﻿<xs:schema targetNamespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/documentMessage" elementFormDefault="qualified"
            attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns="http://schemas.nav.gov.hu/ERECEIPT/1.0/documentMessage"
            xmlns:base="http://schemas.nav.gov.hu/ERECEIPT/1.0/base"
@@ -16,26 +16,18 @@
       <xs:documentation xml:lang="hu">A vevőnek átadandó bizonylat és bizonylat melléklet adat típus.</xs:documentation>
       <xs:documentation xml:lang="en">Business and additional data of the document for the customer.</xs:documentation>
     </xs:annotation>
-    <xs:choice>
-      <xs:sequence>
-        <xs:element name="receiptCore" type="documentData:ReceiptCoreDataType">
-          <xs:annotation>
-            <xs:documentation xml:lang="hu">A nyugta bizonylat üzleti adatai.</xs:documentation>
-            <xs:documentation xml:lang="en">Business data of the receipt.</xs:documentation>
-          </xs:annotation>
-        </xs:element>
+    <xs:sequence>
+      <xs:element name="decryptKey" type="xs:base64Binary">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Független szimetrikus kulcs a bizonylat adatok kititkosításához.</xs:documentation>
+          <xs:documentation xml:lang="en">Independent symmetric key for encryption of receipt data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:choice>
         <xs:element name="receiptAdditional" type="base:DocumentAdditionalDataType" minOccurs="0">
           <xs:annotation>
             <xs:documentation xml:lang="hu">Nyugta melléklet, a nyugtán nem szereplő de ahhoz tartozó egyéb adatok, amelyet az eladó a vevővel szeretne megosztani. Például: garanciára vonatkozó adatok.</xs:documentation>
             <xs:documentation xml:lang="en">Additional information, other than that on the receipt, which the seller wishes to share with the buyer. For example: details of the guarantee.</xs:documentation>
-          </xs:annotation>
-        </xs:element>
-      </xs:sequence>
-      <xs:sequence>
-        <xs:element name="otherDocumentCore" type="documentData:OtherDocumentCoreDataType">
-          <xs:annotation>
-            <xs:documentation xml:lang="hu">Egyéb bizonylat (üzemanyagkártyás értékesítési bizonylat, egészségkártyás értékesítési bizonylat, szállodai átterhelés bizonylat vagy fogyasztási összesítő bizonylat) üzleti adatai.</xs:documentation>
-            <xs:documentation xml:lang="en">Business details of other vouchers (fuel card sales voucher, health card sales voucher, hotel transfer voucher or consumption summary voucher).</xs:documentation>
           </xs:annotation>
         </xs:element>
         <xs:element name="otherDocumentAdditional" type="base:DocumentAdditionalDataType" minOccurs="0">
@@ -44,83 +36,69 @@
             <xs:documentation xml:lang="en">Additional document annex, other data not included in the other document but related to it, which the seller wishes to share with the buyer. For example: information relating to the guarantee.</xs:documentation>
           </xs:annotation>
         </xs:element>
-      </xs:sequence>
-      <xs:sequence>
-        <xs:element name="simplifiedInvoiceCore" type="documentData:SimplifiedInvoiceCoreDataType">
+        <xs:element name="invoiceAdditional" type="base:DocumentAdditionalDataType" minOccurs="0">
           <xs:annotation>
-            <xs:documentation xml:lang="hu">Egyszerűsített számla üzleti adatai.</xs:documentation>
-            <xs:documentation xml:lang="en">Simplified invoice business data.</xs:documentation>
+            <xs:documentation xml:lang="hu">Számla melléklete, a számlához tartozó egyéb adatok, amelyet az eladó a vevővel szeretne megosztani. Például: garanciára vonatkozó adatkok.</xs:documentation>
+            <xs:documentation xml:lang="en">Additional information on the invoice, which the seller wishes to share with the buyer. For example: details of the guarantee.</xs:documentation>
           </xs:annotation>
         </xs:element>
-        <xs:element name="simplifiedInvoiceAdditional" type="base:DocumentAdditionalDataType" minOccurs="0">
-          <xs:annotation>
-            <xs:documentation xml:lang="hu">Egyszerűsített számla melléklete, az egyszerűsített számlához tartozó egyéb adatok, amelyet az eladó a vevővel szeretne megosztani. Például: garanciára vonatkozó adatkok.</xs:documentation>
-            <xs:documentation xml:lang="en">Additional information on the simplified invoice, which the seller wishes to share with the buyer. For example: details of the guarantee.</xs:documentation>
-          </xs:annotation>
-        </xs:element>
-      </xs:sequence>
-    </xs:choice>
+      </xs:choice>
+    </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="NtcaDocumentType">
+  <xs:complexType name="CoreDocumentType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">A NAV-nak átadandó bizonylat és kontroll adat típus.</xs:documentation>
       <xs:documentation xml:lang="en">Business and control data of the document for NTCA.</xs:documentation>
     </xs:annotation>
     <xs:choice>
+      <xs:element name="receiptCore" type="documentData:ReceiptCoreDataType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">A nyugta bizonylat üzleti adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">Business data of the receipt.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="otherDocumentCore" type="documentData:OtherDocumentCoreDataType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Egyéb bizonylat (üzemanyagkártyás értékesítési bizonylat, egészségkártyás értékesítési bizonylat, szállodai átterhelés bizonylat vagy fogyasztási összesítő bizonylat) üzleti adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">Business details of other vouchers (fuel card sales voucher, health card sales voucher, hotel transfer voucher or consumption summary voucher).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:sequence>
-        <xs:element name="receiptCore" type="documentData:ReceiptCoreDataType">
+        <xs:element name="invoiceCore" type="documentData:InvoiceCoreDataType">
           <xs:annotation>
-            <xs:documentation xml:lang="hu">A nyugta bizonylat üzleti adatai.</xs:documentation>
-            <xs:documentation xml:lang="en">Business data of the receipt.</xs:documentation>
+            <xs:documentation xml:lang="hu">Számla üzleti adatai.</xs:documentation>
+            <xs:documentation xml:lang="en">Invoice business data.</xs:documentation>
           </xs:annotation>
         </xs:element>
-        <xs:element name="receiptControl" type="base:DocumentControlDataType">
+        <xs:element name="invoiceControl" type="documentData:InvoiceControlDataType">
           <xs:annotation>
-            <xs:documentation xml:lang="hu">A nyugtához tartozó kontroll adatok, amelyek nem része sem a bizonylatnak sem a bizonylat melléklet adatoknak, a NAV felé történő adatszolgáltatási adatokat tartalmazza.</xs:documentation>
-            <xs:documentation xml:lang="en">The control data for the receipt, which is neither part of the voucher nor part of the voucher annex data, contains the data for reporting to the NAV.</xs:documentation>
-          </xs:annotation>
-        </xs:element>
-      </xs:sequence>
-      <xs:sequence>
-        <xs:element name="otherDocumentCore" type="documentData:OtherDocumentCoreDataType">
-          <xs:annotation>
-            <xs:documentation xml:lang="hu">Egyéb bizonylat (üzemanyagkártyás értékesítési bizonylat, egészségkártyás értékesítési bizonylat, szállodai átterhelés bizonylat vagy fogyasztási összesítő bizonylat) üzleti adatai.</xs:documentation>
-            <xs:documentation xml:lang="en">Business details of other vouchers (fuel card sales voucher, health card sales voucher, hotel transfer voucher or consumption summary voucher).</xs:documentation>
-          </xs:annotation>
-        </xs:element>
-        <xs:element name="otherDocumentControl" type="base:DocumentControlDataType">
-          <xs:annotation>
-            <xs:documentation xml:lang="hu">Az egyéb bizonylathoz tartozó kontroll adatok, amelyek nem része sem a bizonylatnak sem a bizonylat mellékletnek, a NAV felé történő adatszolgáltatási adatokat tartalmazza.</xs:documentation>
-            <xs:documentation xml:lang="en">The control data for other vouchers, which are neither part of the voucher nor of the voucher annex, are included for reporting to the NAV.</xs:documentation>
-          </xs:annotation>
-        </xs:element>
-      </xs:sequence>
-      <xs:sequence>
-        <xs:element name="simplifiedInvoiceCore" type="documentData:SimplifiedInvoiceCoreDataType">
-          <xs:annotation>
-            <xs:documentation xml:lang="hu">Egyszerűsített számla üzleti adatai.</xs:documentation>
-            <xs:documentation xml:lang="en">Simplified invoice business data.</xs:documentation>
-          </xs:annotation>
-        </xs:element>
-        <xs:element name="simplifiedInvoiceControl" type="base:SimplifiedInvoiceControlDataType">
-          <xs:annotation>
-            <xs:documentation xml:lang="hu">Az egyszerűsített számlához tartozó kontroll adatok, amelyek nem része sem a bizonylatnak sem a bizonylat mellékletnek, a NAV felé történő adatszolgáltatási adatokat tartalmazza.</xs:documentation>
-            <xs:documentation xml:lang="en">Az egyszerűsített számlához tartozó kontroll adatok, amelyek nem része sem a bizonylatnak sem a bizonylat mellékletnek, a NAV felé történő adatszolgáltatási adatokat tartalmazza.</xs:documentation>
+            <xs:documentation xml:lang="hu">A számlához tartozó kontroll adatok, amelyek nem része sem a bizonylatnak sem a bizonylat mellékletnek, a NAV felé történő adatszolgáltatási adatokat tartalmazza.</xs:documentation>
+            <xs:documentation xml:lang="en">A számlához tartozó kontroll adatok, amelyek nem része sem a bizonylatnak sem a bizonylat mellékletnek, a NAV felé történő adatszolgáltatási adatokat tartalmazza.</xs:documentation>
           </xs:annotation>
         </xs:element>
       </xs:sequence>
     </xs:choice>
   </xs:complexType>
-  <xs:element name="CustomerDocument" type="CustomerDocumentType">
+  <xs:element name="CustomerDocument">
     <xs:annotation>
       <xs:documentation xml:lang="hu">A vevőnek átadandó bizonylat és bizonylat melléklet adat.</xs:documentation>
       <xs:documentation xml:lang="en">Business and additional data of the document for the customer.</xs:documentation>
     </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="CustomerDocumentType"/>
+      </xs:complexContent>
+    </xs:complexType>
   </xs:element>
-  <xs:element name="NtcaDocument" type="NtcaDocumentType">
+  <xs:element name="CoreDocument">
     <xs:annotation>
       <xs:documentation xml:lang="hu">A NAV-nak átadandó bizonylat és kontroll adat.</xs:documentation>
       <xs:documentation xml:lang="en">Business and control data of the document for NTCA.</xs:documentation>
     </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="CoreDocumentType"/>
+      </xs:complexContent>
+    </xs:complexType>    
   </xs:element>
 </xs:schema>

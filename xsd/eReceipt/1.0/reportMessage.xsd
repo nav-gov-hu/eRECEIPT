@@ -1,13 +1,9 @@
-<xs:schema targetNamespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/reportMessage" elementFormDefault="qualified"
-           attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns="http://schemas.nav.gov.hu/ERECEIPT/1.0/reportMessage"
-           xmlns:communicationData="http://schemas.nav.gov.hu/ERECEIPT/1.0/communicationData"
-           xmlns:base="http://schemas.nav.gov.hu/ERECEIPT/1.0/base" version="1.0"
-           xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common">
-  <xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/base" schemaLocation="eReceiptBase.xsd"/>
-  <xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/communicationData"
-             schemaLocation="communicationData.xsd"/>
-  <xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" schemaLocation="common.xsd"/>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
+<xs:schema xmlns:communicationData="http://schemas.nav.gov.hu/ERECEIPT/1.0/communicationData" xmlns:base="http://schemas.nav.gov.hu/ERECEIPT/1.0/base" xmlns="http://schemas.nav.gov.hu/ERECEIPT/1.0/reportMessage" xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/reportMessage" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="eReceiptBase.xsd" namespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/base" />
+  <xs:import schemaLocation="communicationData.xsd" namespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/communicationData" />
+  <xs:import schemaLocation="common.xsd" namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" />
   <xs:complexType name="CashFlowReportType">
     <xs:annotation>
       <xs:appinfo>
@@ -77,68 +73,6 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="CashRegisterInfoType">
-    <xs:annotation>
-      <xs:documentation xml:lang="hu">e-Pénztárgép info riport típus</xs:documentation>
-      <xs:documentation xml:lang="en">e-Cash register info report type</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="cashRegisterEvent" type="communicationData:CashRegisterEventType" minOccurs="0">
-        <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>EVT</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu">Az e-pénztárgépben bekövetkezett események naplója. Az utolsó adatszolgáltatás óta bekövetkezett eseményeket kell beküldeni.</xs:documentation>
-          <xs:documentation xml:lang="en">Event list of the e-cash register. Events occured after the previous "Cash Register Info" report should be sent.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="cashRegisterTechnicalInfo" type="communicationData:CashRegisterTechnicalInfoType">
-        <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>INF</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu">Az e-pénztárgép műszaki jellemzői, az e-pénztárgép aktuális állapotának megfelelően.</xs:documentation>
-          <xs:documentation xml:lang="en">Technical parameters of the e-cash register according to the current state of the e-cash register.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="cashRegisterState" type="communicationData:CashRegisterStateType">
-        <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>STA</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu">e-Pénztárgép rendszerállapot statisztika, az e-pénztárgép aktuális állapotának megfelelően, illetve a hibák tekintetében az utolsó adatszolgáltatás óta.</xs:documentation>
-          <xs:documentation xml:lang="en">System state statistics of the e-cash register, according to the current state of the e-cash register. In case of errors: All errors occured after the previous "Cash Register Info" report should be sent.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="cashRegisterOperation" type="communicationData:CashRegisterOperationType">
-        <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>OPR</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu">Az e-pénztárgép forgalmazási mérőszámai.</xs:documentation>
-          <xs:documentation xml:lang="en">Traffic data of the e-cash register.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="cashRegisterPosition" type="communicationData:CashRegisterPositionType" minOccurs="0">
-        <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>POS</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu">Az e-pénztárgép földrajzi helye. Csak a műholdas helymeghatározásra alkalmas e-pénztárgép esetén kell kitölteni az adatot.</xs:documentation>
-          <xs:documentation xml:lang="en">Geographical location of the e-cash register. Only applicable if the e-cash register has a GPS unit.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="cashRegisterTimeUpdate" type="communicationData:CashRegisterTimeUpdateType" minOccurs="0">
-        <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>TUD</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu">Amennyiben az e-pénztárgép órája állításra került, akkor az óraállítás körülményeiről adatot kell szolgáltatni. </xs:documentation>
-          <xs:documentation xml:lang="en">In case the clock of the e-cash register has been set, then data of the clock setting.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
   <xs:annotation>
     <xs:documentation xml:lang="hu">A péntárgép által a riport interfészen beküldendő üzenetek formátumát meghatározó séma.</xs:documentation>
     <xs:documentation xml:lang="en">The schema defining the format of the messages to be sent by the e-cash register in the report interface.</xs:documentation>
@@ -154,16 +88,25 @@
     <xs:sequence>
       <xs:element name="reportHeader" type="base:ReportHeaderType">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Riportoknál alkalmazott általános fejadatok</xs:documentation>
           <xs:documentation xml:lang="en">General header data used for reports</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="reportNumber" type="base:DocumentNumberType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>PMS</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Bizonylatszám.</xs:documentation>
+          <xs:documentation xml:lang="en">Document number.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="taxationDay" type="xs:nonNegativeInteger">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
             <legacyMapping>DNO</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">A megnyitott adóügyi nap sorszáma.</xs:documentation>
@@ -172,7 +115,7 @@
       </xs:element>
       <xs:element name="openBalance" type="base:InstrumentType">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">A nyitó pénzkészlet adatai.</xs:documentation>
@@ -199,6 +142,15 @@
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Riportoknál alkalmazott általános fejadatok</xs:documentation>
           <xs:documentation xml:lang="en">General header data used for reports</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reportNumber" type="base:DocumentNumberType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>PMS</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Bizonylatszám.</xs:documentation>
+          <xs:documentation xml:lang="en">Document number.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="dailyRevenueReceipt" type="xs:int" minOccurs="0">
@@ -489,7 +441,7 @@
     <xs:sequence>
       <xs:element name="reportHeader" type="base:ReportHeaderType">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Riportoknál alkalmazott általános fejadatok</xs:documentation>
@@ -498,25 +450,25 @@
       </xs:element>
       <xs:element name="reportNumber" type="base:DocumentNumberType">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Bizonylatszám.</xs:documentation>
           <xs:documentation xml:lang="en">Document number.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="closureCounter" type="xs:string">
+      <xs:element name="closureCounter" type="base:Digit4Type">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
             <legacyMapping>ZSZ</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Zárás sorszáma négy karakteren, szükség esetén vezető nullákkal feltöltve.</xs:documentation>
           <xs:documentation xml:lang="en">e-Cash register closing serial number in four characters, filled with leading zeros if necessary.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="dailyReceipt" type="base:DailyCashFlowDetailType" minOccurs="1">
+      <xs:element name="dailyReceipt" type="base:DailyCashFlowDetailType" minOccurs="0">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Napi nyugták adatai.</xs:documentation>
@@ -525,7 +477,7 @@
       </xs:element>
       <xs:element name="dailyReceiptCancellation" type="base:DailyCashFlowDetailType" minOccurs="0">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Napi nyugta érvénytelenítések adatai.</xs:documentation>
@@ -534,16 +486,16 @@
       </xs:element>
       <xs:element name="dailyReceiptModification" type="base:DailyCashFlowDetailType" minOccurs="0">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Napi nyugta módosítások adatai.</xs:documentation>
           <xs:documentation xml:lang="en">Daily receipt modification data.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="dailySimplifiedInvoice" type="base:DailyCashFlowDetailType" minOccurs="1">
+      <xs:element name="dailySimplifiedInvoice" type="base:DailyCashFlowDetailType" minOccurs="0">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Napi egyszerűsített számlák adatai.</xs:documentation>
@@ -552,7 +504,7 @@
       </xs:element>
       <xs:element name="dailySimplifiedInvoiceCancellation" type="base:DailyCashFlowDetailType" minOccurs="0">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Napi egyszerűsített számla érvénytelenítések adatai.</xs:documentation>
@@ -561,16 +513,43 @@
       </xs:element>
       <xs:element name="dailySimplifiedInvoiceModification" type="base:DailyCashFlowDetailType" minOccurs="0">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Napi egyszerűsített számla módosítások adatai.</xs:documentation>
           <xs:documentation xml:lang="en">Daily simplified invoice modification data.</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="dailyInvoice" type="base:DailyCashFlowDetailType" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Napi számlák adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">Daily invoice data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="dailyInvoiceCancellation" type="base:DailyCashFlowDetailType" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Napi számla érvénytelenítések adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">Daily invoice cancellation data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="dailyInvoiceModification" type="base:DailyCashFlowDetailType" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Napi számla módosítások adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">Daily invoice modification data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="sumCommerceAmount" type="xs:nonNegativeInteger">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Göngyölített forgalom.</xs:documentation>
@@ -590,25 +569,34 @@
     <xs:sequence>
       <xs:element name="reportHeader" type="base:ReportHeaderType">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Riportoknál alkalmazott általános fejadatok</xs:documentation>
           <xs:documentation xml:lang="en">General header data used for reports</xs:documentation>
-        </xs:annotation>      
+        </xs:annotation>
       </xs:element>
-      <xs:element name="otherDocument" type="xs:string">
+      <xs:element name="reportNumber" type="base:DocumentNumberType">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
+            <legacyMapping>PMS</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Bizonylatszám.</xs:documentation>
+          <xs:documentation xml:lang="en">Document number.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="otherDocument" type="common:SimpleText100NotBlankType">
+        <xs:annotation>
+          <xs:appinfo>
             <legacyMapping>EIT</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Egyéb dokumentum típusa.</xs:documentation>
           <xs:documentation xml:lang="en">Type of the document.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="otherDocumentDescription" type="xs:string" minOccurs="0">
+      <xs:element name="otherDocumentDescription" type="common:SimpleText1024NotBlankType" minOccurs="0">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
             <legacyMapping>EIL</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Egyéb dokumentum típus leírás.</xs:documentation>
@@ -617,7 +605,7 @@
       </xs:element>
       <xs:element name="otherReportDataList" type="OtherReportDataListType">
         <xs:annotation>
-        <xs:appinfo>
+          <xs:appinfo>
             <legacyMapping>EDA</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">A dokumentumon szereplő adatok listája</xs:documentation>
@@ -633,7 +621,7 @@
       </xs:appinfo>
       <xs:documentation xml:lang="hu">Egyéb dokumentumon szereplő adatok listája.</xs:documentation>
       <xs:documentation xml:lang="en">List of other document data.</xs:documentation>
-    </xs:annotation>  
+    </xs:annotation>
     <xs:sequence maxOccurs="100">
       <xs:element name="otherReportData" type="OtherReportDataType">
         <xs:annotation>
@@ -653,20 +641,20 @@
       </xs:appinfo>
       <xs:documentation xml:lang="hu">Egyéb dokumentumon szereplő adat</xs:documentation>
       <xs:documentation xml:lang="en">Other document data</xs:documentation>
-    </xs:annotation>  
+    </xs:annotation>
     <xs:sequence>
-      <xs:element name="otherDocumentDataName" type="xs:string">
-      <xs:annotation>
-        <xs:appinfo>
+      <xs:element name="otherDocumentDataName" type="common:SimpleText255NotBlankType">
+        <xs:annotation>
+          <xs:appinfo>
             <legacyMapping>ENM</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Egyéb dokumentumon szereplő adat megnevezése.</xs:documentation>
           <xs:documentation xml:lang="en">Name of the data of the document.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="otherDocumentDataValue" type="xs:string">
-      <xs:annotation>
-        <xs:appinfo>
+      <xs:element name="otherDocumentDataValue" type="common:AtomicStringType1024">
+        <xs:annotation>
+          <xs:appinfo>
             <legacyMapping>EVL</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Egyéb dokumentumon szereplő adat értéke</xs:documentation>
@@ -675,58 +663,99 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="CashFlowReport" type="CashFlowReportType">
+  <xs:complexType name="CoreReportType">
     <xs:annotation>
-      <xs:appinfo>
-        <legacyMapping>Pénzmozgás bizonylat (PMN)</legacyMapping>
-      </xs:appinfo>
-      <xs:documentation xml:lang="hu">Pénzmozgás bizonylat (PMN)</xs:documentation>
-      <xs:documentation xml:lang="en">Cash flow report</xs:documentation>
+      <xs:documentation xml:lang="hu">A NAV-nak átadandó riport adat típus.</xs:documentation>
+      <xs:documentation xml:lang="en">Report data type to be sent to NAV.</xs:documentation>
     </xs:annotation>
+    <xs:choice>
+      <xs:element name="CashFlowReport" type="CashFlowReportType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Pénzmozgás bizonylat (PMN)</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Pénzmozgás bizonylat (PMN)</xs:documentation>
+          <xs:documentation xml:lang="en">Cash flow report</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CashRegisterOpenBalanceReport" type="CashRegisterOpenBalanceReportType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Pénztárnyitás bizonylat (CON)</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Pénztárnyitás bizonylat (CON)</xs:documentation>
+          <xs:documentation xml:lang="en">e-Cash register open balance report</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CashRegisterReport" type="CashRegisterReportType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Pénztárjelentés (PJN)</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Pénztárjelentés (PJN)</xs:documentation>
+          <xs:documentation xml:lang="en">e-Cash register report</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DailyCashFlowReport" type="DailyCashFlowReportType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Napi forgalmi jelentés (NFN)</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Napi forgalmi jelentés (NFN)</xs:documentation>
+          <xs:documentation xml:lang="en">Daily cash flow report (NFN)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OtherReport" type="OtherReportType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Egyéb dokumentum (EDN)</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Egyéb dokumentum</xs:documentation>
+          <xs:documentation xml:lang="en">Other document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="CustomerReportType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A vevőnek átadandó riport melléklet adat típus.</xs:documentation>
+      <xs:documentation xml:lang="en">Business and additional data type of the report for the customer.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="decryptKey" type="xs:base64Binary">
+        <xs:annotation>
+          <xs:documentation xml:lang="HU">Független szimetrikus kulcs a riport adatok kititkosításához.</xs:documentation>
+          <xs:documentation xml:lang="en">Independent symmetric key for encryption of report data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reportAdditional" type="base:DocumentAdditionalDataType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Riport melléklet, a riportban nem szereplő, de ahhoz tartozó egyéb adatok a vevő részére.</xs:documentation>
+          <xs:documentation xml:lang="en">Additional information, other than that in the report, for the buyer.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoreReport">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A NAV-nak átadandó riport adat.</xs:documentation>
+      <xs:documentation xml:lang="en">Report data to be sent to NAV.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="CoreReportType" />
+      </xs:complexContent>
+    </xs:complexType>
   </xs:element>
-  <xs:element name="CashRegisterInfo" type="CashRegisterInfoType">
+  <xs:element name="CustomerReport">
     <xs:annotation>
-      <xs:appinfo>
-        <legacyMapping>Új mező</legacyMapping>
-      </xs:appinfo>
-      <xs:documentation xml:lang="hu">e-Pénztárgép info riport</xs:documentation>
-      <xs:documentation xml:lang="en">e-Cash register info report</xs:documentation>
+      <xs:documentation xml:lang="hu">A vevőnek átadandó riport melléklet adat.</xs:documentation>
+      <xs:documentation xml:lang="en">Business and additional data of the report for the customer.</xs:documentation>
     </xs:annotation>
-  </xs:element>
-  <xs:element name="CashRegisterOpenBalanceReport" type="CashRegisterOpenBalanceReportType">
-    <xs:annotation>
-      <xs:appinfo>
-        <legacyMapping>Pénztárnyitás bizonylat (CON)</legacyMapping>
-      </xs:appinfo>
-      <xs:documentation xml:lang="hu">Pénztárnyitás bizonylat (CON)</xs:documentation>
-      <xs:documentation xml:lang="en">e-Cash register open balance report</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CashRegisterReport" type="CashRegisterReportType">
-    <xs:annotation>
-      <xs:appinfo>
-        <legacyMapping>Pénztárjelentés (PJN)</legacyMapping>
-      </xs:appinfo>
-      <xs:documentation xml:lang="hu">Pénztárjelentés (PJN)</xs:documentation>
-      <xs:documentation xml:lang="en">e-Cash register report</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DailyCashFlowReport" type="DailyCashFlowReportType">
-    <xs:annotation>
-      <xs:appinfo>
-        <legacyMapping>Napi forgalmi jelentés (NFN)</legacyMapping>
-      </xs:appinfo>
-      <xs:documentation xml:lang="hu">Napi forgalmi jelentés (NFN)</xs:documentation>
-      <xs:documentation xml:lang="en">Daily cash flow report (NFN)</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OtherReport" type="OtherReportType">
-    <xs:annotation>
-      <xs:appinfo>
-        <legacyMapping>Egyéb dokumentum (EDN)</legacyMapping>
-      </xs:appinfo>
-      <xs:documentation xml:lang="hu">Egyéb dokumentum</xs:documentation>
-      <xs:documentation xml:lang="en">Other document</xs:documentation>
-    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="CustomerReportType" />
+      </xs:complexContent>
+    </xs:complexType>
   </xs:element>
 </xs:schema>

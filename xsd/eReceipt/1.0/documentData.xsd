@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 # Project: NAV e-Pénztárgép rendszer documentData XML séma
 # Author: NAV Informatikai Intézet
 
@@ -9,21 +9,12 @@
            xmlns="http://schemas.nav.gov.hu/ERECEIPT/1.0/documentData"
            xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common"
            xmlns:invoiceData="http://schemas.nav.gov.hu/OSA/3.0/data"
+           xmlns:communication="http://schemas.nav.gov.hu/ERECEIPT/1.0/communicationData"
            xmlns:base="http://schemas.nav.gov.hu/ERECEIPT/1.0/base" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" schemaLocation="common.xsd"/>
   <xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/base" schemaLocation="eReceiptBase.xsd"/>
   <xs:import namespace="http://schemas.nav.gov.hu/OSA/3.0/data" schemaLocation="invoiceData.xsd"/>
-  <xs:simpleType name="ExchangeRateType">
-    <xs:annotation>
-      <xs:documentation xml:lang="hu">Árfolyam adat típus</xs:documentation>
-      <xs:documentation xml:lang="en">Exchange rate data type</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:decimal">
-      <xs:totalDigits value="14"/>
-      <xs:fractionDigits value="6"/>
-      <xs:minExclusive value="0"/>
-    </xs:restriction>
-  </xs:simpleType>
+  <xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/communicationData" schemaLocation="communicationData.xsd"/>
   <xs:simpleType name="LineNatureIndicatorType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Adott tételsor termékértékesítés vagy szolgáltatás nyújtás jellegének jelzése típus</xs:documentation>
@@ -219,6 +210,12 @@
           <xs:documentation xml:lang="en">Cubic meter</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="SQUARE_METER">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Négyzetméter</xs:documentation>
+          <xs:documentation xml:lang="en">Square meter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="METER">
         <xs:annotation>
           <xs:documentation xml:lang="hu">Méter</xs:documentation>
@@ -324,7 +321,7 @@
             <xs:documentation xml:lang="en">Fuel card information</xs:documentation>
           </xs:annotation>
         </xs:element>
-        <xs:element name="consumeSummaryNumber" minOccurs="0" type="xs:string">
+        <xs:element name="consumeSummaryNumber" minOccurs="0" type="common:SimpleText100NotBlankType">
           <xs:annotation>
             <xs:appinfo>
               <legacyMapping>
@@ -364,34 +361,16 @@
           <xs:documentation xml:lang="en">Type of document, in case of amending document, type of original document</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="currencyCode" type="common:CurrencyType">
-        <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>CTY</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu">A számla pénzneme az ISO 4217 szabvány szerint</xs:documentation>
-          <xs:documentation xml:lang="en">ISO 4217 currency code on the document</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="exchangeRate" type="ExchangeRateType">
-        <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>CRA</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu">HUF-tól különböző pénznem esetén az alkalmazott árfolyam: egy egység értéke HUF-ban</xs:documentation>
-          <xs:documentation xml:lang="en">In case any currency is used other than HUF, the applied exchange rate should be mentioned: 1 unit of the foreign currency expressed in HUF</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="paymentInstruments" type="base:PaymentInstrumentsType">
+      <xs:element name="paymentInstruments" type="base:InstrumentType">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
           </xs:appinfo>
-          <xs:documentation xml:lang="hu">Fizetőeszköz típusa</xs:documentation>
+          <xs:documentation xml:lang="hu">Fizetőeszközök típusa</xs:documentation>
           <xs:documentation xml:lang="en">Payment instruments type</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="additionalDocumentData" type="base:AdditionalDataType" minOccurs="0">
+      <xs:element name="additionalDocumentData" type="base:AdditionalDataType" minOccurs="0" maxOccurs="100">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -408,13 +387,22 @@
       <xs:documentation xml:lang="en">Data in header of document type</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="supplierInfo" type="SupplierInfoType">
+      <xs:element name="shop" type="base:ShopType">
         <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>Új mező</legacyMapping>
-          </xs:appinfo>
-          <xs:documentation xml:lang="hu">Számla kibocsátó (eladó) adatai</xs:documentation>
-          <xs:documentation xml:lang="en">Data related to the issuer of the document (supplier)</xs:documentation>
+          <xs:documentation xml:lang="hu">Az e-pénztárgép üzemeltetési helye</xs:documentation>
+          <xs:documentation xml:lang="en">e-Cash register location of operation</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="taxPayer" type="base:TaxPayerType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">e-Pénztárgép üzemeltető adatai, üzemanyagkúton használt kétvállalkozós e-pénztárgép esetén az üzemanyag tulajdonos adózó adatai</xs:documentation>
+          <xs:documentation xml:lang="en">e-Cash register taxpayer data, in case of a fuel owner two-operator e-cash register used on a fuel well </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="coTaxPayer" type="base:TaxPayerType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Üzemanyagkúton használt kétvállalkozós e-pénztárgépen az üzemeltető adózó adatai</xs:documentation>
+          <xs:documentation xml:lang="en">In case of a fuel owner two-operator e-cash register used on a fuel well</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="customerInfo" type="base:CustomerInfoType" minOccurs="0">
@@ -568,7 +556,7 @@
       <xs:documentation xml:lang="en">Product / service items type</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="line" type="LineType" maxOccurs="unbounded">
+      <xs:element name="line" type="LineType" maxOccurs="1000">
         <xs:annotation>
         <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -594,7 +582,7 @@
           <xs:documentation xml:lang="en">Sequential number of the item</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="EANCode" type="xs:string" minOccurs="0">
+      <xs:element name="EANCode" type="base:EANType" minOccurs="0">
         <xs:annotation>
         <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -693,7 +681,7 @@
           <xs:documentation xml:lang="en">Nature of the current item</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="additionalLineData" type="base:AdditionalDataType" minOccurs="0">
+      <xs:element name="additionalLineData" type="base:AdditionalDataType" minOccurs="0" maxOccurs="10">
         <xs:annotation>
         <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -740,7 +728,7 @@
       <xs:documentation xml:lang="en">Product codes types</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="productCode" type="ProductCodeType" maxOccurs="unbounded">
+      <xs:element name="productCode" type="ProductCodeType" maxOccurs="12">
         <xs:annotation>
         <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -818,7 +806,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="SimplifiedInvoiceCoreDataType">
+  <xs:complexType name="InvoiceCoreDataType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Az egyszerűsített számla üzleti adatai típus</xs:documentation>
       <xs:documentation xml:lang="en">The simplefied invoice core data type</xs:documentation>
@@ -835,15 +823,15 @@
           <xs:documentation xml:lang="en">The document main core data</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="simplifiedInvoice" type="invoiceData:InvoiceDataType">
+      <xs:element name="invoice" type="invoiceData:InvoiceDataType">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>
               Új mező
             </legacyMapping>
           </xs:appinfo>
-          <xs:documentation xml:lang="hu">Az egyszerűsített számla üzleti adatai</xs:documentation>
-          <xs:documentation xml:lang="en">The simplified invoice core data</xs:documentation>
+          <xs:documentation xml:lang="hu">A számla üzleti adatai</xs:documentation>
+          <xs:documentation xml:lang="en">The invoice core data</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -930,7 +918,7 @@
       <xs:documentation xml:lang="en">Data of calculation of document totals type</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="summaryDocument" type="SummaryDocumentType" maxOccurs="unbounded">
+      <xs:element name="summaryDocument" type="SummaryDocumentType" maxOccurs="1000">
         <xs:annotation>
         <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -1019,7 +1007,7 @@
           <xs:documentation xml:lang="en">Bank account number of the seller (supplier)</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="individualExemption" type="xs:boolean" minOccurs="0">
+      <xs:element name="individualExemption" type="xs:boolean">
         <xs:annotation>
         <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -1039,4 +1027,77 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="InvoiceControlDataType">
+    <xs:sequence>
+      <xs:element name="documentNumber" type="base:DocumentNumberType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>NSZ,IID,ORN,PMS (változott a struktúra)</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Dokumentum vagy módosító okirat sorszáma</xs:documentation>
+          <xs:documentation xml:lang="en">Sequential number of the original document or modification document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="recordCounter" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Bejegyzés sorszám e-pénztárgépen belül (1-től sorszámozva). Szigorúan monoton növekvő sorszám, nem lehet benne kihagyás.</xs:documentation>
+          <xs:documentation xml:lang="en">Serial number within the e-cash register (numbered 1 to 1). Strictly monotonic ascending serial number, no skips</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="balanceChange" type="base:InstrumentType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>Új mező</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu"> A fióktartalom változásának adatai</xs:documentation>
+          <xs:documentation xml:lang="en">Information of balance change</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="issueStartDateTime" type="common:GenericTimestampType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>DTS</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Időbélyeg, a bizonylat nyitásának pontos ideje az AE órája szerint</xs:documentation>
+          <xs:documentation xml:lang="en">Timestamp, the exact time of the document's opening according to the AE clock </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="issueEndDateTime" type="common:GenericTimestampType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>CTS</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Időbélyeg, a bizonylat zárásának pontos ideje az AE órája szerint</xs:documentation>
+          <xs:documentation xml:lang="en">Timestamp, the exact time of the document's closing according to the AE clock </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="documentRoundingAmount" type="xs:int" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>RND</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">a bizonylaton szereplő kerekítés összege, egész forintban számolva, szükség esetén negatív előjellel, ha van ilyen adat</xs:documentation>
+          <xs:documentation xml:lang="en">The amount of the rounding on the document, in whole HUF, with a negative sign if necessary</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ntcaControlCode" type="base:NtcaControlCodeType">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>NAV</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">A bizonylaton szereplő NAV ellenőrző kód</xs:documentation>
+          <xs:documentation xml:lang="en">The control code of Ntca</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="shop" type="base:ShopType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az e-pénztárgép üzemeltetési helye</xs:documentation>
+          <xs:documentation xml:lang="en">e-Cash register location of operation</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>  
 </xs:schema>
