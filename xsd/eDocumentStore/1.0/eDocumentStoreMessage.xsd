@@ -1,4 +1,4 @@
-<xs:schema targetNamespace="http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.0/message" elementFormDefault="qualified"
+﻿<xs:schema targetNamespace="http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.0/message" elementFormDefault="qualified"
            attributeFormDefault="unqualified" xmlns="http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.0/message"
            xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common">
   <xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" schemaLocation="../../eReceipt/1.0/common.xsd"/>
@@ -17,15 +17,28 @@
               <xs:documentation xml:lang="en">The hash value of the customer application used during registration.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="appToken" type="common:SimpleText50NotBlankType">
-            <xs:annotation>
-              <xs:documentation xml:lang="hu">A vevői alkalmazás regisztációja során kapott alkalmazás token.</xs:documentation>
-              <xs:documentation xml:lang="en">Application token received during the registration of the customer application.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+  <xs:simpleType name="AtomicStringType8192">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Atomi string típus 8192 hosszra</xs:documentation>
+      <xs:documentation xml:lang="en">Atomic string type for 8192 length</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="8192"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="JwtTokenType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">JWT token típus</xs:documentation>
+      <xs:documentation xml:lang="en">JWT token type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="AtomicStringType8192">
+      <xs:pattern value=".*[^\s].*"/>
+    </xs:restriction>
+  </xs:simpleType>
+
 </xs:schema>

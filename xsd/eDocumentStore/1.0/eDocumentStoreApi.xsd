@@ -30,10 +30,16 @@
           <xs:documentation xml:lang="en">General response type data used in the eReceipt system.</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-          <xs:element name="software" minOccurs="0" type="communication:SoftwareType">
+          <xs:element name="software" type="communication:SoftwareType">
             <xs:annotation>
               <xs:documentation xml:lang="hu">A vevői alkalmazás fejlesztői és verzió adatai</xs:documentation>
               <xs:documentation xml:lang="en">Customer application development and version details</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="userId" type="common:SimpleText50NotBlankType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A vevői backend alkalmazás által nyilvántartott felhasználói azonosító, amelyből a JWT tokent képzi a rendszer.</xs:documentation>
+              <xs:documentation xml:lang="en">The user ID registered by the customer backend application, from which the system generates the JWT token.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -52,10 +58,10 @@
           <xs:documentation xml:lang="en">General response type data used in the eReceipt system.</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-          <xs:element name="appToken" type="common:SimpleText50NotBlankType">
+          <xs:element name="accessToken" type="message:JwtTokenType">
             <xs:annotation>
-              <xs:documentation xml:lang="hu">A vevői alkalmazás számára generált egyedi azonosító token, mellyel a nyugtatár szolgáltatásokat kell hívni.</xs:documentation>
-              <xs:documentation xml:lang="en">Unique identification token generated for the customer application to call the receipt services</xs:documentation>
+              <xs:documentation xml:lang="hu">A vevői alkalmazás számára generált egyedi JWT token, amellyel a nyugtatár szolgáltatásokat kell hívni (auth header-ben átadva).</xs:documentation>
+              <xs:documentation xml:lang="en">A unique JWT token generated for the customer application, which must be used to call the receipt store services (passed in the auth header)</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -164,8 +170,8 @@
               </xs:element>
               <xs:element name="offlineCreated" type="xs:boolean">
                 <xs:annotation>
-                  <xs:documentation xml:lang="hu">Amennyiben a dokumentum on-line beküldés valamilyen okból megvalósult, a kapcsolat helyrállása után kell beküldeni, ebben az esetben a mezőben jelezni kell, hogy a dokumentum off-line került beküldésre.</xs:documentation>
-                  <xs:documentation xml:lang="en">If for some reason the document was submitted on-line, it should be submitted after the connection has been established, in which case the field should indicate that the document was submitted off-line.</xs:documentation>
+                  <xs:documentation xml:lang="hu">Amennyiben a dokumentum on-line beküldés valamilyen okból meghiúsult, a kapcsolat helyrállása után kell beküldeni, ebben az esetben a mezőben jelezni kell, hogy a dokumentum off-line került beküldésre.</xs:documentation>
+                  <xs:documentation xml:lang="en">If the online submission of the document failed for some reason, it must be submitted after the connection is established, in which case the field must indicate that the document was submitted offline.</xs:documentation>
                 </xs:annotation>
               </xs:element>
               <xs:element name="searchKeyTimestamp" type="common:GenericTimestampType">
@@ -225,7 +231,7 @@
   <xs:complexType name="ClientEventRequestType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Vevői applikációk számára eseménybeküldést lehetővé tevő szolgáltatás kérés típusa.</xs:documentation>
-      <xs:documentation xml:lang="en">A service request type that allows client applications to submit events..</xs:documentation>
+      <xs:documentation xml:lang="en">A service request type that allows client applications to submit events.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="message:BasicEDocumentStoreRequestType">
@@ -285,7 +291,7 @@
   <xs:complexType name="ClientEventResponseType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Vevői applikációk számára eseménybeküldést lehetővé tevő szolgáltatás válasz típusa.</xs:documentation>
-      <xs:documentation xml:lang="en">A service response type that allows client applications to submit events..</xs:documentation>
+      <xs:documentation xml:lang="en">A service response type that allows client applications to submit events.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="common:BasicResponseType">
@@ -293,6 +299,50 @@
           <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
           <xs:documentation xml:lang="en">General response type data used in the eReceipt system.</xs:documentation>
         </xs:annotation>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TokenRefreshRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Vevői applikációk számára JWT token megújítást lehetővé tevő szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">A service request type that enables JWT token renewal for client applications.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="message:BasicEDocumentStoreRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">General response type data used in the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="refreshToken" type="message:JwtTokenType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A vevői alkalmazás hozzáférési JWT tokenjének megújításához szükséges JWT token.</xs:documentation>
+              <xs:documentation xml:lang="en">JWT token required to renew the customer application's access JWT token.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TokenRefreshResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Vevői applikációk számára JWT token megújítást lehetővé tevő szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">A service response type that enables JWT token renewal for client applications.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="common:BasicResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">General response type data used in the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="accessToken" type="message:JwtTokenType">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">A vevői alkalmazás számára generált egyedi JWT token, amellyel a nyugtatár szolgáltatásokat kell hívni (auth header-ben átadva).</xs:documentation>
+              <xs:documentation xml:lang="en">A unique JWT token generated for the customer application, which must be used to call the receipt store services (passed in the auth header)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -343,7 +393,7 @@
   <xs:element name="ClientEventRequest">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Vevői applikációk számára eseménybeküldést lehetővé tevő szolgáltatás kérés objektuma.</xs:documentation>
-      <xs:documentation xml:lang="en">A service request object that allows client applications to submit events..</xs:documentation>
+      <xs:documentation xml:lang="en">A service request object that allows client applications to submit events.</xs:documentation>
     </xs:annotation>
     <xs:complexType>
       <xs:complexContent>
@@ -354,11 +404,33 @@
   <xs:element name="ClientEventResponse">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Vevői applikációk számára eseménybeküldést lehetővé tevő szolgáltatás válasz objektuma.</xs:documentation>
-      <xs:documentation xml:lang="en">A service response object that allows client applications to submit events..</xs:documentation>
+      <xs:documentation xml:lang="en">A service response object that allows client applications to submit events.</xs:documentation>
     </xs:annotation>
     <xs:complexType>
       <xs:complexContent>
         <xs:extension base="ClientEventResponseType"/>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TokenRefreshRequest">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Vevői applikációk számára JWT token megújítást lehetővé tevő szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">A service request object that enables JWT token renewal for client applications.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="TokenRefreshRequestType"/>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TokenRefreshResponse">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Vevői applikációk számára JWT token megújítást lehetővé tevő szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">A service response object that enables JWT token renewal for client applications.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="TokenRefreshResponseType"/>
       </xs:complexContent>
     </xs:complexType>
   </xs:element>

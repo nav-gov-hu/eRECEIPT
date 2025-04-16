@@ -493,7 +493,7 @@
           <xs:documentation xml:lang="en">Daily receipt modification data.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="dailySimplifiedInvoice" type="base:DailyCashFlowDetailType" minOccurs="0">
+      <xs:element name="dailySimplifiedInvoice" type="base:DailyCashFlowDetailListType" minOccurs="0">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -502,7 +502,7 @@
           <xs:documentation xml:lang="en">Daily simplified invoice data.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="dailySimplifiedInvoiceCancellation" type="base:DailyCashFlowDetailType" minOccurs="0">
+      <xs:element name="dailySimplifiedInvoiceCancellation" type="base:DailyCashFlowDetailListType" minOccurs="0">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -511,7 +511,7 @@
           <xs:documentation xml:lang="en">Daily simplified invoice cancellation data.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="dailySimplifiedInvoiceModification" type="base:DailyCashFlowDetailType" minOccurs="0">
+      <xs:element name="dailySimplifiedInvoiceModification" type="base:DailyCashFlowDetailListType" minOccurs="0">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -520,7 +520,7 @@
           <xs:documentation xml:lang="en">Daily simplified invoice modification data.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="dailyInvoice" type="base:DailyCashFlowDetailType" minOccurs="0">
+      <xs:element name="dailyInvoice" type="base:DailyCashFlowDetailListType" minOccurs="0">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -529,7 +529,7 @@
           <xs:documentation xml:lang="en">Daily invoice data.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="dailyInvoiceCancellation" type="base:DailyCashFlowDetailType" minOccurs="0">
+      <xs:element name="dailyInvoiceCancellation" type="base:DailyCashFlowDetailListType" minOccurs="0">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -538,7 +538,7 @@
           <xs:documentation xml:lang="en">Daily invoice cancellation data.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="dailyInvoiceModification" type="base:DailyCashFlowDetailType" minOccurs="0">
+      <xs:element name="dailyInvoiceModification" type="base:DailyCashFlowDetailListType" minOccurs="0">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -622,7 +622,7 @@
       <xs:documentation xml:lang="hu">Egyéb dokumentumon szereplő adatok listája.</xs:documentation>
       <xs:documentation xml:lang="en">List of other document data.</xs:documentation>
     </xs:annotation>
-    <xs:sequence maxOccurs="100">
+    <xs:sequence maxOccurs="200">
       <xs:element name="otherReportData" type="OtherReportDataType">
         <xs:annotation>
           <xs:appinfo>

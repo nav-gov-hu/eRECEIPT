@@ -1,27 +1,155 @@
-﻿<!--
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
+<!--
 # Project: NAV e-Pénztárgép rendszer communicationData XML séma
 # Author: NAV Informatikai Intézet
 
 # Version: v1.0 2023/08/23
 -->
-<xs:schema targetNamespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/communicationData" elementFormDefault="qualified"
-           attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns="http://schemas.nav.gov.hu/ERECEIPT/1.0/communicationData"
-           xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common"
-           xmlns:base="http://schemas.nav.gov.hu/ERECEIPT/1.0/base">
-  <xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" schemaLocation="common.xsd"/>
-  <xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/base" schemaLocation="eReceiptBase.xsd"/>
+<xs:schema xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common"
+           xmlns:base="http://schemas.nav.gov.hu/ERECEIPT/1.0/base" 
+           xmlns="http://schemas.nav.gov.hu/ERECEIPT/1.0/communicationData" 
+           attributeFormDefault="unqualified" 
+           elementFormDefault="qualified" 
+           targetNamespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/communicationData" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="common.xsd" namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" />
+  <xs:import schemaLocation="eReceiptBase.xsd" namespace="http://schemas.nav.gov.hu/ERECEIPT/1.0/base" />
   <xs:annotation>
     <xs:documentation xml:lang="hu">e-Pénztárgépek kommunikációs eseteiben használt adatok leírását tartalmazó XSD</xs:documentation>
     <xs:documentation xml:lang="en">XSD containing a description of the data used in e-cash register communication cases</xs:documentation>
   </xs:annotation>
+  <xs:simpleType name="UnitOfMeasureType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Mennyiség egység típus</xs:documentation>
+      <xs:documentation xml:lang="en">Unit of measure type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="common:AtomicStringType15">
+      <xs:enumeration value="PIECE">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Darab</xs:documentation>
+          <xs:documentation xml:lang="en">Piece</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KILOGRAM">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Kilogramm</xs:documentation>
+          <xs:documentation xml:lang="en">Kilogram</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TON">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Metrikus tonna</xs:documentation>
+          <xs:documentation xml:lang="en">Metric ton</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KWH">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Kilowatt óra</xs:documentation>
+          <xs:documentation xml:lang="en">Kilowatt hour</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DAY">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Nap</xs:documentation>
+          <xs:documentation xml:lang="en">Day</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HOUR">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Óra</xs:documentation>
+          <xs:documentation xml:lang="en">Hour</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MINUTE">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Perc</xs:documentation>
+          <xs:documentation xml:lang="en">Minute</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MONTH">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Hónap</xs:documentation>
+          <xs:documentation xml:lang="en">Month</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LITER">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Liter</xs:documentation>
+          <xs:documentation xml:lang="en">Liter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KILOMETER">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Kilométer</xs:documentation>
+          <xs:documentation xml:lang="en">Kilometer</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CUBIC_METER">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Köbméter</xs:documentation>
+          <xs:documentation xml:lang="en">Cubic meter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SQUARE_METER">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Négyzetméter</xs:documentation>
+          <xs:documentation xml:lang="en">Square meter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="METER">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Méter</xs:documentation>
+          <xs:documentation xml:lang="en">Meter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LINEAR_METER">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Folyóméter</xs:documentation>
+          <xs:documentation xml:lang="en">Linear meter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CARTON">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Karton</xs:documentation>
+          <xs:documentation xml:lang="en">Carton</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PACK">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Csomag</xs:documentation>
+          <xs:documentation xml:lang="en">Pack</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OWN">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Saját mennyiségi egység megnevezés</xs:documentation>
+          <xs:documentation xml:lang="en">Own unit of measure</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ProductStateType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Mennyiség egység típus</xs:documentation>
+      <xs:documentation xml:lang="en">Unit of measure type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="common:AtomicStringType50">
+      <xs:enumeration value="ACTIVE">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Aktív</xs:documentation>
+          <xs:documentation xml:lang="en">Active</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="BlockUnblockType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Blokkolás típus</xs:documentation>
       <xs:documentation xml:lang="en">Block type</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:maxLength value="7"/>
+      <xs:maxLength value="7" />
       <xs:enumeration value="BLOCK">
         <xs:annotation>
           <xs:documentation xml:lang="hu">Blokkolás</xs:documentation>
@@ -42,7 +170,7 @@
       <xs:documentation xml:lang="en">e-Cash register work state type</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:maxLength value="5"/>
+      <xs:maxLength value="5" />
       <xs:enumeration value="OK">
         <xs:annotation>
           <xs:documentation xml:lang="hu">Az e-pénztárgép működik és nincs blokkolva</xs:documentation>
@@ -63,35 +191,35 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-    <xs:simpleType name="AeBlockUnblockStateType">
+  <xs:simpleType name="AeBlockUnblockStateType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">AE blokkolási állapot típus</xs:documentation>
+      <xs:documentation xml:lang="en">AE block state type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="7" />
+      <xs:enumeration value="UNBLOCK">
         <xs:annotation>
-            <xs:documentation xml:lang="hu">AE blokkolási állapot típus</xs:documentation>
-            <xs:documentation xml:lang="en">AE block state type</xs:documentation>
+          <xs:documentation xml:lang="hu">Az AE működik és nincs blokkolva</xs:documentation>
+          <xs:documentation xml:lang="en">The AE is working and not blocked</xs:documentation>
         </xs:annotation>
-        <xs:restriction base="xs:string">
-            <xs:maxLength value="7"/>
-            <xs:enumeration value="UNBLOCK">
-                <xs:annotation>
-                    <xs:documentation xml:lang="hu">Az AE működik és nincs blokkolva</xs:documentation>
-                    <xs:documentation xml:lang="en">The AE is working and not blocked</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="BLOCK">
-                <xs:annotation>
-                    <xs:documentation xml:lang="hu">Az AE blokkolt állapotban van</xs:documentation>
-                    <xs:documentation xml:lang="en">The AE is blocked</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-        </xs:restriction>
-    </xs:simpleType>    
+      </xs:enumeration>
+      <xs:enumeration value="BLOCK">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az AE blokkolt állapotban van</xs:documentation>
+          <xs:documentation xml:lang="en">The AE is blocked</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="GpsType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">WGS84 szerinti GPS koordináták Fok, perc, másodperc formátumban</xs:documentation>
       <xs:documentation xml:lang="en">WGS84 GPS coordinates in degrees, minutes, seconds</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:maxLength value="50"/>
-      <xs:pattern value="[0-9]{0,2},[0-9]{4,16}|([0-8][0-9]),([0-5][0-9]),([0-5][0-9])\.([0-9][0-9])"/>
+      <xs:maxLength value="50" />
+      <xs:pattern value="[0-9]{0,2},[0-9]{4,16}|([0-8][0-9]),([0-5][0-9]),([0-5][0-9])\.([0-9][0-9])" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="HttpMethodType">
@@ -100,9 +228,9 @@
       <xs:documentation xml:lang="en">List of http methods.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:maxLength value="4"/>
-      <xs:enumeration value="GET"/>
-      <xs:enumeration value="POST"/>
+      <xs:maxLength value="4" />
+      <xs:enumeration value="GET" />
+      <xs:enumeration value="POST" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="IncorporationType">
@@ -137,7 +265,7 @@
       <xs:documentation xml:lang="en">Mobile connection type</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:maxLength value="4"/>
+      <xs:maxLength value="4" />
       <xs:enumeration value="GSM">
         <xs:annotation>
           <xs:documentation xml:lang="hu">GSM</xs:documentation>
@@ -182,9 +310,9 @@
       <xs:documentation xml:lang="en">Percentage without the percentage sign, with decimal point if necessary, rounded to max 2 decimal places</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:decimal">
-      <xs:totalDigits value="5"/>
-      <xs:fractionDigits value="2"/>
-      <xs:maxInclusive value="100"/>
+      <xs:totalDigits value="5" />
+      <xs:fractionDigits value="2" />
+      <xs:maxInclusive value="100" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="PrintMessageType">
@@ -193,8 +321,8 @@
       <xs:documentation xml:lang="en">Technical information by interface message, to be printed on the system printer (PRINT) after closing the e-cash register</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:maxLength value="2048"/>
-      <xs:pattern value="[a-zA-Z0-9aáeéiíoóöőuúüűAÁEÉIÍOÓÖŐUÚÜŰ_*%=+§/\\@]{0,2048}"/>
+      <xs:maxLength value="2048" />
+      <xs:pattern value="[a-zA-Z0-9aáeéiíoóöőuúüűAÁEÉIÍOÓÖŐUÚÜŰ_*%=+§/\\@]{0,2048}" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="CertificateSigningRequestType">
@@ -202,21 +330,21 @@
       <xs:documentation xml:lang="hu">Tanúsítvány aláírási kérés típus. DER formátumban.</xs:documentation>
       <xs:documentation xml:lang="en">Certificate signing request type. In DER format </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="base:AtomicCsrType"/>
+    <xs:restriction base="base:AtomicCsrType" />
   </xs:simpleType>
   <xs:simpleType name="CMSCertificateSigningRequestType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">CMS tanúsítvány aláírási kérés típus. Base64 formátumban.</xs:documentation>
       <xs:documentation xml:lang="en">CMS Certificate signing request type. In Base64 format </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:base64Binary"/>
+    <xs:restriction base="xs:base64Binary" />
   </xs:simpleType>
   <xs:simpleType name="CertificateType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Kiállított tanúsítvány típus. DER formátumban.</xs:documentation>
       <xs:documentation xml:lang="en">Issued certificate type. In DER format </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:base64Binary"/>
+    <xs:restriction base="xs:base64Binary" />
   </xs:simpleType>
   <xs:simpleType name="CertificateTypeType">
     <xs:annotation>
@@ -224,7 +352,7 @@
       <xs:documentation xml:lang="en">Certificate type</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:maxLength value="14"/>
+      <xs:maxLength value="14" />
       <xs:enumeration value="AUTHENTICATION">
         <xs:annotation>
           <xs:documentation xml:lang="hu">Autentikációs</xs:documentation>
@@ -245,7 +373,7 @@
       <xs:documentation xml:lang="en">Result of the certificate query</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:maxLength value="11"/>
+      <xs:maxLength value="11" />
       <xs:enumeration value="COMPLETE">
         <xs:annotation>
           <xs:documentation xml:lang="hu">Kész</xs:documentation>
@@ -272,8 +400,8 @@
       <xs:documentation xml:lang="en">Registration number type</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:maxLength value="16"/>
-      <xs:pattern value="[0-9]{16}"/>
+      <xs:maxLength value="16" />
+      <xs:pattern value="[0-9]{16}" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="ServiceType">
@@ -282,7 +410,7 @@
       <xs:documentation xml:lang="en">Service list type</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:maxLength value="30"/>
+      <xs:maxLength value="30" />
       <xs:enumeration value="BLOCK_UNBLOCK">
         <xs:annotation>
           <xs:documentation xml:lang="hu">Pénztárgép blokkolás/feloldás</xs:documentation>
@@ -385,18 +513,18 @@
           <xs:documentation xml:lang="en">Logo download</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-        <xs:enumeration value="CASH_REGISTER_INFO">
-            <xs:annotation>
-                <xs:documentation xml:lang="hu">Az e-pénztárgép állapot beküldés</xs:documentation>
-                <xs:documentation xml:lang="en">e-cash machine status submission</xs:documentation>
-            </xs:annotation>
-        </xs:enumeration>
-        <xs:enumeration value="SEND_MISSING_DOCUMENT">
-            <xs:annotation>
-                <xs:documentation xml:lang="hu">Hiányzó dokumentum beküldése</xs:documentation>
-                <xs:documentation xml:lang="en">Send a missing document</xs:documentation>
-            </xs:annotation>
-        </xs:enumeration>
+      <xs:enumeration value="CASH_REGISTER_INFO">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az e-pénztárgép állapot beküldés</xs:documentation>
+          <xs:documentation xml:lang="en">e-cash machine status submission</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SEND_MISSING_DOCUMENT">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Hiányzó dokumentum beküldése</xs:documentation>
+          <xs:documentation xml:lang="en">Send a missing document</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="SoftwareIdType">
@@ -405,8 +533,8 @@
       <xs:documentation xml:lang="en">Software ID type</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:length value="18"/>
-      <xs:pattern value="[0-9A-Z\-]{18}"/>
+      <xs:length value="18" />
+      <xs:pattern value="[0-9A-Z\-]{18}" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="SoftwareOperationType">
@@ -415,17 +543,35 @@
       <xs:documentation xml:lang="en">Software operation type (AE-based (hardware) or online)</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:maxLength value="14"/>
+      <xs:maxLength value="16" />
       <xs:enumeration value="AE">
         <xs:annotation>
           <xs:documentation xml:lang="hu">AE alapú (hardveres) e-pénztárgép</xs:documentation>
           <xs:documentation xml:lang="en">AE-based (hardware) e-cash register</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="ONLINE_ANDROID">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Online Android (felhős) e-pénztárgép</xs:documentation>
+          <xs:documentation xml:lang="en">Online Android (cloud) e-cash register</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ONLINE_IOS">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Online iOS (felhős) e-pénztárgép</xs:documentation>
+          <xs:documentation xml:lang="en">Online iOS (cloud) e-cash register</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ONLINE_HUAWEI">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Online Huawei (felhős) e-pénztárgép</xs:documentation>
+          <xs:documentation xml:lang="en">Online Huawei (cloud) e-cash register</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="ONLINE_SERVICE">
         <xs:annotation>
-          <xs:documentation xml:lang="hu">Online szolgáltatás</xs:documentation>
-          <xs:documentation xml:lang="en">Online service</xs:documentation>
+          <xs:documentation xml:lang="hu">Online egyéb (felhős) e-pénztárgép</xs:documentation>
+          <xs:documentation xml:lang="en">Online other (cloud) e-cash register</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -462,9 +608,9 @@
       <xs:documentation xml:lang="en">TEÁOR code type</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:pattern value="[0-9]{2}|[0-9]{2}.[0-9]{1}|[0-9]{2}.[0-9]{2}"/>
-      <xs:minLength value="2"/>
-      <xs:maxLength value="5"/>
+      <xs:pattern value="[0-9]{2}|[0-9]{2}.[0-9]{1}|[0-9]{2}.[0-9]{2}" />
+      <xs:minLength value="2" />
+      <xs:maxLength value="5" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="UrlType">
@@ -473,30 +619,75 @@
       <xs:documentation xml:lang="en">Standard URL of the service to be reqested by the e-cash register (https://host:port/resource in URI format)</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:maxLength value="2000"/>
+      <xs:maxLength value="2000" />
     </xs:restriction>
   </xs:simpleType>
-    <xs:simpleType name="FiscalDayStateType">
+  <xs:simpleType name="FiscalDayStateType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Adóügyi nap státusz típus</xs:documentation>
+      <xs:documentation xml:lang="en">Fiscal day state type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="6" />
+      <xs:enumeration value="OPENED">
         <xs:annotation>
-            <xs:documentation xml:lang="hu">Adóügyi nap státusz típus</xs:documentation>
-            <xs:documentation xml:lang="en">Fiscal day state type</xs:documentation>
+          <xs:documentation xml:lang="hu">Nyitott adóügyi nap</xs:documentation>
+          <xs:documentation xml:lang="en">Fiscal day opened</xs:documentation>
         </xs:annotation>
-        <xs:restriction base="xs:string">
-            <xs:maxLength value="6"/>
-            <xs:enumeration value="OPENED">
-                <xs:annotation>
-                    <xs:documentation xml:lang="hu">Nyitott adóügyi nap</xs:documentation>
-                    <xs:documentation xml:lang="en">Fiscal day opened</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="CLOSED">
-                <xs:annotation>
-                    <xs:documentation xml:lang="hu">Zárt adóügyi nap</xs:documentation>
-                    <xs:documentation xml:lang="en">Fiscal day closed</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-        </xs:restriction>
-    </xs:simpleType>
+      </xs:enumeration>
+      <xs:enumeration value="CLOSED">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Zárt adóügyi nap</xs:documentation>
+          <xs:documentation xml:lang="en">Fiscal day closed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EventCodeType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Esemény kódja</xs:documentation>
+      <xs:documentation xml:lang="en">Event code</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30" />
+      <xs:enumeration value="POWER_ON">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Pénztárgép bekapcsolása</xs:documentation>
+          <xs:documentation xml:lang="en">Cash register power on</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SHUTDOWN">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Pénztárgép leállása</xs:documentation>
+          <xs:documentation xml:lang="en">Cash register shutdown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BLOCK">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Pénztárgép hiba miatt blokkolta magát</xs:documentation>
+          <xs:documentation xml:lang="en">Cash register has blocked itself due to an error</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNBLOCK">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Pénztárgép hiba miatt blokkolt állapot vége</xs:documentation>
+          <xs:documentation xml:lang="en">End of blocked state due to Cash register error</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MESSAGE_ACK">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">NAV által küldött technikai üzenet megjelenítése/nyomtatása nyugtázva</xs:documentation>
+          <xs:documentation xml:lang="en">Display/printing of technical message sent by NAV confirmed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER_EVENT">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Egyéb fontos esemény jelentése</xs:documentation>
+          <xs:documentation xml:lang="en">Reporting of other important events</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
   <xs:complexType name="AeInternalMetric">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Az AE egység belső mérőszámai típus</xs:documentation>
@@ -513,7 +704,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="20"/>
+            <xs:maxLength value="20" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -527,7 +718,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="50"/>
+            <xs:maxLength value="50" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -550,7 +741,7 @@
   <xs:complexType name="AeStateType">
     <xs:annotation>
       <xs:appinfo>
-        <legacyMapping/>
+        <legacyMapping />
       </xs:appinfo>
       <xs:documentation xml:lang="hu">AE állapot típus</xs:documentation>
       <xs:documentation xml:lang="en">AE state type</xs:documentation>
@@ -566,7 +757,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:nonNegativeInteger">
-            <xs:totalDigits value="10"/>
+            <xs:totalDigits value="10" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -583,7 +774,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:negativeInteger">
-            <xs:minInclusive value="-199"/>
+            <xs:minInclusive value="-199" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -598,7 +789,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:nonNegativeInteger">
-            <xs:maxInclusive value="100"/>
+            <xs:maxInclusive value="100" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -635,8 +826,8 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="1"/>            
-            <xs:pattern value="0|1|2|3"/>
+            <xs:maxLength value="1" />
+            <xs:pattern value="0|1|2|3" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -650,11 +841,11 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="20"/>
+            <xs:maxLength value="20" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="aeInternalMetric" minOccurs="0" type="AeInternalMetricListType">
+      <xs:element name="aeInternalMetric" type="AeInternalMetricListType" minOccurs="0">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -681,7 +872,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="200"/>
+            <xs:maxLength value="200" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -695,7 +886,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="200"/>
+            <xs:maxLength value="200" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -718,7 +909,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="200"/>
+            <xs:maxLength value="200" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -732,7 +923,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="200"/>
+            <xs:maxLength value="200" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -746,7 +937,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="50"/>
+            <xs:maxLength value="50" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -760,7 +951,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="50"/>
+            <xs:maxLength value="50" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -768,27 +959,15 @@
   </xs:complexType>
   <xs:complexType name="CashRegisterEventType">
     <xs:annotation>
-      <xs:appinfo>
-        <legacyMapping>EVT_tip</legacyMapping>
-      </xs:appinfo>
       <xs:documentation xml:lang="hu">e-Pénztárgépben bekövetkezett események naplózás típusa</xs:documentation>
       <xs:documentation xml:lang="en">e-Cash register event type</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="eventCode">
+      <xs:element name="eventCode" type="EventCodeType">
         <xs:annotation>
-          <xs:appinfo>
-            <legacyMapping>EVC</legacyMapping>
-          </xs:appinfo>
           <xs:documentation xml:lang="hu">Esemény kódja</xs:documentation>
           <xs:documentation xml:lang="en">Event code</xs:documentation>
         </xs:annotation>
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:maxLength value="3"/>
-            <xs:pattern value="LCL|CRI|CRO|POF|PIN|BDN|RST|BLS|BLF|TRI|TRF|MGO|MGI|EUR|STB|STF|SCB|SCF|YCH|WDO|WDC|PRN"/>
-          </xs:restriction>
-        </xs:simpleType>
       </xs:element>
       <xs:element name="eventDescription" minOccurs="0">
         <xs:annotation>
@@ -800,7 +979,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="2048"/>
+            <xs:maxLength value="2048" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -848,7 +1027,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:integer">
-            <xs:totalDigits value="5"/>
+            <xs:totalDigits value="5" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -872,31 +1051,31 @@
           <xs:documentation xml:lang="en">e-Cash register work state</xs:documentation>
         </xs:annotation>
       </xs:element>
-        <xs:element name="aeBlockUnblockState" type="AeBlockUnblockStateType">
-            <xs:annotation>
-                <xs:documentation xml:lang="hu">AE blokkolási állapot</xs:documentation>
-                <xs:documentation xml:lang="en">AE block state</xs:documentation>
-            </xs:annotation>
-        </xs:element>
-        <xs:element name="fiscalDayState" type="FiscalDayStateType">
-            <xs:annotation>
-                <xs:documentation xml:lang="hu">Adóügyi nap állapota</xs:documentation>
-                <xs:documentation xml:lang="en">Fiscal day state</xs:documentation>
-            </xs:annotation>
-        </xs:element>
-        <xs:element name="lastSentRecordCounter" type="xs:nonNegativeInteger">
-            <xs:annotation>
-                <xs:documentation xml:lang="hu">Az utoljára beküldött bizonylat recordCounter értéke. Leírását lásd a Fejlesztői dokumentáció „NAV ellenőrző kód képzése” fejezetében.</xs:documentation>
-                <xs:documentation xml:lang="en">The recordCounter value of the last sent document. See further information in the "Generate NAV verification code" chapter of the Development Documentation.</xs:documentation>
-            </xs:annotation>
-        </xs:element>
-        <xs:element name="lastRecordCounter" type="xs:nonNegativeInteger">
-            <xs:annotation>
-                <xs:documentation xml:lang="hu">Az e-pénztárgépen utoljára kiállított bizonylat recordCounter értéke. Leírását lásd a Fejlesztői dokumentáció „NAV ellenőrző kód képzése” fejezetében.</xs:documentation>
-                <xs:documentation xml:lang="en">The recordCounter value of the last document in the e-cash register. See further information in the "Generate NAV verification code" chapter of the Development Documentation.</xs:documentation>
-            </xs:annotation>
-        </xs:element>
-        <xs:element name="aeState" type="AeStateType" minOccurs="0">
+      <xs:element name="aeBlockUnblockState" type="AeBlockUnblockStateType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">AE blokkolási állapot</xs:documentation>
+          <xs:documentation xml:lang="en">AE block state</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="fiscalDayState" type="FiscalDayStateType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Adóügyi nap állapota</xs:documentation>
+          <xs:documentation xml:lang="en">Fiscal day state</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="lastSentRecordCounter" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az utoljára beküldött bizonylat recordCounter értéke. Leírását lásd a Fejlesztői dokumentáció „NAV ellenőrző kód képzése” fejezetében.</xs:documentation>
+          <xs:documentation xml:lang="en">The recordCounter value of the last sent document. See further information in the "Generate NAV verification code" chapter of the Development Documentation.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="lastRecordCounter" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az e-pénztárgépen utoljára kiállított bizonylat recordCounter értéke. Leírását lásd a Fejlesztői dokumentáció „NAV ellenőrző kód képzése” fejezetében.</xs:documentation>
+          <xs:documentation xml:lang="en">The recordCounter value of the last document in the e-cash register. See further information in the "Generate NAV verification code" chapter of the Development Documentation.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="aeState" type="AeStateType" minOccurs="0">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -917,7 +1096,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="400"/>
+            <xs:maxLength value="400" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -953,7 +1132,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="50"/>
+            <xs:maxLength value="50" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -969,16 +1148,16 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="50"/>
+            <xs:maxLength value="50" />
           </xs:restriction>
         </xs:simpleType>
-        </xs:element>
-        <xs:element name="operatorSite" type="OperatorSiteType">
-            <xs:annotation>
-                <xs:documentation xml:lang="hu">Az e-pénztárgép üzemeltetői és üzemeltetési hely adatai.</xs:documentation>
-                <xs:documentation xml:lang="en">The operator or site data of the e-cash register.</xs:documentation>
-            </xs:annotation>
-        </xs:element>        
+      </xs:element>
+      <xs:element name="operatorSite" type="OperatorSiteType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az e-pénztárgép üzemeltetői és üzemeltetési hely adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The operator or site data of the e-cash register.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="vat" type="VatType">
         <xs:annotation>
           <xs:appinfo>
@@ -1007,8 +1186,8 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="5"/>
-            <xs:pattern value="(C[0-9]{4})"/>
+            <xs:maxLength value="5" />
+            <xs:pattern value="(C[0-9]{4})" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -1022,18 +1201,18 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="5"/>
-            <xs:pattern value="(X[0-9]{4})"/>
+            <xs:maxLength value="5" />
+            <xs:pattern value="(X[0-9]{4})" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-        <xs:element name="epdProcessIdentifiers" type="EpdProcessIdentifiersType">
-            <xs:annotation>
-                <xs:documentation xml:lang="hu">Az e-pénztárgép jelenlegi állapotát előállító végrehajtott utasítások, valamint a legutolsó átvett, de még nem végrehajtott (időzített) utasítások EPD folyamat azonosítói</xs:documentation>
-                <xs:documentation xml:lang="en">EPD process IDs of the executed instructions that produce the current state of the e-cash register, and the last received but not yet executed (timed) instructions</xs:documentation>
-            </xs:annotation>
-        </xs:element>
-      <xs:element name="hardwareTechnicalInfo" minOccurs="0" type="HardwareTechnicalInfoType">
+      <xs:element name="epdProcessIdentifiers" type="EpdProcessIdentifiersType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az e-pénztárgép jelenlegi állapotát előállító végrehajtott utasítások, valamint a legutolsó átvett, de még nem végrehajtott (időzített) utasítások EPD folyamat azonosítói</xs:documentation>
+          <xs:documentation xml:lang="en">EPD process IDs of the executed instructions that produce the current state of the e-cash register, and the last received but not yet executed (timed) instructions</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="hardwareTechnicalInfo" type="HardwareTechnicalInfoType" minOccurs="0">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -1090,7 +1269,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:nonNegativeInteger">
-            <xs:totalDigits value="10"/>
+            <xs:totalDigits value="10" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -1118,8 +1297,8 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="1"/>
-            <xs:pattern value="1|2|3|4|5"/>
+            <xs:maxLength value="1" />
+            <xs:pattern value="1|2|3|4|5" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -1292,6 +1471,80 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="ProductItemType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Termék adattípus</xs:documentation>
+      <xs:documentation xml:lang="en">Product data type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="dtszkId" type="common:SimpleText15NotBlankType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">DTSZK azonosító</xs:documentation>
+          <xs:documentation xml:lang="en">DTSZK identifier</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="productId" type="common:SimpleText50NotBlankType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Terméken feltüntetett azonosító</xs:documentation>
+          <xs:documentation xml:lang="en">Product identifier</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="productName" type="common:SimpleText1024NotBlankType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Termék megnevezés</xs:documentation>
+          <xs:documentation xml:lang="en">Product name</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="productManufacturer" type="common:SimpleText255NotBlankType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Gyártó megnevezése</xs:documentation>
+          <xs:documentation xml:lang="en">Manufacturer name</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="validFrom" type="common:GenericTimestampType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Érvényesség -tól</xs:documentation>
+          <xs:documentation xml:lang="en">Validity from</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="validTo" type="common:GenericTimestampType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Érvényesség -ig</xs:documentation>
+          <xs:documentation xml:lang="en">Validity to</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="state" type="ProductStateType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Termék adat státusza</xs:documentation>
+          <xs:documentation xml:lang="en">Product data status</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="vtsz" type="common:SimpleText15NotBlankType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Vámtarifa szám</xs:documentation>
+          <xs:documentation xml:lang="en">Customs tariff number</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="categoryCode" type="common:SimpleText15NotBlankType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Kategória kód</xs:documentation>
+          <xs:documentation xml:lang="en">Category code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="categoryNameLevel4" type="common:SimpleText255NotBlankType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Kategória megnevezés (4. szint)</xs:documentation>
+          <xs:documentation xml:lang="en">Category name (level 4)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="unitOfMeasure" type="UnitOfMeasureType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Mennyiség egység</xs:documentation>
+          <xs:documentation xml:lang="en">Unit of measure</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="TaxpayerAddressListType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Adózói cím lista típus</xs:documentation>
@@ -1302,6 +1555,20 @@
         <xs:annotation>
           <xs:documentation xml:lang="hu">Adózói címsor adat</xs:documentation>
           <xs:documentation xml:lang="en">Taxpayer address item</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductListType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Adózói cím lista típus</xs:documentation>
+      <xs:documentation xml:lang="en">Taxpayer address list type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="productItem" type="ProductItemType" maxOccurs="100">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">A keresési feltételnek megfelelt termékeket tartalmazó eredménylista típusa.</xs:documentation>
+          <xs:documentation xml:lang="en">Type of result list containing products that match the search criteria.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -1365,23 +1632,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="EndpointsListType">
-  <xs:annotation>
-    <xs:documentation xml:lang="hu">Meghívandó endpointok listája típus</xs:documentation>
-    <xs:documentation xml:lang="en">List of endpoints to be called type></xs:documentation>
-  </xs:annotation>
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Meghívandó endpointok listája típus</xs:documentation>
+      <xs:documentation xml:lang="en">List of endpoints to be called type</xs:documentation>
+    </xs:annotation>
     <xs:sequence maxOccurs="100">
       <xs:element name="endpoints" type="EndpointType">
-      <xs:annotation>
-        <xs:documentation xml:lang="hu">Az endpoint hívás paraméterei.</xs:documentation>
-        <xs:documentation xml:lang="en">Parameters of the endpoint call</xs:documentation>
-      </xs:annotation>
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az endpoint hívás paraméterei.</xs:documentation>
+          <xs:documentation xml:lang="en">Parameters of the endpoint call</xs:documentation>
+        </xs:annotation>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="EndpointType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Meghívandó endpoint típus</xs:documentation>
-      <xs:documentation xml:lang="en"></xs:documentation>
+      <xs:documentation xml:lang="en">Endpoint type to call</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="sequence" type="xs:positiveInteger">
@@ -1453,7 +1720,7 @@
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:maxLength value="8"/>
+            <xs:maxLength value="8" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -1555,86 +1822,86 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-    <xs:complexType name="EpdProcessIdentifiersType">
+  <xs:complexType name="EpdProcessIdentifiersType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép jelenlegi állapotát előállító végrehajtott utasítások, valamint a legutolsó átvett, de még nem végrehajtott (időzített) utasítások EPD folyamat azonosítói</xs:documentation>
+      <xs:documentation xml:lang="en">EPD process IDs of the executed instructions that produce the current state of the e-cash register, and the last received but not yet executed (timed) instructions</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="currentVatProcessId" type="base:ProcessIdentifierType" minOccurs="0">
         <xs:annotation>
-            <xs:documentation xml:lang="hu">Az e-pénztárgép jelenlegi állapotát előállító végrehajtott utasítások, valamint a legutolsó átvett, de még nem végrehajtott (időzített) utasítások EPD folyamat azonosítói</xs:documentation>
-            <xs:documentation xml:lang="en">EPD process IDs of the executed instructions that produce the current state of the e-cash register, and the last received but not yet executed (timed) instructions</xs:documentation>
+          <xs:documentation xml:lang="hu">Aktuális ÁFA táblát érvényre juttató végrehajtott utasítás EPD folyamat azonosítója.</xs:documentation>
+          <xs:documentation xml:lang="en">EPD process ID of the executed instruction that enforces the current VAT table.</xs:documentation>
         </xs:annotation>
-        <xs:sequence>
-            <xs:element name="currentVatProcessId" type="base:ProcessIdentifierType" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation xml:lang="hu">Aktuális ÁFA táblát érvényre juttató végrehajtott utasítás EPD folyamat azonosítója.</xs:documentation>
-                    <xs:documentation xml:lang="en">EPD process ID of the executed instruction that enforces the current VAT table.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="nextVatProcessId" type="base:ProcessIdentifierType" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation xml:lang="hu">Következő ÁFA táblát érvényre juttató jövőben végrehajtandó utasítás EPD folyamat azonosítója.</xs:documentation>
-                    <xs:documentation xml:lang="en">EPD process identifier of the instruction to be executed in the future that will enforce the next VAT table.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="currentOperatorSiteProcessId" type="base:ProcessIdentifierType" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation xml:lang="hu">Aktuális üzemeltetői és üzemeltetési hely adatokat érvényre juttató végrehajtott utasítás EPD folyamat azonosítója.</xs:documentation>
-                    <xs:documentation xml:lang="en">EPD process ID of the executed instruction that enforces the current operator and site details.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="nextOperatorSiteProcessId" type="base:ProcessIdentifierType" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation xml:lang="hu">Következő üzemeltetői és üzemeltetési hely adatokat érvényre juttató jövőben végrehajtandó utasítás EPD folyamat azonosítója.</xs:documentation>
-                    <xs:documentation xml:lang="en">EPD process identifier of the instruction to be executed in the future that will enforce the next operator and site details.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="currentSoftwareProcessId" type="base:ProcessIdentifierType" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation xml:lang="hu">Az e-pénztárgépen aktuális futó szoftver verziót érvényre juttató végrehajtott utasítás EPD folyamat azonosítója.</xs:documentation>
-                    <xs:documentation xml:lang="en">The EPD process identifier of the executed instruction that enforces the current software version running on the e-cash register.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="nextSoftwareProcessId" type="base:ProcessIdentifierType" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation xml:lang="hu">Az e-pénztárgépen következően futtatandó szoftver verziót érvényre juttató jövőben végrehajtandó utasítás EPD folyamat azonosítója.</xs:documentation>
-                    <xs:documentation xml:lang="en">EPD process identifier of the instruction to be executed in the future that enforces the next software version to be run on the e-cash register.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="currentAeBlockUnblockStateProcessId" type="base:ProcessIdentifierType" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation xml:lang="hu">Aktuális AE állapotot érvényre juttató végrehajtott utasítás EPD folyamat azonosítója.</xs:documentation>
-                    <xs:documentation xml:lang="en">EPD process ID of the executed instruction that enforces the current AE state.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-        </xs:sequence>
-    </xs:complexType>
-    <xs:complexType name="FirmwareSliceType">
-      <xs:annotation>
-        <xs:documentation xml:lang="hu">Letöltöthető állomány darab adatai</xs:documentation>
-        <xs:documentation xml:lang="en">Downloadable file item sequence info</xs:documentation>
-      </xs:annotation>
-      <xs:sequence>
-        <xs:element name="firmwareSliceNumber" type="xs:nonNegativeInteger">
-          <xs:annotation>
-            <xs:appinfo>
-              <legacyMapping/>
+      </xs:element>
+      <xs:element name="nextVatProcessId" type="base:ProcessIdentifierType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Következő ÁFA táblát érvényre juttató jövőben végrehajtandó utasítás EPD folyamat azonosítója.</xs:documentation>
+          <xs:documentation xml:lang="en">EPD process identifier of the instruction to be executed in the future that will enforce the next VAT table.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="currentOperatorSiteProcessId" type="base:ProcessIdentifierType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Aktuális üzemeltetői és üzemeltetési hely adatokat érvényre juttató végrehajtott utasítás EPD folyamat azonosítója.</xs:documentation>
+          <xs:documentation xml:lang="en">EPD process ID of the executed instruction that enforces the current operator and site details.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nextOperatorSiteProcessId" type="base:ProcessIdentifierType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Következő üzemeltetői és üzemeltetési hely adatokat érvényre juttató jövőben végrehajtandó utasítás EPD folyamat azonosítója.</xs:documentation>
+          <xs:documentation xml:lang="en">EPD process identifier of the instruction to be executed in the future that will enforce the next operator and site details.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="currentSoftwareProcessId" type="base:ProcessIdentifierType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az e-pénztárgépen aktuális futó szoftver verziót érvényre juttató végrehajtott utasítás EPD folyamat azonosítója.</xs:documentation>
+          <xs:documentation xml:lang="en">The EPD process identifier of the executed instruction that enforces the current software version running on the e-cash register.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nextSoftwareProcessId" type="base:ProcessIdentifierType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az e-pénztárgépen következően futtatandó szoftver verziót érvényre juttató jövőben végrehajtandó utasítás EPD folyamat azonosítója.</xs:documentation>
+          <xs:documentation xml:lang="en">EPD process identifier of the instruction to be executed in the future that enforces the next software version to be run on the e-cash register.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="currentAeBlockUnblockStateProcessId" type="base:ProcessIdentifierType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Aktuális AE állapotot érvényre juttató végrehajtott utasítás EPD folyamat azonosítója.</xs:documentation>
+          <xs:documentation xml:lang="en">EPD process ID of the executed instruction that enforces the current AE state.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FirmwareSliceType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Letöltöthető állomány darab adatai</xs:documentation>
+      <xs:documentation xml:lang="en">Downloadable file item sequence info</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="firmwareSliceNumber" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:appinfo>
+              <legacyMapping />
             </xs:appinfo>
-            <xs:documentation xml:lang="hu">Letöltöthető állomány darab sorszáma</xs:documentation>
-            <xs:documentation xml:lang="en">Downloadable file item sequence number</xs:documentation>
-          </xs:annotation>
-        </xs:element>
-        <xs:element name="firmwareHash" type="common:CryptoType">
-          <xs:annotation>
-            <xs:appinfo>
-              <legacyMapping/>
+          <xs:documentation xml:lang="hu">Letöltöthető állomány darab sorszáma</xs:documentation>
+          <xs:documentation xml:lang="en">Downloadable file item sequence number</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="firmwareHash" type="common:CryptoType">
+        <xs:annotation>
+          <xs:appinfo>
+              <legacyMapping />
             </xs:appinfo>
-            <xs:documentation xml:lang="hu">Letöltött állomány hash, amely segítségével ellenőrizhető, hogy a letöltötés során az állomány nem sérült meg.</xs:documentation>
-            <xs:documentation xml:lang="en">The hash value of the software. The downloaded software's hash has to be equal with this value.</xs:documentation>
-          </xs:annotation>
-        </xs:element>
-        <xs:element name="firmwareDownloadUrl" type="UrlType">
-          <xs:annotation>
-            <xs:documentation xml:lang="hu">Szoftver letöltéséhez szükséges URL</xs:documentation>
-            <xs:documentation xml:lang="en">The software can be downloaded from this URL.</xs:documentation>
-          </xs:annotation>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
+          <xs:documentation xml:lang="hu">Letöltött állomány hash, amely segítségével ellenőrizhető, hogy a letöltötés során az állomány nem sérült meg.</xs:documentation>
+          <xs:documentation xml:lang="en">The hash value of the software. The downloaded software's hash has to be equal with this value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="firmwareDownloadUrl" type="UrlType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Szoftver letöltéséhez szükséges URL</xs:documentation>
+          <xs:documentation xml:lang="en">The software can be downloaded from this URL.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
 </xs:schema>

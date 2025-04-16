@@ -340,6 +340,62 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="GetProductByCodeRequestType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A terméktörzs frissítését kezdeményező szolgáltatás kérés típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The request type of the product list update service of the e-cash register.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptRequestType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="productCode" type="common:SimpleText255NotBlankType">
+            <xs:annotation>
+              <xs:appinfo>
+                <legacyMapping/>
+              </xs:appinfo>
+              <xs:documentation xml:lang="hu">Termék csomagolásáról leolvasott kód.</xs:documentation>
+              <xs:documentation xml:lang="en">Code read from product packaging.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GetProductByCodeResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">A terméktörzs frissítését kezdeményező szolgáltatás válasz típusa.</xs:documentation>
+      <xs:documentation xml:lang="en">The response type of the product list update service of the e-cash register.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="base:BasicEReceiptResponseType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
+          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence minOccurs="0">
+          <xs:element name="numberOfProducts" type="xs:nonNegativeInteger">
+            <xs:annotation>
+              <xs:documentation xml:lang="hu">Az eredménylistában található termékek száma.</xs:documentation>
+              <xs:documentation xml:lang="en">The number of products in the results list.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="products" type="communication:ProductListType">
+            <xs:annotation>
+              <xs:appinfo>
+                <legacyMapping/>
+              </xs:appinfo>
+              <xs:documentation xml:lang="hu">A keresési feltételnek megfelelt termékeket tartalmazó eredménylista.</xs:documentation>
+              <xs:documentation xml:lang="en">A results list containing products that match the search criteria.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="HelloRequestType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Az e-pénztárgép regisztrálását vagy átszemélyesítését követően meghívandó szolgáltatás kérés típusa.</xs:documentation>
@@ -474,13 +530,13 @@
           <xs:element name="authenticationCertificateRequest" type="communication:CertificateSigningRequestType">
             <xs:annotation>
               <xs:documentation xml:lang="hu">Az authentikációs kulcspárral generált tanúsítvány aláírási kérelem DER formátumban.</xs:documentation>
-              <xs:documentation xml:lang="en"></xs:documentation>
+              <xs:documentation xml:lang="en">Authentication certificate request in DER format.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="signingCertificateRequest" type="communication:CertificateSigningRequestType">
             <xs:annotation>
               <xs:documentation xml:lang="hu">Az aláíró kulcspárral generált tanúsítvány aláírási kérelem DER formátumban.</xs:documentation>
-              <xs:documentation xml:lang="en"></xs:documentation>
+              <xs:documentation xml:lang="en">Signing certificate request in DER format.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -581,62 +637,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="ProductListRequestType">
-    <xs:annotation>
-      <xs:documentation xml:lang="hu">A terméktörzs frissítését kezdeményező szolgáltatás kérés típusa.</xs:documentation>
-      <xs:documentation xml:lang="en">The request type of the product list update service of the e-cash register.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="base:BasicEReceiptRequestType">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános kérés típus adatai.</xs:documentation>
-          <xs:documentation xml:lang="en">The general request type of the eReceipt system.</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-          <xs:element name="productListHash" type="common:CryptoType">
-            <xs:annotation>
-              <xs:appinfo>
-                <legacyMapping/>
-              </xs:appinfo>
-              <xs:documentation xml:lang="hu">A jelenleg használt terméktörzs hash értéke.</xs:documentation>
-              <xs:documentation xml:lang="en">The hash value of the current product list.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ProductListResponseType">
-    <xs:annotation>
-      <xs:documentation xml:lang="hu">A terméktörzs frissítését kezdeményező szolgáltatás válasz típusa.</xs:documentation>
-      <xs:documentation xml:lang="en">The response type of the product list update service of the e-cash register.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="base:BasicEReceiptResponseType">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Az eReceipt rendszerben alkalmazott általános válasz típus adatai.</xs:documentation>
-          <xs:documentation xml:lang="en">The general response type of the eReceipt system.</xs:documentation>
-        </xs:annotation>
-        <xs:sequence minOccurs="0">
-          <xs:element name="productListDownloadUrl" type="communication:UrlType">
-            <xs:annotation>
-              <xs:documentation xml:lang="hu">Terméktörzs letöltéséhez szükséges URL</xs:documentation>
-              <xs:documentation xml:lang="en">The product list can be downloaded from this URL.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="productListHash" type="common:CryptoType">
-            <xs:annotation>
-              <xs:appinfo>
-                <legacyMapping/>
-              </xs:appinfo>
-              <xs:documentation xml:lang="hu">Letöltött állomány hash, amely segítségével ellenőrizhető, hogy a letöltés során az állomány nem sérült meg.</xs:documentation>
-              <xs:documentation xml:lang="en">The hash value of the product list. The downloaded product list's hash has to be equal with this value.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>  
   <xs:complexType name="QueryTaxpayerRequestType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Belföldi adószám ellenőrző szolgáltatás kérés típusa.</xs:documentation>
@@ -1252,6 +1252,28 @@
     <xs:complexType>
       <xs:complexContent>
         <xs:extension base="EndOfOperationResponseType"/>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductByCodeRequest">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép üzemeltetés befejezés szolgáltatás kérés objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The request element of the e-cash register end of operation service.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="GetProductByCodeRequestType"/>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductByCodeResponse">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Az e-pénztárgép üzemeltetés befejezés szolgáltatás válasz objektuma.</xs:documentation>
+      <xs:documentation xml:lang="en">The response element of the e-cash register end of operation service.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="GetProductByCodeResponseType"/>
       </xs:complexContent>
     </xs:complexType>
   </xs:element>

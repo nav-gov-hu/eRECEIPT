@@ -138,117 +138,7 @@
       <xs:fractionDigits value="10"/>
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="UnitOfMeasureType">
-    <xs:annotation>
-      <xs:documentation xml:lang="hu">Mennyiség egység típus</xs:documentation>
-      <xs:documentation xml:lang="en">Unit of measure type</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="common:AtomicStringType15">
-      <xs:enumeration value="PIECE">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Darab</xs:documentation>
-          <xs:documentation xml:lang="en">Piece</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="KILOGRAM">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Kilogramm</xs:documentation>
-          <xs:documentation xml:lang="en">Kilogram</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="TON">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Metrikus tonna</xs:documentation>
-          <xs:documentation xml:lang="en">Metric ton</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="KWH">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Kilowatt óra</xs:documentation>
-          <xs:documentation xml:lang="en">Kilowatt hour</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="DAY">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Nap</xs:documentation>
-          <xs:documentation xml:lang="en">Day</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="HOUR">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Óra</xs:documentation>
-          <xs:documentation xml:lang="en">Hour</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="MINUTE">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Perc</xs:documentation>
-          <xs:documentation xml:lang="en">Minute</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="MONTH">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Hónap</xs:documentation>
-          <xs:documentation xml:lang="en">Month</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="LITER">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Liter</xs:documentation>
-          <xs:documentation xml:lang="en">Liter</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="KILOMETER">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Kilométer</xs:documentation>
-          <xs:documentation xml:lang="en">Kilometer</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="CUBIC_METER">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Köbméter</xs:documentation>
-          <xs:documentation xml:lang="en">Cubic meter</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="SQUARE_METER">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Négyzetméter</xs:documentation>
-          <xs:documentation xml:lang="en">Square meter</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="METER">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Méter</xs:documentation>
-          <xs:documentation xml:lang="en">Meter</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="LINEAR_METER">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Folyóméter</xs:documentation>
-          <xs:documentation xml:lang="en">Linear meter</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="CARTON">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Karton</xs:documentation>
-          <xs:documentation xml:lang="en">Carton</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="PACK">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Csomag</xs:documentation>
-          <xs:documentation xml:lang="en">Pack</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="OWN">
-        <xs:annotation>
-          <xs:documentation xml:lang="hu">Saját mennyiségi egység megnevezés</xs:documentation>
-          <xs:documentation xml:lang="en">Own unit of measure</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="DocumentDataType">
+    <xs:complexType name="DocumentDataType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">A dokumentum adatszolgáltatás adatok típusa</xs:documentation>
       <xs:documentation xml:lang="en">Document exchange data type</xs:documentation>
@@ -627,7 +517,7 @@
           <xs:documentation xml:lang="en">Quantity</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="unitOfMeasure" type="UnitOfMeasureType" minOccurs="1">
+      <xs:element name="unitOfMeasure" type="communication:UnitOfMeasureType" minOccurs="1">
         <xs:annotation>
         <xs:appinfo>
             <legacyMapping>IU</legacyMapping>

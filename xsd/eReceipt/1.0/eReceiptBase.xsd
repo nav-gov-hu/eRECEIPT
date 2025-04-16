@@ -973,7 +973,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="CommerceCollectorListType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Napi forgalmi gyüjtők típus</xs:documentation>
@@ -1006,13 +1005,31 @@
           <xs:documentation xml:lang="en">Collector code on 3 characters</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="collectorAmount" type="xs:int">
+      <xs:element name="collectorGrossAmount" type="MonetaryType">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>GYE</legacyMapping>
           </xs:appinfo>
           <xs:documentation xml:lang="hu">Az adott forgalmi gyűjtőbe tartozó napi tételek bruttó összértéke</xs:documentation>
           <xs:documentation xml:lang="en">Total gross value of daily items in a given collector</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="collectorNetAmount" type="MonetaryType" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>GYE</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Az adott forgalmi gyűjtőbe tartozó napi tételek nettó összértéke</xs:documentation>
+          <xs:documentation xml:lang="en">Total net value of daily items in a given collector</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="collectorVatAmount" type="MonetaryType" minOccurs="0">
+        <xs:annotation>
+          <xs:appinfo>
+            <legacyMapping>GYE</legacyMapping>
+          </xs:appinfo>
+          <xs:documentation xml:lang="hu">Az adott forgalmi gyűjtőbe tartozó napi tételek ÁFA összértéke</xs:documentation>
+          <xs:documentation xml:lang="en">Total vat value of daily items in a given collector</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -1132,7 +1149,7 @@
       <xs:documentation xml:lang="en">Daily cashflow detail data type</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="commerceCollectorList" type="CommerceCollectorListType">
+      <xs:element name="commerceCollectorList" type="CommerceCollectorListType" minOccurs="0">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -1141,7 +1158,7 @@
           <xs:documentation xml:lang="en">Group by commerce collectors</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="amount" type="xs:int">
+      <xs:element name="amount" type="MonetaryType">
         <xs:annotation>
           <xs:appinfo>
             <legacyMapping>Új mező</legacyMapping>
@@ -1159,8 +1176,28 @@
           <xs:documentation xml:lang="en">Count of document</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="fulfillmentDate" type="DocumentDateType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">A bizonylatok teljesítési dátuma</xs:documentation>
+          <xs:documentation xml:lang="en">Fulfillment date of the document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="DailyCashFlowDetailListType">
+    <xs:annotation>
+      <xs:documentation xml:lang="hu">Napi forgalmi jelentés adatai lista típus</xs:documentation>
+      <xs:documentation xml:lang="en">Daily cashflow detail data list type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence maxOccurs="100">
+      <xs:element name="dailyCashFlowDetail" type="DailyCashFlowDetailType">
+        <xs:annotation>
+          <xs:documentation xml:lang="hu">Napi forgalmi jelentés adatai</xs:documentation>
+          <xs:documentation xml:lang="en">Daily cashflow detail data</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>  
   <xs:complexType name="DetailedAddressType">
     <xs:annotation>
       <xs:documentation xml:lang="hu">Részletes címadatok</xs:documentation>
