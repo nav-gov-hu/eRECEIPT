@@ -1,1 +1,1 @@
-eNyugta alkalmazásokban használható .wav és .gif állományok 
+E-pénztárgépeken használandó hang és képi állományok
