@@ -1,0 +1,230 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item CashFlowReportType in eDocumentStoreApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'cashflowreporttype');
+                        --></script><div class="pageheader">
+         Documentation for eDocumentStoreApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>CashFlowReportType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">http://schemas.nav.gov.hu/ERECEIPT/1.0/reportMessage</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="reportmessage_xsd.html">reportMessage.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Pénzmozgás bizonylat típus (PMN)
+Cash flow document type</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="246,483,493,548" href="roundingdifferenceamount.html" alt="Drilldown into roundingDifferenceAmount"></area>
+                     <area shape="rect" coords="246,421,507,476" href="changeamount.html" alt="Drilldown into changeAmount"></area>
+                     <area shape="rect" coords="226,358,444,413" href="balancechange2.html" alt="Drilldown into balanceChange"></area>
+                     <area shape="rect" coords="226,160,498,351" href="paymenttitlecode.html" alt="Drilldown into paymentTitleCode"></area>
+                     <area shape="rect" coords="226,63,526,153" href="reportnumber.html" alt="Drilldown into reportNumber"></area>
+                     <area shape="rect" coords="226,1,448,56" href="reportheader.html" alt="Drilldown into reportHeader"></area></map><img src="images/cashflowreporttype.png" border="0" alt="XSD Diagram of CashFlowReportType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="CashFlowReportType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:appinfo&gt;
+      &lt;legacyMapping&gt;Pénzmozgás bizonylat típus (PMN)&lt;/legacyMapping&gt;
+    &lt;/xs:appinfo&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Pénzmozgás bizonylat típus (PMN)&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Cash flow document type&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="reportHeader" type="base:ReportHeaderType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;
+              Új mező
+            &lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Riportoknál alkalmazott általános fejadatok&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;General header data used for reports&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="reportNumber" type="base:DocumentNumberType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;PMS&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Bizonylatszám.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Document number.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="paymentTitleCode" type="base:CashPaymentTitleType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;RSN&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A pénztári befizetés, kifizetés vagy fizetőeszköz csere jogcímei&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Cash payment title&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="balanceChange" type="base:InstrumentType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;
+              Új mező
+            &lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Fióktartalom változásának adatai.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Balance change&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="changeAmount" type="xs:nonNegativeInteger" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;PBA&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A bizonylathoz kapcsolódó visszajáró összege egész forintban&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Change amount of the document&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="roundingDifferenceAmount" type="xs:int" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;PRD&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Kerekítési különbözet összege forintban (pozitív, ha a vevő szempontjából számolt előjellel.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Rounding difference amount&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">reportHeader</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">nsC</a>:<a href="reportheader.html">reportHeader</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">reportNumber</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">nsC</a>:<a href="reportnumber.html">reportNumber</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">paymentTitleCode</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">nsC</a>:<a href="paymenttitlecode.html">paymentTitleCode</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">balanceChange</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">nsC</a>:<a href="balancechange2.html">balanceChange</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">changeAmount</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">nsC</a>:<a href="changeamount.html">changeAmount</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">roundingDifferenceAmount</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">nsC</a>:<a href="roundingdifferenceamount.html">roundingDifferenceAmount</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>CashFlowReportType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">nsC</a>:<a href="cashflowreport.html">CashFlowReport</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">nsC</a>:<a href="cashflowreport.html">CashFlowReport</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eDocumentStoreApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

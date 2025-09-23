@@ -1,0 +1,226 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item SupplierInfoType in eReceiptExport</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'supplierinfotype1');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptExport
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>SupplierInfoType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="documentdata_xsd.html">documentData.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>A szállító (eladó) adatai
+Receipt supplier (seller) data</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="222,577,523,689" href="exciselicencenum1.html" alt="Drilldown into exciseLicenceNum"></area>
+                     <area shape="rect" coords="202,514,487,569" href="individualexemption1.html" alt="Drilldown into individualExemption"></area>
+                     <area shape="rect" coords="222,406,573,507" href="supplierbankaccountnumber1.html" alt="Drilldown into supplierBankAccountNumber"></area>
+                     <area shape="rect" coords="202,344,412,399" href="supplieraddress1.html" alt="Drilldown into supplierAddress"></area>
+                     <area shape="rect" coords="202,245,482,337" href="suppliername3.html" alt="Drilldown into supplierName"></area>
+                     <area shape="rect" coords="222,145,541,237" href="communityvatnumber2.html" alt="Drilldown into communityVatNumber"></area>
+                     <area shape="rect" coords="222,63,526,138" href="groupmembertaxnumber3.html" alt="Drilldown into groupMemberTaxNumber"></area>
+                     <area shape="rect" coords="202,1,446,56" href="suppliertaxnumber4.html" alt="Drilldown into supplierTaxNumber"></area></map><img src="images/supplierinfotype1.png" border="0" alt="XSD Diagram of SupplierInfoType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="SupplierInfoType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;A szállító (eladó) adatai&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Receipt supplier (seller) data&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="supplierTaxNumber" type="base:TaxNumberType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;ASZ&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Belföldi adószám vagy csoportazonosító szám&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Tax number or group identification number&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="groupMemberTaxNumber" type="base:TaxNumberType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Csoport tag adószáma, ha a termékbeszerzés vagy szolgáltatás nyújtása csoportazonosító szám alatt történt&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Tax number of group member, when the supply of goods or services is done under group identification number&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="communityVatNumber" type="common:CommunityVatNumberType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Közösségi adószám&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Community tax number&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="supplierName" type="common:SimpleText512NotBlankType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;NAM&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az eladó (szállító) neve&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Name of the seller (supplier)&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="supplierAddress" type="base:AddressType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az eladó (szállító) címe&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Address of the seller (supplier)&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="supplierBankAccountNumber" type="common:BankAccountNumberType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az eladó (szállító) bankszámlaszáma&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Bank account number of the seller (supplier)&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="individualExemption" type="xs:boolean"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Értéke true, amennyiben az eladó (szállító) alanyi ÁFA mentes&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Value is true if the seller (supplier) is individually exempted from VAT&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="exciseLicenceNum" type="common:SimpleText50NotBlankType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az eladó adóraktári engedélyének vagy jövedéki engedélyének száma (2016. évi LXVIII. tv.)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Number of supplier’s tax warehouse license or excise license (Act LXVIII of 2016)&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">supplierTaxNumber</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="suppliertaxnumber4.html">supplierTaxNumber</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">groupMemberTaxNumber</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="groupmembertaxnumber3.html">groupMemberTaxNumber</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">communityVatNumber</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="communityvatnumber2.html">communityVatNumber</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">supplierName</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="suppliername3.html">supplierName</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">supplierAddress</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="supplieraddress1.html">supplierAddress</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">supplierBankAccountNumber</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="supplierbankaccountnumber1.html">supplierBankAccountNumber</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">individualExemption</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="individualexemption1.html">individualExemption</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">exciseLicenceNum</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="exciselicencenum1.html">exciseLicenceNum</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptExport<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

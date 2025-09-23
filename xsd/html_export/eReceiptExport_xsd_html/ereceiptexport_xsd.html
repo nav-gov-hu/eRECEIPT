@@ -1,0 +1,232 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs the schema eReceiptExport.xsd in eReceiptExport</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'ereceiptexport_xsd');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptExport
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>eReceiptExport.xsd</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Target Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_export.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/export</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>
+&lt;!--# Version: v1.1 2025/06/27--&gt;
+&lt;!--Created with Liquid Studio (https://www.liquid-technologies.com)--&gt;
+&lt;xs:schema xmlns:base="http://schemas.nav.gov.hu/ERECEIPT/1.1/base"
+           xmlns:reportMessage="http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage"
+           xmlns="http://schemas.nav.gov.hu/ERECEIPT/1.1/export"
+           xmlns:invoiceData="http://schemas.nav.gov.hu/OSA/3.0/data"
+           xmlns:documentData="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData"
+           xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common"
+           attributeFormDefault="unqualified" elementFormDefault="qualified"
+           targetNamespace="http://schemas.nav.gov.hu/ERECEIPT/1.1/export" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:import schemaLocation="../../eReceipt/1.0/invoiceData.xsd" namespace="http://schemas.nav.gov.hu/OSA/3.0/data" /&gt;
+  &lt;xs:import schemaLocation="../../eReceipt/1.1/eReceiptBase.xsd" namespace="http://schemas.nav.gov.hu/ERECEIPT/1.1/base" /&gt;
+  &lt;xs:import schemaLocation="../../eReceipt/1.1/reportMessage.xsd" namespace="http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage" /&gt;
+  &lt;xs:import schemaLocation="../../eReceipt/1.0/common.xsd" namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" /&gt;
+  &lt;xs:import schemaLocation="../../eReceipt/1.1/documentData.xsd" namespace="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData" /&gt;
+  &lt;xs:complexType name="ExportDataType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;Export elem típus&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="exportCounter" type="xs:nonNegativeInteger"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Az exportálandó elemek számozása 1-től monotonan nővekvő módon&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="elementVersion" type="xs:nonNegativeInteger"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Az exportálandó bizonylat típus verzió száma&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:choice minOccurs="0"&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name="documentClass" type="base:DocumentClassType"&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation xml:lang="hu"&gt;A beküldött bizonylat típusa (nyugta, számla, egyszerűsített számla, stb.)&lt;/xs:documentation&gt;
+              &lt;xs:documentation xml:lang="en"&gt;Type of document submitted (receipt, invoice, simplified invoice, etc.)&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:element name="documentEnvelope" type="base:SignedDocumentEnvelopeType"&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation xml:lang="hu"&gt;A bizonylat boríték a Fejlesztői dokumentációban meghatározott formátumban.&lt;/xs:documentation&gt;
+              &lt;xs:documentation xml:lang="en"&gt;Document envelope in the format specified in the Developer documentation.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name="reportClass" type="base:ReportClassType"&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation xml:lang="hu"&gt;A beküldött bizonylat típusa (pénztárjelentés, pénzmozgás bizonylat, stb.)&lt;/xs:documentation&gt;
+              &lt;xs:documentation xml:lang="en"&gt;The type of voucher submitted (cash report, cash flow voucher, etc.)&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:element name="reportEnvelope" type="base:SignedReportEnvelopeType"&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation xml:lang="hu"&gt;A riport adatai a Fejlesztői dokumentációban előírt formátumban.&lt;/xs:documentation&gt;
+              &lt;xs:documentation xml:lang="en"&gt;A riport adatai a Fejlesztői dokumentációban előírt formátumban.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:choice&gt;
+      &lt;xs:element name="searchKeyTimestamp" type="common:GenericTimestampType"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;A vevői alkalmazában generált keresőkulcs előállításának időpontja.&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;The time of generation of the search key generated in the customer's application.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="searchKey" type="xs:base64Binary"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;A vevői alkalmazában generált keresőkulcs értéke. &lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;The value of the search key generated in the customer's application. &lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="supplierName" type="common:SimpleText512NotBlankType" minOccurs="0"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Az eladó (szállító) neve&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;Name of the seller (supplier)&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="documentNumber" type="base:DocumentNumberType" minOccurs="0"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Dokumentum vagy módosító okirat sorszáma&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;Sequential number of the original document or modification document&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="documentGrossAmountHUF" type="base:MonetaryType" minOccurs="0"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;A bizonylat bruttó végösszege forintban&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;The gross total amount of the receipt is in HUF&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="issueEndDateTime" type="common:GenericTimestampType" minOccurs="0"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Időbélyeg, a bizonylat zárásának pontos ideje az AE órája szerint&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;Timestamp, the exact time of the document's closing according to the AE clock &lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="privateKey" type="xs:base64Binary"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;ECC privát kulcs&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="QRCodeSignature" type="xs:base64Binary" minOccurs="0"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;A QR kód aláírása BASE64 formátumban&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;QR code signature in BASE64 format&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="QRCodeSignCertSerial" type="xs:base64Binary" minOccurs="0"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;A QR kód aláírásához használt tanúsítvány sorozatszáma&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;The serial number of the certificate used to sign the QR code&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="ExportEnvelopeType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;Export boríték típus&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="exportTimestamp" type="common:GenericTimestampType"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Exportálás időpontja&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="numberOfElements" type="xs:nonNegativeInteger"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Kiexportált elemek darabszáma&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="exportVersion" type="xs:nonNegativeInteger"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Export verziószáma&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="exportName" type="common:SimpleText512NotBlankType"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Export állomány neve&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="exportElements" type="ExportDataType" minOccurs="1" maxOccurs="10000"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Exportálandó elemek&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:element name="ExportEnvelope"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;Export boríték&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:complexContent&gt;
+        &lt;xs:extension base="ExportEnvelopeType" /&gt;
+      &lt;/xs:complexContent&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="ComplexType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>ComplexTypes:</b></td>
+            </tr>
+            <tr id="ComplexType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="exportdatatype.html">ExportDataType</a></li>
+                     <li><a href="exportenvelopetype.html">ExportEnvelopeType</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="Element" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Elements:</b></td>
+            </tr>
+            <tr id="Element_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="exportenvelope.html">ExportEnvelope</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptExport<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

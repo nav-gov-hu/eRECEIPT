@@ -1,0 +1,172 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item DocumentNumberType in eDocumentStoreApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('SimpleType', 'documentnumbertype');
+                        --></script><div class="pageheader">
+         Documentation for eDocumentStoreApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>SimpleType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>DocumentNumberType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/base</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="ereceiptbase_xsd.html">eReceiptBase.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Dokumentum vagy módosító okirat sorszám típus
+Sequential number type of the original document or modification document</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap"></map><img src="images/documentnumbertype.png" border="0" alt="XSD Diagram of DocumentNumberType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:simpleType name="DocumentNumberType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Dokumentum vagy módosító okirat sorszám típus&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Sequential number type of the original document or modification document&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:restriction base="xs:string"&gt;
+    &lt;xs:maxLength value="100" /&gt;
+    &lt;xs:pattern value="((UK|EK|SZ|NY|PM|PJ|SA|FO|OT)-[A-Z][0-9]{8}/[0-9]{8}/[0-9]{4}/[0-9]{5})|((NN|NZ)-[A-Z][0-9]{8}/[0-9]{8}/[0-9]{4})"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;
+        NN - Napnyitás bizonylat
+        UK - Üzemanyagkártyás értékesítés
+        EK - Egészségkártyás értékesítés
+        SZ - Számla vagy Egyszerűsített számla
+        NY - Nyugta
+        PM - Pénzmozgás bizonylat
+        PJ - Pénztár jelentés
+        NZ - Napi forgalmi jelentés
+        SA - Szállodai átterhelés bizonylat
+        FO - Fogyasztási összesítő bizonylat
+        OT - Egyéb bizonylat
+        &lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;
+        NN - Day open report
+        UK - Fuel card sale
+        EK - Health Fund sale
+        SZ - Invoice or Simplified invoice
+        NY - Receipt
+        PM - Cashflow document
+        PJ - Cashregister report
+        NZ - Daily cashflow report
+        SA - Hotel deferred document
+        FO - Consumption summary
+        OT - Other document
+        &lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:pattern&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="facets" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Facets:</b></td>
+            </tr>
+            <tr id="facets_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Facet</td>
+                        <td class="last">Value</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>MaxLength</b></td>
+                        <td>100</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Pattern</b></td>
+                        <td>((UK|EK|SZ|NY|PM|PJ|SA|FO|OT)-[A-Z][0-9]{8}/[0-9]{8}/[0-9]{4}/[0-9]{5})|((NN|NZ)-[A-Z][0-9]{8}/[0-9]{8}/[0-9]{4})</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>DocumentNumberType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="documentnumber.html">documentNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="documentnumber1.html">documentNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="documentnumber2.html">documentNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="documentnumber3.html">documentNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="documentnumber4.html">documentNumber</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="documentnumber.html">documentNumber</a>, <a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="documentnumber1.html">documentNumber</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="documentnumber2.html">documentNumber</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="documentnumber3.html">documentNumber</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="documentnumber4.html">documentNumber</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eDocumentStoreApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs the schema eDocumentStoreMessage.xsd in eDocumentStoreApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'edocumentstoremessage_xsd');
+                        --></script><div class="pageheader">
+         Documentation for eDocumentStoreApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>eDocumentStoreMessage.xsd</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Target Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_message.html">http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.1/message</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;!--# Version: v1.1 2025/06/27--&gt;
+&lt;xs:schema targetNamespace="http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.1/message" elementFormDefault="qualified"
+           attributeFormDefault="unqualified" xmlns="http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.1/message"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common"&gt;
+  &lt;xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" schemaLocation="../../eReceipt/1.0/common.xsd"/&gt;
+  
+    &lt;xs:complexType name="BasicEDocumentStoreRequestType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;eNyugta rendszer specifikus általános kérés adatok&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;eReceipt specific basic request data&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexContent&gt;
+      &lt;xs:extension base="common:BasicHeaderType"/&gt;
+    &lt;/xs:complexContent&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:simpleType name="AtomicStringType8192"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;Atomi string típus 8192 hosszra&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;Atomic string type for 8192 length&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+      &lt;xs:minLength value="1"/&gt;
+      &lt;xs:maxLength value="8192"/&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+  &lt;xs:simpleType name="JwtTokenType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;JWT token típus&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;JWT token type&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:restriction base="AtomicStringType8192"&gt;
+      &lt;xs:pattern value=".*[^\s].*"/&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+
+&lt;/xs:schema&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="ComplexType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>ComplexTypes:</b></td>
+            </tr>
+            <tr id="ComplexType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="basicedocumentstorerequesttype.html">BasicEDocumentStoreRequestType</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="SimpleType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>SimpleTypes:</b></td>
+            </tr>
+            <tr id="SimpleType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="atomicstringtype8192.html">AtomicStringType8192</a></li>
+                     <li><a href="jwttokentype.html">JwtTokenType</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eDocumentStoreApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

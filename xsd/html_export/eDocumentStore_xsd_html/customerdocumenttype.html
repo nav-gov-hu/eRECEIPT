@@ -1,0 +1,181 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item CustomerDocumentType in eDocumentStoreApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'customerdocumenttype');
+                        --></script><div class="pageheader">
+         Documentation for eDocumentStoreApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>CustomerDocumentType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_documentmessage.html">http://schemas.nav.gov.hu/ERECEIPT/1.0/documentMessage</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="documentmessage_xsd.html">documentMessage.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>A vevőnek átadandó bizonylat és bizonylat melléklet adat típus.
+Business and additional data of the document for the customer.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="401,258,706,333" href="invoiceadditional.html" alt="Drilldown into invoiceAdditional"></area>
+                     <area shape="rect" coords="401,155,751,250" href="otherdocumentadditional.html" alt="Drilldown into otherDocumentAdditional"></area>
+                     <area shape="rect" coords="401,63,705,148" href="receiptadditional.html" alt="Drilldown into receiptAdditional"></area>
+                     <area shape="rect" coords="336,1,600,56" href="decryptkey.html" alt="Drilldown into decryptKey"></area></map><img src="images/customerdocumenttype.png" border="0" alt="XSD Diagram of CustomerDocumentType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="CustomerDocumentType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;A vevőnek átadandó bizonylat és bizonylat melléklet adat típus.&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Business and additional data of the document for the customer.&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="decryptKey" type="xs:base64Binary"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Független szimetrikus kulcs a bizonylat adatok kititkosításához.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Independent symmetric key for encryption of receipt data.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:choice&gt;
+      &lt;xs:element name="receiptAdditional" type="base:DocumentAdditionalDataType" minOccurs="0"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Nyugta melléklet, a nyugtán nem szereplő de ahhoz tartozó egyéb adatok, amelyet az eladó a vevővel szeretne megosztani. Például: garanciára vonatkozó adatok.&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;Additional information, other than that on the receipt, which the seller wishes to share with the buyer. For example: details of the guarantee.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="otherDocumentAdditional" type="base:DocumentAdditionalDataType" minOccurs="0"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Egyéb bizonylat melléklete, az egyéb bizonylaton nem szereplő, de ahhoz tartozó egyéb adatok, amelyet az eladó a vevővel szeretne megosztani. Például: garanciára vonatkozó adatok.&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;Additional document annex, other data not included in the other document but related to it, which the seller wishes to share with the buyer. For example: information relating to the guarantee.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="invoiceAdditional" type="base:DocumentAdditionalDataType" minOccurs="0"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Számla melléklete, a számlához tartozó egyéb adatok, amelyet az eladó a vevővel szeretne megosztani. Például: garanciára vonatkozó adatkok.&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;Additional information on the invoice, which the seller wishes to share with the buyer. For example: details of the guarantee.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:choice&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">decryptKey</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_documentmessage.html">nsB</a>:<a href="decryptkey.html">decryptKey</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">receiptAdditional</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_documentmessage.html">nsB</a>:<a href="receiptadditional.html">receiptAdditional</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">otherDocumentAdditional</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_documentmessage.html">nsB</a>:<a href="otherdocumentadditional.html">otherDocumentAdditional</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">invoiceAdditional</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_documentmessage.html">nsB</a>:<a href="invoiceadditional.html">invoiceAdditional</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>CustomerDocumentType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_0_documentmessage.html">nsB</a>:<a href="customerdocument.html">CustomerDocument</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_documentmessage.html">nsB</a>:<a href="customerdocument.html">CustomerDocument</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eDocumentStoreApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

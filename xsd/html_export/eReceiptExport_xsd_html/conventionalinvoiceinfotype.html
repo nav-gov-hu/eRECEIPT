@@ -1,0 +1,325 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item ConventionalInvoiceInfoType in eReceiptExport</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'conventionalinvoiceinfotype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptExport
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>ConventionalInvoiceInfoType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">http://schemas.nav.gov.hu/OSA/3.0/data</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="invoicedata_xsd.html">invoiceData.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>A számlafeldolgozást segítő, egyezményesen nevesített egyéb adatok
+Other conventionally named data to assist in invoice processing</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="384,885,553,940" href="ekaerids.html" alt="Drilldown into ekaerIds"></area>
+                     <area shape="rect" coords="384,823,605,878" href="itemnumbers.html" alt="Drilldown into itemNumbers"></area>
+                     <area shape="rect" coords="384,760,644,815" href="materialnumbers.html" alt="Drilldown into materialNumbers"></area>
+                     <area shape="rect" coords="384,698,647,753" href="glnnumberscustomer.html" alt="Drilldown into glnNumbersCustomer"></area>
+                     <area shape="rect" coords="384,636,639,691" href="glnnumberssupplier.html" alt="Drilldown into glnNumbersSupplier"></area>
+                     <area shape="rect" coords="384,562,800,629" href="generalledgeraccountnumbers.html" alt="Drilldown into generalLedgerAccountNumbers"></area>
+                     <area shape="rect" coords="384,499,634,554" href="projectnumbers.html" alt="Drilldown into projectNumbers"></area>
+                     <area shape="rect" coords="384,437,593,492" href="costcenters.html" alt="Drilldown into costCenters"></area>
+                     <area shape="rect" coords="384,375,597,430" href="dealercodes.html" alt="Drilldown into dealerCodes"></area>
+                     <area shape="rect" coords="384,312,736,367" href="customercompanycodes.html" alt="Drilldown into customerCompanyCodes"></area>
+                     <area shape="rect" coords="384,250,722,305" href="suppliercompanycodes.html" alt="Drilldown into supplierCompanyCodes"></area>
+                     <area shape="rect" coords="384,188,649,243" href="contractnumbers.html" alt="Drilldown into contractNumbers"></area>
+                     <area shape="rect" coords="384,125,617,180" href="shippingdates.html" alt="Drilldown into shippingDates"></area>
+                     <area shape="rect" coords="384,63,610,118" href="deliverynotes.html" alt="Drilldown into deliveryNotes"></area>
+                     <area shape="rect" coords="384,1,618,56" href="ordernumbers.html" alt="Drilldown into orderNumbers"></area></map><img src="images/conventionalinvoiceinfotype.png" border="0" alt="XSD Diagram of ConventionalInvoiceInfoType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="ConventionalInvoiceInfoType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;A számlafeldolgozást segítő, egyezményesen nevesített egyéb adatok&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Other conventionally named data to assist in invoice processing&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="orderNumbers" type="OrderNumbersType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Megrendelésszám(ok)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Order numbers&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="deliveryNotes" type="DeliveryNotesType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Szállítólevél szám(ok)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Delivery notes&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="shippingDates" type="ShippingDatesType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Szállítási dátum(ok)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Shipping dates&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="contractNumbers" type="ContractNumbersType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Szerződésszám(ok)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Contract numbers&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="supplierCompanyCodes" type="SupplierCompanyCodesType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az eladó vállalati kódja(i)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Company codes of the supplier&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="customerCompanyCodes" type="CustomerCompanyCodesType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A vevő vállalati kódja(i)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Company codes of the customer&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="dealerCodes" type="DealerCodesType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Beszállító kód(ok)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Dealer codes&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="costCenters" type="CostCentersType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Költséghely(ek)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Cost centers&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="projectNumbers" type="ProjectNumbersType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Projektszám(ok)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Project numbers&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="generalLedgerAccountNumbers" type="GeneralLedgerAccountNumbersType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Főkönyvi számlaszám(ok)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;General ledger account numbers&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="glnNumbersSupplier" type="GlnNumbersType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Kiállítói globális helyazonosító szám(ok)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Supplier's global location numbers&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="glnNumbersCustomer" type="GlnNumbersType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Vevői globális helyazonosító szám(ok)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Customer's global location numbers&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="materialNumbers" type="MaterialNumbersType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Anyagszám(ok)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Material numbers&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="itemNumbers" type="ItemNumbersType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Cikkszám(ok)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Item number(s)&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="ekaerIds" type="EkaerIdsType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;EKÁER azonosító(k)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;EKAER ID-s&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">orderNumbers</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="ordernumbers.html">orderNumbers</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">deliveryNotes</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="deliverynotes.html">deliveryNotes</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">shippingDates</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="shippingdates.html">shippingDates</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">contractNumbers</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="contractnumbers.html">contractNumbers</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">supplierCompanyCodes</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="suppliercompanycodes.html">supplierCompanyCodes</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">customerCompanyCodes</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="customercompanycodes.html">customerCompanyCodes</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dealerCodes</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="dealercodes.html">dealerCodes</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">costCenters</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="costcenters.html">costCenters</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">projectNumbers</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="projectnumbers.html">projectNumbers</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">generalLedgerAccountNumbers</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="generalledgeraccountnumbers.html">generalLedgerAccountNumbers</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">glnNumbersSupplier</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="glnnumberssupplier.html">glnNumbersSupplier</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">glnNumbersCustomer</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="glnnumberscustomer.html">glnNumbersCustomer</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">materialNumbers</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="materialnumbers.html">materialNumbers</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">itemNumbers</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="itemnumbers.html">itemNumbers</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">ekaerIds</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="ekaerids.html">ekaerIds</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>ConventionalInvoiceInfoType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="conventionalinvoiceinfo.html">conventionalInvoiceInfo</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="conventionallineinfo.html">conventionalLineInfo</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="conventionalinvoiceinfo.html">conventionalInvoiceInfo</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="conventionallineinfo.html">conventionalLineInfo</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptExport<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

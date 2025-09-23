@@ -1,0 +1,176 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item TaxpayerDataType in eDocumentStoreApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'taxpayerdatatype');
+                        --></script><div class="pageheader">
+         Documentation for eDocumentStoreApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>TaxpayerDataType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="communicationdata_xsd.html">communicationData.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Az adózó lekérdezés válasz adatai típus
+Response data of the taxpayer query type</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="270,492,573,547" href="taxpayeraddresslist.html" alt="Drilldown into taxpayerAddressList"></area>
+                     <area shape="rect" coords="270,382,523,485" href="vatgroupmembership.html" alt="Drilldown into vatGroupMembership"></area>
+                     <area shape="rect" coords="250,261,472,375" href="incorporation.html" alt="Drilldown into incorporation"></area>
+                     <area shape="rect" coords="250,199,478,254" href="taxnumberdetail.html" alt="Drilldown into taxNumberDetail"></area>
+                     <area shape="rect" coords="270,100,582,192" href="taxpayershortname.html" alt="Drilldown into taxpayerShortName"></area>
+                     <area shape="rect" coords="250,1,532,93" href="taxpayername.html" alt="Drilldown into taxpayerName"></area></map><img src="images/taxpayerdatatype.png" border="0" alt="XSD Diagram of TaxpayerDataType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="TaxpayerDataType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Az adózó lekérdezés válasz adatai típus&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Response data of the taxpayer query type&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="taxpayerName" type="common:SimpleText512NotBlankType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az adózó neve&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Name of the taxpayer&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="taxpayerShortName" type="common:SimpleText200NotBlankType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az adózó rövidített neve&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Shortened name of the taxpayer&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="taxNumberDetail" type="base:TaxNumberType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az adószám részletes adatai&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Detailed data of the tax number&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="incorporation" type="IncorporationType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Gazdasági típus&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Incorporation type&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="vatGroupMembership" type="common:TaxpayerIdType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az adózó ÁFA csoport tagsága&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;VAT group membership of the taxpayer&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="taxpayerAddressList" type="TaxpayerAddressListType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Adózói cím lista típus&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Taxpayer address list type&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">taxpayerName</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="taxpayername.html">taxpayerName</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">taxpayerShortName</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="taxpayershortname.html">taxpayerShortName</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">taxNumberDetail</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="taxnumberdetail.html">taxNumberDetail</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">incorporation</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="incorporation.html">incorporation</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">vatGroupMembership</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="vatgroupmembership.html">vatGroupMembership</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">taxpayerAddressList</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="taxpayeraddresslist.html">taxpayerAddressList</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eDocumentStoreApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

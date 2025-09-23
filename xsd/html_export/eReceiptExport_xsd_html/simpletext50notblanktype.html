@@ -1,0 +1,292 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item SimpleText50NotBlankType in eReceiptExport</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('SimpleType', 'simpletext50notblanktype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptExport
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>SimpleType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>SimpleText50NotBlankType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">http://schemas.nav.gov.hu/NTCA/1.0/common</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="common_xsd.html">common.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Legfeljebb 50 karaktert tartalmazó szöveg típus
+String of maximum 50 characters</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap"></map><img src="images/simpletext50notblanktype.png" border="0" alt="XSD Diagram of SimpleText50NotBlankType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:simpleType name="SimpleText50NotBlankType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Legfeljebb 50 karaktert tartalmazó szöveg típus&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;String of maximum 50 characters&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:restriction base="AtomicStringType50"&gt;
+    &lt;xs:pattern value=".*[^\s].*" /&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="facets" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Facets:</b></td>
+            </tr>
+            <tr id="facets_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Facet</td>
+                        <td class="last">Value</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Pattern</b></td>
+                        <td>.*[^\s].*</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul><li><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="atomicstringtype50.html">AtomicStringType50</a><ul>
+                     <li><b><i>SimpleText50NotBlankType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="errorcode.html">errorCode</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="cryptotype1.html">cryptoType</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="invoicenumber.html">invoiceNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="invoicenumber1.html">invoiceNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="invoicenumber2.html">invoiceNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="originalinvoicenumber.html">originalInvoiceNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="invoicenumber3.html">invoiceNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="originalinvoicenumber1.html">originalInvoiceNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="exchangetoken.html">exchangeToken</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="exchangetoken1.html">exchangeToken</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="originalinvoicenumber2.html">originalInvoiceNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="originalinvoicenumber3.html">originalInvoiceNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="softwaredevtaxnumber.html">softwareDevTaxNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="softwarename.html">softwareName</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="building.html">building</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="door.html">door</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="floor.html">floor</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="lotnumber.html">lotNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="number.html">number</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="publicplacecategory.html">publicPlaceCategory</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="region.html">region</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="staircase.html">staircase</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="region1.html">region</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="advanceoriginalinvoice.html">advanceOriginalInvoice</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="thirdstatetaxid.html">thirdStateTaxId</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="case.html">case</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="invoicenumber4.html">invoiceNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="originalinvoicenumber4.html">originalInvoiceNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="unitofmeasureown.html">unitOfMeasureOwn</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="brand.html">brand</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="evidencedocumentno.html">evidenceDocumentNo</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="exciselicencenum.html">exciseLicenceNum</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="case1.html">case</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="productid.html">productId</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="softwaredevtaxnumber1.html">softwareDevTaxNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="softwarename1.html">softwareName</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="originaldocumentnumber.html">originalDocumentNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="unitofmeasureown1.html">unitOfMeasureOwn</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="exciselicencenum1.html">exciseLicenceNum</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="thirdstatetaxid1.html">thirdStateTaxId</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="building1.html">building</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="door1.html">door</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="floor1.html">floor</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="lotnumber1.html">lotNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="number1.html">number</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="publicplacecategory1.html">publicPlaceCategory</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="region2.html">region</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="staircase1.html">staircase</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="authorizationnumber.html">authorizationNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="fuelcardnumber.html">fuelCardNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="vehicleregistrationnumber1.html">vehicleRegistrationNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="healthfundcardnumber.html">healthFundCardNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="healthfundcode.html">healthFundCode</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="healthfundmembernumber.html">healthFundMemberNumber</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="healthfundname.html">healthFundName</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="region3.html">region</a></li>
+                     </ul></ul></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="advanceoriginalinvoice.html">advanceOriginalInvoice</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="authorizationnumber.html">authorizationNumber</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="brand.html">brand</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="building.html">building</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="building1.html">building</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="case.html">case</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="case1.html">case</a>, <a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="cryptotype1.html">cryptoType</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="door.html">door</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="door1.html">door</a>, <a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="errorcode.html">errorCode</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="evidencedocumentno.html">evidenceDocumentNo</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="exchangetoken.html">exchangeToken</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="exchangetoken1.html">exchangeToken</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="exciselicencenum.html">exciseLicenceNum</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="exciselicencenum1.html">exciseLicenceNum</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="floor.html">floor</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="floor1.html">floor</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="fuelcardnumber.html">fuelCardNumber</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="healthfundcardnumber.html">healthFundCardNumber</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="healthfundcode.html">healthFundCode</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="healthfundmembernumber.html">healthFundMemberNumber</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="healthfundname.html">healthFundName</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="invoicenumber.html">invoiceNumber</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="invoicenumber1.html">invoiceNumber</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="invoicenumber2.html">invoiceNumber</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="invoicenumber3.html">invoiceNumber</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="invoicenumber4.html">invoiceNumber</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="lotnumber.html">lotNumber</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="lotnumber1.html">lotNumber</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="number.html">number</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="number1.html">number</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="originaldocumentnumber.html">originalDocumentNumber</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="originalinvoicenumber.html">originalInvoiceNumber</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="originalinvoicenumber1.html">originalInvoiceNumber</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="originalinvoicenumber2.html">originalInvoiceNumber</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="originalinvoicenumber3.html">originalInvoiceNumber</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="originalinvoicenumber4.html">originalInvoiceNumber</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="productid.html">productId</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="publicplacecategory.html">publicPlaceCategory</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="publicplacecategory1.html">publicPlaceCategory</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="region.html">region</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="region1.html">region</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="region2.html">region</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="region3.html">region</a><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="softwaredevtaxnumber.html">softwareDevTaxNumber</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="softwaredevtaxnumber1.html">softwareDevTaxNumber</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="softwarename.html">softwareName</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="softwarename1.html">softwareName</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="staircase.html">staircase</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="staircase1.html">staircase</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="thirdstatetaxid.html">thirdStateTaxId</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="thirdstatetaxid1.html">thirdStateTaxId</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="unitofmeasureown.html">unitOfMeasureOwn</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="unitofmeasureown1.html">unitOfMeasureOwn</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="vehicleregistrationnumber1.html">vehicleRegistrationNumber</a>, 
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptExport<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

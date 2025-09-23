@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+    <head>
+        <title>XML Schema Documenatation Menu</title> 
+        <script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script>    
+        <script type="text/javascript" src="scripts/xmlstudio.js"></script>    
+        <script type="text/javascript" src="searchindex.js"></script>    
+        <link href="styles/site.css" rel="stylesheet" type="text/css" /> 
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                setTabs();
+                loadTree(null,null);
+            });
+    
+        	var filenames = null;
+        	var keywordIndex = null;
+
+        	function getSearchJS(searchBoxID, ulResults) 
+            {
+        		if (filenames == null) {
+        		    filenames = CreateFileRefs();
+        		}
+        		if (keywordIndex == null) {
+        		    keywordIndex = CreateWordIndex();
+        		}
+
+        		var data = '';
+        		var searchText = $("#" + searchBoxID).attr("value");
+        		var searchTerms = searchText.split(' ');
+        		var fileIndexResults = new Array();
+
+        		for (var sti = 0; sti < searchTerms.length; sti++) {
+        		    var searchTerm = trim(searchTerms[sti]).toLowerCase();
+
+        		    for (var i = 0; i < keywordIndex.length; i++) {
+        		        if (keywordIndex[i][0].indexOf(searchTerm) != -1) {
+        		            fileIndexResults = fileIndexResults.concat(keywordIndex[i][1]);
+        		        }
+        		    }
+        		}
+
+        		fileIndexResults = unique(fileIndexResults);
+        		for (var ri = 0; ri < fileIndexResults.length; ri++) {
+        		    var resultOffset = fileIndexResults[ri];
+        		    data += "<li><a href='" + filenames[resultOffset][1] + "' target='ContentFrame'>" + filenames[resultOffset][0] + "</a></li>";
+        		}
+
+        		if (data == '')
+        		    data = "<li>No Results</li>";
+
+        		$("#" + ulResults).html(data);
+        	}
+		</script>
+    </head> 
+    <body> 
+        <form action="menu.html">
+            <ul class="tabs"> 
+                <li><a href="#tab1">Index</a></li> 
+                <li><a href="#tab2">Search</a></li> 
+            </ul> 
+            <div class="tab_container"> 
+                <div id="tab1" class="tab_content"> 
+                
+                    <div> 
+                        <ul id="ulMenu" class="treeview"></ul> 
+                    </div>           
+                </div> 
+
+                <div id="tab2" class="tab_content"> 
+                    <input type="text" id="txtSearch"/> 
+                    <input type="button" id="cmdSearch" value="Search" onclick="getSearchJS('txtSearch','ulSearch');"/>                
+                    <div style="margin-top:10px;"> 
+                        <ul id="ulSearch" class="search"></ul> 
+                    </div> 
+                </div> 
+            </div>    
+        </form>
+    </body> 
+</html> 

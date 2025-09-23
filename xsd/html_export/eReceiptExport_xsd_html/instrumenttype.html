@@ -1,0 +1,239 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item InstrumentType in eReceiptExport</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'instrumenttype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptExport
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>InstrumentType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/base</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="ereceiptbase_xsd.html">eReceiptBase.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Fizetőeszköz típusa
+Instrument type</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="224,312,453,367" href="otherpayment.html" alt="Drilldown into otherPayment"></area>
+                     <area shape="rect" coords="214,250,367,305" href="aframount.html" alt="Drilldown into afrAmount"></area>
+                     <area shape="rect" coords="214,188,403,243" href="szepcardamount.html" alt="Drilldown into szepCardAmount"></area>
+                     <area shape="rect" coords="214,125,424,180" href="cardpaymentamount.html" alt="Drilldown into cardPaymentAmount"></area>
+                     <area shape="rect" coords="219,63,474,118" href="foreigncurrency.html" alt="Drilldown into foreignCurrency"></area>
+                     <area shape="rect" coords="214,1,397,56" href="cashhufamount.html" alt="Drilldown into cashHufAmount"></area></map><img src="images/instrumenttype.png" border="0" alt="XSD Diagram of InstrumentType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="InstrumentType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Fizetőeszköz típusa&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Instrument type&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="cashHufAmount" type="xs:int" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;FE1&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Forint készpénz forintban&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Cash in HUF&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="foreignCurrency" type="ForeignCurrencyType" minOccurs="0" maxOccurs="10"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Valutában befizetett összeg adatai&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Foreign currency amount data&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="cardPaymentAmount" type="xs:int" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;FE2&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Bankkártyás bevételek forintban&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Card amount in HUF&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="szepCardAmount" type="xs:int" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;SZÉP kártya bevételek forintban&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;SZÉP Card amount in HUF&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="afrAmount" type="xs:int" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;AFR bevételek&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Immediate payment&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="otherPayment" type="OtherPaymentType" minOccurs="0" maxOccurs="100"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Egyéb fizetőeszközben megszerzett bevételek&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Other payment amount&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">cashHufAmount</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="cashhufamount.html">cashHufAmount</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">foreignCurrency</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="foreigncurrency.html">foreignCurrency</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">10</td>
+                     </tr>
+                     <tr>
+                        <td class="first">cardPaymentAmount</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="cardpaymentamount.html">cardPaymentAmount</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">szepCardAmount</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="szepcardamount.html">szepCardAmount</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">afrAmount</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="aframount.html">afrAmount</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">otherPayment</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="otherpayment.html">otherPayment</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">100</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>InstrumentType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="paymentinstruments.html">paymentInstruments</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="balancechange.html">balanceChange</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="balancechange1.html">balanceChange</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="balancechange2.html">balanceChange</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="openbalance.html">openBalance</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="balancechange3.html">balanceChange</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="balancechange.html">balanceChange</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="balancechange1.html">balanceChange</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="balancechange2.html">balanceChange</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="balancechange3.html">balanceChange</a><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="openbalance.html">openBalance</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="paymentinstruments.html">paymentInstruments</a>, 
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptExport<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item LineType in eReceiptExport</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'linetype1');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptExport
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>LineType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="documentdata_xsd.html">documentData.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>A dokumentum tételek (termék vagy szolgáltatás) adatait tartalmazó típus
+Field type including data of document items (product or service)</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="401,1292,658,1347" href="additionallinedata1.html" alt="Drilldown into additionalLineData"></area>
+                     <area shape="rect" coords="376,1105,570,1285" href="itemnature.html" alt="Drilldown into itemNature"></area>
+                     <area shape="rect" coords="396,1042,724,1097" href="lineamountsdocument.html" alt="Drilldown into lineAmountsDocument"></area>
+                     <area shape="rect" coords="396,954,589,1035" href="unitpricehuf1.html" alt="Drilldown into unitPriceHUF"></area>
+                     <area shape="rect" coords="396,866,619,947" href="unitprice1.html" alt="Drilldown into unitPrice"></area>
+                     <area shape="rect" coords="396,767,698,859" href="unitofmeasureown1.html" alt="Drilldown into unitOfMeasureOwn"></area>
+                     <area shape="rect" coords="396,569,680,760" href="unitofmeasure2.html" alt="Drilldown into unitOfMeasure"></area>
+                     <area shape="rect" coords="396,481,564,562" href="quantity1.html" alt="Drilldown into quantity"></area>
+                     <area shape="rect" coords="396,381,683,473" href="linedescription1.html" alt="Drilldown into lineDescription"></area>
+                     <area shape="rect" coords="396,250,697,374" href="linenatureindicator1.html" alt="Drilldown into lineNatureIndicator"></area>
+                     <area shape="rect" coords="396,188,626,243" href="productcodes1.html" alt="Drilldown into productCodes"></area>
+                     <area shape="rect" coords="396,89,569,181" href="eancode.html" alt="Drilldown into EANCode"></area>
+                     <area shape="rect" coords="376,1,580,82" href="linenumber1.html" alt="Drilldown into lineNumber"></area></map><img src="images/linetype1.png" border="0" alt="XSD Diagram of LineType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="LineType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;A dokumentum tételek (termék vagy szolgáltatás) adatait tartalmazó típus&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Field type including data of document items (product or service)&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="lineNumber" type="base:LineNumberType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A tétel sorszáma&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Sequential number of the item&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="EANCode" type="base:EANType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;EAN kód (európai gyártmánykód)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;EAN code (European Article Numbering)&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="productCodes" type="ProductCodesType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Termékkódok&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Product codes&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="lineNatureIndicator" type="LineNatureIndicatorType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Adott tételsor termékértékesítés vagy szolgáltatás nyújtás jellegének jelzése&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Indication of the nature of the supply of goods or services on a given line&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="lineDescription" type="common:SimpleText512NotBlankType" minOccurs="1"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;NA&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A termék vagy szolgáltatás megnevezése&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Name / description of the product or service&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="quantity" type="QuantityType" minOccurs="1"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;QY&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Mennyiség&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Quantity&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="unitOfMeasure" type="communication:UnitOfMeasureType" minOccurs="1"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;IU&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A dokumentumon szereplő mennyiségi egység kanonikus kifejezése&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Canonical representation of the unit of measure of the document&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="unitOfMeasureOwn" type="common:SimpleText50NotBlankType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A dokumentumon szereplő mennyiségi egység literális kifejezése&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Literal unit of measure of the document&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="unitPrice" type="QuantityType" minOccurs="1"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;UN&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Egységár a dokumentum pénznemében&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Unit price expressed in the currency of the document&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="unitPriceHUF" type="QuantityType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;SU&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Egységár forintban&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Unit price expressed in HUF&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="lineAmountsDocument" type="LineAmountsDocumentType" minOccurs="1"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Dokumentum esetén kitöltendő tétel érték adatok&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Item value data to be completed in case of document&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="itemNature" type="base:ItemNatureType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;TY&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az adott tétel jellege&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Nature of the current item&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="additionalLineData" type="base:AdditionalDataType" minOccurs="0" maxOccurs="10"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A termék/szolgáltatás tételhez kapcsolódó, további adat&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Other data in relation to the product / service item&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">lineNumber</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="linenumber1.html">lineNumber</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">EANCode</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="eancode.html">EANCode</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">productCodes</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="productcodes1.html">productCodes</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">lineNatureIndicator</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="linenatureindicator1.html">lineNatureIndicator</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">lineDescription</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="linedescription1.html">lineDescription</a></td>
+                        <td class="mid">1</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">quantity</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="quantity1.html">quantity</a></td>
+                        <td class="mid">1</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">unitOfMeasure</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="unitofmeasure2.html">unitOfMeasure</a></td>
+                        <td class="mid">1</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">unitOfMeasureOwn</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="unitofmeasureown1.html">unitOfMeasureOwn</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">unitPrice</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="unitprice1.html">unitPrice</a></td>
+                        <td class="mid">1</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">unitPriceHUF</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="unitpricehuf1.html">unitPriceHUF</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">lineAmountsDocument</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="lineamountsdocument.html">lineAmountsDocument</a></td>
+                        <td class="mid">1</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">itemNature</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="itemnature.html">itemNature</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">additionalLineData</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="additionallinedata1.html">additionalLineData</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">10</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>LineType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="line2.html">line</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="line2.html">line</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptExport<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

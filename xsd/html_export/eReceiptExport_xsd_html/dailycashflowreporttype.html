@@ -1,0 +1,338 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item DailyCashFlowReportType in eReceiptExport</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'dailycashflowreporttype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptExport
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>DailyCashFlowReportType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="reportmessage_xsd.html">reportMessage.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Napi forgalmi jelentés típus
+Daily cashflow report type</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="253,841,533,896" href="sumcommerceamount.html" alt="Drilldown into sumCommerceAmount"></area>
+                     <area shape="rect" coords="273,778,612,833" href="dailyinvoicemodification.html" alt="Drilldown into dailyInvoiceModification"></area>
+                     <area shape="rect" coords="273,716,613,771" href="dailyinvoicecancellation.html" alt="Drilldown into dailyInvoiceCancellation"></area>
+                     <area shape="rect" coords="273,654,545,709" href="dailyinvoice.html" alt="Drilldown into dailyInvoice"></area>
+                     <area shape="rect" coords="273,591,666,646" href="dailysimplifiedinvoicemodification.html" alt="Drilldown into dailySimplifiedInvoiceModification"></area>
+                     <area shape="rect" coords="273,529,667,584" href="dailysimplifiedinvoicecancellation.html" alt="Drilldown into dailySimplifiedInvoiceCancellation"></area>
+                     <area shape="rect" coords="273,466,599,521" href="dailysimplifiedinvoice.html" alt="Drilldown into dailySimplifiedInvoice"></area>
+                     <area shape="rect" coords="273,404,594,459" href="dailyreceiptmodification.html" alt="Drilldown into dailyReceiptModification"></area>
+                     <area shape="rect" coords="273,342,594,397" href="dailyreceiptcancellation.html" alt="Drilldown into dailyReceiptCancellation"></area>
+                     <area shape="rect" coords="273,279,527,334" href="dailyreceipt.html" alt="Drilldown into dailyReceipt"></area>
+                     <area shape="rect" coords="253,160,560,272" href="closurecounter.html" alt="Drilldown into closureCounter"></area>
+                     <area shape="rect" coords="253,63,553,153" href="reportnumber3.html" alt="Drilldown into reportNumber"></area>
+                     <area shape="rect" coords="253,1,475,56" href="reportheader3.html" alt="Drilldown into reportHeader"></area></map><img src="images/dailycashflowreporttype.png" border="0" alt="XSD Diagram of DailyCashFlowReportType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="DailyCashFlowReportType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:appinfo&gt;
+      &lt;legacyMapping&gt;Napi forgalmi jelentés (NFN)&lt;/legacyMapping&gt;
+    &lt;/xs:appinfo&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Napi forgalmi jelentés típus&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Daily cashflow report type&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="reportHeader" type="base:ReportHeaderType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Riportoknál alkalmazott általános fejadatok&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;General header data used for reports&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="reportNumber" type="base:DocumentNumberType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Bizonylatszám.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Document number.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="closureCounter" type="base:Digit4Type"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;ZSZ&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Zárás sorszáma négy karakteren, szükség esetén vezető nullákkal feltöltve.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;e-Cash register closing serial number in four characters, filled with leading zeros if necessary.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="dailyReceipt" type="base:DailyCashFlowDetailType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Napi nyugták adatai.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Daily receipt data.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="dailyReceiptCancellation" type="base:DailyCashFlowDetailType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Napi nyugta érvénytelenítések adatai.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Daily receipt cancellation data.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="dailyReceiptModification" type="base:DailyCashFlowDetailType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Napi nyugta módosítások adatai.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Daily receipt modification data.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="dailySimplifiedInvoice" type="base:DailyCashFlowDetailListType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Napi egyszerűsített számlák adatai.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Daily simplified invoice data.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="dailySimplifiedInvoiceCancellation" type="base:DailyCashFlowDetailListType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Napi egyszerűsített számla érvénytelenítések adatai.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Daily simplified invoice cancellation data.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="dailySimplifiedInvoiceModification" type="base:DailyCashFlowDetailListType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Napi egyszerűsített számla módosítások adatai.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Daily simplified invoice modification data.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="dailyInvoice" type="base:DailyCashFlowDetailListType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Napi számlák adatai.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Daily invoice data.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="dailyInvoiceCancellation" type="base:DailyCashFlowDetailListType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Napi számla érvénytelenítések adatai.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Daily invoice cancellation data.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="dailyInvoiceModification" type="base:DailyCashFlowDetailListType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Napi számla módosítások adatai.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Daily invoice modification data.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="sumCommerceAmount" type="xs:nonNegativeInteger"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Göngyölített forgalom.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Consolidated cash flow.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">reportHeader</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="reportheader3.html">reportHeader</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">reportNumber</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="reportnumber3.html">reportNumber</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">closureCounter</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="closurecounter.html">closureCounter</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dailyReceipt</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="dailyreceipt.html">dailyReceipt</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dailyReceiptCancellation</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="dailyreceiptcancellation.html">dailyReceiptCancellation</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dailyReceiptModification</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="dailyreceiptmodification.html">dailyReceiptModification</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dailySimplifiedInvoice</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="dailysimplifiedinvoice.html">dailySimplifiedInvoice</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dailySimplifiedInvoiceCancellation</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="dailysimplifiedinvoicecancellation.html">dailySimplifiedInvoiceCancellation</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dailySimplifiedInvoiceModification</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="dailysimplifiedinvoicemodification.html">dailySimplifiedInvoiceModification</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dailyInvoice</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="dailyinvoice.html">dailyInvoice</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dailyInvoiceCancellation</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="dailyinvoicecancellation.html">dailyInvoiceCancellation</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dailyInvoiceModification</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="dailyinvoicemodification.html">dailyInvoiceModification</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">sumCommerceAmount</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="sumcommerceamount.html">sumCommerceAmount</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>DailyCashFlowReportType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="dailycashflowreport.html">DailyCashFlowReport</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="dailycashflowreport.html">DailyCashFlowReport</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptExport<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

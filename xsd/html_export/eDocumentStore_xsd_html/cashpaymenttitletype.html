@@ -1,0 +1,317 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item CashPaymentTitleType in eDocumentStoreApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('SimpleType', 'cashpaymenttitletype');
+                        --></script><div class="pageheader">
+         Documentation for eDocumentStoreApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>SimpleType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>CashPaymentTitleType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/base</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="ereceiptbase_xsd.html">eReceiptBase.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Pénztári befizetés-kifizetés vagy fizetőeszköz csere jogcímei típus
+Cash payment title type</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap"></map><img src="images/cashpaymenttitletype.png" border="0" alt="XSD Diagram of CashPaymentTitleType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:simpleType name="CashPaymentTitleType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Pénztári befizetés-kifizetés vagy fizetőeszköz csere jogcímei típus&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Cash payment title type&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:restriction base="common:AtomicStringType15"&gt;
+    &lt;xs:enumeration value="01"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Váltópénz bevitel&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Cash coin input&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="02"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Pénztáros pénzfelvétel&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Withdraw by cashier (in)&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="03"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Díjbeszedés&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Collection&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="04"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Sorsjegy eladás&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Sale of lottery ticket&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="05"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Előleg&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Advance payment&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="06"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Pénztár hiány&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Cash deficit&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="07"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Borravaló&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Tip&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="08"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Egyéb befizetés&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Other payment (in)&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="31"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Fölözés&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Skimming&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="32"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Pénztáros levétel&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Withdraw by cashier (out)&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="33"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Utalvány kivét&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Voucher take out&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="34"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Ajándékkártya kivét&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Gift card take out&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="35"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Bérkifizetés&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Salary payment&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="36"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Munkabér előleg&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Pre-payment of salary&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="37"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Postaköltség&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Postal cost&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="38"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Egyéb rezsi&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Other costs&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="39"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Áruvásárlás&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Purchasing of goods &lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="40"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Záróösszeg levétel&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Withdraw of closing balance&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="41"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Egyéb kifizetés&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Other payments (out)&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="42"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Készpénzfelvétel&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Cashback&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="60"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Fizetőeszköz csere&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Change of payment instrument&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="facets" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Facets:</b></td>
+            </tr>
+            <tr id="facets_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Facet</td>
+                        <td class="last">Value</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>01</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>02</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>03</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>04</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>05</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>06</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>07</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>08</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>31</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>32</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>33</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>34</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>35</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>36</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>37</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>38</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>39</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>40</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>41</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>42</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>60</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul><li><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="atomicstringtype15.html">AtomicStringType15</a><ul>
+                     <li><b><i>CashPaymentTitleType</i></b></li></ul></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eDocumentStoreApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

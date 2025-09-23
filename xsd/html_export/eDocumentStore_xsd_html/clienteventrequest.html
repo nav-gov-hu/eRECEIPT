@@ -1,0 +1,200 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item ClientEventRequest in eDocumentStoreApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Element', 'clienteventrequest');
+                        --></script><div class="pageheader">
+         Documentation for eDocumentStoreApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>Element</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>ClientEventRequest</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.1/api</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Type:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="clienteventrequesttype.html">ClientEventRequestType</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="edocumentstoreapi_xsd.html">eDocumentStoreApi.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Vevői applikációk számára eseménybeküldést lehetővé tevő szolgáltatás kérés objektuma.
+A service request object that allows client applications to submit events.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="458,1073,760,1153" href="issueenddatetime.html" alt="Drilldown into issueEndDateTime"></area>
+                     <area shape="rect" coords="458,975,758,1065" href="documentnumber.html" alt="Drilldown into documentNumber"></area>
+                     <area shape="rect" coords="458,913,742,968" href="searchkey.html" alt="Drilldown into searchKey"></area>
+                     <area shape="rect" coords="458,826,753,906" href="searchkeytimestamp.html" alt="Drilldown into searchKeyTimestamp"></area>
+                     <area shape="rect" coords="413,727,710,819" href="eventdescription.html" alt="Drilldown into eventDescription"></area>
+                     <area shape="rect" coords="393,628,661,720" href="eventcode.html" alt="Drilldown into eventCode"></area>
+                     <area shape="rect" coords="393,551,660,621" href="eventtimestamp.html" alt="Drilldown into eventTimestamp"></area>
+                     <area shape="rect" coords="453,384,691,465" href="headerversion.html" alt="Drilldown into headerVersion"></area>
+                     <area shape="rect" coords="433,275,732,376" href="requestversion.html" alt="Drilldown into requestVersion"></area>
+                     <area shape="rect" coords="433,198,667,268" href="timestamp.html" alt="Drilldown into timestamp"></area>
+                     <area shape="rect" coords="433,79,729,191" href="requestid.html" alt="Drilldown into requestId"></area>
+                     <area shape="rect" coords="368,54,740,506" href="basicheadertype.html" alt="Drilldown into BasicHeaderType"></area>
+                     <area shape="rect" coords="348,28,748,545" href="basicedocumentstorerequesttype.html" alt="Drilldown into BasicEDocumentStoreRequestType"></area>
+                     <area shape="rect" coords="328,2,768,1197" href="clienteventrequesttype.html" alt="Drilldown into ClientEventRequestType"></area></map><img src="images/clienteventrequest.png" border="0" alt="XSD Diagram of ClientEventRequest" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:element name="ClientEventRequest"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Vevői applikációk számára eseménybeküldést lehetővé tevő szolgáltatás kérés objektuma.&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;A service request object that allows client applications to submit events.&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:complexType&gt;
+    &lt;xs:complexContent&gt;
+      &lt;xs:extension base="ClientEventRequestType" /&gt;
+    &lt;/xs:complexContent&gt;
+  &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">requestId</td>
+                        <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="requestid.html">requestId</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">timestamp</td>
+                        <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="timestamp.html">timestamp</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">requestVersion</td>
+                        <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="requestversion.html">requestVersion</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">headerVersion</td>
+                        <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="headerversion.html">headerVersion</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">eventTimestamp</td>
+                        <td><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="eventtimestamp.html">eventTimestamp</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">eventCode</td>
+                        <td><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="eventcode.html">eventCode</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">eventDescription</td>
+                        <td><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="eventdescription.html">eventDescription</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">searchKeyTimestamp</td>
+                        <td><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="searchkeytimestamp.html">searchKeyTimestamp</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">searchKey</td>
+                        <td><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="searchkey.html">searchKey</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">documentNumber</td>
+                        <td><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="documentnumber.html">documentNumber</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">issueEndDateTime</td>
+                        <td><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="issueenddatetime.html">issueEndDateTime</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul><li><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="basicheadertype.html">BasicHeaderType</a><ul><li><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_message.html">message</a>:<a href="basicedocumentstorerequesttype.html">BasicEDocumentStoreRequestType</a><ul><li><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="clienteventrequesttype.html">ClientEventRequestType</a><ul>
+                     <li><b><i>ClientEventRequest</i></b></li></ul></li></ul></li></ul></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eDocumentStoreApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

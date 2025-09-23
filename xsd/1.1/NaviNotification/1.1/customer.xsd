@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://schemas.nav.gov.hu/NAVINOTIFICATION/1.1/customer"
+           xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common"
+           targetNamespace="http://schemas.nav.gov.hu/NAVINOTIFICATION/1.1/customer"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+    <xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" schemaLocation="../../eReceipt/1.0/common.xsd"/>
+
+    <!-- SIMPLE TYPES -->
+    <xs:simpleType name="Min1Max1000Type">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Egész szám 1-1000 között (beleértve)</xs:documentation>
+            <xs:documentation xml:lang="en">Integer between 1 and 1000 (inclusive)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="1000" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- GROUPS -->
+
+    <!-- COMPLEX TYPES -->
+    <xs:complexType name="RequestPaginationType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Lapozás lekérdezés objektum típusa.</xs:documentation>
+            <xs:documentation xml:lang="en">Pagination request object type.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="rowCount" type="Min1Max1000Type">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A lekérdezésben szereplő sorok maximális száma.</xs:documentation>
+                    <xs:documentation xml:lang="en">Maximum number of rows in the query.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="page" type="common:RequestPageType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A lekérdezésben szereplő oldal száma.</xs:documentation>
+                    <xs:documentation xml:lang="en">Number of page in the query.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ResponsePaginationType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Lapozás válasz objektum típusa.</xs:documentation>
+            <xs:documentation xml:lang="en">Pagination response object type.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="rowCount" type="Min1Max1000Type">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A lekérdezésben szereplő sorok maximális száma.</xs:documentation>
+                    <xs:documentation xml:lang="en">Maximum number of rows in the query.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="page" type="common:ResponsePageType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A lekérdezésben szereplő oldal száma.</xs:documentation>
+                    <xs:documentation xml:lang="en">Number of page in the query.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="totalRowCount" type="xs:nonNegativeInteger">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A lekérdezésben szereplő összes sorok száma.</xs:documentation>
+                    <xs:documentation xml:lang="en">Total number of rows in the query.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="GetNotificationRequestType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Ügyfél notifikációk lekérdezés objektum típusa.</xs:documentation>
+            <xs:documentation xml:lang="en">Customer notification query object type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="common:BasicHeaderType">
+                <xs:sequence>
+                    <xs:element name="sessionId" type="common:SimpleText50NotBlankType" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Lekérdezés munkamenet azonosítója.</xs:documentation>
+                            <xs:documentation xml:lang="en">Query session identifier.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="pagination" type="RequestPaginationType" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Lapozás paraméterei.</xs:documentation>
+                            <xs:documentation xml:lang="en">Pagination parameters.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="NotificationRowType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Ügyfél notifikációk lekérdezés objektum típusa.</xs:documentation>
+            <xs:documentation xml:lang="en">Customer notification query object type.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="userId" type="common:SimpleText100NotBlankType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Eszköz azonosítója.</xs:documentation>
+                    <xs:documentation xml:lang="en">Device identifier.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="requestId" type="common:EntityIdType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Lekérdezés azonosítója.</xs:documentation>
+                    <xs:documentation xml:lang="en">Request identifier.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="notificationToken" type="xs:base64Binary">
+              <xs:annotation>
+                <xs:documentation xml:lang="hu">Feliratkozás esetén a bizonylat lekérdezhetővé válásakor az értesítés szolgáltatónak átadandó értesítési token.</xs:documentation>
+                <xs:documentation xml:lang="en">In the case of subscription, the notification token to be forwarded to the notification service provider when the receipt becomes queryable.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="NotificationRowsType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Ügyfél notifikációk lekérdezés objektum lista típusa.</xs:documentation>
+            <xs:documentation xml:lang="en">Customer notification query object list type.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="row" type="NotificationRowType" minOccurs="1" maxOccurs="1000">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Notifikációs adatok.</xs:documentation>
+                    <xs:documentation xml:lang="en">Notification data.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="GetNotificationResponseType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Ügyfél notifikációk válasz objektum típusa.</xs:documentation>
+            <xs:documentation xml:lang="en">Customer notification response object type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="common:BasicResponseType">
+                <xs:sequence>
+                    <xs:element name="sessionId" type="common:SimpleText50NotBlankType">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Lekérdezés munkamenet azonosítója.</xs:documentation>
+                            <xs:documentation xml:lang="en">Query session identifier.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="sessionExpireIn" type="xs:nonNegativeInteger">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Lekérdezés munkamenet lejárati ideje másodpercekben.</xs:documentation>
+                            <xs:documentation xml:lang="en">Query session expiration time in seconds.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="pagination" type="ResponsePaginationType">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Lapozás paraméterei.</xs:documentation>
+                            <xs:documentation xml:lang="en">Pagination parameters.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="rows" type="NotificationRowsType" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Notifikációs adatok lista.</xs:documentation>
+                            <xs:documentation xml:lang="en">Notification data list.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="SessionRowType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Aktív notifikációs session objektum típusa.</xs:documentation>
+            <xs:documentation xml:lang="en">Active notification session object type.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="sessionId" type="common:SimpleText50NotBlankType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Lekérdezés munkamenet azonosítója.</xs:documentation>
+                    <xs:documentation xml:lang="en">Query session identifier.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="sessionExpireIn" type="xs:nonNegativeInteger">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Lekérdezés munkamenet lejárati ideje másodpercekben.</xs:documentation>
+                    <xs:documentation xml:lang="en">Query session expiration time in seconds.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SessionRowsType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Aktív notifikációs session objektum lista típusa.</xs:documentation>
+            <xs:documentation xml:lang="en">Active notification session object list type.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="row" type="SessionRowType" minOccurs="1" maxOccurs="1000">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Aktív notifikációs session adatok.</xs:documentation>
+                    <xs:documentation xml:lang="en">Active notification session data.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="GetSessionRequestType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Aktív notifikációs sessionok kérés objektum típusa.</xs:documentation>
+            <xs:documentation xml:lang="en">Active notification sessions request object type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="common:BasicHeaderType" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="GetSessionResponseType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Aktív notifikációs sessionok válasz objektum típusa.</xs:documentation>
+            <xs:documentation xml:lang="en">Active notification sessions response object type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="common:BasicResponseType">
+                <xs:sequence>
+                    <xs:element name="rows" type="SessionRowsType" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Aktív notifikációs session lista.</xs:documentation>
+                            <xs:documentation xml:lang="en">Active notification session lista.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- REQUEST/RESPONSE COMPLEX TYPES -->
+
+    <!-- REQUEST/RESPONSE ELEMENTS -->
+    <xs:element name="GetNotificationRequest">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Ügyfél notifikációk lekérdezés kérés objektuma.</xs:documentation>
+            <xs:documentation xml:lang="en">Customer notification query request object type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="GetNotificationRequestType"/>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GetNotificationResponse">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Ügyfél notifikációk lekérdezés válasz objektuma.</xs:documentation>
+            <xs:documentation xml:lang="en">Customer notification query response object type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="GetNotificationResponseType"/>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GetSessionRequest">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Aktív notifikációs sessionok kérés objektuma.</xs:documentation>
+            <xs:documentation xml:lang="en">Active notification sessions request object type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="GetSessionRequestType"/>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GetSessionResponse">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Aktív notifikációs sessionok válasz objektuma.</xs:documentation>
+            <xs:documentation xml:lang="en">Active notification sessions response object type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="GetSessionResponseType"/>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,218 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item EpdProcessIdentifiersType in eReceiptExport</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'epdprocessidentifierstype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptExport
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>EpdProcessIdentifiersType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="communicationdata_xsd.html">communicationData.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Az e-pénztárgép jelenlegi állapotát előállító végrehajtott utasítások, valamint a legutolsó átvett, de még nem végrehajtott (időzített) utasítások EPD folyamat azonosítói
+EPD process IDs of the executed instructions that produce the current state of the e-cash register, and the last received but not yet executed (timed) instructions</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="396,717,758,820" href="currentaeblockunblockstateprocessid.html" alt="Drilldown into currentAeBlockUnblockStateProcessId"></area>
+                     <area shape="rect" coords="396,597,695,709" href="nextsoftwareprocessid.html" alt="Drilldown into nextSoftwareProcessId"></area>
+                     <area shape="rect" coords="396,478,705,590" href="currentsoftwareprocessid.html" alt="Drilldown into currentSoftwareProcessId"></area>
+                     <area shape="rect" coords="396,359,710,471" href="nextoperatorsiteprocessid.html" alt="Drilldown into nextOperatorSiteProcessId"></area>
+                     <area shape="rect" coords="396,239,725,351" href="currentoperatorsiteprocessid.html" alt="Drilldown into currentOperatorSiteProcessId"></area>
+                     <area shape="rect" coords="396,120,695,232" href="nextvatprocessid.html" alt="Drilldown into nextVatProcessId"></area>
+                     <area shape="rect" coords="396,1,699,113" href="currentvatprocessid.html" alt="Drilldown into currentVatProcessId"></area></map><img src="images/epdprocessidentifierstype.png" border="0" alt="XSD Diagram of EpdProcessIdentifiersType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="EpdProcessIdentifiersType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Az e-pénztárgép jelenlegi állapotát előállító végrehajtott utasítások, valamint a legutolsó átvett, de még nem végrehajtott (időzített) utasítások EPD folyamat azonosítói&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;EPD process IDs of the executed instructions that produce the current state of the e-cash register, and the last received but not yet executed (timed) instructions&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="currentVatProcessId" type="base:ProcessIdentifierType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Aktuális ÁFA táblát érvényre juttató végrehajtott utasítás EPD folyamat azonosítója.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;EPD process ID of the executed instruction that enforces the current VAT table.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="nextVatProcessId" type="base:ProcessIdentifierType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Következő ÁFA táblát érvényre juttató jövőben végrehajtandó utasítás EPD folyamat azonosítója.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;EPD process identifier of the instruction to be executed in the future that will enforce the next VAT table.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="currentOperatorSiteProcessId" type="base:ProcessIdentifierType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Aktuális üzemeltetői és üzemeltetési hely adatokat érvényre juttató végrehajtott utasítás EPD folyamat azonosítója.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;EPD process ID of the executed instruction that enforces the current operator and site details.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="nextOperatorSiteProcessId" type="base:ProcessIdentifierType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Következő üzemeltetői és üzemeltetési hely adatokat érvényre juttató jövőben végrehajtandó utasítás EPD folyamat azonosítója.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;EPD process identifier of the instruction to be executed in the future that will enforce the next operator and site details.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="currentSoftwareProcessId" type="base:ProcessIdentifierType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az e-pénztárgépen aktuális futó szoftver verziót érvényre juttató végrehajtott utasítás EPD folyamat azonosítója.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;The EPD process identifier of the executed instruction that enforces the current software version running on the e-cash register.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="nextSoftwareProcessId" type="base:ProcessIdentifierType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az e-pénztárgépen következően futtatandó szoftver verziót érvényre juttató jövőben végrehajtandó utasítás EPD folyamat azonosítója.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;EPD process identifier of the instruction to be executed in the future that enforces the next software version to be run on the e-cash register.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="currentAeBlockUnblockStateProcessId" type="base:ProcessIdentifierType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Aktuális AE állapotot érvényre juttató végrehajtott utasítás EPD folyamat azonosítója.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;EPD process ID of the executed instruction that enforces the current AE state.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">currentVatProcessId</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="currentvatprocessid.html">currentVatProcessId</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">nextVatProcessId</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="nextvatprocessid.html">nextVatProcessId</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">currentOperatorSiteProcessId</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="currentoperatorsiteprocessid.html">currentOperatorSiteProcessId</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">nextOperatorSiteProcessId</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="nextoperatorsiteprocessid.html">nextOperatorSiteProcessId</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">currentSoftwareProcessId</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="currentsoftwareprocessid.html">currentSoftwareProcessId</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">nextSoftwareProcessId</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="nextsoftwareprocessid.html">nextSoftwareProcessId</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">currentAeBlockUnblockStateProcessId</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="currentaeblockunblockstateprocessid.html">currentAeBlockUnblockStateProcessId</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>EpdProcessIdentifiersType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="epdprocessidentifiers.html">epdProcessIdentifiers</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="epdprocessidentifiers.html">epdProcessIdentifiers</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptExport<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item CoreDocumentType in eReceiptApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'coredocumenttype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>CoreDocumentType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentmessage.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="documentmessage_xsd.html">documentMessage.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>A NAV-nak átadandó bizonylat és kontroll adat típus.
+Business and control data of the document for NTCA.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="341,218,605,313" href="invoicecontrol.html" alt="Drilldown into invoiceControl"></area>
+                     <area shape="rect" coords="341,156,571,211" href="invoicecore.html" alt="Drilldown into invoiceCore"></area>
+                     <area shape="rect" coords="296,63,617,148" href="otherdocumentcore.html" alt="Drilldown into otherDocumentCore"></area>
+                     <area shape="rect" coords="296,1,526,56" href="receiptcore.html" alt="Drilldown into receiptCore"></area></map><img src="images/coredocumenttype.png" border="0" alt="XSD Diagram of CoreDocumentType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="CoreDocumentType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;A NAV-nak átadandó bizonylat és kontroll adat típus.&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Business and control data of the document for NTCA.&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:choice&gt;
+    &lt;xs:element name="receiptCore" type="documentData:ReceiptCoreDataType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A nyugta bizonylat üzleti adatai.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Business data of the receipt.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="otherDocumentCore" type="documentData:OtherDocumentCoreDataType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Egyéb bizonylat (üzemanyagkártyás értékesítési bizonylat, egészségkártyás értékesítési bizonylat, szállodai átterhelés bizonylat vagy fogyasztási összesítő bizonylat) üzleti adatai.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Business details of other vouchers (fuel card sales voucher, health card sales voucher, hotel transfer voucher or consumption summary voucher).&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="invoiceCore" type="documentData:InvoiceCoreDataType"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Számla üzleti adatai.&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;Invoice business data.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="invoiceControl" type="documentData:InvoiceControlDataType"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;A számlához tartozó kontroll adatok, amelyek nem része sem a bizonylatnak sem a bizonylat mellékletnek, a NAV felé történő adatszolgáltatási adatokat tartalmazza.&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;A számlához tartozó kontroll adatok, amelyek nem része sem a bizonylatnak sem a bizonylat mellékletnek, a NAV felé történő adatszolgáltatási adatokat tartalmazza.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:choice&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">receiptCore</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentmessage.html">nsB</a>:<a href="receiptcore.html">receiptCore</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">otherDocumentCore</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentmessage.html">nsB</a>:<a href="otherdocumentcore.html">otherDocumentCore</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">invoiceCore</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentmessage.html">nsB</a>:<a href="invoicecore.html">invoiceCore</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">invoiceControl</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentmessage.html">nsB</a>:<a href="invoicecontrol.html">invoiceControl</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>CoreDocumentType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentmessage.html">nsB</a>:<a href="coredocument.html">CoreDocument</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentmessage.html">nsB</a>:<a href="coredocument.html">CoreDocument</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

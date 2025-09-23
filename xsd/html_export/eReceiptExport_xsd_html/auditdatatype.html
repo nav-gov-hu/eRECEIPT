@@ -1,0 +1,218 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item AuditDataType in eReceiptExport</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'auditdatatype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptExport
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>AuditDataType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">http://schemas.nav.gov.hu/OSA/3.0/api</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="invoiceapi_xsd.html">invoiceApi.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>A számla audit adatai
+Invoice audit data</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="189,596,521,721" href="originalrequestversion.html" alt="Drilldown into originalRequestVersion"></area>
+                     <area shape="rect" coords="209,518,477,588" href="batchindex.html" alt="Drilldown into batchIndex"></area>
+                     <area shape="rect" coords="209,430,423,511" href="index2.html" alt="Drilldown into index"></area>
+                     <area shape="rect" coords="209,331,514,423" href="transactionid.html" alt="Drilldown into transactionId"></area>
+                     <area shape="rect" coords="189,188,349,324" href="source1.html" alt="Drilldown into source"></area>
+                     <area shape="rect" coords="189,89,360,181" href="inscususer.html" alt="Drilldown into insCusUser"></area>
+                     <area shape="rect" coords="189,1,442,82" href="insdate.html" alt="Drilldown into insdate"></area></map><img src="images/auditdatatype.png" border="0" alt="XSD Diagram of AuditDataType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="AuditDataType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;A számla audit adatai&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Invoice audit data&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="insdate" type="base:InvoiceTimestampType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A beszúrás időpontja UTC időben&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Insert date in UTC time&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="insCusUser" type="common:LoginType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A beszúrást végző technikai felhasználó&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Inserting technical user name&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="source" type="SourceType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az adatszolgáltatás forrása&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Data exchange source&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="transactionId" type="common:EntityIdType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A számla tranzakció azonosítója, ha az gépi interfészen került beküldésre&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Transaction ID of the invoice if it was exchanged via M2M interface&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="index" type="base:InvoiceIndexType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A számla sorszáma a kérésen belül&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Sequence number of the invoice within the request&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="batchIndex" type="base:InvoiceUnboundedIndexType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A módosító okirat sorszáma a kötegen belül&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Sequence number of the modification document within the batch&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="originalRequestVersion" type="OriginalRequestVersionType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az adatszolgáltatás requestVersion értéke&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;requestVersion value of the invoice exchange&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">insdate</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="insdate.html">insdate</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">insCusUser</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="inscususer.html">insCusUser</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">source</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="source1.html">source</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">transactionId</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="transactionid.html">transactionId</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">index</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="index2.html">index</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">batchIndex</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="batchindex.html">batchIndex</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">originalRequestVersion</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="originalrequestversion.html">originalRequestVersion</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>AuditDataType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="auditdata.html">auditData</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="auditdata.html">auditData</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptExport<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

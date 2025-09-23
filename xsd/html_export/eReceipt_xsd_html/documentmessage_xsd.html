@@ -1,0 +1,184 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs the schema documentMessage.xsd in eReceiptApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'documentmessage_xsd');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>documentMessage.xsd</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Target Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentmessage.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Az üzleti adatok interfészen átadott üzleti adatok modeljét meghatározó séma.
+The schema that defines the model for business data passed through the document data interface.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;!--# Version: v1.1 2025/06/27--&gt;
+&lt;xs:schema targetNamespace="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage" elementFormDefault="qualified"
+           attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage"
+           xmlns:base="http://schemas.nav.gov.hu/ERECEIPT/1.1/base"
+           xmlns:documentData="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData"
+           xmlns:invoiceData="http://schemas.nav.gov.hu/OSA/3.0/data" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+           version="1.0" xmlns:xml="http://www.w3.org/XML/1998/namespace"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Az üzleti adatok interfészen átadott üzleti adatok modeljét meghatározó séma. &lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;The schema that defines the model for business data passed through the document data interface. &lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.1/base" schemaLocation="eReceiptBase.xsd"/&gt;
+  &lt;xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData" schemaLocation="documentData.xsd"/&gt;
+  &lt;xs:complexType name="CustomerDocumentType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;A vevőnek átadandó bizonylat és bizonylat melléklet adat típus.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;Business and additional data of the document for the customer.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="decryptKey" type="xs:base64Binary"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Független szimetrikus kulcs a bizonylat adatok kititkosításához.&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;Independent symmetric key for encryption of receipt data.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:choice&gt;
+        &lt;xs:element name="receiptAdditional" type="base:DocumentAdditionalDataType" minOccurs="0"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang="hu"&gt;Nyugta melléklet, a nyugtán nem szereplő de ahhoz tartozó egyéb adatok, amelyet az eladó a vevővel szeretne megosztani. Például: garanciára vonatkozó adatok.&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang="en"&gt;Additional information, other than that on the receipt, which the seller wishes to share with the buyer. For example: details of the guarantee.&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="otherDocumentAdditional" type="base:DocumentAdditionalDataType" minOccurs="0"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang="hu"&gt;Egyéb bizonylat melléklete, az egyéb bizonylaton nem szereplő, de ahhoz tartozó egyéb adatok, amelyet az eladó a vevővel szeretne megosztani. Például: garanciára vonatkozó adatok.&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang="en"&gt;Additional document annex, other data not included in the other document but related to it, which the seller wishes to share with the buyer. For example: information relating to the guarantee.&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="invoiceAdditional" type="base:DocumentAdditionalDataType" minOccurs="0"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang="hu"&gt;Számla melléklete, a számlához tartozó egyéb adatok, amelyet az eladó a vevővel szeretne megosztani. Például: garanciára vonatkozó adatkok.&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang="en"&gt;Additional information on the invoice, which the seller wishes to share with the buyer. For example: details of the guarantee.&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+      &lt;/xs:choice&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="CoreDocumentType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;A NAV-nak átadandó bizonylat és kontroll adat típus.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;Business and control data of the document for NTCA.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:choice&gt;
+      &lt;xs:element name="receiptCore" type="documentData:ReceiptCoreDataType"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;A nyugta bizonylat üzleti adatai.&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;Business data of the receipt.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="otherDocumentCore" type="documentData:OtherDocumentCoreDataType"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Egyéb bizonylat (üzemanyagkártyás értékesítési bizonylat, egészségkártyás értékesítési bizonylat, szállodai átterhelés bizonylat vagy fogyasztási összesítő bizonylat) üzleti adatai.&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;Business details of other vouchers (fuel card sales voucher, health card sales voucher, hotel transfer voucher or consumption summary voucher).&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="invoiceCore" type="documentData:InvoiceCoreDataType"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang="hu"&gt;Számla üzleti adatai.&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang="en"&gt;Invoice business data.&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="invoiceControl" type="documentData:InvoiceControlDataType"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang="hu"&gt;A számlához tartozó kontroll adatok, amelyek nem része sem a bizonylatnak sem a bizonylat mellékletnek, a NAV felé történő adatszolgáltatási adatokat tartalmazza.&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang="en"&gt;A számlához tartozó kontroll adatok, amelyek nem része sem a bizonylatnak sem a bizonylat mellékletnek, a NAV felé történő adatszolgáltatási adatokat tartalmazza.&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:choice&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:element name="CustomerDocument"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;A vevőnek átadandó bizonylat és bizonylat melléklet adat.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;Business and additional data of the document for the customer.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:complexContent&gt;
+        &lt;xs:extension base="CustomerDocumentType"/&gt;
+      &lt;/xs:complexContent&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+  &lt;xs:element name="CoreDocument"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;A NAV-nak átadandó bizonylat és kontroll adat.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;Business and control data of the document for NTCA.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:complexContent&gt;
+        &lt;xs:extension base="CoreDocumentType"/&gt;
+      &lt;/xs:complexContent&gt;
+    &lt;/xs:complexType&gt;    
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="ComplexType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>ComplexTypes:</b></td>
+            </tr>
+            <tr id="ComplexType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="coredocumenttype.html">CoreDocumentType</a></li>
+                     <li><a href="customerdocumenttype.html">CustomerDocumentType</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="Element" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Elements:</b></td>
+            </tr>
+            <tr id="Element_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="coredocument.html">CoreDocument</a></li>
+                     <li><a href="customerdocument.html">CustomerDocument</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

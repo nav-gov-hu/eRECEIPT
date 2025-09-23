@@ -1,0 +1,3513 @@
+{
+  "apidogProject": "1.0.0",
+  "$schema": {
+    "app": "apidog",
+    "type": "project",
+    "version": "1.2.0"
+  },
+  "info": {
+    "name": "NAV Hardveres1.1 08_27",
+    "description": "",
+    "mockRule": {
+      "rules": [],
+      "enableSystemRule": true
+    }
+  },
+  "apiCollection": [
+    {
+      "name": "Root",
+      "id": 4719230,
+      "auth": {},
+      "securityScheme": {},
+      "parentId": 0,
+      "serverId": "",
+      "description": "",
+      "identityPattern": {
+        "httpApi": {
+          "type": "methodAndPath",
+          "bodyType": "",
+          "fields": []
+        }
+      },
+      "shareSettings": {},
+      "visibility": "SHARED",
+      "moduleId": 868785,
+      "preProcessors": [
+        {
+          "id": "inheritProcessors",
+          "type": "inheritProcessors",
+          "data": {}
+        }
+      ],
+      "postProcessors": [
+        {
+          "id": "inheritProcessors",
+          "type": "inheritProcessors",
+          "data": {}
+        }
+      ],
+      "inheritPostProcessors": {},
+      "inheritPreProcessors": {},
+      "items": [
+        {
+          "name": "Fejlesztői végpontok",
+          "id": 4719231,
+          "auth": {},
+          "securityScheme": {},
+          "parentId": 0,
+          "serverId": "",
+          "description": "",
+          "identityPattern": {
+            "httpApi": {
+              "type": "inherit",
+              "bodyType": "",
+              "fields": []
+            }
+          },
+          "shareSettings": {},
+          "visibility": "INHERITED",
+          "moduleId": 868785,
+          "preProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "postProcessors": [
+            {
+              "id": "inheritProcessors",
+              "type": "inheritProcessors",
+              "data": {}
+            }
+          ],
+          "inheritPostProcessors": {},
+          "inheritPreProcessors": {},
+          "items": [
+            {
+              "name": "Hardveralapú ePénztárgép végpontok",
+              "id": 4719232,
+              "auth": {},
+              "securityScheme": {},
+              "parentId": 4719231,
+              "serverId": "",
+              "description": "",
+              "identityPattern": {
+                "httpApi": {
+                  "type": "inherit",
+                  "bodyType": "",
+                  "fields": []
+                }
+              },
+              "shareSettings": {},
+              "visibility": "INHERITED",
+              "moduleId": 868785,
+              "preProcessors": [
+                {
+                  "id": "inheritProcessors",
+                  "type": "inheritProcessors",
+                  "data": {}
+                }
+              ],
+              "postProcessors": [
+                {
+                  "id": "inheritProcessors",
+                  "type": "inheritProcessors",
+                  "data": {}
+                }
+              ],
+              "inheritPostProcessors": {},
+              "inheritPreProcessors": {},
+              "items": [
+                {
+                  "name": "Regisztrációs végpontok",
+                  "id": 4719233,
+                  "auth": {},
+                  "securityScheme": {},
+                  "parentId": 4719232,
+                  "serverId": "",
+                  "description": "",
+                  "identityPattern": {
+                    "httpApi": {
+                      "type": "inherit",
+                      "bodyType": "",
+                      "fields": []
+                    }
+                  },
+                  "shareSettings": {},
+                  "visibility": "INHERITED",
+                  "moduleId": 868785,
+                  "preProcessors": [
+                    {
+                      "id": "inheritProcessors",
+                      "type": "inheritProcessors",
+                      "data": {}
+                    }
+                  ],
+                  "postProcessors": [
+                    {
+                      "id": "inheritProcessors",
+                      "type": "inheritProcessors",
+                      "data": {}
+                    }
+                  ],
+                  "inheritPostProcessors": {},
+                  "inheritPreProcessors": {},
+                  "items": [
+                    {
+                      "name": "Registration",
+                      "api": {
+                        "id": "20754317",
+                        "method": "post",
+                        "path": "/registration",
+                        "parameters": {
+                          "path": [],
+                          "query": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152713",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "xml",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "application/xml",
+                          "parameters": [],
+                          "jsonSchema": {
+                            "type": "object",
+                            "properties": {},
+                            "x-apidog-orders": []
+                          },
+                          "mediaType": "",
+                          "oasExtensions": "",
+                          "required": false,
+                          "additionalContentTypes": []
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "397f2314-ab5f-4457-bc0e-b4768a359eb4",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 0,
+                        "cases": [
+                          {
+                            "id": 29410226,
+                            "type": "http",
+                            "path": null,
+                            "name": "Success",
+                            "responseId": 30152713,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<?xml version=\"1.1\" encoding=\"UTF-8\"?>\n<ns3:RegistrationRequest xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\" xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:ns4=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:ns5=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData\" xmlns:ns6=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage\" xmlns:ns7=\"http://schemas.nav.gov.hu/OSA/3.0/data\" xmlns:ns8=\"http://schemas.nav.gov.hu/OSA/3.0/base\" xmlns:ns9=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\">\n   <requestId>{{requestId}}</requestId>\n   <timestamp>{{dateTimeString}}</timestamp>\n   <requestVersion>1.1</requestVersion>\n   <headerVersion>1.1</headerVersion>\n   <ns2:APNumber>{{apNumberHW}}</ns2:APNumber>\n   <ns3:registrationNumber>{{registrationNumber}}</ns3:registrationNumber>\n   <ns3:imei>{{imei}}</ns3:imei>\n   <ns3:imsi>{{imsi}}</ns3:imsi>\n   <ns3:authenticationCertificateRequest>{{authenticationCertificateRequest}}</ns3:authenticationCertificateRequest>\n   <ns3:signingCertificateRequest>{{signingCertificateRequest}}</ns3:signingCertificateRequest>\n   <ns3:software>\n      <ns4:softwareId>{{softwareId}}</ns4:softwareId>\n      <ns4:softwareName>{{softwareName}}</ns4:softwareName>\n      <ns4:softwareOperation>{{softwareOperation}}</ns4:softwareOperation>\n      <ns4:softwareMainVersion>{{softwareMainVersion}}</ns4:softwareMainVersion>\n      <ns4:softwareHash>{{softwareHash}}</ns4:softwareHash>\n      <ns4:softwareLastUpdateTime>{{softwareLastUpdateTime}}</ns4:softwareLastUpdateTime>\n      <ns4:softwareDevName>{{softwareDevName}}</ns4:softwareDevName>\n      <ns4:softwareDevContact>{{softwareDevContact}}</ns4:softwareDevContact>\n   </ns3:software>\n</ns3:RegistrationRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {}
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          }
+                        ],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152713"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    },
+                    {
+                      "name": "QueryCertificate AUTH",
+                      "api": {
+                        "id": "20754318",
+                        "method": "get",
+                        "path": "/queryCertificate",
+                        "parameters": {
+                          "path": [],
+                          "query": [
+                            {
+                              "id": "VrzYNBwjTx",
+                              "name": "certId",
+                              "required": true,
+                              "description": "",
+                              "example": "{{certIdAuth}}",
+                              "type": "string"
+                            },
+                            {
+                              "id": "bwfUyMQMKz",
+                              "name": "certType",
+                              "required": true,
+                              "description": "",
+                              "example": "AUTHENTICATION",
+                              "type": "string"
+                            },
+                            {
+                              "id": "k2dzK25VOe",
+                              "name": "imsi",
+                              "required": true,
+                              "description": "",
+                              "example": "{{imsi}}",
+                              "type": "string"
+                            },
+                            {
+                              "id": "hA7rrLgIjd",
+                              "name": "ap",
+                              "required": false,
+                              "description": "",
+                              "example": "{{apNumber}}",
+                              "type": "string"
+                            }
+                          ],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152714",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "json",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "none",
+                          "parameters": [],
+                          "examples": [],
+                          "mediaType": "",
+                          "oasExtensions": "",
+                          "required": false,
+                          "additionalContentTypes": []
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "397f2314-ab5f-4457-bc0e-b4768a359eb4",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 6,
+                        "cases": [],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152714"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    },
+                    {
+                      "name": "QueryCertificate SIGNING",
+                      "api": {
+                        "id": "20754319",
+                        "method": "get",
+                        "path": "/queryCertificate",
+                        "parameters": {
+                          "path": [],
+                          "query": [
+                            {
+                              "id": "VrzYNBwjTx",
+                              "name": "certId",
+                              "required": true,
+                              "description": "",
+                              "example": "{{certIdSign}}",
+                              "type": "string"
+                            },
+                            {
+                              "id": "bwfUyMQMKz",
+                              "name": "certType",
+                              "required": true,
+                              "description": "",
+                              "example": "SIGNING",
+                              "type": "string"
+                            },
+                            {
+                              "id": "k2dzK25VOe",
+                              "name": "imsi",
+                              "required": true,
+                              "description": "",
+                              "example": "{{imsi}}",
+                              "type": "string"
+                            },
+                            {
+                              "id": "LVke06mypy",
+                              "name": "ap",
+                              "required": false,
+                              "description": "",
+                              "example": "{{apNumber}}",
+                              "type": "string"
+                            }
+                          ],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152715",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "json",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "none",
+                          "parameters": [],
+                          "examples": [],
+                          "mediaType": "",
+                          "oasExtensions": "",
+                          "required": false,
+                          "additionalContentTypes": []
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "397f2314-ab5f-4457-bc0e-b4768a359eb4",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 12,
+                        "cases": [],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152715"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    },
+                    {
+                      "name": "Hello",
+                      "api": {
+                        "id": "20754320",
+                        "method": "post",
+                        "path": "/hello",
+                        "parameters": {
+                          "path": [],
+                          "query": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152716",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "json",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "application/xml",
+                          "parameters": [],
+                          "jsonSchema": {
+                            "type": "object",
+                            "properties": {},
+                            "x-apidog-orders": []
+                          },
+                          "examples": [],
+                          "mediaType": "",
+                          "oasExtensions": "",
+                          "required": false,
+                          "additionalContentTypes": []
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "46990ee6-dbd8-45ab-9e6d-20a9eb1aadcd",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 18,
+                        "cases": [
+                          {
+                            "id": 29410227,
+                            "type": "http",
+                            "path": null,
+                            "name": "Success",
+                            "responseId": 30152716,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<?xml version=\"1.1\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns3:HelloRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\"\n                  xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\"\n                  xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\n    <requestId>{{requestId}}</requestId>\n    <timestamp>{{dateTimeString}}</timestamp>\n    <requestVersion>1.1</requestVersion>\n    <headerVersion>1.1</headerVersion>\n    <ns2:APNumber>{{apNumberHW}}</ns2:APNumber>\n    <ns3:currentOperatorSiteProcessId>{{operatorSiteProcessId}}</ns3:currentOperatorSiteProcessId>\n    <ns3:currentVatProcessId>{{vatProcessId}}</ns3:currentVatProcessId>\n</ns3:HelloRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {}
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          }
+                        ],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152716"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Control",
+                  "id": 4719234,
+                  "auth": {},
+                  "securityScheme": {},
+                  "parentId": 4719232,
+                  "serverId": "397f2314-ab5f-4457-bc0e-b4768a359eb4",
+                  "description": "",
+                  "identityPattern": {
+                    "httpApi": {
+                      "type": "inherit",
+                      "bodyType": "",
+                      "fields": []
+                    }
+                  },
+                  "shareSettings": {},
+                  "visibility": "INHERITED",
+                  "moduleId": 868785,
+                  "preProcessors": [
+                    {
+                      "id": "inheritProcessors",
+                      "type": "inheritProcessors",
+                      "data": {}
+                    }
+                  ],
+                  "postProcessors": [
+                    {
+                      "id": "inheritProcessors",
+                      "type": "inheritProcessors",
+                      "data": {}
+                    }
+                  ],
+                  "inheritPostProcessors": {},
+                  "inheritPreProcessors": {},
+                  "items": [
+                    {
+                      "name": "VatUpdate",
+                      "api": {
+                        "id": "20754321",
+                        "method": "post",
+                        "path": "/vatUpdate",
+                        "parameters": {
+                          "path": [],
+                          "query": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152717",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "json",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "application/xml",
+                          "parameters": [],
+                          "jsonSchema": {
+                            "type": "object",
+                            "properties": {},
+                            "x-apidog-orders": []
+                          },
+                          "mediaType": "",
+                          "oasExtensions": "",
+                          "required": false,
+                          "additionalContentTypes": []
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "46990ee6-dbd8-45ab-9e6d-20a9eb1aadcd",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 0,
+                        "cases": [
+                          {
+                            "id": 29410228,
+                            "type": "http",
+                            "path": null,
+                            "name": "Success",
+                            "responseId": 30152717,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<?xml version=\"1.1\" encoding=\"utf-8\"?>\n<VatUpdateRequest xmlns:ns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:base=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:communication=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:reportMessage=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\n  <ns:requestId>{{randomHex}}</ns:requestId>\n  <ns:timestamp>{{dateTimeString}}</ns:timestamp>\n  <ns:requestVersion>1.1</ns:requestVersion>\n  <ns:headerVersion>1.1</ns:headerVersion>\n  <base:APNumber>{{apNumberHW}</base:APNumber>\n</VatUpdateRequest>\n",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {}
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          }
+                        ],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152717"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    },
+                    {
+                      "name": "OperatorSiteUpdate",
+                      "api": {
+                        "id": "20754322",
+                        "method": "post",
+                        "path": "/operatorSiteUpdate",
+                        "parameters": {
+                          "path": [],
+                          "query": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152718",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "json",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "application/xml",
+                          "parameters": [],
+                          "jsonSchema": {
+                            "type": "object",
+                            "properties": {},
+                            "x-apidog-orders": []
+                          },
+                          "examples": [],
+                          "mediaType": "",
+                          "oasExtensions": "",
+                          "required": false,
+                          "additionalContentTypes": []
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "46990ee6-dbd8-45ab-9e6d-20a9eb1aadcd",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 6,
+                        "cases": [
+                          {
+                            "id": 29410229,
+                            "type": "http",
+                            "path": null,
+                            "name": "Success",
+                            "responseId": 30152718,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<?xml version=\"1.1\" encoding=\"utf-8\"?>\n<OperatorSiteUpdateRequest xmlns:ns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:base=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:communication=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:reportMessage=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\n  <ns:requestId>{{randomHex}}</ns:requestId>\n  <ns:timestamp>{{dateTimeString}}</ns:timestamp>\n  <ns:requestVersion>1.1</ns:requestVersion>\n  <ns:headerVersion>1.1</ns:headerVersion>\n  <base:APNumber>{{apNumberHW}}</base:APNumber>\n</OperatorSiteUpdateRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {}
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          }
+                        ],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152718"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    },
+                    {
+                      "name": "CommMgr",
+                      "api": {
+                        "id": "20754323",
+                        "method": "post",
+                        "path": "/commMgr",
+                        "parameters": {
+                          "path": [],
+                          "query": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152719",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "json",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "application/xml",
+                          "parameters": [],
+                          "jsonSchema": {
+                            "type": "object",
+                            "properties": {},
+                            "x-apidog-orders": []
+                          },
+                          "mediaType": "",
+                          "oasExtensions": "",
+                          "required": false,
+                          "additionalContentTypes": []
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "46990ee6-dbd8-45ab-9e6d-20a9eb1aadcd",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 12,
+                        "cases": [
+                          {
+                            "id": 29410230,
+                            "type": "http",
+                            "path": null,
+                            "name": "Success",
+                            "responseId": 30152719,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<?xml version=\"1.1\" encoding=\"utf-8\"?>\n<ns:CommMgrRequest xmlns:base=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:communication=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:reportMessage=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns:common=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:ns=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\n  <common:requestId>{{randomHex}}</common:requestId>\n  <common:timestamp>{{dateTimeString}}</common:timestamp>\n  <common:requestVersion>1.1</common:requestVersion>\n  <common:headerVersion>1.1</common:headerVersion>\n  <base:APNumber>{{apNumberHW}}</base:APNumber>\n</ns:CommMgrRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {}
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          }
+                        ],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152719"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    },
+                    {
+                      "name": "CashRegisterInfo",
+                      "api": {
+                        "id": "20754324",
+                        "method": "post",
+                        "path": "/cashRegisterInfo",
+                        "parameters": {
+                          "path": [],
+                          "query": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152720",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "xml",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "application/xml",
+                          "parameters": [],
+                          "jsonSchema": {
+                            "type": "object",
+                            "properties": {},
+                            "x-apidog-orders": []
+                          },
+                          "examples": [],
+                          "mediaType": "",
+                          "oasExtensions": "",
+                          "required": false,
+                          "additionalContentTypes": []
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "46990ee6-dbd8-45ab-9e6d-20a9eb1aadcd",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 18,
+                        "cases": [
+                          {
+                            "id": 29410231,
+                            "type": "http",
+                            "path": null,
+                            "name": "Success",
+                            "responseId": 30152720,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<?xml version=\"1.1\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns4:CashRegisterInfoRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" \nxmlns:ns6=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage\"\nxmlns:ns5=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData\"\nxmlns:ns8=\"http://schemas.nav.gov.hu/OSA/3.0/base\"\nxmlns:ns7=\"http://schemas.nav.gov.hu/OSA/3.0/data\"\nxmlns:ns9=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\"\nxmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\"\nxmlns:ns4=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\"\nxmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\">\n    <requestId xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\">{{randomHex}}</requestId>\n    <timestamp xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\">{{dateTimeString}}</timestamp>\n    <requestVersion xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\">1.1</requestVersion>\n    <headerVersion xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\">1.1</headerVersion>\n    <ns2:APNumber>{{apNumberHW}}</ns2:APNumber>\n    <ns4:cashRegisterInfo>\n        <ns3:cashRegisterEvent>\n            <ns3:eventCode>POWER_ON</ns3:eventCode>\n        </ns3:cashRegisterEvent>\n        <ns3:cashRegisterTechnicalInfo>\n            <ns3:cashRegisterSoftware>\n                <ns3:softwareId>{{softwareId}}</ns3:softwareId>\n                <ns3:softwareName>{{softwareName}}</ns3:softwareName>\n                <ns3:softwareOperation>AE</ns3:softwareOperation>\n                <ns3:softwareMainVersion>{{softwareMainVersion}}</ns3:softwareMainVersion>\n                <ns3:softwareHash>{{softwareHash}}</ns3:softwareHash>\n                <ns3:softwareLastUpdateTime>{{softwareLastUpdateTime}}</ns3:softwareLastUpdateTime>\n                <ns3:softwareDevName>{{softwareDevName}}</ns3:softwareDevName>\n                <ns3:softwareDevContact>{{softwareDevContact}}</ns3:softwareDevContact>\n            </ns3:cashRegisterSoftware>\n            <ns3:imei>{{imei}}</ns3:imei>\n            <ns3:imsi>{{imsi}}</ns3:imsi>\n            <ns3:operatorSite>\n                <ns3:operatorSiteValidFrom>{{operatorSiteValidFrom}}</ns3:operatorSiteValidFrom>\n                <ns3:shop>\n                    <ns2:detailedAddress>\n                        <ns2:countryCode>{{countryCode}}</ns2:countryCode>\n                        <ns2:postalCode>{{postalCode}}</ns2:postalCode>\n                        <ns2:city>{{city}}</ns2:city>\n                        <ns2:streetName>{{streetName}}</ns2:streetName>\n                        <ns2:publicPlaceCategory>{{publicPlaceCategory}}</ns2:publicPlaceCategory>\n                        <ns2:number>{{number}}</ns2:number>\n                    </ns2:detailedAddress>\n                    <ns3:shopName>{{shopname}}</ns3:shopName>\n                    <ns3:shopShortName>{{shopShortName}}</ns3:shopShortName>\n                </ns3:shop>\n                <ns3:taxPayer>\n                    <ns2:detailedAddress>\n                        <ns2:countryCode>{{countryCode}}</ns2:countryCode>\n                        <ns2:postalCode>{{postalCode}}</ns2:postalCode>\n                        <ns2:city>{{city}}</ns2:city>\n                        <ns2:streetName>{{streetName}}</ns2:streetName>\n                        <ns2:publicPlaceCategory>{{publicPlaceCategory}}</ns2:publicPlaceCategory>\n                        <ns2:number>{{number}}</ns2:number>\n                    </ns2:detailedAddress>\n                    <ns3:taxPayerName>{{taxPayerName}}</ns3:taxPayerName>\n                    <ns3:taxPayerShortName>{{taxPayerShortName}}</ns3:taxPayerShortName>\n                    <ns3:taxNumber>\n                        <ns2:taxpayerId>{{taxpayerId}}</ns2:taxpayerId>\n                        <ns2:vatCode>{{vatCode}}</ns2:vatCode>\n                        <ns2:countyCode>{{countyCode}}</ns2:countyCode>\n                    </ns3:taxNumber>\n                </ns3:taxPayer>\n            </ns3:operatorSite>\n            <ns3:vat>\n                <ns3:vatValidFrom>{{vatValidFrom}}</ns3:vatValidFrom>\n                <ns3:vatGroup>\n                    <ns3:collectorCode>A</ns3:collectorCode>\n                    <ns3:vatPercentage>19.59</ns3:vatPercentage>\n                    <ns3:vatContent>5</ns3:vatContent>\n                    <ns3:vatLabel>AFA5A</ns3:vatLabel>\n                </ns3:vatGroup>\n                <ns3:vatGroup>\n                    <ns3:collectorCode>B</ns3:collectorCode>\n                    <ns3:vatPercentage>19.59</ns3:vatPercentage>\n                    <ns3:vatContent>18</ns3:vatContent>\n                    <ns3:vatLabel>AFA18A</ns3:vatLabel>\n                </ns3:vatGroup>\n                <ns3:vatGroup>\n                    <ns3:collectorCode>C</ns3:collectorCode>\n                    <ns3:vatPercentage>19.59</ns3:vatPercentage>\n                    <ns3:vatContent>24.36</ns3:vatContent>\n                    <ns3:vatLabel>AFA24A</ns3:vatLabel>\n                </ns3:vatGroup>\n                <ns3:vatGroup>\n                    <ns3:collectorCode>D</ns3:collectorCode>\n                    <ns3:vatPercentage>0</ns3:vatPercentage>\n                    <ns3:vatContent>0</ns3:vatContent>\n                    <ns3:vatLabel>TAM</ns3:vatLabel>\n                </ns3:vatGroup>\n                <ns3:vatGroup>\n                    <ns3:collectorCode>E</ns3:collectorCode>\n                    <ns3:vatPercentage>0</ns3:vatPercentage>\n                    <ns3:vatContent>0</ns3:vatContent>\n                    <ns3:vatLabel>AAM</ns3:vatLabel>\n                </ns3:vatGroup>\n            </ns3:vat>\n            <ns3:registrationNumber>{{registrationNumber}}</ns3:registrationNumber>\n            <ns3:communicationProtocolVersion>C0001</ns3:communicationProtocolVersion>\n            <ns3:schemaVersion>X0001</ns3:schemaVersion>\n            <ns3:epdProcessIdentifiers>\n                <ns3:currentVatProcessId>{{currentVatProcessId}}</ns3:currentVatProcessId>\n                <ns3:nextVatProcessId>{{nextVatProcessId}}</ns3:nextVatProcessId>\n                <ns3:currentOperatorSiteProcessId>{{currentOperatorSiteProcessId}}</ns3:currentOperatorSiteProcessId>\n                <ns3:nextOperatorSiteProcessId>{{nextOperatorSiteProcessId}}</ns3:nextOperatorSiteProcessId>\n                <ns3:currentSoftwareProcessId>{{currentSoftwareProcessId}}</ns3:currentSoftwareProcessId>\n                <ns3:nextSoftwareProcessId>{{nextSoftwareProcessId}}</ns3:nextSoftwareProcessId>\n                <ns3:currentAeBlockUnblockStateProcessId>{{currentAeBlockUnblockStateProcessId}}</ns3:currentAeBlockUnblockStateProcessId>\n            </ns3:epdProcessIdentifiers>\n        </ns3:cashRegisterTechnicalInfo>\n        <ns3:cashRegisterState>\n            <ns3:cashRegisterWorkState>{{cashRegisterWorkState}}</ns3:cashRegisterWorkState>\n            <ns3:aeBlockUnblockState>{{aeBlockUnblockState}}</ns3:aeBlockUnblockState>\n            <ns3:fiscalDayState>{{fiscalDayState}}</ns3:fiscalDayState>\n            <ns3:lastSentRecordCounter>{{lastSentRecordCounter}}</ns3:lastSentRecordCounter>\n            <ns3:lastRecordCounter>{{lastRecordCounter}}</ns3:lastRecordCounter>\n        </ns3:cashRegisterState>\n    </ns4:cashRegisterInfo>\n</ns4:CashRegisterInfoRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {}
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          }
+                        ],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152720"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    },
+                    {
+                      "name": "Print Technical Info",
+                      "api": {
+                        "id": "20754325",
+                        "method": "post",
+                        "path": "/printTechnicalInfo",
+                        "parameters": {
+                          "path": [],
+                          "query": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152721",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "json",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "application/xml",
+                          "parameters": [],
+                          "jsonSchema": {
+                            "type": "object",
+                            "properties": {},
+                            "x-apidog-orders": []
+                          },
+                          "mediaType": "",
+                          "oasExtensions": "",
+                          "required": false,
+                          "additionalContentTypes": []
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "46990ee6-dbd8-45ab-9e6d-20a9eb1aadcd",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 24,
+                        "cases": [
+                          {
+                            "id": 29410232,
+                            "type": "http",
+                            "path": null,
+                            "name": "Success",
+                            "responseId": 30152721,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<?xml version=\"1.1\" encoding=\"utf-8\"?>\n<PrintTechnicalInfoRequest xmlns:ns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:base=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:communication=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:reportMessage=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\n  <ns:requestId>{{randomHex}}</ns:requestId>\n  <ns:timestamp>{{dateTimeString}}</ns:timestamp>\n  <ns:requestVersion>1.1</ns:requestVersion>\n  <ns:headerVersion>1.1</ns:headerVersion>\n  <base:APNumber>{{apNumberHW}}</base:APNumber>\n</PrintTechnicalInfoRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {}
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          }
+                        ],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152721"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    },
+                    {
+                      "name": "Owner change",
+                      "api": {
+                        "id": "20754326",
+                        "method": "post",
+                        "path": "/ownerChange",
+                        "parameters": {
+                          "path": [],
+                          "query": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152722",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "json",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "application/xml",
+                          "parameters": [],
+                          "jsonSchema": {
+                            "type": "object",
+                            "properties": {},
+                            "x-apidog-orders": []
+                          },
+                          "mediaType": "",
+                          "oasExtensions": "",
+                          "required": false,
+                          "additionalContentTypes": []
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "46990ee6-dbd8-45ab-9e6d-20a9eb1aadcd",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 30,
+                        "cases": [
+                          {
+                            "id": 29410233,
+                            "type": "http",
+                            "path": null,
+                            "name": "Success",
+                            "responseId": 30152722,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<?xml version=\"1.1\" encoding=\"utf-8\"?>\n<OwnerChangeRequest xmlns:ns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:base=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:communication=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:reportMessage=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\n  <ns:requestId>{{randomHex}}</ns:requestId>\n  <ns:timestamp>{{dateTimeString}}</ns:timestamp>\n  <ns:requestVersion>1.1</ns:requestVersion>\n  <ns:headerVersion>1.1</ns:headerVersion>\n  <base:APNumber>{{apnumberHW}}</base:APNumber>\n  <registrationNumber>{{registrationNumber}}</registrationNumber>\n  <lastRecordCounter>{{lastRecordCounter}}</lastRecordCounter>\n  <coTaxpayerLastRecordCounter>{{coTaxpayerLastRecordCounter}}</coTaxpayerLastRecordCounter>\n  <cashRegisterWorkState>{{cashRegisterWorkState}}</cashRegisterWorkState>\n  <authenticationCertificateRequest>{{authenticationCertificateRequest}}</authenticationCertificateRequest>\n  <signingCertificateRequest>{{signingCertificateRequest}}</signingCertificateRequest>\n</OwnerChangeRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {}
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          }
+                        ],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152722"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    },
+                    {
+                      "name": "Hello Owner Change",
+                      "api": {
+                        "id": "20754327",
+                        "method": "post",
+                        "path": "/hello",
+                        "parameters": {
+                          "query": [],
+                          "path": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152723",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "json",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "application/xml",
+                          "parameters": [],
+                          "jsonSchema": {
+                            "type": "object",
+                            "properties": {},
+                            "x-apidog-orders": []
+                          },
+                          "mediaType": "",
+                          "examples": [],
+                          "oasExtensions": ""
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "46990ee6-dbd8-45ab-9e6d-20a9eb1aadcd",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 36,
+                        "cases": [
+                          {
+                            "id": 29410234,
+                            "type": "http",
+                            "path": null,
+                            "name": "Success",
+                            "responseId": 30152723,
+                            "parameters": {
+                              "query": [],
+                              "path": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<?xml version=\"1.1\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns3:HelloRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\"\n                  xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\"\n                  xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\n    <requestId>{{randomHex}}</requestId>\n    <timestamp>{{dateTimeString}}</timestamp>\n    <requestVersion>1.1</requestVersion>\n    <headerVersion>1.1</headerVersion>\n    <ns2:APNumber>{{apNumberHW}}</ns2:APNumber>\n    <ns3:currentOperatorSiteProcessId>{{currentOperatorSiteProcessId}}</ns3:currentOperatorSiteProcessId>\n    <ns3:currentAeBlockUnblockStateProcessId>{{currentAeBlockUnblockStateProcessId}}</ns3:currentAeBlockUnblockStateProcessId>\n</ns3:HelloRequest>\n",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {}
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          }
+                        ],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152723"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    },
+                    {
+                      "name": "Software update",
+                      "api": {
+                        "id": "20754328",
+                        "method": "post",
+                        "path": "/softwareUpdate",
+                        "parameters": {
+                          "path": [],
+                          "query": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152724",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "json",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "application/xml",
+                          "parameters": [],
+                          "jsonSchema": {
+                            "type": "object",
+                            "properties": {},
+                            "x-apidog-orders": []
+                          },
+                          "mediaType": "",
+                          "oasExtensions": "",
+                          "required": false,
+                          "additionalContentTypes": []
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "46990ee6-dbd8-45ab-9e6d-20a9eb1aadcd",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 42,
+                        "cases": [
+                          {
+                            "id": 29410235,
+                            "type": "http",
+                            "path": null,
+                            "name": "Success",
+                            "responseId": 30152724,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<?xml version=\"1.1\" encoding=\"utf-8\"?>\n<SoftwareUpdateRequest xmlns:ns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:base=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:communication=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:reportMessage=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\n  <ns:requestId>{{randomHex}}</ns:requestId>\n  <ns:timestamp>{{dateTimeString}}</ns:timestamp>\n  <ns:requestVersion>1.1</ns:requestVersion>\n  <ns:headerVersion>1.1</ns:headerVersion>\n  <base:APNumber>{{apNumberHW}}</base:APNumber>\n</SoftwareUpdateRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {}
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          }
+                        ],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152724"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    },
+                    {
+                      "name": "BlockUnblock",
+                      "api": {
+                        "id": "20754329",
+                        "method": "post",
+                        "path": "/blockUnblock",
+                        "parameters": {
+                          "path": [],
+                          "query": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152725",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "json",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "application/xml",
+                          "parameters": [],
+                          "jsonSchema": {
+                            "type": "object",
+                            "properties": {},
+                            "x-apidog-orders": []
+                          },
+                          "mediaType": "",
+                          "oasExtensions": "",
+                          "required": false,
+                          "additionalContentTypes": []
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "46990ee6-dbd8-45ab-9e6d-20a9eb1aadcd",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 48,
+                        "cases": [
+                          {
+                            "id": 29410236,
+                            "type": "http",
+                            "path": null,
+                            "name": "Success",
+                            "responseId": 30152725,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<?xml version=\"1.1\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns3:BlockUnblockRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\"\n                             xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\"\n                             xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\n    <requestId>{{randomHex}}</requestId>\n    <timestamp>{{dateTimeString}}</timestamp>\n    <requestVersion>1.1</requestVersion>\n    <headerVersion>1.1</headerVersion>\n    <ns2:APNumber>{{apNumberHW}}</ns2:APNumber>\n</ns3:BlockUnblockRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {}
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          }
+                        ],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152725"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    },
+                    {
+                      "name": "EndOfOperation",
+                      "api": {
+                        "id": "20754330",
+                        "method": "post",
+                        "path": "/endOfOperation",
+                        "parameters": {
+                          "path": [],
+                          "query": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152726",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "json",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "application/xml",
+                          "parameters": [],
+                          "jsonSchema": {
+                            "type": "object",
+                            "properties": {},
+                            "x-apidog-orders": []
+                          },
+                          "mediaType": "",
+                          "oasExtensions": "",
+                          "required": false,
+                          "additionalContentTypes": []
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "46990ee6-dbd8-45ab-9e6d-20a9eb1aadcd",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 54,
+                        "cases": [
+                          {
+                            "id": 29410237,
+                            "type": "http",
+                            "path": null,
+                            "name": "Success",
+                            "responseId": 30152726,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<?xml version=\"1.1\" encoding=\"utf-8\"?>\n<ns:EndOfOperationRequest xmlns:base=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:common=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:ns=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\n    <common:requestId>{{randomHex}}</common:requestId>\n    <common:timestamp>{{dateTimeString}}</common:timestamp>\n    <common:requestVersion>1.1</common:requestVersion>\n    <common:headerVersion>1.1</common:headerVersion>\n    <base:APNumber>{{apnumberHW}}</base:APNumber>\n    <ns:lastRecordCounter>{{lastRecordCounter}</ns:lastRecordCounter>\n    <ns:coTaxpayerLastRecordCounter>{{coTaxpayerLastRecordCounter}}</ns:coTaxpayerLastRecordCounter>\n    <ns:cashRegisterWorkState>{{cashRegisterWorkState}}</ns:cashRegisterWorkState>\n</ns:EndOfOperationRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {}
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          }
+                        ],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152726"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    },
+                    {
+                      "name": "Renew certificate",
+                      "api": {
+                        "id": "20754331",
+                        "method": "post",
+                        "path": "/renewCertificate",
+                        "parameters": {
+                          "path": [],
+                          "query": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152727",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "json",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "application/xml",
+                          "parameters": [],
+                          "jsonSchema": {
+                            "type": "object",
+                            "properties": {},
+                            "x-apidog-orders": []
+                          },
+                          "mediaType": "",
+                          "oasExtensions": "",
+                          "required": false,
+                          "additionalContentTypes": []
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "46990ee6-dbd8-45ab-9e6d-20a9eb1aadcd",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 60,
+                        "cases": [
+                          {
+                            "id": 29410238,
+                            "type": "http",
+                            "path": null,
+                            "name": "Success",
+                            "responseId": 30152727,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<?xml version=\"1.1\" encoding=\"UTF-8\" standalone=\"yes\"?>\r\n<ns3:RenewCertificateRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\"\r\n                  xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\"\r\n                  xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\r\n    <requestId>{{randomHex}}</requestId>\r\n    <timestamp>{{dateTimeString}}</timestamp>\r\n    <requestVersion>1.1</requestVersion>\r\n    <headerVersion>1.1</headerVersion>\r\n    <ns2:APNumber>{{apNumberHW}}</ns2:APNumber>\r\n    <ns3:taxNumber>{{taxNumber}}</ns3:taxNumber>\r\n    <ns3:renewCertificateCode>{{renewCertificateCode}}</ns3:renewCertificateCode>\r\n    <ns3:certificateType>{{certificateType}}</ns3:certificateType>\r\n    <ns3:certificateRequest>{{certificateRequest}}</ns3:certificateRequest>\r\n</ns3:RenewCertificateRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {}
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          }
+                        ],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152727"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Document",
+                  "id": 4719235,
+                  "auth": {},
+                  "securityScheme": {},
+                  "parentId": 4719232,
+                  "serverId": "ee402d33-6769-49d9-ad39-a7c632c43daa",
+                  "description": "",
+                  "identityPattern": {
+                    "httpApi": {
+                      "type": "inherit",
+                      "bodyType": "",
+                      "fields": []
+                    }
+                  },
+                  "shareSettings": {},
+                  "visibility": "INHERITED",
+                  "moduleId": 868785,
+                  "preProcessors": [
+                    {
+                      "id": "inheritProcessors",
+                      "type": "inheritProcessors",
+                      "data": {}
+                    }
+                  ],
+                  "postProcessors": [
+                    {
+                      "id": "inheritProcessors",
+                      "type": "inheritProcessors",
+                      "data": {}
+                    }
+                  ],
+                  "inheritPostProcessors": {},
+                  "inheritPreProcessors": {},
+                  "items": [
+                    {
+                      "name": "Send document",
+                      "api": {
+                        "id": "20754332",
+                        "method": "post",
+                        "path": "/document",
+                        "parameters": {
+                          "path": [],
+                          "query": [],
+                          "cookie": [],
+                          "header": [
+                            {
+                              "id": "nThaV9evqm",
+                              "name": "x-cert-subject",
+                              "required": true,
+                              "description": "",
+                              "example": "C=HU,2.5.4.97=20000002-0-02,CN=Q00000001,SERIALNUMBER=000000000000000",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152728",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "json",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "application/xml",
+                          "parameters": [],
+                          "jsonSchema": {
+                            "type": "object",
+                            "properties": {},
+                            "x-apidog-orders": []
+                          },
+                          "examples": [],
+                          "mediaType": "",
+                          "oasExtensions": "",
+                          "required": false,
+                          "additionalContentTypes": []
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "e966be85-3c91-4af0-9baf-0c49e53c39fa",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 0,
+                        "cases": [
+                          {
+                            "id": 29410239,
+                            "type": "http",
+                            "path": null,
+                            "name": "Receipt - nyugta",
+                            "responseId": 30152728,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": [
+                                {
+                                  "id": "TC2xZ3b8ZR",
+                                  "relatedId": "nThaV9evqm",
+                                  "relatedName": "x-cert-subject",
+                                  "name": "x-cert-subject",
+                                  "type": "string",
+                                  "value": "C=HU,2.5.4.97=20000002-0-02,CN=Q00000001,SERIALNUMBER=000000000000000",
+                                  "enable": true,
+                                  "description": "",
+                                  "isDelete": false
+                                }
+                              ]
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<ns3:DocumentRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:ns6=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage\" xmlns:ns5=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData\" xmlns:ns8=\"http://schemas.nav.gov.hu/OSA/3.0/base\" xmlns:ns7=\"http://schemas.nav.gov.hu/OSA/3.0/data\" xmlns:ns9=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:ns4=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\r\n    <requestId>{{randomHex}}</requestId>\r\n    <timestamp>{{dateTimeString}}</timestamp>\r\n    <requestVersion>1.1</requestVersion>\r\n    <ns2:APNumber>{{apnumberHW}}</ns2:APNumber>\r\n    <ns3:taxNumber>{{taxNumber}}</ns3:taxNumber>\r\n    <ns3:documentClass>RECEIPT</ns3:documentClass>\r\n    <ns3:documentEnvelope>\r\n        <ns2:envelopeData>{{envelopeData}}</ns2:envelopeData>\r\n        <ns2:customerEnvelopeData>{{customerEnvelopeData}}</ns2:customerEnvelopeData>\r\n        <ns2:envelopeHash cryptoType=\"SHA-256\">{{envelopeHash}}</ns2:envelopeHash>\r\n        <ns2:envelopeSignature>{{envelopeSignature}}</ns2:envelopeSignature>\r\n    </ns3:documentEnvelope>\r\n    <ns3:decryptKey>{{decryptKey}}</ns3:decryptKey>\r\n    <ns3:searchKeyTimestamp>{{searchKeyTimestamp}}</ns3:searchKeyTimestamp>\r\n    <ns3:searchKey>{{searchKey}}</ns3:searchKey>\r\n    <ns3:qRCodeExpired>false</ns3:qRCodeExpired>\r\n    <ns3:offlineCreated>false</ns3:offlineCreated>\r\n    <ns3:cashRegisterSignCertificate>{{cashRegisterSignCertificate}}</ns3:cashRegisterSignCertificate>\r\n    <ns3:recordCounter>{{recordCounter}}</ns3:recordCounter>\r\n    <ns3:lastRecordCounter>{{lastRecordCounter}}</ns3:lastRecordCounter>\r\n    <ns3:ntcaVerificationCode>{{ntcaVerificationCode}}</ns3:ntcaVerificationCode>\r\n</ns3:DocumentRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {},
+                              "isDefaultUrlEncoding": 3,
+                              "disableUrlEncoding": false
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          },
+                          {
+                            "id": 29410240,
+                            "type": "http",
+                            "path": null,
+                            "name": "Fuel - Üzemanyagkártya",
+                            "responseId": 30152728,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": [
+                                {
+                                  "id": "T9X9zpNJTF",
+                                  "relatedId": "nThaV9evqm",
+                                  "relatedName": "x-cert-subject",
+                                  "name": "x-cert-subject",
+                                  "type": "string",
+                                  "value": "C=HU,2.5.4.97=20000002-0-02,CN=Q00000001,SERIALNUMBER=000000000000000",
+                                  "enable": true,
+                                  "description": "",
+                                  "isDelete": false
+                                }
+                              ]
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<ns3:DocumentRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:ns6=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage\" xmlns:ns5=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData\" xmlns:ns8=\"http://schemas.nav.gov.hu/OSA/3.0/base\" xmlns:ns7=\"http://schemas.nav.gov.hu/OSA/3.0/data\" xmlns:ns9=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:ns4=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\r\n    <requestId>{{randomHex}}</requestId>\r\n    <timestamp>{{dateTimeString}}</timestamp>\r\n    <requestVersion>1.1</requestVersion>\r\n    <ns2:APNumber>{{apnumberHW}}</ns2:APNumber>\r\n    <ns3:taxNumber>{{taxNumber}}</ns3:taxNumber>\r\n    <ns3:documentClass>FUEL</ns3:documentClass>\r\n    <ns3:documentEnvelope>\r\n        <ns2:envelopeData>{{envelopeData}}</ns2:envelopeData>\r\n        <ns2:customerEnvelopeData>{{customerEnvelopeData}}</ns2:customerEnvelopeData>\r\n        <ns2:envelopeHash cryptoType=\"SHA-256\">{{envelopeHash}}</ns2:envelopeHash>\r\n        <ns2:envelopeSignature>{{envelopeSignature}}</ns2:envelopeSignature>\r\n    </ns3:documentEnvelope>\r\n    <ns3:decryptKey>{{decryptKey}}</ns3:decryptKey>\r\n    <ns3:searchKeyTimestamp>{{searchKeyTimestamp}}</ns3:searchKeyTimestamp>\r\n    <ns3:searchKey>{{searchKey}}</ns3:searchKey>\r\n    <ns3:qRCodeExpired>false</ns3:qRCodeExpired>\r\n    <ns3:offlineCreated>false</ns3:offlineCreated>\r\n    <ns3:cashRegisterSignCertificate>{{cashRegisterSignCertificate}}</ns3:cashRegisterSignCertificate>\r\n    <ns3:recordCounter>{{recordCounter}}</ns3:recordCounter>\r\n    <ns3:lastRecordCounter>{{lastRecordCounter}}</ns3:lastRecordCounter>\r\n    <ns3:ntcaVerificationCode>{{ntcaVerificationCode}}</ns3:ntcaVerificationCode>\r\n</ns3:DocumentRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {},
+                              "isDefaultUrlEncoding": 3,
+                              "disableUrlEncoding": false
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          },
+                          {
+                            "id": 29410241,
+                            "type": "http",
+                            "path": null,
+                            "name": "Deferred - Szállodai átterhelés bizonylat",
+                            "responseId": 30152728,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": [
+                                {
+                                  "id": "R3hNoPepj1",
+                                  "relatedId": "nThaV9evqm",
+                                  "relatedName": "x-cert-subject",
+                                  "name": "x-cert-subject",
+                                  "type": "string",
+                                  "value": "C=HU,2.5.4.97=20000002-0-02,CN=Q00000001,SERIALNUMBER=000000000000000",
+                                  "enable": true,
+                                  "description": "",
+                                  "isDelete": false
+                                }
+                              ]
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<ns3:DocumentRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:ns6=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage\" xmlns:ns5=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData\" xmlns:ns8=\"http://schemas.nav.gov.hu/OSA/3.0/base\" xmlns:ns7=\"http://schemas.nav.gov.hu/OSA/3.0/data\" xmlns:ns9=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:ns4=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\r\n    <requestId>{{randomHex}}</requestId>\r\n    <timestamp>{{dateTimeString}}</timestamp>\r\n    <requestVersion>1.1</requestVersion>\r\n    <ns2:APNumber>{{apnumberHW}}</ns2:APNumber>\r\n    <ns3:taxNumber>{{taxNumber}}</ns3:taxNumber>\r\n    <ns3:documentClass>DEFERRED</ns3:documentClass>\r\n    <ns3:documentEnvelope>\r\n        <ns2:envelopeData>{{envelopeData}}</ns2:envelopeData>\r\n        <ns2:customerEnvelopeData>{{customerEnvelopeData}}</ns2:customerEnvelopeData>\r\n        <ns2:envelopeHash cryptoType=\"SHA-256\">{{envelopeHash}}</ns2:envelopeHash>\r\n        <ns2:envelopeSignature>{{envelopeSignature}}</ns2:envelopeSignature>\r\n    </ns3:documentEnvelope>\r\n    <ns3:decryptKey>{{decryptKey}}</ns3:decryptKey>\r\n    <ns3:searchKeyTimestamp>{{searchKeyTimestamp}}</ns3:searchKeyTimestamp>\r\n    <ns3:searchKey>{{searchKey}}</ns3:searchKey>\r\n    <ns3:qRCodeExpired>false</ns3:qRCodeExpired>\r\n    <ns3:offlineCreated>false</ns3:offlineCreated>\r\n    <ns3:cashRegisterSignCertificate>{{cashRegisterSignCertificate}}</ns3:cashRegisterSignCertificate>\r\n    <ns3:recordCounter>{{recordCounter}}</ns3:recordCounter>\r\n    <ns3:lastRecordCounter>{{lastRecordCounter}}</ns3:lastRecordCounter>\r\n    <ns3:ntcaVerificationCode>{{ntcaVerificationCode}}</ns3:ntcaVerificationCode>\r\n</ns3:DocumentRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {},
+                              "isDefaultUrlEncoding": 3,
+                              "disableUrlEncoding": false
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          },
+                          {
+                            "id": 29410242,
+                            "type": "http",
+                            "path": null,
+                            "name": "Other - Egyéb bizonylat",
+                            "responseId": 30152728,
+                            "parameters": {
+                              "query": [],
+                              "path": [],
+                              "cookie": [],
+                              "header": [
+                                {
+                                  "id": "5FULpXMEpK",
+                                  "relatedId": "nThaV9evqm",
+                                  "relatedName": "x-cert-subject",
+                                  "value": "C=HU,2.5.4.97=20000002-0-02,CN=Q00000001,SERIALNUMBER=000000000000000",
+                                  "enable": true,
+                                  "isDelete": false
+                                }
+                              ]
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<ns3:DocumentRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:ns6=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage\" xmlns:ns5=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData\" xmlns:ns8=\"http://schemas.nav.gov.hu/OSA/3.0/base\" xmlns:ns7=\"http://schemas.nav.gov.hu/OSA/3.0/data\" xmlns:ns9=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:ns4=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\r\n    <requestId>{{randomHex}}</requestId>\r\n    <timestamp>{{dateTimeString}}</timestamp>\r\n    <requestVersion>1.1</requestVersion>\r\n    <ns2:APNumber>{{apnumberHW}}</ns2:APNumber>\r\n    <ns3:taxNumber>{{taxNumber}}</ns3:taxNumber>\r\n    <ns3:documentClass>OTHER</ns3:documentClass>\r\n    <ns3:documentEnvelope>\r\n        <ns2:envelopeData>{{envelopeData}}</ns2:envelopeData>\r\n        <ns2:customerEnvelopeData>{{customerEnvelopeData}}</ns2:customerEnvelopeData>\r\n        <ns2:envelopeHash cryptoType=\"SHA-256\">{{envelopeHash}}</ns2:envelopeHash>\r\n        <ns2:envelopeSignature>{{envelopeSignature}}</ns2:envelopeSignature>\r\n    </ns3:documentEnvelope>\r\n    <ns3:decryptKey>{{decryptKey}}</ns3:decryptKey>\r\n    <ns3:searchKeyTimestamp>{{searchKeyTimestamp}}</ns3:searchKeyTimestamp>\r\n    <ns3:searchKey>{{searchKey}}</ns3:searchKey>\r\n    <ns3:qRCodeExpired>false</ns3:qRCodeExpired>\r\n    <ns3:offlineCreated>false</ns3:offlineCreated>\r\n    <ns3:cashRegisterSignCertificate>{{cashRegisterSignCertificate}}</ns3:cashRegisterSignCertificate>\r\n    <ns3:recordCounter>{{recordCounter}}</ns3:recordCounter>\r\n    <ns3:lastRecordCounter>{{lastRecordCounter}}</ns3:lastRecordCounter>\r\n    <ns3:ntcaVerificationCode>{{ntcaVerificationCode}}</ns3:ntcaVerificationCode>\r\n</ns3:DocumentRequest>",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {},
+                              "isDefaultUrlEncoding": 3,
+                              "disableUrlEncoding": false
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          },
+                          {
+                            "id": 29410243,
+                            "type": "http",
+                            "path": null,
+                            "name": "Consume - Fogyasztási összesítő",
+                            "responseId": 30152728,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": [
+                                {
+                                  "id": "VC5P0zXjYW",
+                                  "relatedId": "nThaV9evqm",
+                                  "relatedName": "x-cert-subject",
+                                  "name": "x-cert-subject",
+                                  "type": "string",
+                                  "value": "C=HU,2.5.4.97=20000002-0-02,CN=Q00000001,SERIALNUMBER=000000000000000",
+                                  "enable": true,
+                                  "description": "",
+                                  "isDelete": false
+                                }
+                              ]
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<ns3:DocumentRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:ns6=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage\" xmlns:ns5=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData\" xmlns:ns8=\"http://schemas.nav.gov.hu/OSA/3.0/base\" xmlns:ns7=\"http://schemas.nav.gov.hu/OSA/3.0/data\" xmlns:ns9=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:ns4=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\r\n    <requestId>{{randomHex}}</requestId>\r\n    <timestamp>{{dateTimeString}}</timestamp>\r\n    <requestVersion>1.1</requestVersion>\r\n    <ns2:APNumber>{{apnumberHW}}</ns2:APNumber>\r\n    <ns3:taxNumber>{{taxNumber}}</ns3:taxNumber>\r\n    <ns3:documentClass>CONSUME</ns3:documentClass>\r\n    <ns3:documentEnvelope>\r\n        <ns2:envelopeData>{{envelopeData}}</ns2:envelopeData>\r\n        <ns2:customerEnvelopeData>{{customerEnvelopeData}}</ns2:customerEnvelopeData>\r\n        <ns2:envelopeHash cryptoType=\"SHA-256\">{{envelopeHash}}</ns2:envelopeHash>\r\n        <ns2:envelopeSignature>{{envelopeSignature}}</ns2:envelopeSignature>\r\n    </ns3:documentEnvelope>\r\n    <ns3:decryptKey>{{decryptKey}}</ns3:decryptKey>\r\n    <ns3:searchKeyTimestamp>{{searchKeyTimestamp}}</ns3:searchKeyTimestamp>\r\n    <ns3:searchKey>{{searchKey}}</ns3:searchKey>\r\n    <ns3:qRCodeExpired>false</ns3:qRCodeExpired>\r\n    <ns3:offlineCreated>false</ns3:offlineCreated>\r\n    <ns3:cashRegisterSignCertificate>{{cashRegisterSignCertificate}}</ns3:cashRegisterSignCertificate>\r\n    <ns3:recordCounter>{{recordCounter}}</ns3:recordCounter>\r\n    <ns3:lastRecordCounter>{{lastRecordCounter}}</ns3:lastRecordCounter>\r\n    <ns3:ntcaVerificationCode>{{ntcaVerificationCode}}</ns3:ntcaVerificationCode>\r\n</ns3:DocumentRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {},
+                              "isDefaultUrlEncoding": 3,
+                              "disableUrlEncoding": false
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          },
+                          {
+                            "id": 29410244,
+                            "type": "http",
+                            "path": null,
+                            "name": "Health - Egészségkártya",
+                            "responseId": 30152728,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": [
+                                {
+                                  "id": "vtpJsr6QNu",
+                                  "relatedId": "nThaV9evqm",
+                                  "relatedName": "x-cert-subject",
+                                  "name": "x-cert-subject",
+                                  "type": "string",
+                                  "value": "C=HU,2.5.4.97=20000002-0-02,CN=Q00000001,SERIALNUMBER=000000000000000",
+                                  "enable": true,
+                                  "description": "",
+                                  "isDelete": false
+                                }
+                              ]
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<ns3:DocumentRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:ns6=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage\" xmlns:ns5=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData\" xmlns:ns8=\"http://schemas.nav.gov.hu/OSA/3.0/base\" xmlns:ns7=\"http://schemas.nav.gov.hu/OSA/3.0/data\" xmlns:ns9=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:ns4=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\r\n    <requestId>{{randomHex}}</requestId>\r\n    <timestamp>{{dateTimeString}}</timestamp>\r\n    <requestVersion>1.1</requestVersion>\r\n    <ns2:APNumber>{{apnumberHW}}</ns2:APNumber>\r\n    <ns3:taxNumber>{{taxNumber}}</ns3:taxNumber>\r\n    <ns3:documentClass>HEALTH</ns3:documentClass>\r\n    <ns3:documentEnvelope>\r\n        <ns2:envelopeData>{{envelopeData}}</ns2:envelopeData>\r\n        <ns2:customerEnvelopeData>{{customerEnvelopeData}}</ns2:customerEnvelopeData>\r\n        <ns2:envelopeHash cryptoType=\"SHA-256\">{{envelopeHash}}</ns2:envelopeHash>\r\n        <ns2:envelopeSignature>{{envelopeSignature}}</ns2:envelopeSignature>\r\n    </ns3:documentEnvelope>\r\n    <ns3:decryptKey>{{decryptKey}}</ns3:decryptKey>\r\n    <ns3:searchKeyTimestamp>{{searchKeyTimestamp}}</ns3:searchKeyTimestamp>\r\n    <ns3:searchKey>{{searchKey}}</ns3:searchKey>\r\n    <ns3:qRCodeExpired>false</ns3:qRCodeExpired>\r\n    <ns3:offlineCreated>false</ns3:offlineCreated>\r\n    <ns3:cashRegisterSignCertificate>{{cashRegisterSignCertificate}}</ns3:cashRegisterSignCertificate>\r\n    <ns3:recordCounter>{{recordCounter}}</ns3:recordCounter>\r\n    <ns3:lastRecordCounter>{{lastRecordCounter}}</ns3:lastRecordCounter>\r\n    <ns3:ntcaVerificationCode>{{ntcaVerificationCode}}</ns3:ntcaVerificationCode>\r\n</ns3:DocumentRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {},
+                              "isDefaultUrlEncoding": 3,
+                              "disableUrlEncoding": false
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          },
+                          {
+                            "id": 29410245,
+                            "type": "http",
+                            "path": null,
+                            "name": "Simplified Invoice - egyszerusitett szamla",
+                            "responseId": 30152728,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": [
+                                {
+                                  "id": "38ObB2BDIM",
+                                  "relatedId": "nThaV9evqm",
+                                  "relatedName": "x-cert-subject",
+                                  "name": "x-cert-subject",
+                                  "type": "string",
+                                  "value": "C=HU,2.5.4.97=20000002-0-02,CN=Q00000001,SERIALNUMBER=000000000000000",
+                                  "enable": true,
+                                  "description": "",
+                                  "isDelete": false
+                                }
+                              ]
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<ns3:DocumentRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:ns6=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage\" xmlns:ns5=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData\" xmlns:ns8=\"http://schemas.nav.gov.hu/OSA/3.0/base\" xmlns:ns7=\"http://schemas.nav.gov.hu/OSA/3.0/data\" xmlns:ns9=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:ns4=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\r\n    <requestId>{{randomHex}}</requestId>\r\n    <timestamp>{{dateTimeString}}</timestamp>\r\n    <requestVersion>1.1</requestVersion>\r\n    <ns2:APNumber>{{apnumberHW}}</ns2:APNumber>\r\n    <ns3:taxNumber>{{taxNumber}}</ns3:taxNumber>\r\n    <ns3:documentClass>SIMPLIFIEDINVOICE</ns3:documentClass>\r\n    <ns3:documentEnvelope>\r\n        <ns2:envelopeData>{{envelopeData}}</ns2:envelopeData>\r\n        <ns2:customerEnvelopeData>{{customerEnvelopeData}}</ns2:customerEnvelopeData>\r\n        <ns2:envelopeHash cryptoType=\"SHA-256\">{{envelopeHash}}</ns2:envelopeHash>\r\n        <ns2:envelopeSignature>{{envelopeSignature}}</ns2:envelopeSignature>\r\n    </ns3:documentEnvelope>\r\n    <ns3:decryptKey>{{decryptKey}}</ns3:decryptKey>\r\n    <ns3:searchKeyTimestamp>{{searchKeyTimestamp}}</ns3:searchKeyTimestamp>\r\n    <ns3:searchKey>{{searchKey}}</ns3:searchKey>\r\n    <ns3:qRCodeExpired>false</ns3:qRCodeExpired>\r\n    <ns3:offlineCreated>false</ns3:offlineCreated>\r\n    <ns3:cashRegisterSignCertificate>{{cashRegisterSignCertificate}}</ns3:cashRegisterSignCertificate>\r\n    <ns3:recordCounter>{{recordCounter}}</ns3:recordCounter>\r\n    <ns3:lastRecordCounter>{{lastRecordCounter}}</ns3:lastRecordCounter>\r\n    <ns3:ntcaVerificationCode>{{ntcaVerificationCode}}</ns3:ntcaVerificationCode>\r\n</ns3:DocumentRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {},
+                              "isDefaultUrlEncoding": 3,
+                              "disableUrlEncoding": false
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          },
+                          {
+                            "id": 29410246,
+                            "type": "http",
+                            "path": null,
+                            "name": "Normal Invoice - Normál számla",
+                            "responseId": 30152728,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": [
+                                {
+                                  "id": "34nanOuS4l",
+                                  "relatedId": "nThaV9evqm",
+                                  "relatedName": "x-cert-subject",
+                                  "name": "x-cert-subject",
+                                  "type": "string",
+                                  "value": "C=HU,2.5.4.97=20000002-0-02,CN=Q00000001,SERIALNUMBER=000000000000000",
+                                  "enable": true,
+                                  "description": "",
+                                  "isDelete": false
+                                }
+                              ]
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<ns3:DocumentRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:ns6=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage\" xmlns:ns5=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData\" xmlns:ns8=\"http://schemas.nav.gov.hu/OSA/3.0/base\" xmlns:ns7=\"http://schemas.nav.gov.hu/OSA/3.0/data\" xmlns:ns9=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:ns4=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\r\n    <requestId>{{randomHex}}</requestId>\r\n    <timestamp>{{dateTimeString}}</timestamp>\r\n    <requestVersion>1.1</requestVersion>\r\n    <ns2:APNumber>{{apnumberHW}}</ns2:APNumber>\r\n    <ns3:taxNumber>{{taxNumber}}</ns3:taxNumber>\r\n    <ns3:documentClass>NORMALINVOICE</ns3:documentClass>\r\n    <ns3:documentEnvelope>\r\n        <ns2:envelopeData>{{envelopeData}}</ns2:envelopeData>\r\n        <ns2:customerEnvelopeData>{{customerEnvelopeData}}</ns2:customerEnvelopeData>\r\n        <ns2:envelopeHash cryptoType=\"SHA-256\">{{envelopeHash}}</ns2:envelopeHash>\r\n        <ns2:envelopeSignature>{{envelopeSignature}}</ns2:envelopeSignature>\r\n    </ns3:documentEnvelope>\r\n    <ns3:decryptKey>{{decryptKey}}</ns3:decryptKey>\r\n    <ns3:searchKeyTimestamp>{{searchKeyTimestamp}}</ns3:searchKeyTimestamp>\r\n    <ns3:searchKey>{{searchKey}}</ns3:searchKey>\r\n    <ns3:qRCodeExpired>false</ns3:qRCodeExpired>\r\n    <ns3:offlineCreated>false</ns3:offlineCreated>\r\n    <ns3:cashRegisterSignCertificate>{{cashRegisterSignCertificate}}</ns3:cashRegisterSignCertificate>\r\n    <ns3:recordCounter>{{recordCounter}}</ns3:recordCounter>\r\n    <ns3:lastRecordCounter>{{lastRecordCounter}}</ns3:lastRecordCounter>\r\n    <ns3:ntcaVerificationCode>{{ntcaVerificationCode}}</ns3:ntcaVerificationCode>\r\n</ns3:DocumentRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {},
+                              "isDefaultUrlEncoding": 3,
+                              "disableUrlEncoding": false
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          }
+                        ],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152728"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    },
+                    {
+                      "name": "Send report",
+                      "api": {
+                        "id": "20754333",
+                        "method": "post",
+                        "path": "/report",
+                        "parameters": {
+                          "path": [],
+                          "query": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "auth": {},
+                        "securityScheme": {},
+                        "commonParameters": {
+                          "query": [],
+                          "body": [],
+                          "cookie": [],
+                          "header": []
+                        },
+                        "responses": [
+                          {
+                            "id": "30152729",
+                            "code": 200,
+                            "name": "Success",
+                            "headers": [],
+                            "jsonSchema": {
+                              "type": "object",
+                              "properties": {},
+                              "x-apidog-orders": []
+                            },
+                            "description": "",
+                            "contentType": "json",
+                            "mediaType": "",
+                            "oasExtensions": ""
+                          }
+                        ],
+                        "responseExamples": [],
+                        "requestBody": {
+                          "type": "application/xml",
+                          "parameters": [],
+                          "jsonSchema": {
+                            "type": "object",
+                            "properties": {},
+                            "x-apidog-orders": []
+                          },
+                          "examples": [],
+                          "mediaType": "",
+                          "oasExtensions": "",
+                          "required": false,
+                          "additionalContentTypes": []
+                        },
+                        "description": "",
+                        "tags": [],
+                        "status": "released",
+                        "serverId": "f7f3c3b8-ef02-4eae-a86f-dd30a8e58bbc",
+                        "operationId": "",
+                        "sourceUrl": "",
+                        "ordering": 6,
+                        "cases": [
+                          {
+                            "id": 29410247,
+                            "type": "http",
+                            "path": null,
+                            "name": "Cashregister other - bizonylatosszesito",
+                            "responseId": 30152729,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<ns3:ReportRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:ns6=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage\" xmlns:ns5=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData\" xmlns:ns8=\"http://schemas.nav.gov.hu/OSA/3.0/base\" xmlns:ns7=\"http://schemas.nav.gov.hu/OSA/3.0/data\" xmlns:ns9=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:ns4=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\r\n    <requestId>{{randomHex}}</requestId>\r\n    <timestamp>{{dateTimeString}}</timestamp>\r\n    <requestVersion>1.1</requestVersion>\r\n    <ns2:APNumber>{{apnumberHW}}</ns2:APNumber>\r\n    <ns3:taxNumber>{{taxNumber}}</ns3:taxNumber>\r\n    <ns3:reportClass>OTHER</ns3:reportClass>\r\n    <ns3:reportEnvelope>\r\n        <ns2:envelopeData>{{envelopeData}}</ns2:envelopeData>\r\n        <ns2:customerEnvelopeData>{{customerEnvelopeData}}</ns2:customerEnvelopeData>\r\n        <ns2:envelopeHash cryptoType=\"SHA-256\">{{envelopeHash}}</ns2:envelopeHash>\r\n        <ns2:envelopeSignature>{{envelopeSignature}}</ns2:envelopeSignature>\r\n    </ns3:reportEnvelope>\r\n    <ns3:decryptKey>{{decryptKey}}</ns3:decryptKey>\r\n    <ns3:searchKeyTimestamp>{{searchKeyTimestamp}}</ns3:searchKeyTimestamp>\r\n    <ns3:searchKey>{{searchKey}}</ns3:searchKey>\r\n    <ns3:qRCodeExpired>false</ns3:qRCodeExpired>\r\n    <ns3:offlineCreated>false</ns3:offlineCreated>\r\n    <ns3:cashRegisterSignCertificate>{{cashRegisterSignCertificate}}</ns3:cashRegisterSignCertificate>\r\n    <ns3:recordCounter>{{recordCounter}}</ns3:recordCounter>\r\n    <ns3:lastRecordCounter>{{lastRecordCounter}}</ns3:lastRecordCounter>\r\n    <ns3:ntcaVerificationCode>{{ntcaVerificationCode}}</ns3:ntcaVerificationCode>\r\n</ns3:ReportRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {},
+                              "isDefaultUrlEncoding": 3,
+                              "disableUrlEncoding": false
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          },
+                          {
+                            "id": 29410248,
+                            "type": "http",
+                            "path": null,
+                            "name": "Fiscal day open - napnyitas",
+                            "responseId": 30152729,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<ns3:ReportRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:ns6=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage\" xmlns:ns5=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData\" xmlns:ns8=\"http://schemas.nav.gov.hu/OSA/3.0/base\" xmlns:ns7=\"http://schemas.nav.gov.hu/OSA/3.0/data\" xmlns:ns9=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:ns4=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\r\n    <requestId>{{randomHex}}</requestId>\r\n    <timestamp>{{dateTimeString}}</timestamp>\r\n    <requestVersion>1.1</requestVersion>\r\n    <ns2:APNumber>{{apnumberHW}}</ns2:APNumber>\r\n    <ns3:taxNumber>{{taxNumber}}</ns3:taxNumber>\r\n    <ns3:reportClass>CASHREGISTEROPENBALANCE</ns3:reportClass>\r\n    <ns3:reportEnvelope>\r\n        <ns2:envelopeData>{{envelopeData}}</ns2:envelopeData>\r\n        <ns2:customerEnvelopeData>{{customerEnvelopeData}}</ns2:customerEnvelopeData>\r\n        <ns2:envelopeHash cryptoType=\"SHA-256\">{{envelopeHash}}</ns2:envelopeHash>\r\n        <ns2:envelopeSignature>{{envelopeSignature}}</ns2:envelopeSignature>\r\n    </ns3:reportEnvelope>\r\n    <ns3:decryptKey>{{decryptKey}}</ns3:decryptKey>\r\n    <ns3:searchKeyTimestamp>{{searchKeyTimestamp}}</ns3:searchKeyTimestamp>\r\n    <ns3:searchKey>{{searchKey}}</ns3:searchKey>\r\n    <ns3:qRCodeExpired>false</ns3:qRCodeExpired>\r\n    <ns3:offlineCreated>false</ns3:offlineCreated>\r\n    <ns3:cashRegisterSignCertificate>{{cashRegisterSignCertificate}}</ns3:cashRegisterSignCertificate>\r\n    <ns3:recordCounter>{{recordCounter}}</ns3:recordCounter>\r\n    <ns3:lastRecordCounter>{{lastRecordCounter}}</ns3:lastRecordCounter>\r\n    <ns3:ntcaVerificationCode>{{ntcaVerificationCode}}</ns3:ntcaVerificationCode>\r\n</ns3:ReportRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {},
+                              "isDefaultUrlEncoding": 3,
+                              "disableUrlEncoding": false
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          },
+                          {
+                            "id": 29410249,
+                            "type": "http",
+                            "path": null,
+                            "name": "Cashflow report - penzmozgas",
+                            "responseId": 30152729,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<ns3:ReportRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:ns6=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage\" xmlns:ns5=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData\" xmlns:ns8=\"http://schemas.nav.gov.hu/OSA/3.0/base\" xmlns:ns7=\"http://schemas.nav.gov.hu/OSA/3.0/data\" xmlns:ns9=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:ns4=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\r\n    <requestId>{{randomHex}}</requestId>\r\n    <timestamp>{{dateTimeString}}</timestamp>\r\n    <requestVersion>1.1</requestVersion>\r\n    <ns2:APNumber>{{apnumberHW}}</ns2:APNumber>\r\n    <ns3:taxNumber>{{taxNumber}}</ns3:taxNumber>\r\n    <ns3:reportClass>CASHFLOW</ns3:reportClass>\r\n    <ns3:reportEnvelope>\r\n        <ns2:envelopeData>{{envelopeData}}</ns2:envelopeData>\r\n        <ns2:customerEnvelopeData>{{customerEnvelopeData}}</ns2:customerEnvelopeData>\r\n        <ns2:envelopeHash cryptoType=\"SHA-256\">{{envelopeHash}}</ns2:envelopeHash>\r\n        <ns2:envelopeSignature>{{envelopeSignature}}</ns2:envelopeSignature>\r\n    </ns3:reportEnvelope>\r\n    <ns3:decryptKey>{{decryptKey}}</ns3:decryptKey>\r\n    <ns3:searchKeyTimestamp>{{searchKeyTimestamp}}</ns3:searchKeyTimestamp>\r\n    <ns3:searchKey>{{searchKey}}</ns3:searchKey>\r\n    <ns3:qRCodeExpired>false</ns3:qRCodeExpired>\r\n    <ns3:offlineCreated>false</ns3:offlineCreated>\r\n    <ns3:cashRegisterSignCertificate>{{cashRegisterSignCertificate}}</ns3:cashRegisterSignCertificate>\r\n    <ns3:recordCounter>{{recordCounter}}</ns3:recordCounter>\r\n    <ns3:lastRecordCounter>{{lastRecordCounter}}</ns3:lastRecordCounter>\r\n    <ns3:ntcaVerificationCode>{{ntcaVerificationCode}}</ns3:ntcaVerificationCode>\r\n</ns3:ReportRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {},
+                              "isDefaultUrlEncoding": 3,
+                              "disableUrlEncoding": false
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          },
+                          {
+                            "id": 29410250,
+                            "type": "http",
+                            "path": null,
+                            "name": "Cashregister- penztarjelentes",
+                            "responseId": 30152729,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<ns3:ReportRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:ns6=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage\" xmlns:ns5=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData\" xmlns:ns8=\"http://schemas.nav.gov.hu/OSA/3.0/base\" xmlns:ns7=\"http://schemas.nav.gov.hu/OSA/3.0/data\" xmlns:ns9=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:ns4=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\r\n    <requestId>{{randomHex}}</requestId>\r\n    <timestamp>{{dateTimeString}}</timestamp>\r\n    <requestVersion>1.1</requestVersion>\r\n    <ns2:APNumber>{{apnumberHW}}</ns2:APNumber>\r\n    <ns3:taxNumber>{{taxNumber}}</ns3:taxNumber>\r\n    <ns3:reportClass>CASHREGISTER</ns3:reportClass>\r\n    <ns3:reportEnvelope>\r\n        <ns2:envelopeData>{{envelopeData}}</ns2:envelopeData>\r\n        <ns2:customerEnvelopeData>{{customerEnvelopeData}}</ns2:customerEnvelopeData>\r\n        <ns2:envelopeHash cryptoType=\"SHA-256\">{{envelopeHash}}</ns2:envelopeHash>\r\n        <ns2:envelopeSignature>{{envelopeSignature}}</ns2:envelopeSignature>\r\n    </ns3:reportEnvelope>\r\n    <ns3:decryptKey>{{decryptKey}}</ns3:decryptKey>\r\n    <ns3:searchKeyTimestamp>{{searchKeyTimestamp}}</ns3:searchKeyTimestamp>\r\n    <ns3:searchKey>{{searchKey}}</ns3:searchKey>\r\n    <ns3:qRCodeExpired>false</ns3:qRCodeExpired>\r\n    <ns3:offlineCreated>false</ns3:offlineCreated>\r\n    <ns3:cashRegisterSignCertificate>{{cashRegisterSignCertificate}}</ns3:cashRegisterSignCertificate>\r\n    <ns3:recordCounter>{{recordCounter}}</ns3:recordCounter>\r\n    <ns3:lastRecordCounter>{{lastRecordCounter}}</ns3:lastRecordCounter>\r\n    <ns3:ntcaVerificationCode>{{ntcaVerificationCode}}</ns3:ntcaVerificationCode>\r\n</ns3:ReportRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {},
+                              "isDefaultUrlEncoding": 3,
+                              "disableUrlEncoding": false
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          },
+                          {
+                            "id": 29410251,
+                            "type": "http",
+                            "path": null,
+                            "name": "Cashregister- napiforgalmijelentes",
+                            "responseId": 30152729,
+                            "parameters": {
+                              "path": [],
+                              "query": [],
+                              "cookie": [],
+                              "header": []
+                            },
+                            "commonParameters": {
+                              "query": [],
+                              "body": [],
+                              "header": [],
+                              "cookie": []
+                            },
+                            "requestBody": {
+                              "parameters": [],
+                              "data": "<ns3:ReportRequest xmlns=\"http://schemas.nav.gov.hu/NTCA/1.0/common\" xmlns:ns6=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage\" xmlns:ns5=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData\" xmlns:ns8=\"http://schemas.nav.gov.hu/OSA/3.0/base\" xmlns:ns7=\"http://schemas.nav.gov.hu/OSA/3.0/data\" xmlns:ns9=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage\" xmlns:ns2=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/base\" xmlns:ns4=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData\" xmlns:ns3=\"http://schemas.nav.gov.hu/ERECEIPT/1.1/api\">\r\n    <requestId>{{randomHex}}</requestId>\r\n    <timestamp>{{dateTimeString}}</timestamp>\r\n    <requestVersion>1.1</requestVersion>\r\n    <ns2:APNumber>{{apnumberHW}}</ns2:APNumber>\r\n    <ns3:taxNumber>{{taxNumber}}</ns3:taxNumber>\r\n    <ns3:reportClass>DAILYCASHFLOW</ns3:reportClass>\r\n    <ns3:reportEnvelope>\r\n        <ns2:envelopeData>{{envelopeData}}</ns2:envelopeData>\r\n        <ns2:customerEnvelopeData>{{customerEnvelopeData}}</ns2:customerEnvelopeData>\r\n        <ns2:envelopeHash cryptoType=\"SHA-256\">{{envelopeHash}}</ns2:envelopeHash>\r\n        <ns2:envelopeSignature>{{envelopeSignature}}</ns2:envelopeSignature>\r\n    </ns3:reportEnvelope>\r\n    <ns3:decryptKey>{{decryptKey}}</ns3:decryptKey>\r\n    <ns3:searchKeyTimestamp>{{searchKeyTimestamp}}</ns3:searchKeyTimestamp>\r\n    <ns3:searchKey>{{searchKey}}</ns3:searchKey>\r\n    <ns3:qRCodeExpired>false</ns3:qRCodeExpired>\r\n    <ns3:offlineCreated>false</ns3:offlineCreated>\r\n    <ns3:cashRegisterSignCertificate>{{cashRegisterSignCertificate}}</ns3:cashRegisterSignCertificate>\r\n    <ns3:recordCounter>{{recordCounter}}</ns3:recordCounter>\r\n    <ns3:lastRecordCounter>{{lastRecordCounter}}</ns3:lastRecordCounter>\r\n    <ns3:ntcaVerificationCode>{{ntcaVerificationCode}}</ns3:ntcaVerificationCode>\r\n</ns3:ReportRequest>",
+                              "type": "application/xml",
+                              "generateMode": "normal"
+                            },
+                            "auth": {},
+                            "securityScheme": {},
+                            "advancedSettings": {
+                              "disabledSystemHeaders": {},
+                              "isDefaultUrlEncoding": 3,
+                              "disableUrlEncoding": false
+                            },
+                            "requestResult": null,
+                            "visibility": "INHERITED",
+                            "moduleId": 868785,
+                            "categoryId": 0,
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "inheritPostProcessors": {},
+                            "inheritPreProcessors": {}
+                          }
+                        ],
+                        "mocks": [],
+                        "customApiFields": "{}",
+                        "advancedSettings": {
+                          "disabledSystemHeaders": {}
+                        },
+                        "mockScript": {},
+                        "codeSamples": [],
+                        "commonResponseStatus": {},
+                        "responseChildren": [
+                          "BLANK.30152729"
+                        ],
+                        "visibility": "INHERITED",
+                        "moduleId": 868785,
+                        "oasExtensions": "",
+                        "type": "http",
+                        "preProcessors": [],
+                        "postProcessors": [],
+                        "inheritPostProcessors": {},
+                        "inheritPreProcessors": {}
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "socketCollection": [],
+  "docCollection": [],
+  "webSocketCollection": [],
+  "socketIOCollection": [],
+  "responseCollection": [
+    {
+      "_databaseId": 1098088,
+      "updatedAt": "2025-08-27T08:28:53.000Z",
+      "name": "Root",
+      "type": "root",
+      "children": [],
+      "moduleId": 868785,
+      "parentId": 0,
+      "id": 1098088,
+      "items": [
+        {
+          "_databaseId": 3235311,
+          "name": "Record not found",
+          "moduleId": 868785,
+          "code": 404,
+          "contentType": "json",
+          "jsonSchema": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "integer"
+              },
+              "message": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "x-apidog-orders": [
+              "code",
+              "message"
+            ]
+          },
+          "defaultEnable": false,
+          "folderId": 0,
+          "id": 3235311,
+          "databaseResponseExamples": [],
+          "responseExamples": []
+        },
+        {
+          "_databaseId": 3235312,
+          "name": "Invalid input",
+          "moduleId": 868785,
+          "code": 400,
+          "contentType": "json",
+          "jsonSchema": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "integer"
+              },
+              "message": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "x-apidog-orders": [
+              "code",
+              "message"
+            ]
+          },
+          "defaultEnable": false,
+          "folderId": 0,
+          "id": 3235312,
+          "databaseResponseExamples": [],
+          "responseExamples": []
+        }
+      ]
+    }
+  ],
+  "schemaCollection": [
+    {
+      "id": 2481241,
+      "name": "Root",
+      "visibility": "SHARED",
+      "moduleId": 868785,
+      "items": [],
+      "ordering": []
+    }
+  ],
+  "securitySchemeCollection": [
+    {
+      "id": 715218,
+      "moduleId": 868785,
+      "name": "Root",
+      "items": [],
+      "ordering": []
+    }
+  ],
+  "requestCollection": [
+    {
+      "name": "Root",
+      "children": [],
+      "ordering": [
+        "requestFolder.7963370"
+      ],
+      "items": []
+    }
+  ],
+  "apiTestCaseCollection": [
+    {
+      "name": "Root",
+      "children": [],
+      "items": []
+    }
+  ],
+  "testCaseReferences": [],
+  "environments": [
+    {
+      "name": "NAV PROD BV",
+      "requestProxyAgentSettings": {},
+      "variables": [
+        {
+          "name": "adminPassword",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "systemId",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "csr1",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "csr2",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "certId",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "certUrl",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "registrationNumber",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "X-API-Version",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "requestId",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "apNumber",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "oneTimePassword",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "X-Auth-Token",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "documentId",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "documentType",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "fiscalDayNo",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "manufacturerName",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "distributorName",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "distributorTaxPayerId",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "distributorContactName",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "distributorContactEmail",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "distributorContactPhone",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "cashRegisterName",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "searchKey",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "appToken",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "licenceNumber",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "hwFlag",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "startTime",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "endTime",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "coTaxFlag",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "softwareVersion",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "file",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "softwareHash",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "softwareId",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "softwareName",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "softwareOperationCode",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "softwareMainVersion",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "softwareLastUpdateTime",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "softwareDevName",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "softwareDevContact",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "softwareDevCountryCode",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "softwareDevTaxNumber",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "sliceSize",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "softwareVersionLegalTime",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "softwareStartDate",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "operatorSiteValidFrom",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "coTaxPayerDetailsProcessingFlag",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "taxPayer",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "coTaxPayer",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "shop",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "currentRegistrationNumber",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "timestamp",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "imei",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "imsi",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "authenticationCertificateRequest",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "signingCertificateRequest",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "softwareOperation",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "vatProcessId",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "operatorSiteProcessId",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "certIdAuth",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "certIdSign",
+          "value": "",
+          "description": "",
+          "initialValue": "",
+          "isSync": true
+        }
+      ],
+      "parameters": {
+        "cookie": [],
+        "query": [],
+        "header": [],
+        "body": []
+      },
+      "type": "normal",
+      "visibility": "protected",
+      "ordering": 0,
+      "tags": [
+        {
+          "name": "",
+          "color": "#9373EE"
+        }
+      ],
+      "id": "4710367",
+      "baseUrl": "default",
+      "baseUrls": {
+        "default": "default",
+        "397f2314-ab5f-4457-bc0e-b4768a359eb4": "https://navi-bv.enyugta.nav.gov.hu/eReceiptMgmt/v1",
+        "e966be85-3c91-4af0-9baf-0c49e53c39fa": "https://navi-bv-sec.enyugta.nav.gov.hu/eReceiptMgmt/v1",
+        "f7f3c3b8-ef02-4eae-a86f-dd30a8e58bbc": "https://navi-bv-sec.enyugta.nav.gov.hu/eReceipt/v1",
+        "1d80478c-14b1-4424-a66a-8a84926cc57e": "https://lekerdezo-bv.enyugta.nav.gov.hu/eDocumentStore/v1",
+        "5aa69bc7-24a9-4151-a682-2a1282020f81": "https://fam-bv-sec.enyugta.nav.gov.hu/fam/v1",
+        "c189058d-eac5-4675-8632-ab590a2f7768": "https://fam-bv.enyugta.nav.gov.hu/fam-ca/v1",
+        "94f0f09b-d298-4574-8fd3-95a05146e200": "https://navi-bv.enyugta.nav.gov.hu/eReceiptMgmt/v1",
+        "46990ee6-dbd8-45ab-9e6d-20a9eb1aadcd": "https://navi-bv-sec.enyugta.nav.gov.hu/eReceiptMgmt/v1"
+      }
+    }
+  ],
+  "commonScripts": [],
+  "databaseConnections": [],
+  "globalVariables": [
+    {
+      "id": "1051649",
+      "variables": [
+        {
+          "name": "currency",
+          "value": "HUF",
+          "description": "",
+          "isBindInitial": true,
+          "initialValue": "HUF",
+          "isSync": true
+        },
+        {
+          "name": "X-Auth-Token",
+          "value": "",
+          "description": "",
+          "isBindInitial": true,
+          "initialValue": "",
+          "isSync": true
+        },
+        {
+          "name": "X-API-Version",
+          "value": "1",
+          "description": "",
+          "isBindInitial": true,
+          "initialValue": "1",
+          "isSync": true
+        }
+      ]
+    }
+  ],
+  "commonParameters": null,
+  "projectSetting": {
+    "id": "1051689",
+    "auth": {},
+    "securityScheme": {},
+    "gateway": [],
+    "language": "en-US",
+    "apiStatuses": [
+      "developing",
+      "testing",
+      "released",
+      "deprecated"
+    ],
+    "mockSettings": {},
+    "preProcessors": [],
+    "postProcessors": [],
+    "advancedSettings": {
+      "enableJsonc": true,
+      "enableBigint": false,
+      "responseValidate": true,
+      "isDefaultUrlEncoding": 3,
+      "enableTestScenarioSetting": false,
+      "enableYAPICompatScript": false,
+      "publishedDocUrlRules": {
+        "defaultRule": "RESOURCE_KEY_ONLY",
+        "resourceKeyStandard": "LEGACY"
+      },
+      "folderShareExpandModeSettings": {
+        "expandId": [],
+        "mode": "AUTO"
+      }
+    },
+    "initialDisabledMockIds": [],
+    "servers": [
+      {
+        "id": "default",
+        "name": "Default Server"
+      },
+      {
+        "id": "397f2314-ab5f-4457-bc0e-b4768a359eb4",
+        "name": "navi",
+        "moduleId": 868785
+      },
+      {
+        "id": "e966be85-3c91-4af0-9baf-0c49e53c39fa",
+        "name": "secure-navi",
+        "moduleId": 868785
+      },
+      {
+        "id": "f7f3c3b8-ef02-4eae-a86f-dd30a8e58bbc",
+        "name": "navi-doc",
+        "moduleId": 868785
+      },
+      {
+        "id": "1d80478c-14b1-4424-a66a-8a84926cc57e",
+        "name": "document-store",
+        "moduleId": 868785
+      },
+      {
+        "id": "5aa69bc7-24a9-4151-a682-2a1282020f81",
+        "name": "fam",
+        "moduleId": 868785
+      },
+      {
+        "id": "c189058d-eac5-4675-8632-ab590a2f7768",
+        "name": "fam-m",
+        "moduleId": 868785
+      },
+      {
+        "id": "94f0f09b-d298-4574-8fd3-95a05146e200",
+        "name": "navi-sec",
+        "moduleId": 868785
+      },
+      {
+        "id": "46990ee6-dbd8-45ab-9e6d-20a9eb1aadcd",
+        "name": "navi-sec-mgmt",
+        "moduleId": 868785
+      }
+    ],
+    "cloudMock": {
+      "security": "free",
+      "enable": false,
+      "tokenKey": "apidogToken"
+    }
+  },
+  "customFunctions": [],
+  "projectTestCaseCategories": [
+    {
+      "id": 123166,
+      "name": "Positive"
+    },
+    {
+      "id": 123167,
+      "name": "Negative"
+    },
+    {
+      "id": 123168,
+      "name": "Boundary Value"
+    },
+    {
+      "id": 123169,
+      "name": "Security"
+    },
+    {
+      "id": 123170,
+      "name": "Other"
+    }
+  ],
+  "projectAssociations": [],
+  "moduleSettings": [
+    {
+      "id": "868785",
+      "name": "Default module",
+      "moduleVariables": []
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item AdditionalQueryParamsType in eReceiptExport</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'additionalqueryparamstype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptExport
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>AdditionalQueryParamsType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">http://schemas.nav.gov.hu/OSA/3.0/api</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="invoiceapi_xsd.html">invoiceApi.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>A számla lekérdezés kiegészítő paraméterei
+Additional params of the invoice query</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="285,940,458,1043" href="currency.html" alt="Drilldown into currency"></area>
+                     <area shape="rect" coords="285,797,445,933" href="source.html" alt="Drilldown into source"></area>
+                     <area shape="rect" coords="285,665,569,790" href="invoiceappearance.html" alt="Drilldown into invoiceAppearance"></area>
+                     <area shape="rect" coords="285,522,535,658" href="paymentmethod.html" alt="Drilldown into paymentMethod"></area>
+                     <area shape="rect" coords="285,401,537,515" href="invoicecategory.html" alt="Drilldown into invoiceCategory"></area>
+                     <area shape="rect" coords="285,271,578,393" href="name.html" alt="Drilldown into name"></area>
+                     <area shape="rect" coords="285,131,586,264" href="groupmembertaxnumber.html" alt="Drilldown into groupMemberTaxNumber"></area>
+                     <area shape="rect" coords="285,1,580,124" href="taxnumber1.html" alt="Drilldown into taxNumber"></area></map><img src="images/additionalqueryparamstype.png" border="0" alt="XSD Diagram of AdditionalQueryParamsType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="AdditionalQueryParamsType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;A számla lekérdezés kiegészítő paraméterei&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Additional params of the invoice query&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="taxNumber" type="common:TaxpayerIdType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A számla kiállítójának vagy vevőjének adószáma (a keresési feltétel az invoiceDirection tag értékétől függ)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Tax number of the supplier or the customer of the invoice (the search criteria depends on the value of the invoiceDirection tag)&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="groupMemberTaxNumber" type="common:TaxpayerIdType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A számla kiállítójának vagy vevőjének csoport tag adószáma (a keresési feltétel az invoiceDirection tag értékétől függ)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Tax number of group member of the supplier or the customer of the invoice (the search criteria depends on the value of the invoiceDirection tag)&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="name" type="QueryNameType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A számla kiállítójának vagy vevőjének keresőparamétere szó eleji egyezőségre (a keresési feltétel az invoiceDirection tag értékétől függ)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Query param of the supplier or the customer of the invoice for leading match pattern (the search criteria depends on the value of the invoiceDirection tag)&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="invoiceCategory" type="base:InvoiceCategoryType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A számla típusa&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Type of invoice&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="paymentMethod" type="base:PaymentMethodType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Fizetés módja&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Method of payment&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="invoiceAppearance" type="base:InvoiceAppearanceType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A számla megjelenési formája&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Form of appearance of the invoice&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="source" type="SourceType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az adatszolgáltatás forrása&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Data exchange source&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="currency" type="common:CurrencyType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A számla pénzneme&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Currency of the invoice&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">taxNumber</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="taxnumber1.html">taxNumber</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">groupMemberTaxNumber</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="groupmembertaxnumber.html">groupMemberTaxNumber</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">name</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="name.html">name</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">invoiceCategory</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="invoicecategory.html">invoiceCategory</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">paymentMethod</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="paymentmethod.html">paymentMethod</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">invoiceAppearance</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="invoiceappearance.html">invoiceAppearance</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">source</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="source.html">source</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">currency</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="currency.html">currency</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>AdditionalQueryParamsType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="additionalqueryparams.html">additionalQueryParams</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsB</a>:<a href="additionalqueryparams.html">additionalQueryParams</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptExport<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

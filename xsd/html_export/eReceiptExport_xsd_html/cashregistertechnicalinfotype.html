@@ -1,0 +1,326 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item CashRegisterTechnicalInfoType in eReceiptExport</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'cashregistertechnicalinfotype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptExport
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>CashRegisterTechnicalInfoType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="communicationdata_xsd.html">communicationData.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>e-Pénztárgép műszaki jellemzői
+e-Cash register technical features</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="302,812,693,867" href="posassignedbankaccounts.html" alt="Drilldown into posAssignedBankAccounts"></area>
+                     <area shape="rect" coords="302,730,626,805" href="hardwaretechnicalinfo.html" alt="Drilldown into hardwareTechnicalInfo"></area>
+                     <area shape="rect" coords="282,627,596,722" href="epdprocessidentifiers.html" alt="Drilldown into epdProcessIdentifiers"></area>
+                     <area shape="rect" coords="282,529,576,620" href="schemaversion.html" alt="Drilldown into schemaVersion"></area>
+                     <area shape="rect" coords="282,430,576,521" href="communicationprotocolversion.html" alt="Drilldown into communicationProtocolVersion"></area>
+                     <area shape="rect" coords="282,342,572,423" href="registrationnumber.html" alt="Drilldown into registrationNumber"></area>
+                     <area shape="rect" coords="282,280,474,335" href="vat.html" alt="Drilldown into vat"></area>
+                     <area shape="rect" coords="282,217,522,272" href="operatorsite.html" alt="Drilldown into operatorSite"></area>
+                     <area shape="rect" coords="282,140,535,210" href="imsi.html" alt="Drilldown into imsi"></area>
+                     <area shape="rect" coords="282,63,534,133" href="imei.html" alt="Drilldown into imei"></area>
+                     <area shape="rect" coords="282,1,525,56" href="cashregistersoftware.html" alt="Drilldown into cashRegisterSoftware"></area></map><img src="images/cashregistertechnicalinfotype.png" border="0" alt="XSD Diagram of CashRegisterTechnicalInfoType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="CashRegisterTechnicalInfoType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:appinfo&gt;
+      &lt;legacyMapping&gt;INF_tip&lt;/legacyMapping&gt;
+    &lt;/xs:appinfo&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;e-Pénztárgép műszaki jellemzői&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;e-Cash register technical features&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="cashRegisterSoftware" type="SoftwareType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;DPF, DPS&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az e-pénztárgépen futó szoftver adatai&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Details of the software on the e-cash register&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="imei"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;
+              DME
+            &lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az AE-ben lévő modem/ePénztárgép kiolvasott IMEI száma.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;The IMEI number of the modem/cash register in the AE&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+      &lt;xs:simpleType&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+          &lt;xs:maxLength value="50" /&gt;
+        &lt;/xs:restriction&gt;
+      &lt;/xs:simpleType&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="imsi"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;
+              DMS
+            &lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az AE-ben/ePénztárgépben lévő SIM kiolvasott IMSI száma.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;The IMSI number of the SIM in the AE/cash register&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+      &lt;xs:simpleType&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+          &lt;xs:maxLength value="50" /&gt;
+        &lt;/xs:restriction&gt;
+      &lt;/xs:simpleType&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="operatorSite" type="OperatorSiteType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az e-pénztárgép üzemeltetői és üzemeltetési hely adatai.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;The operator or site data of the e-cash register.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="vat" type="VatType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;VAT&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Aktuális ÁFA-tábla (a vonatkozó NAV üzenet)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Current VAT table&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="registrationNumber" type="RegistrationNumberType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;VCC&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Legutóbb használt üzembehelyezési kód&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Latest used installation code&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="communicationProtocolVersion"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;COM&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az e-pénztárgép által használt kommunikációs protokoll verziószáma&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;The version number of the communication protocol used by the e-cash register&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+      &lt;xs:simpleType&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+          &lt;xs:maxLength value="5" /&gt;
+          &lt;xs:pattern value="(C[0-9]{4})" /&gt;
+        &lt;/xs:restriction&gt;
+      &lt;/xs:simpleType&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="schemaVersion"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;XMV&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A legfrissebb séma verziószáma, aminek az e-pénztárgép által képzett üzenetek megfelelnek.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Latest schema version number&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+      &lt;xs:simpleType&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+          &lt;xs:maxLength value="5" /&gt;
+          &lt;xs:pattern value="(X[0-9]{4})" /&gt;
+        &lt;/xs:restriction&gt;
+      &lt;/xs:simpleType&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="epdProcessIdentifiers" type="EpdProcessIdentifiersType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az e-pénztárgép jelenlegi állapotát előállító végrehajtott utasítások, valamint a legutolsó átvett, de még nem végrehajtott (időzített) utasítások EPD folyamat azonosítói&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;EPD process IDs of the executed instructions that produce the current state of the e-cash register, and the last received but not yet executed (timed) instructions&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="hardwareTechnicalInfo" type="HardwareTechnicalInfoType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;HW alapú e-pénztárgép műszaki jellemzői. Csak HW alapú e-pénztárgép esetén kell kitölteni.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;HW-based e-cash register technical features. It should be filled only by HW based e-cash register.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="posAssignedBankAccounts" type="PosAssignedBankAccountListType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A POS terminálhoz rendelt bankszámla száma&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Bank account number assigned to the POS terminal&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">cashRegisterSoftware</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="cashregistersoftware.html">cashRegisterSoftware</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">imei</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="imei.html">imei</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">imsi</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="imsi.html">imsi</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">operatorSite</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="operatorsite.html">operatorSite</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">vat</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="vat.html">vat</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">registrationNumber</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="registrationnumber.html">registrationNumber</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">communicationProtocolVersion</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="communicationprotocolversion.html">communicationProtocolVersion</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">schemaVersion</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="schemaversion.html">schemaVersion</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">epdProcessIdentifiers</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="epdprocessidentifiers.html">epdProcessIdentifiers</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">hardwareTechnicalInfo</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="hardwaretechnicalinfo.html">hardwareTechnicalInfo</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">posAssignedBankAccounts</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="posassignedbankaccounts.html">posAssignedBankAccounts</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>CashRegisterTechnicalInfoType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="cashregistertechnicalinfo.html">cashRegisterTechnicalInfo</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="cashregistertechnicalinfo.html">cashRegisterTechnicalInfo</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptExport<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item OwnerChangeRequestType in eReceiptApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'ownerchangerequesttype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>OwnerChangeRequestType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/api</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Type:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="basicereceiptrequesttype.html">BasicEReceiptRequestType</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="ereceiptapi_xsd.html">eReceiptApi.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Az e-pénztárgép átszemélyesítését kezdeményező szolgáltatás kérés típusa.
+The request type of the e-cash register owner change service.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="425,1107,783,1199" href="signingcertificaterequest.html" alt="Drilldown into signingCertificateRequest"></area>
+                     <area shape="rect" coords="425,1008,820,1100" href="authenticationcertificaterequest.html" alt="Drilldown into authenticationCertificateRequest"></area>
+                     <area shape="rect" coords="425,898,757,1001" href="cashregisterworkstate2.html" alt="Drilldown into cashRegisterWorkState"></area>
+                     <area shape="rect" coords="445,816,769,891" href="cotaxpayerlastrecordcounter1.html" alt="Drilldown into coTaxpayerLastRecordCounter"></area>
+                     <area shape="rect" coords="425,733,728,808" href="lastrecordcounter3.html" alt="Drilldown into lastRecordCounter"></area>
+                     <area shape="rect" coords="425,625,732,726" href="registrationnumber1.html" alt="Drilldown into registrationNumber"></area>
+                     <area shape="rect" coords="445,486,638,578" href="apnumber.html" alt="Drilldown into APNumber"></area>
+                     <area shape="rect" coords="485,358,723,439" href="headerversion.html" alt="Drilldown into headerVersion"></area>
+                     <area shape="rect" coords="465,249,764,350" href="requestversion.html" alt="Drilldown into requestVersion"></area>
+                     <area shape="rect" coords="465,172,699,242" href="timestamp.html" alt="Drilldown into timestamp"></area>
+                     <area shape="rect" coords="465,53,761,165" href="requestid.html" alt="Drilldown into requestId"></area>
+                     <area shape="rect" coords="400,28,772,480" href="basicheadertype.html" alt="Drilldown into BasicHeaderType"></area>
+                     <area shape="rect" coords="380,2,780,619" href="basicereceiptrequesttype.html" alt="Drilldown into BasicEReceiptRequestType"></area></map><img src="images/ownerchangerequesttype.png" border="0" alt="XSD Diagram of OwnerChangeRequestType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="OwnerChangeRequestType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Az e-pénztárgép átszemélyesítését kezdeményező szolgáltatás kérés típusa.&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;The request type of the e-cash register owner change service.&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="base:BasicEReceiptRequestType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az eReceipt rendszerben alkalmazott általános kérés típus adatai.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;The general request type of the eReceipt system.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="registrationNumber" type="communication:RegistrationNumberType"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang="hu"&gt;Üzembehelyezési kód. Annak az adózónak az adatait tartalmazza, amelyre az e-pénztárgép szeretne átszemélyesedni.&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang="en"&gt;Registration number. It belongs to the taxpayer who will be the new owner of the e-cash register.&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="lastRecordCounter" type="xs:nonNegativeInteger"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang="hu"&gt;Az e-pénztárgépen az utoljára kiállított bizonylat vagy riport recordCounter értéke.&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang="en"&gt;The recordCounter value of the last receipt or report issued at the e-cash register.&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="coTaxpayerLastRecordCounter" minOccurs="0" type="xs:nonNegativeInteger"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang="hu"&gt;Kétadózós e-pénztárgép esetén a társadózó által az e-pénztárgépen utoljára kiállított bizonylat vagy riport recordCounter értéke.&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang="en"&gt;In case of two taxpayers e-cash register, the recordCounter value of the last receipt or report issued by the co-taxpayer.&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="cashRegisterWorkState" type="communication:CashRegisterWorkStateType"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:appinfo&gt;
+              &lt;legacyMapping /&gt;
+            &lt;/xs:appinfo&gt;
+            &lt;xs:documentation xml:lang="hu"&gt;Az e-pénztárgép állapota&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang="en"&gt;The state of the e-cash register.&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="authenticationCertificateRequest" type="communication:CertificateSigningRequestType"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang="hu"&gt;Az authentikációs kulcspárral generált tanúsítvány aláírási kérelem DER formátumban.&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang="en"&gt;Authentication certificate request in DER format.&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="signingCertificateRequest" type="communication:CertificateSigningRequestType"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang="hu"&gt;Az aláíró kulcspárral generált tanúsítvány aláírási kérelem DER formátumban.&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang="en"&gt;Signing certificate request in DER format.&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:extension&gt;
+  &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">requestId</td>
+                        <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="requestid.html">requestId</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">timestamp</td>
+                        <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="timestamp.html">timestamp</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">requestVersion</td>
+                        <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="requestversion.html">requestVersion</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">headerVersion</td>
+                        <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="headerversion.html">headerVersion</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">APNumber</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="apnumber.html">APNumber</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">registrationNumber</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">nsA</a>:<a href="registrationnumber1.html">registrationNumber</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">lastRecordCounter</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">nsA</a>:<a href="lastrecordcounter3.html">lastRecordCounter</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">coTaxpayerLastRecordCounter</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">nsA</a>:<a href="cotaxpayerlastrecordcounter1.html">coTaxpayerLastRecordCounter</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">cashRegisterWorkState</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">nsA</a>:<a href="cashregisterworkstate2.html">cashRegisterWorkState</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">authenticationCertificateRequest</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">nsA</a>:<a href="authenticationcertificaterequest.html">authenticationCertificateRequest</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">signingCertificateRequest</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">nsA</a>:<a href="signingcertificaterequest.html">signingCertificateRequest</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul><li><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="basicheadertype.html">BasicHeaderType</a><ul><li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="basicereceiptrequesttype.html">BasicEReceiptRequestType</a><ul>
+                     <li><b><i>OwnerChangeRequestType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">nsA</a>:<a href="ownerchangerequest.html">OwnerChangeRequest</a></li>
+                     </ul></ul></li></ul></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">nsA</a>:<a href="ownerchangerequest.html">OwnerChangeRequest</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

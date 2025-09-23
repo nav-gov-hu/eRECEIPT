@@ -1,0 +1,465 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs the schema eDocumentStoreApi.xsd in eDocumentStoreApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'edocumentstoreapi_xsd');
+                        --></script><div class="pageheader">
+         Documentation for eDocumentStoreApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>eDocumentStoreApi.xsd</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Target Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.1/api</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>A vevői alkalmazások által hívható szolgáltatások kérés-válasz objektumait leíró XSD
+XSD describing the request-response objects of services that can be called by customer applications</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>
+&lt;!--# Version: v1.1 2025/06/27--&gt;
+&lt;xs:schema targetNamespace="http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.1/api" elementFormDefault="qualified"
+           attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.1/api"
+           xmlns:communication="http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData"
+           xmlns:base="http://schemas.nav.gov.hu/ERECEIPT/1.1/base"
+           xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common"
+           xmlns:message="http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.1/message"
+           xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:import namespace="http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.1/message"
+             schemaLocation="eDocumentStoreMessage.xsd"/&gt;
+  &lt;xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData"
+             schemaLocation="../../eReceipt/1.1/communicationData.xsd"/&gt;
+  &lt;xs:import namespace="http://schemas.nav.gov.hu/ERECEIPT/1.1/base"
+             schemaLocation="../../eReceipt/1.1/eReceiptBase.xsd"/&gt;
+  &lt;xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" schemaLocation="../../eReceipt/1.0/common.xsd"/&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;A vevői alkalmazások által hívható szolgáltatások kérés-válasz objektumait leíró XSD&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;XSD describing the request-response objects of services that can be called by customer applications&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:complexType name="AppRegistrationRequestType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;Vevői alkalmazás regisztrációját megvalósító szolgáltatás kérés típusa.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;Type of service request for customer application registration.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexContent&gt;
+      &lt;xs:extension base="common:BasicHeaderType"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Az eReceipt rendszerben alkalmazott általános kérés típus adatai.&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;General response type data used in the eReceipt system.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name="software" type="communication:AppSoftwareType"&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation xml:lang="hu"&gt;A vevői alkalmazás fejlesztői és verzió adatai&lt;/xs:documentation&gt;
+              &lt;xs:documentation xml:lang="en"&gt;Customer application development and version details&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:element name="userId" type="common:SimpleText50NotBlankType"&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation xml:lang="hu"&gt;A vevői backend alkalmazás által nyilvántartott felhasználói azonosító, amelyből a JWT tokent képzi a rendszer.&lt;/xs:documentation&gt;
+              &lt;xs:documentation xml:lang="en"&gt;The user ID registered by the customer backend application, from which the system generates the JWT token.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:complexContent&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="AppRegistrationResponseType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;Vevői alkalmazás regisztrációját megvalósító szolgáltatás válasz típusa.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;Type of response to the service implementing the registration of the customer application.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexContent&gt;
+      &lt;xs:extension base="common:BasicResponseType"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Az eReceipt rendszerben alkalmazott általános válasz típus adatai.&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;General response type data used in the eReceipt system.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name="appToken" type="message:JwtTokenType"&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation xml:lang="hu"&gt;A vevői alkalmazás számára generált egyedi JWT token, amellyel a nyugtatár szolgáltatásokat kell hívni (auth header-ben átadva).&lt;/xs:documentation&gt;
+              &lt;xs:documentation xml:lang="en"&gt;A unique JWT token generated for the customer application, which must be used to call the receipt store services (passed in the auth header)&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:element name="appExpiresIn" type="xs:nonNegativeInteger" &gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation xml:lang="hu"&gt;Navi app token érvényességi időtartama másodpercben.&lt;/xs:documentation&gt;
+              &lt;xs:documentation xml:lang="en"&gt;Duration of Navi app token validity in seconds.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:complexContent&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="GetDocumentRequestType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;Dokumentum (nyugta, számla, egyszerűsített számla ...) letöltést megvalósító szolgáltatás kérés típusa.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;Type of service request to download a document (receipt, invoice, simplified invoice ...).&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexContent&gt;
+      &lt;xs:extension base="message:BasicEDocumentStoreRequestType"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Az eReceipt rendszerben alkalmazott általános kérés típus adatai.&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;General response type data used in the eReceipt system.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name="searchKeyTimestamp" type="common:GenericTimestampType"&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation xml:lang="hu"&gt;A vevői alkalmazában generált keresőkulcs előállításának időpontja.&lt;/xs:documentation&gt;
+              &lt;xs:documentation xml:lang="en"&gt;The time of generation of the search key generated in the customer's application.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:element name="searchKey" type="xs:base64Binary"&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation xml:lang="hu"&gt;A vevői alkalmazában generált keresőkulcs értéke. &lt;/xs:documentation&gt;
+              &lt;xs:documentation xml:lang="en"&gt;The value of the search key generated in the customer's application. &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:element&gt;
+          &lt;xsd:element name="notificationToken" type="xsd:base64Binary" minOccurs="0"&gt;
+              &lt;xsd:annotation&gt;
+                  &lt;xsd:documentation xml:lang="hu"&gt;Feliratkozás esetén a bizonylat lekérdezhetővé válásakor az értesítés szolgáltatónak átadandó értesítési token.&lt;/xsd:documentation&gt;
+                  &lt;xsd:documentation xml:lang="en"&gt;In the case of subscription, the notification token to be forwarded to the notification service provider when the receipt becomes queryable.&lt;/xsd:documentation&gt;
+              &lt;/xsd:annotation&gt;
+          &lt;/xsd:element&gt;
+          &lt;xs:sequence minOccurs="0"&gt;
+            &lt;xsd:element name="documentNumber" type="base:DocumentNumberType"&gt;
+              &lt;xsd:annotation&gt;
+                &lt;xsd:documentation xml:lang="hu"&gt;Dokumentum vagy módosító okirat sorszáma&lt;/xsd:documentation&gt;
+                &lt;xsd:documentation xml:lang="en"&gt;Sequential number of the original document or modification document&lt;/xsd:documentation&gt;
+              &lt;/xsd:annotation&gt;
+            &lt;/xsd:element&gt;
+            &lt;xsd:element name="documentGrossAmountHUF" type="base:MonetaryType"&gt;
+              &lt;xsd:annotation&gt;
+                &lt;xsd:documentation xml:lang="hu"&gt;A bizonylat bruttó végösszege forintban&lt;/xsd:documentation&gt;
+                &lt;xsd:documentation xml:lang="en"&gt;The gross total amount of the receipt is in HUF&lt;/xsd:documentation&gt;
+              &lt;/xsd:annotation&gt;
+            &lt;/xsd:element&gt;
+            &lt;xsd:element name="QRCodeSignature" type="xsd:base64Binary"&gt;
+              &lt;xsd:annotation&gt;
+                &lt;xsd:documentation xml:lang="hu"&gt;A QR kód aláírása BASE64 formátumban&lt;/xsd:documentation&gt;
+                &lt;xsd:documentation xml:lang="en"&gt;QR code signature in BASE64 format&lt;/xsd:documentation&gt;
+              &lt;/xsd:annotation&gt;
+            &lt;/xsd:element&gt;
+            &lt;xsd:element name="QRCodeSignCertSerial" type="xsd:base64Binary"&gt;
+              &lt;xsd:annotation&gt;
+                &lt;xsd:documentation xml:lang="hu"&gt;A QR kód aláírásához használt tanúsítvány sorozatszáma&lt;/xsd:documentation&gt;
+                &lt;xsd:documentation xml:lang="en"&gt;The serial number of the certificate used to sign the QR code&lt;/xsd:documentation&gt;
+              &lt;/xsd:annotation&gt;
+            &lt;/xsd:element&gt;
+            &lt;xs:element name="issueEndDateTime" type="common:GenericTimestampType"&gt;
+              &lt;xs:annotation&gt;
+                &lt;xs:documentation xml:lang="hu"&gt;Időbélyeg, a bizonylat zárásának pontos ideje az AE órája szerint&lt;/xs:documentation&gt;
+                &lt;xs:documentation xml:lang="en"&gt;Timestamp, the exact time of the document's closing according to the AE clock &lt;/xs:documentation&gt;
+              &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+          &lt;/xs:sequence&gt;  
+        &lt;/xs:sequence&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:complexContent&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="GetDocumentResponseType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;Dokumentum (nyugta, számla, egyszerűsített számla ...) letöltést megvalósító szolgáltatás válasz típusa.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;Response type of the service implementing the download of the document (receipt, invoice, simplified invoice ...).&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexContent&gt;
+      &lt;xs:extension base="common:BasicResponseType"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Az eReceipt rendszerben alkalmazott általános válasz típus adatai.&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;General response type data used in the eReceipt system.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:choice&gt;
+            &lt;xs:sequence&gt;
+                &lt;xsd:element name="subscriptionExpirationTime" type="common:GenericTimestampType"&gt;
+                    &lt;xsd:annotation&gt;
+                        &lt;xsd:documentation xml:lang="hu"&gt;Feliratkozás esetén megadja, meddig érvényes a feliratkozás. Lejárat után a vevői applikációnak újra kell hívnia a getDocument végpontot a feliratkozás megújításához.&lt;/xsd:documentation&gt;
+                        &lt;xsd:documentation xml:lang="en"&gt;In case of subscription, it returns how long the subscription is valid. After expiration, the client application must call the getDocument endpoint again to renew the subscription.&lt;/xsd:documentation&gt;
+                    &lt;/xsd:annotation&gt;
+                &lt;/xsd:element&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="taxNumber" type="common:TaxpayerIdType"&gt;
+                &lt;xs:annotation&gt;
+                  &lt;xs:documentation xml:lang="hu"&gt;A bizonylatot kiállító adózó adószámának első 8 karaktere, vagy ÁFA-csoport tagság esetén a bizonylatot kiállító adózó tagi adószámának első 8 karaktere.&lt;/xs:documentation&gt;
+                  &lt;xs:documentation xml:lang="en"&gt;The first 8 characters of the tax number of the taxpayer who creates the document, or (if part of a VAT group) the first 8 characters of the member tax number of the taxpayer who creates the document.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="groupIdentificationNumber" type="common:TaxpayerIdType" minOccurs="0"&gt;
+                &lt;xs:annotation&gt;
+                  &lt;xs:documentation xml:lang="hu"&gt;ÁFA-csoport tagság esetén a bizonylatot kiállító adózó csoportazonosító számának első 8 karaktere.&lt;/xs:documentation&gt;
+                  &lt;xs:documentation xml:lang="en"&gt;The first 8 characters of the group identification number of the taxpayer who creates the document (if part of a VAT group).&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="offlineCreated" type="xs:boolean"&gt;
+                &lt;xs:annotation&gt;
+                  &lt;xs:documentation xml:lang="hu"&gt;Amennyiben a dokumentum on-line beküldés valamilyen okból meghiúsult, a kapcsolat helyrállása után kell beküldeni, ebben az esetben a mezőben jelezni kell, hogy a dokumentum off-line került beküldésre.&lt;/xs:documentation&gt;
+                  &lt;xs:documentation xml:lang="en"&gt;If the online submission of the document failed for some reason, it must be submitted after the connection is established, in which case the field must indicate that the document was submitted offline.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="searchKeyTimestamp" type="common:GenericTimestampType"&gt;
+                &lt;xs:annotation&gt;
+                  &lt;xs:documentation xml:lang="hu"&gt;A vevői alkalmazában generált keresőkulcs előállításának időpontja.&lt;/xs:documentation&gt;
+                  &lt;xs:documentation xml:lang="en"&gt;The time of generation of the search key generated in the customer's application.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="searchKey" type="xs:base64Binary"&gt;
+                &lt;xs:annotation&gt;
+                  &lt;xs:documentation xml:lang="hu"&gt;A vevői alkalmazában generált keresőkulcs értéke. &lt;/xs:documentation&gt;
+                  &lt;xs:documentation xml:lang="en"&gt;The value of the search key generated in the customer's application. &lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="ntcaVerificationCode" type="common:SHA256Type"&gt;
+                &lt;xs:annotation&gt;
+                  &lt;xs:documentation xml:lang="hu"&gt;NAV ellenőrző kód. Leírását lásd a Fejlesztői dokumentáció „NAV ellenőrző kód képzése” fejezetében.&lt;/xs:documentation&gt;
+                  &lt;xs:documentation xml:lang="en"&gt;Ntca verification code&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:choice&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="documentClass" type="base:DocumentClassType"&gt;
+                    &lt;xs:annotation&gt;
+                      &lt;xs:documentation xml:lang="hu"&gt;A beküldött bizonylat típusa (nyugta, számla, egyszerűsített számla, stb.)&lt;/xs:documentation&gt;
+                      &lt;xs:documentation xml:lang="en"&gt;Type of document submitted (receipt, invoice, simplified invoice, etc.)&lt;/xs:documentation&gt;
+                    &lt;/xs:annotation&gt;
+                  &lt;/xs:element&gt;
+                  &lt;xs:element name="documentEnvelope" type="base:SignedDocumentEnvelopeType"&gt;
+                    &lt;xs:annotation&gt;
+                      &lt;xs:documentation xml:lang="hu"&gt;A bizonylat boríték a Fejlesztői dokumentációban meghatározott formátumban.&lt;/xs:documentation&gt;
+                      &lt;xs:documentation xml:lang="en"&gt;Document envelope in the format specified in the Developer documentation.&lt;/xs:documentation&gt;
+                    &lt;/xs:annotation&gt;
+                  &lt;/xs:element&gt;
+                &lt;/xs:sequence&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="reportClass" type="base:ReportClassType"&gt;
+                    &lt;xs:annotation&gt;
+                      &lt;xs:documentation xml:lang="hu"&gt;A beküldött bizonylat típusa (pénztárjelentés, pénzmozgás bizonylat, stb.)&lt;/xs:documentation&gt;
+                      &lt;xs:documentation xml:lang="en"&gt;The type of voucher submitted (cash report, cash flow voucher, etc.)&lt;/xs:documentation&gt;
+                    &lt;/xs:annotation&gt;
+                  &lt;/xs:element&gt;
+                  &lt;xs:element name="reportEnvelope" type="base:SignedReportEnvelopeType"&gt;
+                    &lt;xs:annotation&gt;
+                      &lt;xs:documentation xml:lang="hu"&gt;A riport adatai a Fejlesztői dokumentációban előírt formátumban.&lt;/xs:documentation&gt;
+                      &lt;xs:documentation xml:lang="en"&gt;A riport adatai a Fejlesztői dokumentációban előírt formátumban.&lt;/xs:documentation&gt;
+                    &lt;/xs:annotation&gt;
+                  &lt;/xs:element&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:choice&gt;
+            &lt;/xs:sequence&gt;
+          &lt;/xs:choice&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:complexContent&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="ClientEventRequestType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;Vevői applikációk számára eseménybeküldést lehetővé tevő szolgáltatás kérés típusa.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;A service request type that allows client applications to submit events.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexContent&gt;
+      &lt;xs:extension base="message:BasicEDocumentStoreRequestType"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Az eReceipt rendszerben alkalmazott általános kérés típus adatai.&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;General response type data used in the eReceipt system.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name="eventTimestamp" type="common:GenericTimestampType"&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation xml:lang="hu"&gt;A vevői alkalmazában történt esemény időpontja.&lt;/xs:documentation&gt;
+              &lt;xs:documentation xml:lang="en"&gt;The date of the event in the customer's application.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:element name="eventCode" type="base:CustomerAppEventCodeType"&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation xml:lang="hu"&gt;A vevői alkalmazában történt esemény kódja.&lt;/xs:documentation&gt;
+              &lt;xs:documentation xml:lang="en"&gt;The event code of the event in the customer's application.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:element name="eventDescription" type="common:SimpleText200NotBlankType" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation xml:lang="hu"&gt;A vevői alkalmazában történt esemény leírása.&lt;/xs:documentation&gt;
+              &lt;xs:documentation xml:lang="en"&gt;The description of the event in the customer's application.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:sequence minOccurs="0"&gt;
+            &lt;xs:element name="searchKeyTimestamp" type="common:GenericTimestampType"&gt;
+              &lt;xs:annotation&gt;
+                &lt;xs:documentation xml:lang="hu"&gt;A vevői alkalmazában generált keresőkulcs előállításának időpontja.&lt;/xs:documentation&gt;
+                &lt;xs:documentation xml:lang="en"&gt;The time of generation of the search key generated in the customer's application.&lt;/xs:documentation&gt;
+              &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="searchKey" type="xs:base64Binary"&gt;
+              &lt;xs:annotation&gt;
+                &lt;xs:documentation xml:lang="hu"&gt;A vevői alkalmazában generált keresőkulcs értéke. &lt;/xs:documentation&gt;
+                &lt;xs:documentation xml:lang="en"&gt;The value of the search key generated in the customer's application. &lt;/xs:documentation&gt;
+              &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xsd:element name="documentNumber" type="base:DocumentNumberType"&gt;
+              &lt;xsd:annotation&gt;
+                &lt;xsd:documentation xml:lang="hu"&gt;Dokumentum vagy módosító okirat sorszáma&lt;/xsd:documentation&gt;
+                &lt;xsd:documentation xml:lang="en"&gt;Sequential number of the original document or modification document&lt;/xsd:documentation&gt;
+              &lt;/xsd:annotation&gt;
+            &lt;/xsd:element&gt;
+            &lt;xs:element name="issueEndDateTime" type="common:GenericTimestampType"&gt;
+              &lt;xs:annotation&gt;
+                &lt;xs:documentation xml:lang="hu"&gt;Időbélyeg, a bizonylat zárásának pontos ideje az AE órája szerint&lt;/xs:documentation&gt;
+                &lt;xs:documentation xml:lang="en"&gt;Timestamp, the exact time of the document's closing according to the AE clock &lt;/xs:documentation&gt;
+              &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:complexContent&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="ClientEventResponseType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;Vevői applikációk számára eseménybeküldést lehetővé tevő szolgáltatás válasz típusa.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;A service response type that allows client applications to submit events.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexContent&gt;
+      &lt;xs:extension base="common:BasicResponseType"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Az eReceipt rendszerben alkalmazott általános válasz típus adatai.&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;General response type data used in the eReceipt system.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:complexContent&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:element name="AppRegistrationRequest"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;Vevői alkalmazás regisztrációját megvalósító szolgáltatás kérés objektuma.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;Request object for customer application registration.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:complexContent&gt;
+        &lt;xs:extension base="AppRegistrationRequestType"/&gt;
+      &lt;/xs:complexContent&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+  &lt;xs:element name="AppRegistrationResponse"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;Vevői alkalmazás regisztrációját megvalósító szolgáltatás válasz objektuma.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;Response object for customer application registration.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:complexContent&gt;
+        &lt;xs:extension base="AppRegistrationResponseType"/&gt;
+      &lt;/xs:complexContent&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+  &lt;xs:element name="GetDocumentRequest"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;Dokumentum (nyugta, számla, egyszerűsített számla ...) letöltést megvalósító szolgáltatás kérés objektuma.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;Object of a service request for downloading a document (receipt, invoice, simplified invoice ...).&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:complexContent&gt;
+        &lt;xs:extension base="GetDocumentRequestType"/&gt;
+      &lt;/xs:complexContent&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+  &lt;xs:element name="GetDocumentResponse"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;Dokumentum (nyugta, számla, egyszerűsített számla ...) letöltést megvalósító szolgáltatás válasz objektuma.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;Document (receipt, invoice, simplified invoice ...) download service response object.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:complexContent&gt;
+        &lt;xs:extension base="GetDocumentResponseType"/&gt;
+      &lt;/xs:complexContent&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+  &lt;xs:element name="ClientEventRequest"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;Vevői applikációk számára eseménybeküldést lehetővé tevő szolgáltatás kérés objektuma.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;A service request object that allows client applications to submit events.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:complexContent&gt;
+        &lt;xs:extension base="ClientEventRequestType"/&gt;
+      &lt;/xs:complexContent&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+  &lt;xs:element name="ClientEventResponse"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation xml:lang="hu"&gt;Vevői applikációk számára eseménybeküldést lehetővé tevő szolgáltatás válasz objektuma.&lt;/xs:documentation&gt;
+      &lt;xs:documentation xml:lang="en"&gt;A service response object that allows client applications to submit events.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:complexContent&gt;
+        &lt;xs:extension base="ClientEventResponseType"/&gt;
+      &lt;/xs:complexContent&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="ComplexType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>ComplexTypes:</b></td>
+            </tr>
+            <tr id="ComplexType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="appregistrationrequesttype.html">AppRegistrationRequestType</a></li>
+                     <li><a href="appregistrationresponsetype.html">AppRegistrationResponseType</a></li>
+                     <li><a href="clienteventrequesttype.html">ClientEventRequestType</a></li>
+                     <li><a href="clienteventresponsetype.html">ClientEventResponseType</a></li>
+                     <li><a href="getdocumentrequesttype.html">GetDocumentRequestType</a></li>
+                     <li><a href="getdocumentresponsetype.html">GetDocumentResponseType</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="Element" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Elements:</b></td>
+            </tr>
+            <tr id="Element_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="appregistrationrequest.html">AppRegistrationRequest</a></li>
+                     <li><a href="appregistrationresponse.html">AppRegistrationResponse</a></li>
+                     <li><a href="clienteventrequest.html">ClientEventRequest</a></li>
+                     <li><a href="clienteventresponse.html">ClientEventResponse</a></li>
+                     <li><a href="getdocumentrequest.html">GetDocumentRequest</a></li>
+                     <li><a href="getdocumentresponse.html">GetDocumentResponse</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eDocumentStoreApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

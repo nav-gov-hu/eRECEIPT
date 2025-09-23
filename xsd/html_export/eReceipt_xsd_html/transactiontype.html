@@ -1,0 +1,231 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item TransactionType in eReceiptApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'transactiontype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>TransactionType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">http://schemas.nav.gov.hu/OSA/3.0/api</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="invoiceapi_xsd.html">invoiceApi.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Tranzakció lekérdezési eredmény
+Transaction query result</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="216,768,416,849" href="itemcount.html" alt="Drilldown into itemCount"></area>
+                     <area shape="rect" coords="216,636,548,761" href="originalrequestversion3.html" alt="Drilldown into originalRequestVersion"></area>
+                     <area shape="rect" coords="216,573,479,628" href="technicalannulment.html" alt="Drilldown into technicalAnnulment"></area>
+                     <area shape="rect" coords="216,430,447,566" href="requeststatus1.html" alt="Drilldown into requestStatus"></area>
+                     <area shape="rect" coords="216,331,404,423" href="transactionid5.html" alt="Drilldown into transactionId"></area>
+                     <area shape="rect" coords="216,188,376,324" href="source3.html" alt="Drilldown into source"></area>
+                     <area shape="rect" coords="216,89,386,181" href="inscususer1.html" alt="Drilldown into insCusUser"></area>
+                     <area shape="rect" coords="216,1,469,82" href="insdate5.html" alt="Drilldown into insDate"></area></map><img src="images/transactiontype.png" border="0" alt="XSD Diagram of TransactionType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="TransactionType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Tranzakció lekérdezési eredmény&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Transaction query result&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="insDate" type="base:InvoiceTimestampType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A beszúrás időpontja UTC időben&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Insert date in UTC time&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="insCusUser" type="common:LoginType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A beszúrást végző felhasználó&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Inserting user name&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="source" type="SourceType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az adatszolgáltatás forrása&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Data exchange source&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="transactionId" type="common:EntityIdType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A számla tranzakció azonosítója&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Transaction ID of the invoice&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="requestStatus" type="RequestStatusType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A kérés feldolgozási státusza&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Processing status of the request&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="technicalAnnulment" type="xs:boolean"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Jelöli ha a tranzakció technikai érvénytelenítést tartalmaz&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Indicates whether the transaction contains technical annulment&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="originalRequestVersion" type="OriginalRequestVersionType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az adatszolgáltatás requestVersion értéke&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;requestVersion value of the invoice exchange&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="itemCount" type="base:InvoiceIndexType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az adatszolgáltatás tételeinek száma&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Item count of the invoiceExchange&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">insDate</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="insdate5.html">insDate</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">insCusUser</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="inscususer1.html">insCusUser</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">source</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="source3.html">source</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">transactionId</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="transactionid5.html">transactionId</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">requestStatus</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="requeststatus1.html">requestStatus</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">technicalAnnulment</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="technicalannulment.html">technicalAnnulment</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">originalRequestVersion</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="originalrequestversion3.html">originalRequestVersion</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">itemCount</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="itemcount.html">itemCount</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>TransactionType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="transaction.html">transaction</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="transaction.html">transaction</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>
