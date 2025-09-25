@@ -1,0 +1,119 @@
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+<ns4:CashRegisterInfoRequest xmlns="http://schemas.nav.gov.hu/NTCA/1.0/common" 
+xmlns:ns6="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage"
+xmlns:ns5="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData"
+xmlns:ns8="http://schemas.nav.gov.hu/OSA/3.0/base"
+xmlns:ns7="http://schemas.nav.gov.hu/OSA/3.0/data"
+xmlns:ns9="http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage"
+xmlns:ns2="http://schemas.nav.gov.hu/ERECEIPT/1.1/base"
+xmlns:ns4="http://schemas.nav.gov.hu/ERECEIPT/1.1/api"
+xmlns:ns3="http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData">
+    <requestId xmlns="http://schemas.nav.gov.hu/NTCA/1.0/common">{{randomHex}}</requestId>
+    <timestamp xmlns="http://schemas.nav.gov.hu/NTCA/1.0/common">{{dateTimeString}}</timestamp>
+    <requestVersion xmlns="http://schemas.nav.gov.hu/NTCA/1.0/common">1.1</requestVersion>
+    <headerVersion xmlns="http://schemas.nav.gov.hu/NTCA/1.0/common">1.1</headerVersion>
+    <ns2:APNumber>{{apNumberHW}}</ns2:APNumber>
+    <ns4:cashRegisterInfo>
+        <ns3:cashRegisterEvent>
+            <ns3:eventCode>POWER_ON</ns3:eventCode>
+        </ns3:cashRegisterEvent>
+        <ns3:cashRegisterTechnicalInfo>
+            <ns3:cashRegisterSoftware>
+                <ns3:softwareId>{{softwareId}}</ns3:softwareId>
+                <ns3:softwareName>{{softwareName}}</ns3:softwareName>
+                <ns3:softwareOperation>AE</ns3:softwareOperation>
+                <ns3:softwareMainVersion>{{softwareMainVersion}}</ns3:softwareMainVersion>
+                <ns3:softwareHash>{{softwareHash}}</ns3:softwareHash>
+                <ns3:softwareLastUpdateTime>{{softwareLastUpdateTime}}</ns3:softwareLastUpdateTime>
+                <ns3:softwareDevName>{{softwareDevName}}</ns3:softwareDevName>
+                <ns3:softwareDevContact>{{softwareDevContact}}</ns3:softwareDevContact>
+            </ns3:cashRegisterSoftware>
+            <ns3:imei>{{imei}}</ns3:imei>
+            <ns3:imsi>{{imsi}}</ns3:imsi>
+            <ns3:operatorSite>
+                <ns3:operatorSiteValidFrom>{{operatorSiteValidFrom}}</ns3:operatorSiteValidFrom>
+                <ns3:shop>
+                    <ns2:detailedAddress>
+                        <ns2:countryCode>{{countryCode}}</ns2:countryCode>
+                        <ns2:postalCode>{{postalCode}}</ns2:postalCode>
+                        <ns2:city>{{city}}</ns2:city>
+                        <ns2:streetName>{{streetName}}</ns2:streetName>
+                        <ns2:publicPlaceCategory>{{publicPlaceCategory}}</ns2:publicPlaceCategory>
+                        <ns2:number>{{number}}</ns2:number>
+                    </ns2:detailedAddress>
+                    <ns3:shopName>{{shopname}}</ns3:shopName>
+                    <ns3:shopShortName>{{shopShortName}}</ns3:shopShortName>
+                </ns3:shop>
+                <ns3:taxPayer>
+                    <ns2:detailedAddress>
+                        <ns2:countryCode>{{countryCode}}</ns2:countryCode>
+                        <ns2:postalCode>{{postalCode}}</ns2:postalCode>
+                        <ns2:city>{{city}}</ns2:city>
+                        <ns2:streetName>{{streetName}}</ns2:streetName>
+                        <ns2:publicPlaceCategory>{{publicPlaceCategory}}</ns2:publicPlaceCategory>
+                        <ns2:number>{{number}}</ns2:number>
+                    </ns2:detailedAddress>
+                    <ns3:taxPayerName>{{taxPayerName}}</ns3:taxPayerName>
+                    <ns3:taxPayerShortName>{{taxPayerShortName}}</ns3:taxPayerShortName>
+                    <ns3:taxNumber>
+                        <ns2:taxpayerId>{{taxpayerId}}</ns2:taxpayerId>
+                        <ns2:vatCode>{{vatCode}}</ns2:vatCode>
+                        <ns2:countyCode>{{countyCode}}</ns2:countyCode>
+                    </ns3:taxNumber>
+                </ns3:taxPayer>
+            </ns3:operatorSite>
+            <ns3:vat>
+                <ns3:vatValidFrom>{{vatValidFrom}}</ns3:vatValidFrom>
+                <ns3:vatGroup>
+                    <ns3:collectorCode>A</ns3:collectorCode>
+                    <ns3:vatPercentage>19.59</ns3:vatPercentage>
+                    <ns3:vatContent>5</ns3:vatContent>
+                    <ns3:vatLabel>AFA5A</ns3:vatLabel>
+                </ns3:vatGroup>
+                <ns3:vatGroup>
+                    <ns3:collectorCode>B</ns3:collectorCode>
+                    <ns3:vatPercentage>19.59</ns3:vatPercentage>
+                    <ns3:vatContent>18</ns3:vatContent>
+                    <ns3:vatLabel>AFA18A</ns3:vatLabel>
+                </ns3:vatGroup>
+                <ns3:vatGroup>
+                    <ns3:collectorCode>C</ns3:collectorCode>
+                    <ns3:vatPercentage>19.59</ns3:vatPercentage>
+                    <ns3:vatContent>24.36</ns3:vatContent>
+                    <ns3:vatLabel>AFA24A</ns3:vatLabel>
+                </ns3:vatGroup>
+                <ns3:vatGroup>
+                    <ns3:collectorCode>D</ns3:collectorCode>
+                    <ns3:vatPercentage>0</ns3:vatPercentage>
+                    <ns3:vatContent>0</ns3:vatContent>
+                    <ns3:vatLabel>TAM</ns3:vatLabel>
+                </ns3:vatGroup>
+                <ns3:vatGroup>
+                    <ns3:collectorCode>E</ns3:collectorCode>
+                    <ns3:vatPercentage>0</ns3:vatPercentage>
+                    <ns3:vatContent>0</ns3:vatContent>
+                    <ns3:vatLabel>AAM</ns3:vatLabel>
+                </ns3:vatGroup>
+            </ns3:vat>
+            <ns3:registrationNumber>{{registrationNumber}}</ns3:registrationNumber>
+            <ns3:communicationProtocolVersion>C0001</ns3:communicationProtocolVersion>
+            <ns3:schemaVersion>X0001</ns3:schemaVersion>
+            <ns3:epdProcessIdentifiers>
+                <ns3:currentVatProcessId>{{currentVatProcessId}}</ns3:currentVatProcessId>
+                <ns3:nextVatProcessId>{{nextVatProcessId}}</ns3:nextVatProcessId>
+                <ns3:currentOperatorSiteProcessId>{{currentOperatorSiteProcessId}}</ns3:currentOperatorSiteProcessId>
+                <ns3:nextOperatorSiteProcessId>{{nextOperatorSiteProcessId}}</ns3:nextOperatorSiteProcessId>
+                <ns3:currentSoftwareProcessId>{{currentSoftwareProcessId}}</ns3:currentSoftwareProcessId>
+                <ns3:nextSoftwareProcessId>{{nextSoftwareProcessId}}</ns3:nextSoftwareProcessId>
+                <ns3:currentAeBlockUnblockStateProcessId>{{currentAeBlockUnblockStateProcessId}}</ns3:currentAeBlockUnblockStateProcessId>
+            </ns3:epdProcessIdentifiers>
+        </ns3:cashRegisterTechnicalInfo>
+        <ns3:cashRegisterState>
+            <ns3:cashRegisterWorkState>{{cashRegisterWorkState}}</ns3:cashRegisterWorkState>
+            <ns3:aeBlockUnblockState>{{aeBlockUnblockState}}</ns3:aeBlockUnblockState>
+            <ns3:fiscalDayState>{{fiscalDayState}}</ns3:fiscalDayState>
+            <ns3:lastSentRecordCounter>{{lastSentRecordCounter}}</ns3:lastSentRecordCounter>
+            <ns3:lastRecordCounter>{{lastRecordCounter}}</ns3:lastRecordCounter>
+        </ns3:cashRegisterState>
+    </ns4:cashRegisterInfo>
+</ns4:CashRegisterInfoRequest>

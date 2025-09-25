@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns6:CoreDocument xmlns="http://schemas.nav.gov.hu/NTCA/1.0/common" xmlns:ns2="http://schemas.nav.gov.hu/ERECEIPT/1.1/base" xmlns:ns3="http://schemas.nav.gov.hu/ERECEIPT/1.1/api" xmlns:ns4="http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData" xmlns:ns5="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData" xmlns:ns6="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage" xmlns:ns7="http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage" xmlns:ns8="http://schemas.nav.gov.hu/OSA/3.0/data" xmlns:ns9="http://schemas.nav.gov.hu/OSA/3.0/base">
+	<ns6:invoiceCore>
+		<ns5:metaData>
+			<ns2:documentNumber>SZ-T11100001/12345678/0001/00001</ns2:documentNumber>
+			<ns2:documentOperation>CREATE</ns2:documentOperation>
+			<ns2:APNumber>T11100001</ns2:APNumber>
+			<ns2:taxpayerId>12345678</ns2:taxpayerId>
+		</ns5:metaData>
+		<ns5:invoice>
+			<ns8:invoiceNumber>SZ-T11100001/12345678/0001/00001</ns8:invoiceNumber>
+			<ns8:invoiceIssueDate>2025-08-01</ns8:invoiceIssueDate>
+			<ns8:completenessIndicator>true</ns8:completenessIndicator>
+			<ns8:invoiceMain>
+				<ns8:invoice>
+					<ns8:invoiceHead>
+						<ns8:supplierInfo>
+							<ns8:supplierTaxNumber>
+								<ns9:taxpayerId>12345678</ns9:taxpayerId>
+								<ns9:vatCode>1</ns9:vatCode>
+								<ns9:countyCode>12</ns9:countyCode>
+							</ns8:supplierTaxNumber>
+							<ns8:supplierName>Teszt szolgáltató</ns8:supplierName>
+							<ns8:supplierAddress>
+								<ns9:simpleAddress>
+									<ns9:countryCode>HU</ns9:countryCode>
+									<ns9:postalCode>1000</ns9:postalCode>
+									<ns9:city>Teszt város</ns9:city>
+									<ns9:additionalAddressDetail>Kapcsolódó címadatok.</ns9:additionalAddressDetail>
+								</ns9:simpleAddress>
+							</ns8:supplierAddress>
+						</ns8:supplierInfo>
+						<ns8:customerInfo>
+							<ns8:customerVatStatus>DOMESTIC</ns8:customerVatStatus>
+							<ns8:customerVatData>
+								<ns8:customerTaxNumber>
+									<ns9:taxpayerId>12345670</ns9:taxpayerId>
+									<ns9:vatCode>1</ns9:vatCode>
+									<ns9:countyCode>12</ns9:countyCode>
+								</ns8:customerTaxNumber>
+							</ns8:customerVatData>
+							<ns8:customerName>Teszt vevő</ns8:customerName>
+							<ns8:customerAddress>
+								<ns9:simpleAddress>
+									<ns9:countryCode>HU</ns9:countryCode>
+									<ns9:postalCode>1000</ns9:postalCode>
+									<ns9:city>Teszt város</ns9:city>
+									<ns9:additionalAddressDetail>Kapcsolódó címadatok</ns9:additionalAddressDetail>
+								</ns9:simpleAddress>
+							</ns8:customerAddress>
+						</ns8:customerInfo>
+						<ns8:invoiceDetail>
+							<ns8:invoiceCategory>SIMPLIFIED</ns8:invoiceCategory>
+							<ns8:invoiceDeliveryDate>2025-08-01</ns8:invoiceDeliveryDate>
+							<ns8:periodicalSettlement>false</ns8:periodicalSettlement>
+							<ns8:smallBusinessIndicator>false</ns8:smallBusinessIndicator>
+							<ns8:currencyCode>HUF</ns8:currencyCode>
+							<ns8:exchangeRate>1</ns8:exchangeRate>
+							<ns8:selfBillingIndicator>false</ns8:selfBillingIndicator>
+							<ns8:paymentMethod>CARD</ns8:paymentMethod>
+							<ns8:invoiceAppearance>ELECTRONIC</ns8:invoiceAppearance>
+						</ns8:invoiceDetail>
+					</ns8:invoiceHead>
+					<ns8:invoiceLines>
+						<ns8:mergedItemIndicator>false</ns8:mergedItemIndicator>
+						<ns8:line>
+							<ns8:lineNumber>1</ns8:lineNumber>
+							<ns8:lineExpressionIndicator>false</ns8:lineExpressionIndicator>
+							<ns8:lineDescription>Termék A</ns8:lineDescription>
+							<ns8:quantity>2.0000</ns8:quantity>
+							<ns8:unitOfMeasure>PIECE</ns8:unitOfMeasure>
+							<ns8:unitPrice>7500.00</ns8:unitPrice>
+							<ns8:lineAmountsSimplified>
+								<ns8:lineVatRate>
+									<ns8:vatContent>0.2126</ns8:vatContent>
+								</ns8:lineVatRate>
+								<ns8:lineGrossAmountSimplified>15000.00</ns8:lineGrossAmountSimplified>
+								<ns8:lineGrossAmountSimplifiedHUF>15000.00</ns8:lineGrossAmountSimplifiedHUF>
+							</ns8:lineAmountsSimplified>
+							<ns8:intermediatedService>false</ns8:intermediatedService>
+							<ns8:depositIndicator>false</ns8:depositIndicator>
+							<ns8:obligatedForProductFee>false</ns8:obligatedForProductFee>
+						</ns8:line>
+					</ns8:invoiceLines>
+					<ns8:invoiceSummary>
+						<ns8:summarySimplified>
+							<ns8:vatRate>
+								<ns8:vatContent>0.2126</ns8:vatContent>
+							</ns8:vatRate>
+							<ns8:vatContentGrossAmount>15000.00</ns8:vatContentGrossAmount>
+							<ns8:vatContentGrossAmountHUF>15000.00</ns8:vatContentGrossAmountHUF>
+						</ns8:summarySimplified>
+					</ns8:invoiceSummary>
+				</ns8:invoice>
+			</ns8:invoiceMain>
+		</ns5:invoice>
+	</ns6:invoiceCore>
+	<ns6:invoiceControl>
+		<ns5:documentNumber>SZ-T11100001/12345678/0001/00001</ns5:documentNumber>
+		<ns5:recordCounter>99</ns5:recordCounter>
+		<ns5:balanceChange>
+			<ns2:cashHufAmount>0</ns2:cashHufAmount>
+			<ns2:cardPaymentAmount>15000</ns2:cardPaymentAmount>
+			<ns2:szepCardAmount>0</ns2:szepCardAmount>
+			<ns2:afrAmount>0</ns2:afrAmount>
+		</ns5:balanceChange>
+		<ns5:issueStartDateTime>2025-08-01T20:55:00.100Z</ns5:issueStartDateTime>
+		<ns5:issueEndDateTime>2025-08-01T20:55:15.300Z</ns5:issueEndDateTime>
+		<ns5:documentRoundingAmount>0</ns5:documentRoundingAmount>
+		<ns5:ntcaControlCode>A1B2C</ns5:ntcaControlCode>
+		<ns5:shop>
+			<ns2:simpleAddress>
+				<ns2:countryCode>HU</ns2:countryCode>
+				<ns2:region>Teszt régió</ns2:region>
+				<ns2:postalCode>1000</ns2:postalCode>
+				<ns2:city>Teszt város</ns2:city>
+				<ns2:additionalAddressDetail>Kapcsolódó címadatok.</ns2:additionalAddressDetail>
+			</ns2:simpleAddress>
+			<ns2:shopName>Teszt bolt hosszú</ns2:shopName>
+			<ns2:shopShortName>Teszt bolt rövid</ns2:shopShortName>
+		</ns5:shop>
+	</ns6:invoiceControl>
+</ns6:CoreDocument>

@@ -1,0 +1,11 @@
+<?xml version="1.1" encoding="utf-8"?>
+<ns:EndOfOperationRequest xmlns:base="http://schemas.nav.gov.hu/ERECEIPT/1.1/base" xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common" xmlns:ns="http://schemas.nav.gov.hu/ERECEIPT/1.1/api">
+    <common:requestId>{{randomHex}}</common:requestId>
+    <common:timestamp>{{dateTimeString}}</common:timestamp>
+    <common:requestVersion>1.1</common:requestVersion>
+    <common:headerVersion>1.1</common:headerVersion>
+    <base:APNumber>{{apnumberHW}}</base:APNumber>
+    <ns:lastRecordCounter>{{lastRecordCounter}}</ns:lastRecordCounter>
+    <ns:coTaxpayerLastRecordCounter>{{coTaxpayerLastRecordCounter}}</ns:coTaxpayerLastRecordCounter>
+    <ns:cashRegisterWorkState>{{cashRegisterWorkState}}</ns:cashRegisterWorkState>
+</ns:EndOfOperationRequest>

@@ -1,0 +1,12 @@
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+<ns3:HelloRequest xmlns="http://schemas.nav.gov.hu/NTCA/1.0/common"
+                  xmlns:ns2="http://schemas.nav.gov.hu/ERECEIPT/1.1/base"
+                  xmlns:ns3="http://schemas.nav.gov.hu/ERECEIPT/1.1/api">
+    <requestId>{{requestId}}</requestId>
+    <timestamp>{{dateTimeString}}</timestamp>
+    <requestVersion>1.1</requestVersion>
+    <headerVersion>1.1</headerVersion>
+    <ns2:APNumber>{{apNumberHW}}</ns2:APNumber>
+    <ns3:currentOperatorSiteProcessId>{{operatorSiteProcessId}}</ns3:currentOperatorSiteProcessId>
+    <ns3:currentVatProcessId>{{vatProcessId}}</ns3:currentVatProcessId>
+</ns3:HelloRequest>

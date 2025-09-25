@@ -1,0 +1,8 @@
+<?xml version="1.1" encoding="utf-8"?>
+<ns:CommMgrRequest xmlns:base="http://schemas.nav.gov.hu/ERECEIPT/1.1/base" xmlns:communication="http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData" xmlns:reportMessage="http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage" xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common" xmlns:ns="http://schemas.nav.gov.hu/ERECEIPT/1.1/api" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.nav.gov.hu/ERECEIPT/1.1/api">
+  <common:requestId>{{randomHex}}</common:requestId>
+  <common:timestamp>{{dateTimeString}}</common:timestamp>
+  <common:requestVersion>1.1</common:requestVersion>
+  <common:headerVersion>1.1</common:headerVersion>
+  <base:APNumber>{{apNumberHW}}</base:APNumber>
+</ns:CommMgrRequest>

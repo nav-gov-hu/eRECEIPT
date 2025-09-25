@@ -1,0 +1,23 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<ns3:RegistrationRequest xmlns:ns3="http://schemas.nav.gov.hu/ERECEIPT/1.1/api" xmlns="http://schemas.nav.gov.hu/NTCA/1.0/common" xmlns:ns2="http://schemas.nav.gov.hu/ERECEIPT/1.1/base" xmlns:ns4="http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData" xmlns:ns5="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData" xmlns:ns6="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage" xmlns:ns7="http://schemas.nav.gov.hu/OSA/3.0/data" xmlns:ns8="http://schemas.nav.gov.hu/OSA/3.0/base" xmlns:ns9="http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage">
+   <requestId>{{requestId}}</requestId>
+   <timestamp>{{dateTimeString}}</timestamp>
+   <requestVersion>1.1</requestVersion>
+   <headerVersion>1.1</headerVersion>
+   <ns2:APNumber>{{apNumberHW}}</ns2:APNumber>
+   <ns3:registrationNumber>{{registrationNumber}}</ns3:registrationNumber>
+   <ns3:imei>{{imei}}</ns3:imei>
+   <ns3:imsi>{{imsi}}</ns3:imsi>
+   <ns3:authenticationCertificateRequest>{{authenticationCertificateRequest}}</ns3:authenticationCertificateRequest>
+   <ns3:signingCertificateRequest>{{signingCertificateRequest}}</ns3:signingCertificateRequest>
+   <ns3:software>
+      <ns4:softwareId>{{softwareId}}</ns4:softwareId>
+      <ns4:softwareName>{{softwareName}}</ns4:softwareName>
+      <ns4:softwareOperation>{{softwareOperation}}</ns4:softwareOperation>
+      <ns4:softwareMainVersion>{{softwareMainVersion}}</ns4:softwareMainVersion>
+      <ns4:softwareHash>{{softwareHash}}</ns4:softwareHash>
+      <ns4:softwareLastUpdateTime>{{softwareLastUpdateTime}}</ns4:softwareLastUpdateTime>
+      <ns4:softwareDevName>{{softwareDevName}}</ns4:softwareDevName>
+      <ns4:softwareDevContact>{{softwareDevContact}}</ns4:softwareDevContact>
+   </ns3:software>
+</ns3:RegistrationRequest>

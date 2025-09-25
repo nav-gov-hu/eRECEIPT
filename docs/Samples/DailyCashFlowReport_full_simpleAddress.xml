@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns9:CoreReport xmlns="http://schemas.nav.gov.hu/NTCA/1.0/common" 
+xmlns:ns6="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage" 
+xmlns:ns5="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData" 
+xmlns:ns8="http://schemas.nav.gov.hu/OSA/3.0/base" 
+xmlns:ns7="http://schemas.nav.gov.hu/OSA/3.0/data" 
+xmlns:ns9="http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage" 
+xmlns:ns2="http://schemas.nav.gov.hu/ERECEIPT/1.1/base" 
+xmlns:ns4="http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData" 
+xmlns:ns3="http://schemas.nav.gov.hu/ERECEIPT/1.1/api">
+  <ns9:DailyCashFlowReport>
+    <ns9:reportHeader>
+      <ns2:recordCounter>4</ns2:recordCounter>
+      <ns2:issueStartDateTime>2025-03-03T10:17:45.385Z</ns2:issueStartDateTime>
+      <ns2:ntcaControlCode>20F93</ns2:ntcaControlCode>
+      <ns2:additionalData>
+        <ns2:dataName>A12345_VALAMI</ns2:dataName>
+        <ns2:dataDescription>TextCHUtomInfo</ns2:dataDescription>
+        <ns2:dataValue>Daily CashFlow REPORT CHUTOM INFO</ns2:dataValue>
+      </ns2:additionalData>
+	  <ns2:additionalData>
+        <ns2:dataName>A12345_VALAMI</ns2:dataName>
+        <ns2:dataDescription>TextCHUtomInfo</ns2:dataDescription>
+        <ns2:dataValue>Daily CashFlow REPORT CHUTOM INFO</ns2:dataValue>
+      </ns2:additionalData>
+      <ns2:shop>
+		<!-- simpleAddress vagy detailedAddress-->
+        <ns2:simpleAddress>
+            <ns2:countryCode>HU</ns2:countryCode>
+            <ns2:region>Teszt régió</ns2:region>
+            <ns2:postalCode>1000</ns2:postalCode>
+            <ns2:city>Teszt város</ns2:city>
+            <ns2:additionalAddressDetail>Kapcsolódó címadatok.</ns2:additionalAddressDetail>
+		</ns2:simpleAddress>
+        <!--<ns2:detailedAddress>
+          <ns2:countryCode>HU</ns2:countryCode>
+          <ns2:region>Teszt régió</ns2:region>
+          <ns2:postalCode>1000</ns2:postalCode>
+          <ns2:city>Teszt város</ns2:city>
+          <ns2:streetName>Teszt</ns2:streetName>
+          <ns2:publicPlaceCategory>Utca</ns2:publicPlaceCategory>
+          <ns2:number>1</ns2:number>
+          <ns2:building>Teszt épület</ns2:building>
+          <ns2:staircase>1</ns2:staircase>
+          <ns2:floor>1</ns2:floor>
+          <ns2:door>1</ns2:door>
+          <ns2:lotNumber>1</ns2:lotNumber>
+        </ns2:detailedAddress>-->
+        <ns2:shopName>Teszt bolt hosszú</ns2:shopName>
+        <ns2:shopShortName>Teszt bolt rövid</ns2:shopShortName>
+      </ns2:shop>
+      <ns2:taxPayer>
+	  <!-- simpleAddress vagy detailedAddress-->
+		 <ns2:simpleAddress>
+            <ns2:countryCode>HU</ns2:countryCode>
+            <ns2:region>Teszt régió</ns2:region>
+            <ns2:postalCode>1000</ns2:postalCode>
+            <ns2:city>Teszt város</ns2:city>
+            <ns2:additionalAddressDetail>Kapcsolódó címadatok</ns2:additionalAddressDetail>
+		</ns2:simpleAddress>
+        <!--<ns2:detailedAddress>
+          <ns2:countryCode>HU</ns2:countryCode>
+		  <ns2:region>HU</ns2:region>
+          <ns2:postalCode>1000</ns2:postalCode>
+          <ns2:city>Teszt város</ns2:city>
+          <ns2:streetName>Teszt</ns2:streetName>
+          <ns2:publicPlaceCategory>Utca</ns2:publicPlaceCategory>
+          <ns2:number>1</ns2:number>
+          <ns2:building>Teszt épület</ns2:building>
+          <ns2:staircase>1</ns2:staircase>
+          <ns2:floor>1</ns2:floor>
+          <ns2:door>1</ns2:door>
+          <ns2:lotNumber>1</ns2:lotNumber>
+        </ns2:detailedAddress>-->
+        <ns2:taxPayerName>Teszt hosszú BT</ns2:taxPayerName>
+        <ns2:taxPayerShortName>Teszt rövid BT</ns2:taxPayerShortName>
+        <ns2:taxNumber>
+          <ns2:taxpayerId>12345678</ns2:taxpayerId>
+          <ns2:vatCode>1</ns2:vatCode>
+          <ns2:countyCode>12</ns2:countyCode>
+        </ns2:taxNumber>
+		<ns2:groupIdentificationNumber>
+		  <ns2:taxpayerId>12345678</ns2:taxpayerId>
+          <ns2:vatCode>1</ns2:vatCode>
+          <ns2:countyCode>12</ns2:countyCode>
+		</ns2:groupIdentificationNumber>
+      </ns2:taxPayer>
+	  <ns2:coTaxPayer>
+	  <!-- simpleAddress vagy detailedAddress-->
+		 <ns2:simpleAddress>
+            <ns2:countryCode>HU</ns2:countryCode>
+            <ns2:region>Teszt régió</ns2:region>
+            <ns2:postalCode>1000</ns2:postalCode>
+            <ns2:city>Teszt város</ns2:city>
+            <ns2:additionalAddressDetail>Kapcsolódó címadatok.</ns2:additionalAddressDetail>
+		</ns2:simpleAddress>
+        <!--<ns2:detailedAddress>
+          <ns2:countryCode>HU</ns2:countryCode>
+		  <ns2:region>HU</ns2:region>
+          <ns2:postalCode>1000</ns2:postalCode>
+          <ns2:city>Teszt város</ns2:city>
+          <ns2:streetName>Teszt</ns2:streetName>
+          <ns2:publicPlaceCategory>Utca</ns2:publicPlaceCategory>
+          <ns2:number>1</ns2:number>
+          <ns2:building>Teszt épület</ns2:building>
+          <ns2:staircase>1</ns2:staircase>
+          <ns2:floor>1</ns2:floor>
+          <ns2:door>1</ns2:door>
+          <ns2:lotNumber>1</ns2:lotNumber>
+        </ns2:detailedAddress>-->
+        <ns2:taxPayerName>Teszt hosszú BT</ns2:taxPayerName>
+        <ns2:taxPayerShortName>Teszt rövid BT</ns2:taxPayerShortName>
+        <ns2:taxNumber>
+          <ns2:taxpayerId>12345678</ns2:taxpayerId>
+          <ns2:vatCode>1</ns2:vatCode>
+          <ns2:countyCode>12</ns2:countyCode>
+        </ns2:taxNumber>
+		<ns2:groupIdentificationNumber>
+		  <ns2:taxpayerId>12345678</ns2:taxpayerId>
+          <ns2:vatCode>1</ns2:vatCode>
+          <ns2:countyCode>12</ns2:countyCode>
+		</ns2:groupIdentificationNumber>
+      </ns2:coTaxPayer>
+    </ns9:reportHeader>
+    <ns9:reportNumber>NZ-T11100001/12345678/0001</ns9:reportNumber>
+    <ns9:closureCounter>0001</ns9:closureCounter>
+	<ns9:dailyReceipt>
+		<ns2:commerceCollectorList>
+			<ns2:commercialCollector>
+				<ns2:collectorCode>SEC</ns2:collectorCode>
+				<ns2:collectorGrossAmount>10.10</ns2:collectorGrossAmount>
+				<ns2:collectorNetAmount>10.10</ns2:collectorNetAmount>
+				<ns2:collectorVatAmount>10.10</ns2:collectorVatAmount>
+			</ns2:commercialCollector>
+			<ns2:commercialCollector>
+				<ns2:collectorCode>AAM</ns2:collectorCode>
+				<ns2:collectorGrossAmount>10.10</ns2:collectorGrossAmount>
+				<ns2:collectorNetAmount>10.10</ns2:collectorNetAmount>
+				<ns2:collectorVatAmount>10.10</ns2:collectorVatAmount>
+			</ns2:commercialCollector>
+		</ns2:commerceCollectorList>
+		<ns2:amount>100.10</ns2:amount>
+		<ns2:count>1</ns2:count>
+		<ns2:fulfillmentDate>2023-05-13</ns2:fulfillmentDate>
+	</ns9:dailyReceipt>
+	<ns9:dailyReceiptCancellation>
+		<ns2:commerceCollectorList>
+			<ns2:commercialCollector>
+				<ns2:collectorCode>SEC</ns2:collectorCode>
+				<ns2:collectorGrossAmount>10.10</ns2:collectorGrossAmount>
+				<ns2:collectorNetAmount>10.10</ns2:collectorNetAmount>
+				<ns2:collectorVatAmount>10.10</ns2:collectorVatAmount>
+			</ns2:commercialCollector>
+			<ns2:commercialCollector>
+				<ns2:collectorCode>AAM</ns2:collectorCode>
+				<ns2:collectorGrossAmount>10.10</ns2:collectorGrossAmount>
+				<ns2:collectorNetAmount>10.10</ns2:collectorNetAmount>
+				<ns2:collectorVatAmount>10.10</ns2:collectorVatAmount>
+			</ns2:commercialCollector>
+		</ns2:commerceCollectorList>
+		<ns2:amount>100.10</ns2:amount>
+		<ns2:count>1</ns2:count>
+		<ns2:fulfillmentDate>2023-05-13</ns2:fulfillmentDate>
+	</ns9:dailyReceiptCancellation>	
+	<ns9:dailyReceiptModification>
+		<ns2:commerceCollectorList>
+			<ns2:commercialCollector>
+				<ns2:collectorCode>SEC</ns2:collectorCode>
+				<ns2:collectorGrossAmount>10.10</ns2:collectorGrossAmount>
+				<ns2:collectorNetAmount>10.10</ns2:collectorNetAmount>
+				<ns2:collectorVatAmount>10.10</ns2:collectorVatAmount>
+			</ns2:commercialCollector>
+			<ns2:commercialCollector>
+				<ns2:collectorCode>AAM</ns2:collectorCode>
+				<ns2:collectorGrossAmount>10.10</ns2:collectorGrossAmount>
+				<ns2:collectorNetAmount>10.10</ns2:collectorNetAmount>
+				<ns2:collectorVatAmount>10.10</ns2:collectorVatAmount>
+			</ns2:commercialCollector>
+		</ns2:commerceCollectorList>
+		<ns2:amount>100.10</ns2:amount>
+		<ns2:count>1</ns2:count>
+		<ns2:fulfillmentDate>2023-05-13</ns2:fulfillmentDate>
+	</ns9:dailyReceiptModification>	
+	<ns9:dailySimplifiedInvoice>
+		<ns2:dailyCashFlowDetail>
+			<ns2:amount>100.10</ns2:amount>
+			<ns2:count>1</ns2:count>
+			<ns2:fulfillmentDate>2023-05-13</ns2:fulfillmentDate>	
+		</ns2:dailyCashFlowDetail>
+	</ns9:dailySimplifiedInvoice>	
+	<ns9:dailySimplifiedInvoiceCancellation>
+		<ns2:dailyCashFlowDetail>
+			<ns2:commerceCollectorList>
+				<ns2:commercialCollector>
+					<ns2:collectorCode>SEC</ns2:collectorCode>
+					<ns2:collectorGrossAmount>10.10</ns2:collectorGrossAmount>
+					<ns2:collectorNetAmount>10.10</ns2:collectorNetAmount>
+					<ns2:collectorVatAmount>10.10</ns2:collectorVatAmount>
+				</ns2:commercialCollector>
+				<ns2:commercialCollector>
+					<ns2:collectorCode>AAM</ns2:collectorCode>
+					<ns2:collectorGrossAmount>10.10</ns2:collectorGrossAmount>
+					<ns2:collectorNetAmount>10.10</ns2:collectorNetAmount>
+					<ns2:collectorVatAmount>10.10</ns2:collectorVatAmount>
+				</ns2:commercialCollector>
+			</ns2:commerceCollectorList>
+			<ns2:amount>100.10</ns2:amount>
+			<ns2:count>1</ns2:count>
+			<ns2:fulfillmentDate>2023-05-13</ns2:fulfillmentDate>	
+		</ns2:dailyCashFlowDetail>
+	</ns9:dailySimplifiedInvoiceCancellation>	
+	<ns9:dailySimplifiedInvoiceModification>
+		<ns2:dailyCashFlowDetail>
+			<ns2:commerceCollectorList>
+				<ns2:commercialCollector>
+					<ns2:collectorCode>SEC</ns2:collectorCode>
+					<ns2:collectorGrossAmount>10.10</ns2:collectorGrossAmount>
+					<ns2:collectorNetAmount>10.10</ns2:collectorNetAmount>
+					<ns2:collectorVatAmount>10.10</ns2:collectorVatAmount>
+				</ns2:commercialCollector>
+				<ns2:commercialCollector>
+					<ns2:collectorCode>AAM</ns2:collectorCode>
+					<ns2:collectorGrossAmount>10.10</ns2:collectorGrossAmount>
+					<ns2:collectorNetAmount>10.10</ns2:collectorNetAmount>
+					<ns2:collectorVatAmount>10.10</ns2:collectorVatAmount>
+				</ns2:commercialCollector>
+			</ns2:commerceCollectorList>
+			<ns2:amount>100.10</ns2:amount>
+			<ns2:count>1</ns2:count>
+			<ns2:fulfillmentDate>2023-05-13</ns2:fulfillmentDate>	
+		</ns2:dailyCashFlowDetail>
+	</ns9:dailySimplifiedInvoiceModification>	
+	<ns9:dailyInvoice>
+		<ns2:dailyCashFlowDetail>
+			<ns2:commerceCollectorList>
+				<ns2:commercialCollector>
+					<ns2:collectorCode>SEC</ns2:collectorCode>
+					<ns2:collectorGrossAmount>10.10</ns2:collectorGrossAmount>
+					<ns2:collectorNetAmount>10.10</ns2:collectorNetAmount>
+					<ns2:collectorVatAmount>10.10</ns2:collectorVatAmount>
+				</ns2:commercialCollector>
+				<ns2:commercialCollector>
+					<ns2:collectorCode>AAM</ns2:collectorCode>
+					<ns2:collectorGrossAmount>10.10</ns2:collectorGrossAmount>
+					<ns2:collectorNetAmount>10.10</ns2:collectorNetAmount>
+					<ns2:collectorVatAmount>10.10</ns2:collectorVatAmount>
+				</ns2:commercialCollector>
+			</ns2:commerceCollectorList>
+			<ns2:amount>100.10</ns2:amount>
+			<ns2:count>1</ns2:count>
+			<ns2:fulfillmentDate>2023-05-13</ns2:fulfillmentDate>	
+		</ns2:dailyCashFlowDetail>
+	</ns9:dailyInvoice>	
+	<ns9:dailyInvoiceCancellation>
+		<ns2:dailyCashFlowDetail>
+			<ns2:commerceCollectorList>
+				<ns2:commercialCollector>
+					<ns2:collectorCode>SEC</ns2:collectorCode>
+					<ns2:collectorGrossAmount>10.10</ns2:collectorGrossAmount>
+					<ns2:collectorNetAmount>10.10</ns2:collectorNetAmount>
+					<ns2:collectorVatAmount>10.10</ns2:collectorVatAmount>
+				</ns2:commercialCollector>
+				<ns2:commercialCollector>
+					<ns2:collectorCode>AAM</ns2:collectorCode>
+					<ns2:collectorGrossAmount>10.10</ns2:collectorGrossAmount>
+					<ns2:collectorNetAmount>10.10</ns2:collectorNetAmount>
+					<ns2:collectorVatAmount>10.10</ns2:collectorVatAmount>
+				</ns2:commercialCollector>
+			</ns2:commerceCollectorList>
+			<ns2:amount>100.10</ns2:amount>
+			<ns2:count>1</ns2:count>
+			<ns2:fulfillmentDate>2023-05-13</ns2:fulfillmentDate>	
+		</ns2:dailyCashFlowDetail>
+	</ns9:dailyInvoiceCancellation>	
+	<ns9:dailyInvoiceModification>
+		<ns2:dailyCashFlowDetail>
+			<ns2:commerceCollectorList>
+				<ns2:commercialCollector>
+					<ns2:collectorCode>SEC</ns2:collectorCode>
+					<ns2:collectorGrossAmount>10.10</ns2:collectorGrossAmount>
+					<ns2:collectorNetAmount>10.10</ns2:collectorNetAmount>
+					<ns2:collectorVatAmount>10.10</ns2:collectorVatAmount>
+				</ns2:commercialCollector>
+				<ns2:commercialCollector>
+					<ns2:collectorCode>AAM</ns2:collectorCode>
+					<ns2:collectorGrossAmount>10.10</ns2:collectorGrossAmount>
+					<ns2:collectorNetAmount>10.10</ns2:collectorNetAmount>
+					<ns2:collectorVatAmount>10.10</ns2:collectorVatAmount>
+				</ns2:commercialCollector>
+			</ns2:commerceCollectorList>
+			<ns2:amount>100.10</ns2:amount>
+			<ns2:count>1</ns2:count>
+			<ns2:fulfillmentDate>2023-05-13</ns2:fulfillmentDate>	
+		</ns2:dailyCashFlowDetail>
+	</ns9:dailyInvoiceModification>
+    <ns9:sumCommerceAmount>0</ns9:sumCommerceAmount>
+  </ns9:DailyCashFlowReport>
+</ns9:CoreReport>

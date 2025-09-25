@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns9:CoreReport xmlns="http://schemas.nav.gov.hu/NTCA/1.0/common" 
+xmlns:ns6="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage" 
+xmlns:ns5="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData" 
+xmlns:ns8="http://schemas.nav.gov.hu/OSA/3.0/base" 
+xmlns:ns7="http://schemas.nav.gov.hu/OSA/3.0/data" 
+xmlns:ns9="http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage" 
+xmlns:ns2="http://schemas.nav.gov.hu/ERECEIPT/1.1/base" 
+xmlns:ns4="http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData" 
+xmlns:ns3="http://schemas.nav.gov.hu/ERECEIPT/1.1/api">
+  <ns9:CashFlowReport>
+    <ns9:reportHeader>
+      <ns2:recordCounter>1</ns2:recordCounter>
+      <ns2:issueStartDateTime>2025-01-16T13:54:42.826Z</ns2:issueStartDateTime>
+      <ns2:ntcaControlCode>E698C</ns2:ntcaControlCode>
+      <ns2:additionalData>
+        <ns2:dataName>A12345_VALAMI</ns2:dataName>
+        <ns2:dataDescription>TextCustomInfo</ns2:dataDescription>
+        <ns2:dataValue>CASHFLOWReport CUSTOM INFO</ns2:dataValue>
+      </ns2:additionalData>
+	  <ns2:additionalData>
+        <ns2:dataName>A12345_VALAMI</ns2:dataName>
+        <ns2:dataDescription>TextCustomInfo</ns2:dataDescription>
+        <ns2:dataValue>CASHFLOWReport CUSTOM INFO</ns2:dataValue>
+      </ns2:additionalData>
+      <ns2:shop>
+	  <!-- simpleAddress vagy detailedAddress-->
+		 <!--<ns2:simpleAddress>
+            <ns2:countryCode>HU</ns2:countryCode>
+            <ns2:region>Teszt régió</ns2:region>
+            <ns2:postalCode>1000</ns2:postalCode>
+            <ns2:city>Város</ns2:city>
+            <ns2:additionalAddressDetail>Kapcsolódó címadat</ns2:additionalAddressDetail>
+		</ns2:simpleAddress>-->
+        <ns2:detailedAddress>
+          <ns2:countryCode>HU</ns2:countryCode>
+		  <ns2:region>HU</ns2:region>
+          <ns2:postalCode>1000</ns2:postalCode>
+          <ns2:city>Teszt város</ns2:city>
+          <ns2:streetName>Teszt</ns2:streetName>
+          <ns2:publicPlaceCategory>Utca</ns2:publicPlaceCategory>
+          <ns2:number>1</ns2:number>
+          <ns2:building>Teszt épület</ns2:building>
+          <ns2:staircase>1</ns2:staircase>
+          <ns2:floor>1</ns2:floor>
+          <ns2:door>1</ns2:door>
+          <ns2:lotNumber>1</ns2:lotNumber>
+        </ns2:detailedAddress>
+        <ns2:shopName>Teszt bolt hosszú</ns2:shopName>
+        <ns2:shopShortName>Teszt bolt rövid</ns2:shopShortName>
+      </ns2:shop>
+      <ns2:taxPayer>
+	  <!-- simpleAddress vagy detailedAddress-->
+		 <!--<ns2:simpleAddress>
+            <ns2:countryCode>HU</ns2:countryCode>
+            <ns2:region>Teszt régió</ns2:region>
+            <ns2:postalCode>1000</ns2:postalCode>
+            <ns2:city>Teszt város</ns2:city>
+            <ns2:additionalAddressDetail>Kapcsolódó címadat</ns2:additionalAddressDetail>
+		</ns2:simpleAddress>-->
+        <ns2:detailedAddress>
+          <ns2:countryCode>HU</ns2:countryCode>
+		  <ns2:region>HU</ns2:region>
+          <ns2:postalCode>1000</ns2:postalCode>
+          <ns2:city>Teszt város</ns2:city>
+          <ns2:streetName>Teszt</ns2:streetName>
+          <ns2:publicPlaceCategory>Utca</ns2:publicPlaceCategory>
+          <ns2:number>1</ns2:number>
+          <ns2:building>Teszt épület</ns2:building>
+          <ns2:staircase>1</ns2:staircase>
+          <ns2:floor>1</ns2:floor>
+          <ns2:door>1</ns2:door>
+          <ns2:lotNumber>1</ns2:lotNumber>
+        </ns2:detailedAddress>
+        <ns2:taxPayerName>Teszt hosszú BT</ns2:taxPayerName>
+        <ns2:taxPayerShortName>Teszt hosszú BT</ns2:taxPayerShortName>
+        <ns2:taxNumber>
+          <ns2:taxpayerId>12345678</ns2:taxpayerId>
+          <ns2:vatCode>1</ns2:vatCode>
+          <ns2:countyCode>12</ns2:countyCode>
+        </ns2:taxNumber>
+		<ns2:groupIdentificationNumber>
+		  <ns2:taxpayerId>12345678</ns2:taxpayerId>
+          <ns2:vatCode>1</ns2:vatCode>
+          <ns2:countyCode>12</ns2:countyCode>
+		</ns2:groupIdentificationNumber>
+      </ns2:taxPayer>
+	  <ns2:coTaxPayer>
+	  <!-- simpleAddress vagy detailedAddress-->
+		 <!--<ns2:simpleAddress>
+            <ns2:countryCode>HU</ns2:countryCode>
+            <ns2:region>Teszt régió</ns2:region>
+            <ns2:postalCode>1000</ns2:postalCode>
+            <ns2:city>Teszt Város</ns2:city>
+            <ns2:additionalAddressDetail>Kapcsolódó címadat</ns2:additionalAddressDetail>
+		</ns2:simpleAddress>-->
+        <ns2:detailedAddress>
+          <ns2:countryCode>HU</ns2:countryCode>
+		  <ns2:region>HU</ns2:region>
+          <ns2:postalCode>1000</ns2:postalCode>
+          <ns2:city>Teszt város</ns2:city>
+          <ns2:streetName>Teszt</ns2:streetName>
+          <ns2:publicPlaceCategory>Utca</ns2:publicPlaceCategory>
+          <ns2:number>1</ns2:number>
+          <ns2:building>Teszt épület</ns2:building>
+          <ns2:staircase>1</ns2:staircase>
+          <ns2:floor>1</ns2:floor>
+          <ns2:door>1</ns2:door>
+          <ns2:lotNumber>1</ns2:lotNumber>
+        </ns2:detailedAddress>
+        <ns2:taxPayerName>Teszt hosszú BT</ns2:taxPayerName>
+        <ns2:taxPayerShortName>Teszt rövid BT</ns2:taxPayerShortName>
+        <ns2:taxNumber>
+          <ns2:taxpayerId>12345678</ns2:taxpayerId>
+          <ns2:vatCode>1</ns2:vatCode>
+          <ns2:countyCode>12</ns2:countyCode>
+        </ns2:taxNumber>
+		<ns2:groupIdentificationNumber>
+		  <ns2:taxpayerId>12345678</ns2:taxpayerId>
+          <ns2:vatCode>1</ns2:vatCode>
+          <ns2:countyCode>12</ns2:countyCode>
+		</ns2:groupIdentificationNumber>
+      </ns2:coTaxPayer>
+    </ns9:reportHeader>
+    <ns9:reportNumber>PM-T11100001/12345678/0001/00001</ns9:reportNumber>
+    <ns9:paymentTitleCode>01</ns9:paymentTitleCode>
+    <ns9:balanceChange>
+      <ns2:cashHufAmount>4000</ns2:cashHufAmount>
+	  <!--foreignCurrency opcionális, de lehet több is 0..10-->
+	  <ns2:foreignCurrency>
+		<ns2:currencyAmount>10.10</ns2:currencyAmount>
+		<ns2:currencyCode>EUR</ns2:currencyCode>
+		<ns2:exchangeRate>400.1</ns2:exchangeRate>
+		<ns2:currencyHufAmount>4041</ns2:currencyHufAmount>
+	  </ns2:foreignCurrency>
+	  <ns2:foreignCurrency>
+		<ns2:currencyAmount>10.10</ns2:currencyAmount>
+		<ns2:currencyCode>EUR</ns2:currencyCode>
+		<ns2:exchangeRate>400.1</ns2:exchangeRate>
+		<ns2:currencyHufAmount>4041</ns2:currencyHufAmount>
+	  </ns2:foreignCurrency>	  
+      <ns2:cardPaymentAmount>0</ns2:cardPaymentAmount>
+      <ns2:szepCardAmount>0</ns2:szepCardAmount>
+      <ns2:afrAmount>0</ns2:afrAmount>
+	  <!--otherPayment opcionális, de lehet több is 0..10-->
+	  <ns2:otherPayment>
+	    <ns2:otherPaymentCode>SMART</ns2:otherPaymentCode>
+		<ns2:otherPaymentHufAmount>100000</ns2:otherPaymentHufAmount>	  
+	  </ns2:otherPayment>
+	  <ns2:otherPayment>
+	    <ns2:otherPaymentCode>EGYEB-kedvezmeny2025</ns2:otherPaymentCode>
+		<ns2:otherPaymentHufAmount>100000</ns2:otherPaymentHufAmount>	  
+	  </ns2:otherPayment>
+    </ns9:balanceChange>
+	<ns9:changeAmount>1000</ns9:changeAmount>
+    <ns9:roundingDifferenceAmount>0</ns9:roundingDifferenceAmount>
+  </ns9:CashFlowReport>
+</ns9:CoreReport>

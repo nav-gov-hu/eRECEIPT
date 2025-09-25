@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns6:CoreDocument xmlns="http://schemas.nav.gov.hu/NTCA/1.0/common" xmlns:ns6="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage" xmlns:ns5="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData" xmlns:ns8="http://schemas.nav.gov.hu/OSA/3.0/data" xmlns:ns7="http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage" xmlns:ns9="http://schemas.nav.gov.hu/OSA/3.0/base" xmlns:ns2="http://schemas.nav.gov.hu/ERECEIPT/1.1/base" xmlns:ns4="http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData" xmlns:ns3="http://schemas.nav.gov.hu/ERECEIPT/1.1/api">
+	<ns6:otherDocumentCore>
+		<ns5:metaData>
+			<ns2:documentNumber>NY-T11100001/12345678/0004/00001</ns2:documentNumber>
+			<ns2:documentOperation>CREATE</ns2:documentOperation>
+			<ns2:APNumber>T11100001</ns2:APNumber>
+			<ns2:taxpayerId>12345678</ns2:taxpayerId>
+			<ns2:electronicInvoiceHash cryptoType="SHA3-512">B36A9C519D1238D65F8A8F1ACD7F1DBFC87A8BEFB7F169EC762B86C9D6C567B7F8736C2F1C314A94D9F6310413085E4975A4F78D1829F5020629D49A7BE618AB</ns2:electronicInvoiceHash>
+		</ns5:metaData>
+		<ns5:otherDocumentData>
+			<ns5:documentNumber>NY-T11100001/12345678/0004/00001</ns5:documentNumber>
+			<ns5:documentIssueDate>2025-07-24</ns5:documentIssueDate>
+			<ns5:issueStartDateTime>2025-07-24T08:45:03.507Z</ns5:issueStartDateTime>
+			<ns5:issueEndDateTime>2025-07-24T08:45:15.320Z</ns5:issueEndDateTime>
+			<ns5:healthFundInfo>
+				<ns2:healthFundName>TESZT Egészségpénztár</ns2:healthFundName>
+				<ns2:healthFundAddress>
+					<!-- Simple address -->
+					<ns2:detailedAddress>
+						<ns2:countryCode>HU</ns2:countryCode>
+						<ns2:region>Teszt régió</ns2:region>
+						<ns2:postalCode>1000</ns2:postalCode>
+						<ns2:city>Teszt város</ns2:city>
+						<ns2:streetName>Teszt</ns2:streetName>
+						<ns2:publicPlaceCategory>Utca</ns2:publicPlaceCategory>
+						<ns2:number>1</ns2:number>
+						<ns2:building>Teszt épület</ns2:building>
+						<ns2:staircase>1</ns2:staircase>
+						<ns2:floor>1</ns2:floor>
+						<ns2:door>1</ns2:door>
+						<ns2:lotNumber>1234/56</ns2:lotNumber>
+					</ns2:detailedAddress>
+				</ns2:healthFundAddress>
+				<ns2:healthFundCode>12345678</ns2:healthFundCode>
+				<ns2:healthFundMemberNumber>EP123456789</ns2:healthFundMemberNumber>
+				<ns2:healthFundCardNumber>CARD987654321</ns2:healthFundCardNumber>
+			</ns5:healthFundInfo>
+			<ns5:document>
+				<ns5:documentHead>
+					<ns5:shop>
+						<ns2:detailedAddress>
+							<ns2:countryCode>HU</ns2:countryCode>
+							<ns2:region>Teszt régió</ns2:region>
+							<ns2:postalCode>1000</ns2:postalCode>
+							<ns2:city>Teszt város</ns2:city>
+							<ns2:streetName>Teszt</ns2:streetName>
+							<ns2:publicPlaceCategory>Utca</ns2:publicPlaceCategory>
+							<ns2:number>1</ns2:number>
+							<ns2:building>Teszt épület</ns2:building>
+							<ns2:staircase>1</ns2:staircase>
+							<ns2:floor>1</ns2:floor>
+							<ns2:door>1</ns2:door>
+							<ns2:lotNumber>1234/56</ns2:lotNumber>
+						</ns2:detailedAddress>
+						<ns2:shopName>Teszt bolt hosszú</ns2:shopName>
+						<ns2:shopShortName>Teszt bolt rövid</ns2:shopShortName>
+					</ns5:shop>
+					<ns5:taxPayer>
+						<ns2:simpleAddress>
+							<ns2:countryCode>HU</ns2:countryCode>
+							<ns2:region>Teszt régió</ns2:region>
+							<ns2:postalCode>1000</ns2:postalCode>
+							<ns2:city>Teszt város</ns2:city>
+							<ns2:additionalAddressDetail>Kapcsolódó címadatok</ns2:additionalAddressDetail>
+						</ns2:simpleAddress>
+						<ns2:taxPayerName>Teszt hosszú BT</ns2:taxPayerName>
+						<ns2:taxPayerShortName>Teszt rövid BT</ns2:taxPayerShortName>
+						<ns2:taxNumber>
+							<ns2:taxpayerId>12345678</ns2:taxpayerId>
+							<ns2:vatCode>1</ns2:vatCode>
+							<ns2:countyCode>12</ns2:countyCode>
+						</ns2:taxNumber>
+						<ns2:groupIdentificationNumber>
+							<ns2:taxpayerId>12345678</ns2:taxpayerId>
+							<ns2:vatCode>1</ns2:vatCode>
+							<ns2:countyCode>12</ns2:countyCode>
+						</ns2:groupIdentificationNumber>
+					</ns5:taxPayer>
+					<ns5:coTaxPayer>
+						<ns2:detailedAddress>
+							<ns2:countryCode>US</ns2:countryCode>
+							<ns2:postalCode>1000</ns2:postalCode>
+							<ns2:city>Teszt város</ns2:city>
+							<ns2:streetName>Teszt</ns2:streetName>
+							<ns2:publicPlaceCategory>Utca</ns2:publicPlaceCategory>
+							<ns2:number>1</ns2:number>
+							<ns2:building>Teszt épület</ns2:building>
+							<ns2:staircase>1</ns2:staircase>
+							<ns2:floor>1</ns2:floor>
+							<ns2:door>1</ns2:door>
+							<ns2:lotNumber>1</ns2:lotNumber>
+						</ns2:detailedAddress>
+						<ns2:taxPayerName>Teszt hosszú BT</ns2:taxPayerName>
+						<ns2:taxPayerShortName>Teszt rövid BT</ns2:taxPayerShortName>
+						<ns2:taxNumber>
+							<ns2:taxpayerId>12345678</ns2:taxpayerId>
+							<ns2:vatCode>1</ns2:vatCode>
+							<ns2:countyCode>12</ns2:countyCode>
+						</ns2:taxNumber>
+						<ns2:groupIdentificationNumber>
+							<ns2:taxpayerId>12345678</ns2:taxpayerId>
+							<ns2:vatCode>1</ns2:vatCode>
+							<ns2:countyCode>12</ns2:countyCode>
+						</ns2:groupIdentificationNumber>
+					</ns5:coTaxPayer>
+					<ns5:customerInfo>
+						<ns2:customerVatStatus>DOMESTIC</ns2:customerVatStatus>
+						<ns2:customerVatData>
+							<ns2:customerTaxNumber>
+								<ns2:taxpayerId>12345678</ns2:taxpayerId>
+								<ns2:vatCode>1</ns2:vatCode>
+								<ns2:countyCode>12</ns2:countyCode>
+								<ns2:groupMemberTaxNumber>
+									<ns2:taxpayerId>12345678</ns2:taxpayerId>
+									<ns2:vatCode>1</ns2:vatCode>
+									<ns2:countyCode>12</ns2:countyCode>
+								</ns2:groupMemberTaxNumber>
+							</ns2:customerTaxNumber>
+						</ns2:customerVatData>
+						<ns2:customerName>Minta Vevő Kft.</ns2:customerName>
+						<ns2:customerAddress>
+							<ns2:detailedAddress>
+								<ns2:countryCode>HU</ns2:countryCode>
+								<ns2:region>Teszt régió</ns2:region>
+								<ns2:postalCode>1000</ns2:postalCode>
+								<ns2:city>Teszt város</ns2:city>
+								<ns2:streetName>Teszt</ns2:streetName>
+								<ns2:publicPlaceCategory>Utca</ns2:publicPlaceCategory>
+								<ns2:number>1</ns2:number>
+								<ns2:building>Teszt épület</ns2:building>
+								<ns2:staircase>1</ns2:staircase>
+								<ns2:floor>1</ns2:floor>
+								<ns2:door>1</ns2:door>
+								<ns2:lotNumber>1234/56</ns2:lotNumber>
+							</ns2:detailedAddress>
+						</ns2:customerAddress>
+						<ns2:customerBankAccountNumber>HU42111111111111111111111111</ns2:customerBankAccountNumber>
+					</ns5:customerInfo>
+					<ns5:documentDetail>
+						<ns5:documentCategory>RECEIPT</ns5:documentCategory>
+						<ns5:paymentInstruments>
+							<ns2:szepCardAmount>1000</ns2:szepCardAmount>
+							<ns2:afrAmount>1000</ns2:afrAmount>
+							<ns2:otherPayment>
+								<ns2:otherPaymentCode>KUPON</ns2:otherPaymentCode>
+								<ns2:otherPaymentHufAmount>500</ns2:otherPaymentHufAmount>
+							</ns2:otherPayment>
+						</ns5:paymentInstruments>
+						<ns5:additionalDocumentData>
+							<ns2:dataName>D12345__MEGJEGYZES</ns2:dataName>
+							<ns2:dataDescription>Belső használat</ns2:dataDescription>
+							<ns2:dataValue>Teszt bizonylat</ns2:dataValue>
+						</ns5:additionalDocumentData>
+					</ns5:documentDetail>
+				</ns5:documentHead>
+				<ns5:documentLines>
+					<ns5:line>
+						<ns5:lineNumber>1</ns5:lineNumber>
+						<ns5:EANCode>5998881234567</ns5:EANCode>
+						<ns5:productCodes>
+							<ns5:productCode>
+								<ns5:productCodeCategory>VTSZ</ns5:productCodeCategory>
+								<ns5:productCodeValue>08081080</ns5:productCodeValue>
+							</ns5:productCode>
+							<ns5:productCode>
+								<ns5:productCodeCategory>OWN</ns5:productCodeCategory>
+								<ns5:productCodeOwnValue>ALMA-KEDVEZMENYES</ns5:productCodeOwnValue>
+							</ns5:productCode>
+						</ns5:productCodes>
+						<ns5:lineNatureIndicator>PRODUCT</ns5:lineNatureIndicator>
+						<ns5:lineDescription>Alma</ns5:lineDescription>
+						<ns5:quantity>1.0000</ns5:quantity>
+						<ns5:unitOfMeasure>PACK</ns5:unitOfMeasure>
+						<ns5:unitOfMeasureOwn>PACKETA</ns5:unitOfMeasureOwn>
+						<ns5:unitPrice>25800.00</ns5:unitPrice>
+						<ns5:unitPriceHUF>25800.00</ns5:unitPriceHUF>
+						<ns5:lineAmountsDocument>
+							<ns5:collectorCode>C</ns5:collectorCode>
+							<ns5:lineGrossAmountDocument>25800.00</ns5:lineGrossAmountDocument>
+							<ns5:lineGrossAmountDocumentHUF>25800.00</ns5:lineGrossAmountDocumentHUF>
+						</ns5:lineAmountsDocument>
+						<ns5:itemNature>n</ns5:itemNature>
+						<ns5:additionalLineData>
+							<ns2:dataName>D12345__CIKK_POZMEZ</ns2:dataName>
+							<ns2:dataDescription>Pozíció mező</ns2:dataDescription>
+							<ns2:dataValue>123456</ns2:dataValue>
+						</ns5:additionalLineData>
+					</ns5:line>
+				</ns5:documentLines>
+				<ns5:documentSummary>
+					<ns5:summaryDocument>
+						<ns5:collectorCode>C</ns5:collectorCode>
+						<ns5:vatContentGrossAmount>25800.00</ns5:vatContentGrossAmount>
+						<ns5:vatContentGrossAmountHUF>25800.00</ns5:vatContentGrossAmountHUF>
+					</ns5:summaryDocument>
+					<ns5:summaryGrossData>
+						<ns5:documentGrossAmount>25800.00</ns5:documentGrossAmount>
+						<ns5:documentGrossAmountHUF>25800.00</ns5:documentGrossAmountHUF>
+						<ns5:documentRoundingAmount>0</ns5:documentRoundingAmount>
+					</ns5:summaryGrossData>
+					<ns5:ntcaControlCode>676FA</ns5:ntcaControlCode>
+				</ns5:documentSummary>
+			</ns5:document>
+		</ns5:otherDocumentData>
+	</ns6:otherDocumentCore>
+</ns6:CoreDocument>

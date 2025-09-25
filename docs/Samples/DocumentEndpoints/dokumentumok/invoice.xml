@@ -1,0 +1,23 @@
+<ns3:DocumentRequest xmlns="http://schemas.nav.gov.hu/NTCA/1.0/common" xmlns:ns6="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentMessage" xmlns:ns5="http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData" xmlns:ns8="http://schemas.nav.gov.hu/OSA/3.0/base" xmlns:ns7="http://schemas.nav.gov.hu/OSA/3.0/data" xmlns:ns9="http://schemas.nav.gov.hu/ERECEIPT/1.1/reportMessage" xmlns:ns2="http://schemas.nav.gov.hu/ERECEIPT/1.1/base" xmlns:ns4="http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData" xmlns:ns3="http://schemas.nav.gov.hu/ERECEIPT/1.1/api">
+    <requestId>{{randomHex}}</requestId>
+    <timestamp>{{dateTimeString}}</timestamp>
+    <requestVersion>1.1</requestVersion>
+    <ns2:APNumber>{{apnumberHW}}</ns2:APNumber>
+    <ns3:taxNumber>{{taxNumber}}</ns3:taxNumber>
+    <ns3:documentClass>NORMALINVOICE</ns3:documentClass>
+    <ns3:documentEnvelope>
+        <ns2:envelopeData>{{envelopeData}}</ns2:envelopeData>
+        <ns2:customerEnvelopeData>{{customerEnvelopeData}}</ns2:customerEnvelopeData>
+        <ns2:envelopeHash cryptoType="SHA-256">{{envelopeHash}}</ns2:envelopeHash>
+        <ns2:envelopeSignature>{{envelopeSignature}}</ns2:envelopeSignature>
+    </ns3:documentEnvelope>
+    <ns3:decryptKey>{{decryptKey}}</ns3:decryptKey>
+    <ns3:searchKeyTimestamp>{{searchKeyTimestamp}}</ns3:searchKeyTimestamp>
+    <ns3:searchKey>{{searchKey}}</ns3:searchKey>
+    <ns3:qRCodeExpired>false</ns3:qRCodeExpired>
+    <ns3:offlineCreated>false</ns3:offlineCreated>
+    <ns3:cashRegisterSignCertificate>{{cashRegisterSignCertificate}}</ns3:cashRegisterSignCertificate>
+    <ns3:recordCounter>{{recordCounter}}</ns3:recordCounter>
+    <ns3:lastRecordCounter>{{lastRecordCounter}}</ns3:lastRecordCounter>
+    <ns3:ntcaVerificationCode>{{ntcaVerificationCode}}</ns3:ntcaVerificationCode>
+</ns3:DocumentRequest>

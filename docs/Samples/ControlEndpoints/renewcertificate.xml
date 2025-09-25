@@ -1,0 +1,14 @@
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+<ns3:RenewCertificateRequest xmlns="http://schemas.nav.gov.hu/NTCA/1.0/common"
+                  xmlns:ns2="http://schemas.nav.gov.hu/ERECEIPT/1.1/base"
+                  xmlns:ns3="http://schemas.nav.gov.hu/ERECEIPT/1.1/api">
+    <requestId>{{randomHex}}</requestId>
+    <timestamp>{{dateTimeString}}</timestamp>
+    <requestVersion>1.1</requestVersion>
+    <headerVersion>1.1</headerVersion>
+    <ns2:APNumber>{{apNumberHW}}</ns2:APNumber>
+    <ns3:taxNumber>{{taxNumber}}</ns3:taxNumber>
+    <ns3:renewCertificateCode>{{renewCertificateCode}}</ns3:renewCertificateCode>
+    <ns3:certificateType>{{certificateType}}</ns3:certificateType>
+    <ns3:certificateRequest>{{certificateRequest}}</ns3:certificateRequest>
+</ns3:RenewCertificateRequest>
