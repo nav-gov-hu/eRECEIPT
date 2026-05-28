@@ -1,0 +1,172 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item GenericTimestampType in eDocumentStoreApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('SimpleType', 'generictimestamptype');
+                        --></script><div class="pageheader">
+         Documentation for eDocumentStoreApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>SimpleType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>GenericTimestampType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">http://schemas.nav.gov.hu/NTCA/1.0/common</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="common_xsd.html">common.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Általános UTC időbélyeg
+Generic UTC timestamp</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap"></map><img src="images/generictimestamptype.png" border="0" alt="XSD Diagram of GenericTimestampType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:simpleType name="GenericTimestampType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Általános UTC időbélyeg&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Generic UTC timestamp&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:restriction base="xs:dateTime"&gt;
+    &lt;xs:pattern value="\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,3})?Z" /&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="facets" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Facets:</b></td>
+            </tr>
+            <tr id="facets_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Facet</td>
+                        <td class="last">Value</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Pattern</b></td>
+                        <td>\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,3})?Z</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>GenericTimestampType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="eventtimestamp.html">eventTimestamp</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="issueenddatetime.html">issueEndDateTime</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="searchkeytimestamp.html">searchKeyTimestamp</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="searchkeytimestamp1.html">searchKeyTimestamp</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="issueenddatetime1.html">issueEndDateTime</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="searchkeytimestamp2.html">searchKeyTimestamp</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="subscriptionexpirationtime.html">subscriptionExpirationTime</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="timestamp.html">timestamp</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="newtime.html">newTime</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="oldtime.html">oldTime</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="operatorsitevalidfrom.html">operatorSiteValidFrom</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="validfrom.html">validFrom</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="validto.html">validTo</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="softwarelastupdatetime.html">softwareLastUpdateTime</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="vatvalidfrom.html">vatValidFrom</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="issuestartdatetime.html">issueStartDateTime</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="eventtimestamp.html">eventTimestamp</a>, <a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="issueenddatetime.html">issueEndDateTime</a>, <a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="issueenddatetime1.html">issueEndDateTime</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="issuestartdatetime.html">issueStartDateTime</a><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="newtime.html">newTime</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="oldtime.html">oldTime</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="operatorsitevalidfrom.html">operatorSiteValidFrom</a>, <a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="searchkeytimestamp.html">searchKeyTimestamp</a>, <a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="searchkeytimestamp1.html">searchKeyTimestamp</a>, <a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="searchkeytimestamp2.html">searchKeyTimestamp</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="softwarelastupdatetime.html">softwareLastUpdateTime</a>, <a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html">nsA</a>:<a href="subscriptionexpirationtime.html">subscriptionExpirationTime</a>, <a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="timestamp.html">timestamp</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="validfrom.html">validFrom</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="validto.html">validTo</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="vatvalidfrom.html">vatValidFrom</a>, 
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eDocumentStoreApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

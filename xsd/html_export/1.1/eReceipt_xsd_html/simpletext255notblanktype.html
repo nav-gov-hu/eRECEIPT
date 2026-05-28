@@ -1,0 +1,184 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item SimpleText255NotBlankType in eReceiptApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('SimpleType', 'simpletext255notblanktype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>SimpleType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>SimpleText255NotBlankType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">http://schemas.nav.gov.hu/NTCA/1.0/common</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="common_xsd.html">common.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Legfeljebb 255 karaktert tartalmazó szöveg típus
+String of maximum 255 characters</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap"></map><img src="images/simpletext255notblanktype.png" border="0" alt="XSD Diagram of SimpleText255NotBlankType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:simpleType name="SimpleText255NotBlankType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Legfeljebb 255 karaktert tartalmazó szöveg típus&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;String of maximum 255 characters&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:restriction base="AtomicStringType255"&gt;
+    &lt;xs:pattern value=".*[^\s].*" /&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="facets" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Facets:</b></td>
+            </tr>
+            <tr id="facets_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Facet</td>
+                        <td class="last">Value</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Pattern</b></td>
+                        <td>.*[^\s].*</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul><li><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="atomicstringtype255.html">AtomicStringType255</a><ul>
+                     <li><b><i>SimpleText255NotBlankType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="city.html">city</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="streetname.html">streetName</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="additionaladdressdetail.html">additionalAddressDetail</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="city1.html">city</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="datadescription.html">dataDescription</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="discountdescription.html">discountDescription</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="enginenum.html">engineNum</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="serialnum.html">serialNum</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="obligatedname.html">obligatedName</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="productcodeownvalue.html">productCodeOwnValue</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communicationData</a>:<a href="categorynamelevel4.html">categoryNameLevel4</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communicationData</a>:<a href="productmanufacturer.html">productManufacturer</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="productcodeownvalue1.html">productCodeOwnValue</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">nsA</a>:<a href="productcode2.html">productCode</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="datadescription1.html">dataDescription</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="city2.html">city</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="streetname1.html">streetName</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="additionaladdressdetail1.html">additionalAddressDetail</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="city3.html">city</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="otherdocumentdataname.html">otherDocumentDataName</a></li>
+                     </ul></ul></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="additionaladdressdetail.html">additionalAddressDetail</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="additionaladdressdetail1.html">additionalAddressDetail</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communicationData</a>:<a href="categorynamelevel4.html">categoryNameLevel4</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="city.html">city</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="city1.html">city</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="city2.html">city</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="city3.html">city</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="datadescription.html">dataDescription</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="datadescription1.html">dataDescription</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="discountdescription.html">discountDescription</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="enginenum.html">engineNum</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="obligatedname.html">obligatedName</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_reportmessage.html">reportMessage</a>:<a href="otherdocumentdataname.html">otherDocumentDataName</a><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">nsA</a>:<a href="productcode2.html">productCode</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="productcodeownvalue.html">productCodeOwnValue</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="productcodeownvalue1.html">productCodeOwnValue</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communicationData</a>:<a href="productmanufacturer.html">productManufacturer</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="serialnum.html">serialNum</a>, <a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="streetname.html">streetName</a>, <a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="streetname1.html">streetName</a>, 
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

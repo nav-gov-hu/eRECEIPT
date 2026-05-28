@@ -1,0 +1,179 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item SummaryByVatRateType in eDocumentStoreApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'summarybyvatratetype');
+                        --></script><div class="pageheader">
+         Documentation for eDocumentStoreApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>SummaryByVatRateType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">http://schemas.nav.gov.hu/OSA/3.0/data</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="invoicedata_xsd.html">invoiceData.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>ÁFA mértékek szerinti összesítés
+Summary according to VAT rates</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="264,188,537,243" href="vatrategrossdata.html" alt="Drilldown into vatRateGrossData"></area>
+                     <area shape="rect" coords="244,125,487,180" href="vatratevatdata.html" alt="Drilldown into vatRateVatData"></area>
+                     <area shape="rect" coords="244,63,488,118" href="vatratenetdata.html" alt="Drilldown into vatRateNetData"></area>
+                     <area shape="rect" coords="244,1,446,56" href="vatrate.html" alt="Drilldown into vatRate"></area></map><img src="images/summarybyvatratetype.png" border="0" alt="XSD Diagram of SummaryByVatRateType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="SummaryByVatRateType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;ÁFA mértékek szerinti összesítés&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Summary according to VAT rates&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="vatRate" type="VatRateType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Adómérték vagy adómentesség jelölése&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Marking the tax rate or the fact of tax exemption&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="vatRateNetData" type="VatRateNetDataType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Adott adómértékhez tartozó nettó adatok&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Net data of given tax rate&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="vatRateVatData" type="VatRateVatDataType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Adott adómértékhez tartozó ÁFA adatok&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;VAT data of given tax rate&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="vatRateGrossData" type="VatRateGrossDataType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Adott adómértékhez tartozó bruttó adatok&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Gross data of given tax rate&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">vatRate</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="vatrate.html">vatRate</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">vatRateNetData</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="vatratenetdata.html">vatRateNetData</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">vatRateVatData</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="vatratevatdata.html">vatRateVatData</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">vatRateGrossData</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="vatrategrossdata.html">vatRateGrossData</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>SummaryByVatRateType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="summarybyvatrate.html">summaryByVatRate</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="summarybyvatrate.html">summaryByVatRate</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eDocumentStoreApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

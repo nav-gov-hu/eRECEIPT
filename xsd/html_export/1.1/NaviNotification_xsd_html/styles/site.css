@@ -1,0 +1,307 @@
+﻿/**********************************************************************************************
+ * Copyright (c) 2001-2023 Liquid Technologies Limited. All rights reserved.
+ * See www.liquid-technologies.com for product details.
+ *
+ * Please see products End User License Agreement for distribution permissions.
+ **********************************************************************************************/
+body
+{
+    font-family: Verdana;
+    font-size: 12px;
+}
+
+a
+{
+    color: #666;
+}
+
+
+pre
+{
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    margin-bottom:0px;
+    margin-top:0;
+}
+
+pre .title
+{
+    color: brown;
+}
+pre .tag .attribute .value
+{
+    color: blue;
+}
+
+pre .tag
+{
+    color: blue;
+}
+
+pre .attribute
+{
+    color: red;
+}
+
+
+
+.treeview, .search
+{
+    font-size: 11px;
+    margin:0;
+    padding:0;    
+}
+
+.treeview li, .search li {
+    list-style-type:none;
+    font-weight: normal;
+    padding:2px;
+}
+
+.treeview li.parent  a
+{
+    font-weight: bold;
+    padding-bottom:6px;
+}
+
+.treeview a
+{
+  outline: 0;
+
+}    
+
+
+.treeview li ul 
+{
+    padding-left:15px;        
+}
+.treeview li.parent li a
+{
+ font-weight: normal; 
+}
+.treeview img 
+{
+    border:0;
+    padding-right:5px;
+    vertical-align:text-top;
+}
+
+.treeview a, .search a
+{
+    color: #3f529c;
+    text-decoration:none;
+    white-space:nowrap;
+}
+
+.treeview li.selected
+{
+    background-color:#CCCCFF;
+}
+
+
+.mainHelp, .mainHelp2
+{
+    border-collapse: collapse;
+    width: 100%;
+    border: 0px !important;
+}
+
+.mainHelp2
+{
+    margin-bottom: 10px;
+}
+.mainHelp td, .mainHelp2 td
+{
+    border: 1px solid #ccc;
+    padding: 4px;
+    font-size: 12px;
+}
+
+.mainHelp .label, .mainHelp2 .label
+{
+    color: #3f529c;
+    font-weight: bold;
+}
+
+.childTable
+{
+    border-collapse: collapse;
+    width: 100%;
+    border: 0;
+}
+
+.childTable td
+{
+    border: 1px solid #ccc;
+    padding: 4px;
+    font-size: 12px;
+    vertical-align:top;
+}
+
+.childTable tr.header td
+{
+    background-color: #e5e5e5;
+    color: #000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    border-top-width: 0px !important;
+    vertical-align:top;    
+}
+
+.childTable td.first
+{
+    border-left-width: 0px !important;
+    vertical-align:top;    
+    width:180px;
+}
+
+.childTable td.mid 
+{
+    width:120px;
+}
+
+.childTable td.last
+{
+    border-right-width: 0px !important;
+    vertical-align:top;
+    width:120px;
+}
+
+.childTableHolder
+{
+    padding: 0px !important;
+    border-bottom-width: 0px !important;
+}
+
+
+.mainHelp2 ul
+{
+    list-style-type:none;
+    margin:0;
+    padding:0;    
+}
+.mainHelp2 ul li 
+{
+    padding-bottom:3px;
+}
+.mainHelp2 td ul li ul
+{
+    margin:0;
+    padding:0;
+    margin-left:10px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+ul.tabs
+{
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+    height: 25px;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    width: 100%;
+    
+}
+ul.tabs li
+{
+    float: left;
+    margin: 0;
+    padding: 0;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #ccc;
+    border-left: none;
+    margin-bottom: -1px;
+    background: #e0e0e0;
+    overflow: hidden;
+    position: relative;
+}
+ul.tabs li a
+{
+    text-decoration: none;
+    color: #000;
+    display: block;
+    border: 1px solid #fff;
+    outline: none;
+    width: 60px;
+    text-align: center;
+}
+ul.tabs li a:hover
+{
+    background: #ccc;
+}
+html ul.tabs li.active, html ul.tabs li.active a:hover
+{
+    background: #fff;
+    border-bottom: 1px solid #fff;
+}
+.tab_container
+{
+    border: 1px solid #ccc;
+    border-top: none;
+    clear: both;
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    overflow:hidden;
+}
+.tab_content
+{
+    padding: 10px;
+    padding-top:20px;
+}
+.tab_content input
+{
+    border: 1px solid #ccc;
+}
+.pageheader
+{
+    font-size:1.3em;
+    font-weight:bold;
+    background-color: #3f529c;
+    color: White;
+    padding:10px!important;
+    clear:both;
+    margin-bottom:10px;
+   
+}
+.pageheader a
+{
+    color: White;
+    text-decoration:none;
+}
+
+.pageheader a:hover
+{
+    color: White;
+    text-decoration:none;
+}
+
+
+.pagefooter
+{
+    font-size:0.9em;
+    background-color: #3f529c;
+    color: White;
+    padding:10px !important;
+    clear:both;
+    margin-bottom:5px;
+}
+.pagefooter a
+{
+    color: White;
+    text-decoration:none;
+}
+
+.pagefooter a:hover
+{
+    color: White;
+    text-decoration:none;
+}

@@ -1,0 +1,369 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs the schema invoiceBase.xsd in eDocumentStoreApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'invoicebase_xsd');
+                        --></script><div class="pageheader">
+         Documentation for eDocumentStoreApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>invoiceBase.xsd</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Target Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">http://schemas.nav.gov.hu/OSA/3.0/base</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;!--
+# Project: Magyar Online Számla Rendszer invoiceBase XML séma
+# Author: NAV Informatikai Intézet
+
+# Version: v3.0 2020/07/31
+--&gt;&lt;xs:schema targetNamespace="http://schemas.nav.gov.hu/OSA/3.0/base" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://schemas.nav.gov.hu/OSA/3.0/base" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:common="http://schemas.nav.gov.hu/NTCA/1.0/common"&gt;
+	&lt;xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" schemaLocation="common.xsd"/&gt;
+	&lt;xs:simpleType name="InvoiceAppearanceType"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation xml:lang="hu"&gt;Számla megjelenési formája típus&lt;/xs:documentation&gt;
+			&lt;xs:documentation xml:lang="en"&gt;Form of appearance of the invoice type&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="common:AtomicStringType15"&gt;
+			&lt;xs:enumeration value="PAPER"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Papír alapú számla&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Invoice issued on paper&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="ELECTRONIC"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Elektronikus formában előállított, nem EDI számla&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Electronic invoice (non-EDI)&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="EDI"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;EDI számla&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;EDI invoice&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="UNKNOWN"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;A szoftver nem képes azonosítani vagy a kiállításkor nem ismert&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;The software cannot be identify the form of appearance of the invoice or it is unknown at the time of issue&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="InvoiceCategoryType"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation xml:lang="hu"&gt;A számla típusa&lt;/xs:documentation&gt;
+			&lt;xs:documentation xml:lang="en"&gt;Type of invoice&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="common:AtomicStringType15"&gt;
+			&lt;xs:enumeration value="NORMAL"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Normál (nem egyszerűsített és nem gyűjtő) számla&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Normal (not simplified and not aggregate) invoice&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="SIMPLIFIED"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Egyszerűsített számla&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Simplified invoice&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="AGGREGATE"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Gyűjtőszámla&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Aggregate invoice&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="InvoiceDateType"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation xml:lang="hu"&gt;Dátum típus az Online Számla rendszerben&lt;/xs:documentation&gt;
+			&lt;xs:documentation xml:lang="en"&gt;Date type in the Online Invoice system&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="xs:date"&gt;
+			&lt;xs:minInclusive value="2010-01-01"/&gt;
+			&lt;xs:pattern value="\d{4}-\d{2}-\d{2}"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="InvoiceIndexType"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation xml:lang="hu"&gt;Sorszám típus az Online Számla rendszerben&lt;/xs:documentation&gt;
+			&lt;xs:documentation xml:lang="en"&gt;Index type in the Online Invoice system&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="xs:int"&gt;
+			&lt;xs:minInclusive value="1"/&gt;
+			&lt;xs:maxInclusive value="100"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="InvoiceTimestampType"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation xml:lang="hu"&gt;Időbélyeg típus az Online Számla rendszerben&lt;/xs:documentation&gt;
+			&lt;xs:documentation xml:lang="en"&gt;Timestamp type in the Online Invoice system&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="xs:dateTime"&gt;
+			&lt;xs:minInclusive value="2010-01-01T00:00:00Z"/&gt;
+			&lt;xs:pattern value="\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(.\d{1,3})?Z"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="InvoiceUnboundedIndexType"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation xml:lang="hu"&gt;Sorszám típus kötegelt számlaművelethez az Online Számla rendszerben&lt;/xs:documentation&gt;
+			&lt;xs:documentation xml:lang="en"&gt;Index type for batch invoice operation in the Online Invoice system&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="xs:int"&gt;
+			&lt;xs:minInclusive value="1"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="LineNumberType"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation xml:lang="hu"&gt;Tételszám típus&lt;/xs:documentation&gt;
+			&lt;xs:documentation xml:lang="en"&gt;Line number type&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="xs:nonNegativeInteger"&gt;
+			&lt;xs:minInclusive value="1"/&gt;
+			&lt;xs:totalDigits value="20"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="MonetaryType"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation xml:lang="hu"&gt;Pénzérték típus. Maximum 18 számjegy, ami 2 tizedesjegyet tartalmazhat&lt;/xs:documentation&gt;
+			&lt;xs:documentation xml:lang="en"&gt;Field type for money value input. Maximum 18 digits that may include 2 decimal places&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="common:GenericDecimalType"&gt;
+			&lt;xs:totalDigits value="18"/&gt;
+			&lt;xs:fractionDigits value="2"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="PaymentMethodType"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation xml:lang="hu"&gt;Fizetés módja&lt;/xs:documentation&gt;
+			&lt;xs:documentation xml:lang="en"&gt;Method of payment&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="common:AtomicStringType15"&gt;
+			&lt;xs:enumeration value="TRANSFER"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Banki átutalás&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Bank transfer&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="CASH"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Készpénz&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Cash&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="CARD"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Bankkártya, hitelkártya, egyéb készpénz helyettesítő eszköz&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Debit card, credit card, other cash-substitute payment instrument&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="VOUCHER"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Utalvány, váltó, egyéb pénzhelyettesítő eszköz&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Voucher, bill of exchange, other non-cash payment instrument&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="OTHER"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Egyéb&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Other&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:complexType name="AddressType"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation xml:lang="hu"&gt;Cím típus, amely vagy egyszerű, vagy részletes címet tartalmaz&lt;/xs:documentation&gt;
+			&lt;xs:documentation xml:lang="en"&gt;Format of address that includes either a simple or a detailed address&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:choice&gt;
+			&lt;xs:element name="simpleAddress" type="SimpleAddressType"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Egyszerű cím&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Simple address&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="detailedAddress" type="DetailedAddressType"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Részletes cím&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Detailed address&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+		&lt;/xs:choice&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="DetailedAddressType"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation xml:lang="hu"&gt;Részletes címadatok&lt;/xs:documentation&gt;
+			&lt;xs:documentation xml:lang="en"&gt;Detailed address data&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="countryCode" type="common:CountryCodeType"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Az országkód ISO 3166 alpha-2 szabvány szerint&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;ISO 3166 alpha-2 country code&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="region" type="common:SimpleText50NotBlankType" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Tartomány kódja (amennyiben értelmezhető az adott országban) az ISO 3166-2 alpha 2 szabvány szerint&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;ISO 3166 alpha-2 province code (if appropriate in a given country)&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="postalCode" type="common:PostalCodeType"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Irányítószám (amennyiben nem értelmezhető, 0000 értékkel kell kitölteni)&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;ZIP code (If can not be interpreted, need to be filled "0000")&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="city" type="common:SimpleText255NotBlankType"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Település&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Settlement&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="streetName" type="common:SimpleText255NotBlankType"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Közterület neve&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Name of public place&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="publicPlaceCategory" type="common:SimpleText50NotBlankType"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Közterület jellege&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Category of public place&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="number" type="common:SimpleText50NotBlankType" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Házszám&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;House number&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="building" type="common:SimpleText50NotBlankType" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Épület&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Building&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="staircase" type="common:SimpleText50NotBlankType" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Lépcsőház&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Staircase&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="floor" type="common:SimpleText50NotBlankType" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Emelet&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Floor&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="door" type="common:SimpleText50NotBlankType" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Ajtó&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Door number&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="lotNumber" type="common:SimpleText50NotBlankType" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Helyrajzi szám&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Lot number&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="SimpleAddressType"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation xml:lang="hu"&gt;Egyszerű címtípus&lt;/xs:documentation&gt;
+			&lt;xs:documentation xml:lang="en"&gt;Simple address type&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="countryCode" type="common:CountryCodeType"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Az országkód az ISO 3166 alpha-2 szabvány szerint&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;ISO 3166 alpha-2 country code&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="region" type="common:SimpleText50NotBlankType" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Tartomány kódja (amennyiben értelmezhető az adott országban) az ISO 3166-2 alpha 2 szabvány szerint&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;ISO 3166 alpha-2 province code (if appropriate in a given country)&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="postalCode" type="common:PostalCodeType"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Irányítószám (amennyiben nem értelmezhető, 0000 értékkel kell kitölteni)&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;ZIP code (If can not be interpreted, need to be filled "0000")&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="city" type="common:SimpleText255NotBlankType"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Település&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Settlement&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="additionalAddressDetail" type="common:SimpleText255NotBlankType"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;További címadatok (pl. közterület neve és jellege, házszám, emelet, ajtó, helyrajzi szám, stb.)&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Further address data (name and type of public place, house number, floor, door, lot number, etc.)&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="TaxNumberType"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation xml:lang="hu"&gt;Adószám típus&lt;/xs:documentation&gt;
+			&lt;xs:documentation xml:lang="en"&gt;Tax number type&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="taxpayerId" type="common:TaxpayerIdType"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Az adóalany adó törzsszáma. Csoportos adóalany esetén csoportazonosító szám&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Core tax number of the taxable person. In case of group taxation arrangement the group identification number&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="vatCode" type="common:VatCodeType" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;ÁFA kód az adóalanyiság típusának jelzésére. Egy számjegy&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;VAT code to indicate taxation type of the taxpayer. One digit&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="countyCode" type="common:CountyCodeType" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="hu"&gt;Megyekód, két számjegy&lt;/xs:documentation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;County code, two digits&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eDocumentStoreApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

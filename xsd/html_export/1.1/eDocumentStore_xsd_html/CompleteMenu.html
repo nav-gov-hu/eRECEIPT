@@ -1,0 +1,482 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>XML Schema Documenatation Menu</title>
+      <!-- saved from url=(0014)about:internet --><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="searchindex.js"></script><link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript">
+         <!--
+            $(document).ready(function () {
+                setTabs();
+            });
+    
+        	var filenames = null;
+        	var keywordIndex = null;
+
+        	function getSearchJS(searchBoxID, ulResults) 
+            {
+        		if (filenames == null) {
+        		    filenames = CreateFileRefs();
+        		}
+        		if (keywordIndex == null) {
+        		    keywordIndex = CreateWordIndex();
+        		}
+
+        		var data = '';
+        		var searchText = $("#" + searchBoxID).attr("value");
+        		var searchTerms = searchText.split(' ');
+        		var fileIndexResults = new Array();
+
+        		for (var sti = 0; sti < searchTerms.length; sti++) {
+        		    var searchTerm = trim(searchTerms[sti]).toLowerCase();
+
+        		    for (var i = 0; i < keywordIndex.length; i++) {
+        		        if (keywordIndex[i][0].indexOf(searchTerm) != -1) {
+        		            fileIndexResults = fileIndexResults.concat(keywordIndex[i][1]);
+        		        }
+        		    }
+        		}
+
+        		fileIndexResults = unique(fileIndexResults);
+        		for (var ri = 0; ri < fileIndexResults.length; ri++) {
+        		    var resultOffset = fileIndexResults[ri];
+        		    data += "<li><a href='" + filenames[resultOffset][1] + "' target='ContentFrame'>" + filenames[resultOffset][0] + "</a></li>";
+        		}
+
+        		if (data == '')
+        		    data = "<li>No Results</li>";
+
+        		$("#" + ulResults).html(data);
+        	}
+                        --></script></head>
+   <body>
+      <form action="CompleteMenu.html">
+         <ul class="tabs">
+            <li><a href="#tab1">Index</a></li>
+            <li><a href="#tab2">Search</a></li>
+         </ul>
+         <div class="tab_container">
+            <div id="tab1" class="tab_content">
+               <div>
+                  <ul id="ulMenu" class="treeview">
+                     <li id="Schema" class="parent"><a href="javascript:toggleNode('Schema')"><img height="11" width="11" src="images/plus.gif"></img>Schema</a><ul style="display:none" expanded="false" loaded="true">
+                           <li id="common_xsd"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="common_xsd.html" target="ContentFrame">common.xsd</a></li>
+                           <li id="communicationdata_xsd"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="communicationdata_xsd.html" target="ContentFrame">communicationData.xsd</a></li>
+                           <li id="edocumentstoreapi_xsd"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html" target="ContentFrame">nsA</a>:
+                              <a href="edocumentstoreapi_xsd.html" target="ContentFrame">eDocumentStoreApi.xsd</a></li>
+                           <li id="edocumentstoremessage_xsd"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_message.html" target="ContentFrame">message</a>:
+                              <a href="edocumentstoremessage_xsd.html" target="ContentFrame">eDocumentStoreMessage.xsd</a></li>
+                           <li id="ereceiptbase_xsd"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="ereceiptbase_xsd.html" target="ContentFrame">eReceiptBase.xsd</a></li>
+                        </ul>
+                     </li>
+                     <li id="ComplexType" class="parent"><a href="javascript:toggleNode('ComplexType')"><img height="11" width="11" src="images/plus.gif"></img>ComplexType</a><ul style="display:none" expanded="false" loaded="true">
+                           <li id="additionaldatatype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="additionaldatatype.html" target="ContentFrame">AdditionalDataType</a></li>
+                           <li id="additionalheadtype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="additionalheadtype.html" target="ContentFrame">AdditionalHeadType</a></li>
+                           <li id="additionallinetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="additionallinetype.html" target="ContentFrame">AdditionalLineType</a></li>
+                           <li id="additionallinestype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="additionallinestype.html" target="ContentFrame">AdditionalLinesType</a></li>
+                           <li id="addresstype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="addresstype.html" target="ContentFrame">AddressType</a></li>
+                           <li id="aeinternalmetric"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="aeinternalmetric.html" target="ContentFrame">AeInternalMetric</a></li>
+                           <li id="aeinternalmetriclisttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="aeinternalmetriclisttype.html" target="ContentFrame">AeInternalMetricListType</a></li>
+                           <li id="aestatetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="aestatetype.html" target="ContentFrame">AeStateType</a></li>
+                           <li id="appregistrationrequesttype"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html" target="ContentFrame">nsA</a>:
+                              <a href="appregistrationrequesttype.html" target="ContentFrame">AppRegistrationRequestType</a></li>
+                           <li id="appregistrationresponsetype"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html" target="ContentFrame">nsA</a>:
+                              <a href="appregistrationresponsetype.html" target="ContentFrame">AppRegistrationResponseType</a></li>
+                           <li id="appsoftwaretype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="appsoftwaretype.html" target="ContentFrame">AppSoftwareType</a></li>
+                           <li id="attachmenttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="attachmenttype.html" target="ContentFrame">AttachmentType</a></li>
+                           <li id="basicedocumentstorerequesttype"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_message.html" target="ContentFrame">message</a>:
+                              <a href="basicedocumentstorerequesttype.html" target="ContentFrame">BasicEDocumentStoreRequestType</a></li>
+                           <li id="basicereceiptrequesttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="basicereceiptrequesttype.html" target="ContentFrame">BasicEReceiptRequestType</a></li>
+                           <li id="basicereceiptresponsetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="basicereceiptresponsetype.html" target="ContentFrame">BasicEReceiptResponseType</a></li>
+                           <li id="basicheadertype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="basicheadertype.html" target="ContentFrame">BasicHeaderType</a></li>
+                           <li id="basicrequesttype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="basicrequesttype.html" target="ContentFrame">BasicRequestType</a></li>
+                           <li id="basicresponsetype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="basicresponsetype.html" target="ContentFrame">BasicResponseType</a></li>
+                           <li id="basicresulttype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="basicresulttype.html" target="ContentFrame">BasicResultType</a></li>
+                           <li id="cashregistereventtype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="cashregistereventtype.html" target="ContentFrame">CashRegisterEventType</a></li>
+                           <li id="cashregisterinfotype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="cashregisterinfotype.html" target="ContentFrame">CashRegisterInfoType</a></li>
+                           <li id="cashregisterpositiontype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="cashregisterpositiontype.html" target="ContentFrame">CashRegisterPositionType</a></li>
+                           <li id="cashregisterstatetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="cashregisterstatetype.html" target="ContentFrame">CashRegisterStateType</a></li>
+                           <li id="cashregistertechnicalinfotype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="cashregistertechnicalinfotype.html" target="ContentFrame">CashRegisterTechnicalInfoType</a></li>
+                           <li id="cashregistertimeupdatetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="cashregistertimeupdatetype.html" target="ContentFrame">CashRegisterTimeUpdateType</a></li>
+                           <li id="clienteventrequesttype"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html" target="ContentFrame">nsA</a>:
+                              <a href="clienteventrequesttype.html" target="ContentFrame">ClientEventRequestType</a></li>
+                           <li id="clienteventresponsetype"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html" target="ContentFrame">nsA</a>:
+                              <a href="clienteventresponsetype.html" target="ContentFrame">ClientEventResponseType</a></li>
+                           <li id="commercecollectorlisttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="commercecollectorlisttype.html" target="ContentFrame">CommerceCollectorListType</a></li>
+                           <li id="commercecollectortype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="commercecollectortype.html" target="ContentFrame">CommerceCollectorType</a></li>
+                           <li id="cryptotype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="cryptotype.html" target="ContentFrame">CryptoType</a></li>
+                           <li id="customerinfotype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="customerinfotype.html" target="ContentFrame">CustomerInfoType</a></li>
+                           <li id="customertaxnumbertype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="customertaxnumbertype.html" target="ContentFrame">CustomerTaxNumberType</a></li>
+                           <li id="customervatdatatype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="customervatdatatype.html" target="ContentFrame">CustomerVatDataType</a></li>
+                           <li id="dailycashflowdetaillisttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="dailycashflowdetaillisttype.html" target="ContentFrame">DailyCashFlowDetailListType</a></li>
+                           <li id="dailycashflowdetailtype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="dailycashflowdetailtype.html" target="ContentFrame">DailyCashFlowDetailType</a></li>
+                           <li id="detailedaddresstype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="detailedaddresstype.html" target="ContentFrame">DetailedAddressType</a></li>
+                           <li id="documentadditionaldatatype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="documentadditionaldatatype.html" target="ContentFrame">DocumentAdditionalDataType</a></li>
+                           <li id="documentcontroldatatype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="documentcontroldatatype.html" target="ContentFrame">DocumentControlDataType</a></li>
+                           <li id="endpointtype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="endpointtype.html" target="ContentFrame">EndpointType</a></li>
+                           <li id="endpointslisttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="endpointslisttype.html" target="ContentFrame">EndpointsListType</a></li>
+                           <li id="epdprocessidentifierstype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="epdprocessidentifierstype.html" target="ContentFrame">EpdProcessIdentifiersType</a></li>
+                           <li id="firmwareslicetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="firmwareslicetype.html" target="ContentFrame">FirmwareSliceType</a></li>
+                           <li id="foreigncurrencytype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="foreigncurrencytype.html" target="ContentFrame">ForeignCurrencyType</a></li>
+                           <li id="fuelcardinfotype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="fuelcardinfotype.html" target="ContentFrame">FuelCardInfoType</a></li>
+                           <li id="generalerrorheaderresponsetype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="generalerrorheaderresponsetype.html" target="ContentFrame">GeneralErrorHeaderResponseType</a></li>
+                           <li id="getdocumentrequesttype"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html" target="ContentFrame">nsA</a>:
+                              <a href="getdocumentrequesttype.html" target="ContentFrame">GetDocumentRequestType</a></li>
+                           <li id="getdocumentresponsetype"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html" target="ContentFrame">nsA</a>:
+                              <a href="getdocumentresponsetype.html" target="ContentFrame">GetDocumentResponseType</a></li>
+                           <li id="hardwaretechnicalinfotype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="hardwaretechnicalinfotype.html" target="ContentFrame">HardwareTechnicalInfoType</a></li>
+                           <li id="healthfundinfotype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="healthfundinfotype.html" target="ContentFrame">HealthFundInfoType</a></li>
+                           <li id="instrumenttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="instrumenttype.html" target="ContentFrame">InstrumentType</a></li>
+                           <li id="metadatatype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="metadatatype.html" target="ContentFrame">MetaDataType</a></li>
+                           <li id="notificationtype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="notificationtype.html" target="ContentFrame">NotificationType</a></li>
+                           <li id="notificationstype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="notificationstype.html" target="ContentFrame">NotificationsType</a></li>
+                           <li id="operatorsitetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="operatorsitetype.html" target="ContentFrame">OperatorSiteType</a></li>
+                           <li id="otherpaymenttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="otherpaymenttype.html" target="ContentFrame">OtherPaymentType</a></li>
+                           <li id="paymentinstrumenttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="paymentinstrumenttype.html" target="ContentFrame">PaymentInstrumentType</a></li>
+                           <li id="paymentinstrumentstype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="paymentinstrumentstype.html" target="ContentFrame">PaymentInstrumentsType</a></li>
+                           <li id="posassignedbankaccountlisttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="posassignedbankaccountlisttype.html" target="ContentFrame">PosAssignedBankAccountListType</a></li>
+                           <li id="productitemtype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="productitemtype.html" target="ContentFrame">ProductItemType</a></li>
+                           <li id="productlisttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="productlisttype.html" target="ContentFrame">ProductListType</a></li>
+                           <li id="reportheadertype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="reportheadertype.html" target="ContentFrame">ReportHeaderType</a></li>
+                           <li id="shoptype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="shoptype.html" target="ContentFrame">ShopType</a></li>
+                           <li id="signeddocumentenvelopetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="signeddocumentenvelopetype.html" target="ContentFrame">SignedDocumentEnvelopeType</a></li>
+                           <li id="signedreportenvelopetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="signedreportenvelopetype.html" target="ContentFrame">SignedReportEnvelopeType</a></li>
+                           <li id="simpleaddresstype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="simpleaddresstype.html" target="ContentFrame">SimpleAddressType</a></li>
+                           <li id="softwaretype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="softwaretype.html" target="ContentFrame">SoftwareType</a></li>
+                           <li id="taxnumbertype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="taxnumbertype.html" target="ContentFrame">TaxNumberType</a></li>
+                           <li id="taxpayertype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="taxpayertype.html" target="ContentFrame">TaxPayerType</a></li>
+                           <li id="taxpayeraddressitemtype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="taxpayeraddressitemtype.html" target="ContentFrame">TaxpayerAddressItemType</a></li>
+                           <li id="taxpayeraddresslisttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="taxpayeraddresslisttype.html" target="ContentFrame">TaxpayerAddressListType</a></li>
+                           <li id="taxpayerdatatype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="taxpayerdatatype.html" target="ContentFrame">TaxpayerDataType</a></li>
+                           <li id="teaorcodelisttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="teaorcodelisttype.html" target="ContentFrame">TeaorCodeListType</a></li>
+                           <li id="technicalvalidationresulttype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="technicalvalidationresulttype.html" target="ContentFrame">TechnicalValidationResultType</a></li>
+                           <li id="userheadertype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="userheadertype.html" target="ContentFrame">UserHeaderType</a></li>
+                           <li id="vatgrouptype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="vatgrouptype.html" target="ContentFrame">VatGroupType</a></li>
+                           <li id="vatlisttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="vatlisttype.html" target="ContentFrame">VatListType</a></li>
+                           <li id="vattype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="vattype.html" target="ContentFrame">VatType</a></li>
+                        </ul>
+                     </li>
+                     <li id="Element" class="parent"><a href="javascript:toggleNode('Element')"><img height="11" width="11" src="images/plus.gif"></img>Element</a><ul style="display:none" expanded="false" loaded="true">
+                           <li id="appregistrationrequest"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html" target="ContentFrame">nsA</a>:
+                              <a href="appregistrationrequest.html" target="ContentFrame">AppRegistrationRequest</a></li>
+                           <li id="appregistrationresponse"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html" target="ContentFrame">nsA</a>:
+                              <a href="appregistrationresponse.html" target="ContentFrame">AppRegistrationResponse</a></li>
+                           <li id="clienteventrequest"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html" target="ContentFrame">nsA</a>:
+                              <a href="clienteventrequest.html" target="ContentFrame">ClientEventRequest</a></li>
+                           <li id="clienteventresponse"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html" target="ContentFrame">nsA</a>:
+                              <a href="clienteventresponse.html" target="ContentFrame">ClientEventResponse</a></li>
+                           <li id="generalerrorheaderresponse"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="generalerrorheaderresponse.html" target="ContentFrame">GeneralErrorHeaderResponse</a></li>
+                           <li id="generalexceptionresponse"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="generalexceptionresponse.html" target="ContentFrame">GeneralExceptionResponse</a></li>
+                           <li id="getdocumentrequest"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html" target="ContentFrame">nsA</a>:
+                              <a href="getdocumentrequest.html" target="ContentFrame">GetDocumentRequest</a></li>
+                           <li id="getdocumentresponse"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html" target="ContentFrame">nsA</a>:
+                              <a href="getdocumentresponse.html" target="ContentFrame">GetDocumentResponse</a></li>
+                        </ul>
+                     </li>
+                     <li id="SimpleType" class="parent"><a href="javascript:toggleNode('SimpleType')"><img height="11" width="11" src="images/plus.gif"></img>SimpleType</a><ul style="display:none" expanded="false" loaded="true">
+                           <li id="apnumbertype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="apnumbertype.html" target="ContentFrame">APNumberType</a></li>
+                           <li id="aeblockunblockstatetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="aeblockunblockstatetype.html" target="ContentFrame">AeBlockUnblockStateType</a></li>
+                           <li id="atomiccsrtype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="atomiccsrtype.html" target="ContentFrame">AtomicCsrType</a></li>
+                           <li id="atomicstringtype100"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype100.html" target="ContentFrame">AtomicStringType100</a></li>
+                           <li id="atomicstringtype1024"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype1024.html" target="ContentFrame">AtomicStringType1024</a></li>
+                           <li id="atomicstringtype128"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype128.html" target="ContentFrame">AtomicStringType128</a></li>
+                           <li id="atomicstringtype15"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype15.html" target="ContentFrame">AtomicStringType15</a></li>
+                           <li id="atomicstringtype16"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype16.html" target="ContentFrame">AtomicStringType16</a></li>
+                           <li id="atomicstringtype2"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype2.html" target="ContentFrame">AtomicStringType2</a></li>
+                           <li id="atomicstringtype200"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype200.html" target="ContentFrame">AtomicStringType200</a></li>
+                           <li id="atomicstringtype2048"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype2048.html" target="ContentFrame">AtomicStringType2048</a></li>
+                           <li id="atomicstringtype255"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype255.html" target="ContentFrame">AtomicStringType255</a></li>
+                           <li id="atomicstringtype256"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype256.html" target="ContentFrame">AtomicStringType256</a></li>
+                           <li id="atomicstringtype32"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype32.html" target="ContentFrame">AtomicStringType32</a></li>
+                           <li id="atomicstringtype4"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype4.html" target="ContentFrame">AtomicStringType4</a></li>
+                           <li id="atomicstringtype4000"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype4000.html" target="ContentFrame">AtomicStringType4000</a></li>
+                           <li id="atomicstringtype50"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype50.html" target="ContentFrame">AtomicStringType50</a></li>
+                           <li id="atomicstringtype512"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype512.html" target="ContentFrame">AtomicStringType512</a></li>
+                           <li id="atomicstringtype64"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype64.html" target="ContentFrame">AtomicStringType64</a></li>
+                           <li id="atomicstringtype8"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="atomicstringtype8.html" target="ContentFrame">AtomicStringType8</a></li>
+                           <li id="atomicstringtype8192"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_message.html" target="ContentFrame">message</a>:
+                              <a href="atomicstringtype8192.html" target="ContentFrame">AtomicStringType8192</a></li>
+                           <li id="bankaccountnumbertype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="bankaccountnumbertype.html" target="ContentFrame">BankAccountNumberType</a></li>
+                           <li id="blockunblocktype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="blockunblocktype.html" target="ContentFrame">BlockUnblockType</a></li>
+                           <li id="businessresultcodetype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="businessresultcodetype.html" target="ContentFrame">BusinessResultCodeType</a></li>
+                           <li id="cmscertificatesigningrequesttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="cmscertificatesigningrequesttype.html" target="ContentFrame">CMSCertificateSigningRequestType</a></li>
+                           <li id="cancellationreasontype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="cancellationreasontype.html" target="ContentFrame">CancellationReasonType</a></li>
+                           <li id="cashpaymenttitletype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="cashpaymenttitletype.html" target="ContentFrame">CashPaymentTitleType</a></li>
+                           <li id="cashregisterworkstatetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="cashregisterworkstatetype.html" target="ContentFrame">CashRegisterWorkStateType</a></li>
+                           <li id="certificatesigningrequesttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="certificatesigningrequesttype.html" target="ContentFrame">CertificateSigningRequestType</a></li>
+                           <li id="certificatetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="certificatetype.html" target="ContentFrame">CertificateType</a></li>
+                           <li id="certificatetypetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="certificatetypetype.html" target="ContentFrame">CertificateTypeType</a></li>
+                           <li id="collectorcodetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="collectorcodetype.html" target="ContentFrame">CollectorCodeType</a></li>
+                           <li id="communityvatnumbertype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="communityvatnumbertype.html" target="ContentFrame">CommunityVatNumberType</a></li>
+                           <li id="countrycodetype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="countrycodetype.html" target="ContentFrame">CountryCodeType</a></li>
+                           <li id="countycodetype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="countycodetype.html" target="ContentFrame">CountyCodeType</a></li>
+                           <li id="currencytype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="currencytype.html" target="ContentFrame">CurrencyType</a></li>
+                           <li id="customerappeventcodetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="customerappeventcodetype.html" target="ContentFrame">CustomerAppEventCodeType</a></li>
+                           <li id="customervatstatustype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="customervatstatustype.html" target="ContentFrame">CustomerVatStatusType</a></li>
+                           <li id="datanametype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="datanametype.html" target="ContentFrame">DataNameType</a></li>
+                           <li id="digit4type"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="digit4type.html" target="ContentFrame">Digit4Type</a></li>
+                           <li id="documentcategorytype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="documentcategorytype.html" target="ContentFrame">DocumentCategoryType</a></li>
+                           <li id="documentclasstype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="documentclasstype.html" target="ContentFrame">DocumentClassType</a></li>
+                           <li id="documentdatetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="documentdatetype.html" target="ContentFrame">DocumentDateType</a></li>
+                           <li id="documentnumbertype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="documentnumbertype.html" target="ContentFrame">DocumentNumberType</a></li>
+                           <li id="documentoperationtype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="documentoperationtype.html" target="ContentFrame">DocumentOperationType</a></li>
+                           <li id="documentunboundedindextype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="documentunboundedindextype.html" target="ContentFrame">DocumentUnboundedIndexType</a></li>
+                           <li id="eantype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="eantype.html" target="ContentFrame">EANType</a></li>
+                           <li id="encryptedsymmetricinitialvectortype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="encryptedsymmetricinitialvectortype.html" target="ContentFrame">EncryptedSymmetricInitialVectorType</a></li>
+                           <li id="encryptedsymmetrickeytype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="encryptedsymmetrickeytype.html" target="ContentFrame">EncryptedSymmetricKeyType</a></li>
+                           <li id="entityidtype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="entityidtype.html" target="ContentFrame">EntityIdType</a></li>
+                           <li id="eventcodetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="eventcodetype.html" target="ContentFrame">EventCodeType</a></li>
+                           <li id="exchangeratetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="exchangeratetype.html" target="ContentFrame">ExchangeRateType</a></li>
+                           <li id="file512kbinarytype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="file512kbinarytype.html" target="ContentFrame">File512kBinaryType</a></li>
+                           <li id="fileextensiontype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="fileextensiontype.html" target="ContentFrame">FileExtensionType</a></li>
+                           <li id="fiscaldaystatetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="fiscaldaystatetype.html" target="ContentFrame">FiscalDayStateType</a></li>
+                           <li id="functioncodetype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="functioncodetype.html" target="ContentFrame">FunctionCodeType</a></li>
+                           <li id="genericdatetype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="genericdatetype.html" target="ContentFrame">GenericDateType</a></li>
+                           <li id="genericdecimaltype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="genericdecimaltype.html" target="ContentFrame">GenericDecimalType</a></li>
+                           <li id="generictimestamptype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="generictimestamptype.html" target="ContentFrame">GenericTimestampType</a></li>
+                           <li id="genericunsignedintegertype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="genericunsignedintegertype.html" target="ContentFrame">GenericUnsignedIntegerType</a></li>
+                           <li id="gpstype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="gpstype.html" target="ContentFrame">GpsType</a></li>
+                           <li id="httpmethodtype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="httpmethodtype.html" target="ContentFrame">HttpMethodType</a></li>
+                           <li id="incorporationtype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="incorporationtype.html" target="ContentFrame">IncorporationType</a></li>
+                           <li id="itemnaturetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="itemnaturetype.html" target="ContentFrame">ItemNatureType</a></li>
+                           <li id="jwttokentype"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_message.html" target="ContentFrame">message</a>:
+                              <a href="jwttokentype.html" target="ContentFrame">JwtTokenType</a></li>
+                           <li id="linenumbertype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="linenumbertype.html" target="ContentFrame">LineNumberType</a></li>
+                           <li id="localizationtype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="localizationtype.html" target="ContentFrame">LocalizationType</a></li>
+                           <li id="logintype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="logintype.html" target="ContentFrame">LoginType</a></li>
+                           <li id="mobileconnectiontype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="mobileconnectiontype.html" target="ContentFrame">MobileConnectionType</a></li>
+                           <li id="modificationreasontype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="modificationreasontype.html" target="ContentFrame">ModificationReasonType</a></li>
+                           <li id="monetarytype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="monetarytype.html" target="ContentFrame">MonetaryType</a></li>
+                           <li id="ntcacontrolcodetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="ntcacontrolcodetype.html" target="ContentFrame">NtcaControlCodeType</a></li>
+                           <li id="paymentmethodtype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="paymentmethodtype.html" target="ContentFrame">PaymentMethodType</a></li>
+                           <li id="percentagetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="percentagetype.html" target="ContentFrame">PercentageType</a></li>
+                           <li id="platenumbertype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="platenumbertype.html" target="ContentFrame">PlateNumberType</a></li>
+                           <li id="postalcodetype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="postalcodetype.html" target="ContentFrame">PostalCodeType</a></li>
+                           <li id="printmessagetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="printmessagetype.html" target="ContentFrame">PrintMessageType</a></li>
+                           <li id="processidentifiertype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="processidentifiertype.html" target="ContentFrame">ProcessIdentifierType</a></li>
+                           <li id="productstatetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="productstatetype.html" target="ContentFrame">ProductStateType</a></li>
+                           <li id="querycertificateresulttype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="querycertificateresulttype.html" target="ContentFrame">QueryCertificateResultType</a></li>
+                           <li id="registrationnumbertype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="registrationnumbertype.html" target="ContentFrame">RegistrationNumberType</a></li>
+                           <li id="reportclasstype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">base</a>:
+                              <a href="reportclasstype.html" target="ContentFrame">ReportClassType</a></li>
+                           <li id="requestpagetype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="requestpagetype.html" target="ContentFrame">RequestPageType</a></li>
+                           <li id="responsepagetype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="responsepagetype.html" target="ContentFrame">ResponsePageType</a></li>
+                           <li id="sha256type"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="sha256type.html" target="ContentFrame">SHA256Type</a></li>
+                           <li id="sha512type"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="sha512type.html" target="ContentFrame">SHA512Type</a></li>
+                           <li id="servicetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="servicetype.html" target="ContentFrame">ServiceType</a></li>
+                           <li id="simpletext100notblanktype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="simpletext100notblanktype.html" target="ContentFrame">SimpleText100NotBlankType</a></li>
+                           <li id="simpletext1024notblanktype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="simpletext1024notblanktype.html" target="ContentFrame">SimpleText1024NotBlankType</a></li>
+                           <li id="simpletext15notblanktype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="simpletext15notblanktype.html" target="ContentFrame">SimpleText15NotBlankType</a></li>
+                           <li id="simpletext200notblanktype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="simpletext200notblanktype.html" target="ContentFrame">SimpleText200NotBlankType</a></li>
+                           <li id="simpletext255notblanktype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="simpletext255notblanktype.html" target="ContentFrame">SimpleText255NotBlankType</a></li>
+                           <li id="simpletext50notblanktype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="simpletext50notblanktype.html" target="ContentFrame">SimpleText50NotBlankType</a></li>
+                           <li id="simpletext512notblanktype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="simpletext512notblanktype.html" target="ContentFrame">SimpleText512NotBlankType</a></li>
+                           <li id="softwareidtype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="softwareidtype.html" target="ContentFrame">SoftwareIdType</a></li>
+                           <li id="softwareoperationtype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="softwareoperationtype.html" target="ContentFrame">SoftwareOperationType</a></li>
+                           <li id="swiftcodetype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="swiftcodetype.html" target="ContentFrame">SwiftCodeType</a></li>
+                           <li id="taxidentificationnumbertype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="taxidentificationnumbertype.html" target="ContentFrame">TaxIdentificationNumberType</a></li>
+                           <li id="taxpayeraddressclasstype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="taxpayeraddressclasstype.html" target="ContentFrame">TaxpayerAddressClassType</a></li>
+                           <li id="taxpayeridtype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="taxpayeridtype.html" target="ContentFrame">TaxpayerIdType</a></li>
+                           <li id="teaorcodetype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="teaorcodetype.html" target="ContentFrame">TeaorCodeType</a></li>
+                           <li id="technicalresultcodetype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="technicalresultcodetype.html" target="ContentFrame">TechnicalResultCodeType</a></li>
+                           <li id="unitofmeasuretype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="unitofmeasuretype.html" target="ContentFrame">UnitOfMeasureType</a></li>
+                           <li id="urltype"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">communication</a>:
+                              <a href="urltype.html" target="ContentFrame">UrlType</a></li>
+                           <li id="vatcodetype"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">common</a>:
+                              <a href="vatcodetype.html" target="ContentFrame">VatCodeType</a></li>
+                        </ul>
+                     </li>
+                     <li id="Namespace" class="parent"><a href="javascript:toggleNode('Namespace')"><img height="11" width="11" src="images/plus.gif"></img>Namespace</a><ul style="display:none" expanded="false" loaded="true">
+                           <li id="http___schemas_nav_gov_hu_edocumentstore_1_1_api"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_api.html" target="ContentFrame">http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.1/api</a></li>
+                           <li id="http___schemas_nav_gov_hu_edocumentstore_1_1_message"><a href="http___schemas_nav_gov_hu_edocumentstore_1_1_message.html" target="ContentFrame">http://schemas.nav.gov.hu/EDOCUMENTSTORE/1.1/message</a></li>
+                           <li id="http___schemas_nav_gov_hu_ereceipt_1_1_base"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html" target="ContentFrame">http://schemas.nav.gov.hu/ERECEIPT/1.1/base</a></li>
+                           <li id="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata"><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html" target="ContentFrame">http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData</a></li>
+                           <li id="http___schemas_nav_gov_hu_ntca_1_0_common"><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html" target="ContentFrame">http://schemas.nav.gov.hu/NTCA/1.0/common</a></li>
+                        </ul>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div id="tab2" class="tab_content"><input type="text" id="txtSearch"></input><input type="button" id="cmdSearch" value="Search" onclick="getSearchJS('txtSearch','ulSearch');"></input><div style="margin-top:10px;">
+                  <ul id="ulSearch" class="search"></ul>
+               </div>
+            </div>
+         </div>
+      </form>
+   </body>
+</html>

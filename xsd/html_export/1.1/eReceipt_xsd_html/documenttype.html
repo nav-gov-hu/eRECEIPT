@@ -1,0 +1,191 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item DocumentType in eReceiptApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'documenttype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>DocumentType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/documentData</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="documentdata_xsd.html">documentData.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Egy dokumentum vagy módosító dokumentum adatai típus
+Data of a single document or modification document type</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="318,188,551,243" href="documentsummary.html" alt="Drilldown into documentSummary"></area>
+                     <area shape="rect" coords="318,125,524,180" href="documentlines.html" alt="Drilldown into documentLines"></area>
+                     <area shape="rect" coords="318,63,559,118" href="documenthead.html" alt="Drilldown into documentHead"></area>
+                     <area shape="rect" coords="338,1,633,56" href="documentreference.html" alt="Drilldown into documentReference"></area></map><img src="images/documenttype.png" border="0" alt="XSD Diagram of DocumentType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="DocumentType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Egy dokumentum vagy módosító dokumentum adatai típus&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Data of a single document or modification document type&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="documentReference" type="DocumentReferenceType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A módosítás vagy érvénytelenítés adatai&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Modification or cancellation data&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="documentHead" type="DocumentHeadType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A dokumentum egészét jellemző adatok&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Data concerning the whole document&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="documentLines" type="LinesType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A dokumentumon szereplő tételek adatai&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Product/service data appearing on the document&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="documentSummary" type="SummaryType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Új mező&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az ÁFA törvény szerinti összesítő adatok&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Summary data according to VAT law&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">documentReference</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="documentreference.html">documentReference</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">documentHead</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="documenthead.html">documentHead</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">documentLines</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="documentlines.html">documentLines</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">documentSummary</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="documentsummary.html">documentSummary</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>DocumentType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="document.html">document</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_documentdata.html">documentData</a>:<a href="document.html">document</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

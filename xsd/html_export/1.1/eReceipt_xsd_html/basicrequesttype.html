@@ -1,0 +1,207 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item BasicRequestType in eReceiptApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'basicrequesttype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>BasicRequestType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">http://schemas.nav.gov.hu/NTCA/1.0/common</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="common_xsd.html">common.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Alap kérés adatok
+Basic request data</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="211,63,397,118" href="user.html" alt="Drilldown into user"></area>
+                     <area shape="rect" coords="211,1,402,56" href="header.html" alt="Drilldown into header"></area></map><img src="images/basicrequesttype.png" border="0" alt="XSD Diagram of BasicRequestType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="BasicRequestType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Alap kérés adatok&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Basic request data&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="header" type="BasicHeaderType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A kérés tranzakcionális adatai&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Transactional data of the request&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="user" type="UserHeaderType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;A kérés authentikációs adatai&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Authentication data of the request&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">header</td>
+                        <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="header.html">header</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">user</td>
+                        <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="user.html">user</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>BasicRequestType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="basiconlineinvoicerequesttype.html">BasicOnlineInvoiceRequestType</a></li>
+                        <ul>
+                           <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="manageannulmentrequesttype.html">ManageAnnulmentRequestType</a></li>
+                           <ul>
+                              <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="manageannulmentrequest.html">ManageAnnulmentRequest</a></li>
+                           </ul>
+                        </ul>
+                        <ul>
+                           <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="manageinvoicerequesttype.html">ManageInvoiceRequestType</a></li>
+                           <ul>
+                              <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="manageinvoicerequest.html">ManageInvoiceRequest</a></li>
+                           </ul>
+                        </ul>
+                        <ul>
+                           <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="queryinvoicechaindigestrequesttype.html">QueryInvoiceChainDigestRequestType</a></li>
+                           <ul>
+                              <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="queryinvoicechaindigestrequest.html">QueryInvoiceChainDigestRequest</a></li>
+                           </ul>
+                        </ul>
+                        <ul>
+                           <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="queryinvoicedatarequesttype.html">QueryInvoiceDataRequestType</a></li>
+                           <ul>
+                              <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="queryinvoicecheckrequest.html">QueryInvoiceCheckRequest</a></li>
+                           </ul>
+                           <ul>
+                              <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="queryinvoicedatarequest.html">QueryInvoiceDataRequest</a></li>
+                           </ul>
+                        </ul>
+                        <ul>
+                           <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="queryinvoicedigestrequesttype.html">QueryInvoiceDigestRequestType</a></li>
+                           <ul>
+                              <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="queryinvoicedigestrequest.html">QueryInvoiceDigestRequest</a></li>
+                           </ul>
+                        </ul>
+                        <ul>
+                           <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="querytaxpayerrequesttype.html">QueryTaxpayerRequestType</a></li>
+                           <ul>
+                              <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="querytaxpayerrequest.html">QueryTaxpayerRequest</a></li>
+                           </ul>
+                        </ul>
+                        <ul>
+                           <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="querytransactionlistrequesttype.html">QueryTransactionListRequestType</a></li>
+                           <ul>
+                              <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="querytransactionlistrequest.html">QueryTransactionListRequest</a></li>
+                           </ul>
+                        </ul>
+                        <ul>
+                           <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="querytransactionstatusrequesttype.html">QueryTransactionStatusRequestType</a></li>
+                           <ul>
+                              <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="querytransactionstatusrequest.html">QueryTransactionStatusRequest</a></li>
+                           </ul>
+                        </ul>
+                        <ul>
+                           <li><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="tokenexchangerequest.html">TokenExchangeRequest</a></li>
+                        </ul>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_api.html">nsC</a>:<a href="basiconlineinvoicerequesttype.html">BasicOnlineInvoiceRequestType</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

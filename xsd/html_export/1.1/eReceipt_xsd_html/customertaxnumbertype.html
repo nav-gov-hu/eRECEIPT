@@ -1,0 +1,170 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item CustomerTaxNumberType in eReceiptApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'customertaxnumbertype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>CustomerTaxNumberType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">http://schemas.nav.gov.hu/OSA/3.0/data</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Type:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="taxnumbertype.html">TaxNumberType</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="invoicedata_xsd.html">invoiceData.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Adószám, amely alatt a számlán szereplő termékbeszerzés vagy szolgáltatás igénybevétele történt. Lehet csoportazonosító szám is
+Tax number or group identification number, under which the purchase of goods or services is done</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="390,417,693,492" href="groupmembertaxnumber1.html" alt="Drilldown into groupMemberTaxNumber"></area>
+                     <area shape="rect" coords="410,267,619,370" href="countycode.html" alt="Drilldown into countyCode"></area>
+                     <area shape="rect" coords="410,157,664,260" href="vatcode.html" alt="Drilldown into vatCode"></area>
+                     <area shape="rect" coords="390,27,659,150" href="taxpayerid.html" alt="Drilldown into taxpayerId"></area>
+                     <area shape="rect" coords="325,2,672,411" href="taxnumbertype.html" alt="Drilldown into TaxNumberType"></area></map><img src="images/customertaxnumbertype.png" border="0" alt="XSD Diagram of CustomerTaxNumberType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="CustomerTaxNumberType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Adószám, amely alatt a számlán szereplő termékbeszerzés vagy szolgáltatás igénybevétele történt. Lehet csoportazonosító szám is&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Tax number or group identification number, under which the purchase of goods or services is done&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="base:TaxNumberType"&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="groupMemberTaxNumber" type="base:TaxNumberType" minOccurs="0"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang="hu"&gt;Csoport tag adószáma, ha a termékbeszerzés vagy szolgáltatás igénybevétele csoportazonosító szám alatt történt&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang="en"&gt;Tax number of group member, when the purchase of goods or services is done under group identification number&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:extension&gt;
+  &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">taxpayerId</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="taxpayerid.html">taxpayerId</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">vatCode</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="vatcode.html">vatCode</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">countyCode</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="countycode.html">countyCode</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">groupMemberTaxNumber</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="groupmembertaxnumber1.html">groupMemberTaxNumber</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul><li><a href="http___schemas_nav_gov_hu_osa_3_0_base.html">base</a>:<a href="taxnumbertype.html">TaxNumberType</a><ul>
+                     <li><b><i>CustomerTaxNumberType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="customertaxnumber2.html">customerTaxNumber</a></li>
+                     </ul></ul></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="customertaxnumber2.html">customerTaxNumber</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

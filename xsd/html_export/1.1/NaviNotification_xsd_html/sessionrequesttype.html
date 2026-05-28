@@ -1,0 +1,161 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item SessionRequestType in customer</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'sessionrequesttype');
+                        --></script><div class="pageheader">
+         Documentation for customer
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>SessionRequestType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_navinotification_1_0_customer.html">http://schemas.nav.gov.hu/NAVINOTIFICATION/1.0/customer</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Type:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="basicheadertype.html">BasicHeaderType</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="customer_xsd.html">customer.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Aktív notifikációs sessionok kérés objektum típusa.
+Active notification sessions request object type.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="377,332,615,413" href="headerversion.html" alt="Drilldown into headerVersion"></area>
+                     <area shape="rect" coords="357,223,656,324" href="requestversion.html" alt="Drilldown into requestVersion"></area>
+                     <area shape="rect" coords="357,146,591,216" href="timestamp.html" alt="Drilldown into timestamp"></area>
+                     <area shape="rect" coords="357,27,653,139" href="requestid.html" alt="Drilldown into requestId"></area>
+                     <area shape="rect" coords="292,2,664,454" href="basicheadertype.html" alt="Drilldown into BasicHeaderType"></area></map><img src="images/sessionrequesttype.png" border="0" alt="XSD Diagram of SessionRequestType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="SessionRequestType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Aktív notifikációs sessionok kérés objektum típusa.&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Active notification sessions request object type.&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="common:BasicHeaderType" /&gt;
+  &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">requestId</td>
+                        <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="requestid.html">requestId</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">timestamp</td>
+                        <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="timestamp.html">timestamp</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">requestVersion</td>
+                        <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="requestversion.html">requestVersion</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">headerVersion</td>
+                        <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="headerversion.html">headerVersion</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul><li><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="basicheadertype.html">BasicHeaderType</a><ul>
+                     <li><b><i>SessionRequestType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_navinotification_1_0_customer.html">nsA</a>:<a href="sessionrequest.html">SessionRequest</a></li>
+                     </ul></ul></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_navinotification_1_0_customer.html">nsA</a>:<a href="sessionrequest.html">SessionRequest</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for customer<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

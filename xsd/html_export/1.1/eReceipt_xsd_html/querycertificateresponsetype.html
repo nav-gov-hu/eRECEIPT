@@ -1,0 +1,208 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item QueryCertificateResponseType in eReceiptApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'querycertificateresponsetype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>QueryCertificateResponseType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/api</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Type:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="basicereceiptresponsetype.html">BasicEReceiptResponseType</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="ereceiptapi_xsd.html">eReceiptApi.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>A kiállított tanúsítvány lekérdezés válasz típusa.
+The response type of the issued certificate query request.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="475,628,660,683" href="certificate.html" alt="Drilldown into certificate"></area>
+                     <area shape="rect" coords="475,529,713,621" href="certificatetype1.html" alt="Drilldown into certificateType"></area>
+                     <area shape="rect" coords="455,419,774,522" href="querycertificateresult.html" alt="Drilldown into queryCertificateResult"></area>
+                     <area shape="rect" coords="475,317,664,372" href="callbackrequired.html" alt="Drilldown into callbackRequired"></area>
+                     <area shape="rect" coords="475,218,668,310" href="apnumber1.html" alt="Drilldown into APNumber"></area>
+                     <area shape="rect" coords="495,115,682,170" href="result.html" alt="Drilldown into result"></area>
+                     <area shape="rect" coords="495,53,686,108" href="header1.html" alt="Drilldown into header"></area>
+                     <area shape="rect" coords="430,28,699,212" href="basicresponsetype.html" alt="Drilldown into BasicResponseType"></area>
+                     <area shape="rect" coords="410,2,736,413" href="basicereceiptresponsetype.html" alt="Drilldown into BasicEReceiptResponseType"></area></map><img src="images/querycertificateresponsetype.png" border="0" alt="XSD Diagram of QueryCertificateResponseType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="QueryCertificateResponseType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;A kiállított tanúsítvány lekérdezés válasz típusa.&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;The response type of the issued certificate query request.&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="base:BasicEReceiptResponseType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Az eReceipt rendszerben alkalmazott általános válasz típus adatai.&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;The general response type of the eReceipt system.&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="queryCertificateResult" type="communication:QueryCertificateResultType"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang="hu"&gt;A tanúsítvány lekérés eredménye.&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang="en"&gt;Result of the certificate query.&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="certificateType" type="communication:CertificateTypeType" minOccurs="0"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang="hu"&gt;A tanúsítvány típusa.&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang="en"&gt;The type of the certificate&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="certificate" type="communication:CertificateType" minOccurs="0"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation xml:lang="hu"&gt;A tanúsítvány.&lt;/xs:documentation&gt;
+            &lt;xs:documentation xml:lang="en"&gt;The certificate.&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:extension&gt;
+  &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">header</td>
+                        <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="header1.html">header</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">result</td>
+                        <td><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="result.html">result</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">APNumber</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="apnumber1.html">APNumber</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">callbackRequired</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="callbackrequired.html">callbackRequired</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">queryCertificateResult</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">nsA</a>:<a href="querycertificateresult.html">queryCertificateResult</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">certificateType</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">nsA</a>:<a href="certificatetype1.html">certificateType</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">certificate</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">nsA</a>:<a href="certificate.html">certificate</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul><li><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="basicresponsetype.html">BasicResponseType</a><ul><li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">base</a>:<a href="basicereceiptresponsetype.html">BasicEReceiptResponseType</a><ul>
+                     <li><b><i>QueryCertificateResponseType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">nsA</a>:<a href="querycertificateresponse.html">QueryCertificateResponse</a></li>
+                     </ul></ul></li></ul></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_api.html">nsA</a>:<a href="querycertificateresponse.html">QueryCertificateResponse</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

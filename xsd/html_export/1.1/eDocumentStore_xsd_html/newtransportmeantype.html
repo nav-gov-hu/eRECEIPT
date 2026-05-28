@@ -1,0 +1,220 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item NewTransportMeanType in eDocumentStoreApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'newtransportmeantype');
+                        --></script><div class="pageheader">
+         Documentation for eDocumentStoreApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>NewTransportMeanType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">http://schemas.nav.gov.hu/OSA/3.0/data</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="invoicedata_xsd.html">invoiceData.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Új közlekedési eszköz értékesítés ÁFA tv. 89 § ill. 169 § o)
+Supply of new means of transport - section 89 § and 169 (o) of the VAT law</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="411,510,573,565" href="aircraft.html" alt="Drilldown into aircraft"></area>
+                     <area shape="rect" coords="411,448,569,503" href="vessel.html" alt="Drilldown into vessel"></area>
+                     <area shape="rect" coords="411,386,609,441" href="vehicle.html" alt="Drilldown into vehicle"></area>
+                     <area shape="rect" coords="386,298,637,379" href="firstentryintoservice.html" alt="Drilldown into firstEntryIntoService"></area>
+                     <area shape="rect" coords="386,199,652,291" href="enginenum.html" alt="Drilldown into engineNum"></area>
+                     <area shape="rect" coords="386,100,646,192" href="serialnum.html" alt="Drilldown into serialNum"></area>
+                     <area shape="rect" coords="386,1,631,93" href="brand.html" alt="Drilldown into brand"></area></map><img src="images/newtransportmeantype.png" border="0" alt="XSD Diagram of NewTransportMeanType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="NewTransportMeanType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Új közlekedési eszköz értékesítés ÁFA tv. 89 § ill. 169 § o)&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Supply of new means of transport - section 89 § and 169 (o) of the VAT law&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="brand" type="common:SimpleText50NotBlankType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Gyártmány/típus&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Product / type&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="serialNum" type="common:SimpleText255NotBlankType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Alvázszám/gyári szám/Gyártási szám&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Chassis number / serial number / product number&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="engineNum" type="common:SimpleText255NotBlankType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Motorszám&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Engine number&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="firstEntryIntoService" type="base:InvoiceDateType" minOccurs="0"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Első forgalomba helyezés időpontja&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;First entry into service&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:choice&gt;
+      &lt;xs:element name="vehicle" type="VehicleType"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Szárazföldi közlekedési eszköz további adatai&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;Other data in relation to motorised land vehicle&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="vessel" type="VesselType"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Vízi jármű adatai&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;Data of vessel&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="aircraft" type="AircraftType"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation xml:lang="hu"&gt;Légi közlekedési eszköz&lt;/xs:documentation&gt;
+          &lt;xs:documentation xml:lang="en"&gt;Aircraft&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:choice&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">brand</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="brand.html">brand</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">serialNum</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="serialnum.html">serialNum</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">engineNum</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="enginenum.html">engineNum</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">firstEntryIntoService</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="firstentryintoservice.html">firstEntryIntoService</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">vehicle</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="vehicle.html">vehicle</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">vessel</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="vessel.html">vessel</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">aircraft</td>
+                        <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="aircraft.html">aircraft</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>NewTransportMeanType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="newtransportmean.html">newTransportMean</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">invoiceData</a>:<a href="newtransportmean.html">newTransportMean</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eDocumentStoreApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

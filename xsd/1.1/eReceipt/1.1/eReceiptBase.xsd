@@ -458,7 +458,7 @@
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:maxLength value="100"/>
-      <xs:pattern value="((UK|EK|SZ|NY|PM|PJ|SA|FO|OT)-[A-Z][0-9]{8}/[0-9]{8}/[0-9]{4}/[0-9]{5})|((NN|NZ)-[A-Z][0-9]{8}/[0-9]{8}/[0-9]{4})">
+      <xs:pattern value="([A-Z]{2}-[A-Z][0-9]{8}/[0-9]{8}/[0-9]{4}/[0-9]{5})|((NN|NZ)-[A-Z][0-9]{8}/[0-9]{8}/[0-9]{4})">
         <xs:annotation>
           <xs:documentation xml:lang="hu">
         NN - Napnyitás bizonylat
@@ -469,9 +469,9 @@
         PM - Pénzmozgás bizonylat
         PJ - Pénztár jelentés
         NZ - Napi forgalmi jelentés
-        SA - Szállodai átterhelés bizonylat
-        FO - Fogyasztási összesítő bizonylat
-        OT - Egyéb bizonylat
+        HC - Szállodai átterhelés bizonylat
+        FB - Fogyasztási összesítő bizonylat
+        XX - Egyéb bizonylat (Bármely két ASCII nagybetű)
         </xs:documentation>
           <xs:documentation xml:lang="en">
         NN - Day open report
@@ -482,9 +482,9 @@
         PM - Cashflow document
         PJ - Cashregister report
         NZ - Daily cashflow report
-        SA - Hotel deferred document
-        FO - Consumption summary
-        OT - Other document
+        HC - Hotel deferred document
+        FB - Consumption summary
+        XX - Other document (Any two uppercase letter)
         </xs:documentation>
         </xs:annotation>
       </xs:pattern>

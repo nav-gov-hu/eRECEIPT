@@ -1,0 +1,207 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item CoreReportType in eDocumentStoreApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'corereporttype');
+                        --></script><div class="pageheader">
+         Documentation for eDocumentStoreApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>CoreReportType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">http://schemas.nav.gov.hu/ERECEIPT/1.0/reportMessage</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="reportmessage_xsd.html">reportMessage.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>A NAV-nak átadandó riport adat típus.
+Report data type to be sent to NAV.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="233,262,442,317" href="otherreport.html" alt="Drilldown into OtherReport"></area>
+                     <area shape="rect" coords="233,199,543,254" href="dailycashflowreport.html" alt="Drilldown into DailyCashFlowReport"></area>
+                     <area shape="rect" coords="233,137,528,192" href="cashregisterreport.html" alt="Drilldown into CashRegisterReport"></area>
+                     <area shape="rect" coords="233,63,659,130" href="cashregisteropenbalancereport.html" alt="Drilldown into CashRegisterOpenBalanceReport"></area>
+                     <area shape="rect" coords="233,1,489,56" href="cashflowreport.html" alt="Drilldown into CashFlowReport"></area></map><img src="images/corereporttype.png" border="0" alt="XSD Diagram of CoreReportType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="CoreReportType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;A NAV-nak átadandó riport adat típus.&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Report data type to be sent to NAV.&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:choice&gt;
+    &lt;xs:element name="CashFlowReport" type="CashFlowReportType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Pénzmozgás bizonylat (PMN)&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Pénzmozgás bizonylat (PMN)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Cash flow report&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="CashRegisterOpenBalanceReport" type="CashRegisterOpenBalanceReportType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Pénztárnyitás bizonylat (CON)&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Pénztárnyitás bizonylat (CON)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;e-Cash register open balance report&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="CashRegisterReport" type="CashRegisterReportType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Pénztárjelentés (PJN)&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Pénztárjelentés (PJN)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;e-Cash register report&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="DailyCashFlowReport" type="DailyCashFlowReportType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Napi forgalmi jelentés (NFN)&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Napi forgalmi jelentés (NFN)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Daily cash flow report (NFN)&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="OtherReport" type="OtherReportType"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:appinfo&gt;
+          &lt;legacyMapping&gt;Egyéb dokumentum (EDN)&lt;/legacyMapping&gt;
+        &lt;/xs:appinfo&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Egyéb dokumentum&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Other document&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:choice&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">CashFlowReport</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">nsC</a>:<a href="cashflowreport.html">CashFlowReport</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">CashRegisterOpenBalanceReport</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">nsC</a>:<a href="cashregisteropenbalancereport.html">CashRegisterOpenBalanceReport</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">CashRegisterReport</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">nsC</a>:<a href="cashregisterreport.html">CashRegisterReport</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">DailyCashFlowReport</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">nsC</a>:<a href="dailycashflowreport.html">DailyCashFlowReport</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">OtherReport</td>
+                        <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">nsC</a>:<a href="otherreport.html">OtherReport</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>CoreReportType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">nsC</a>:<a href="corereport.html">CoreReport</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_0_reportmessage.html">nsC</a>:<a href="corereport.html">CoreReport</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eDocumentStoreApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

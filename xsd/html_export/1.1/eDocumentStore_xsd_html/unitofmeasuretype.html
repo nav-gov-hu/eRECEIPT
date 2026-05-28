@@ -1,0 +1,291 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item UnitOfMeasureType in eDocumentStoreApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('SimpleType', 'unitofmeasuretype');
+                        --></script><div class="pageheader">
+         Documentation for eDocumentStoreApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>SimpleType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>UnitOfMeasureType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/communicationData</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="communicationdata_xsd.html">communicationData.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Mennyiség egység típus
+Unit of measure type</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap"></map><img src="images/unitofmeasuretype.png" border="0" alt="XSD Diagram of UnitOfMeasureType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:simpleType name="UnitOfMeasureType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Mennyiség egység típus&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Unit of measure type&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:restriction base="common:AtomicStringType15"&gt;
+    &lt;xs:enumeration value="PIECE"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Darab&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Piece&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="KILOGRAM"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Kilogramm&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Kilogram&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="TON"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Metrikus tonna&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Metric ton&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="KWH"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Kilowatt óra&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Kilowatt hour&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="DAY"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Nap&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Day&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="HOUR"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Óra&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Hour&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="MINUTE"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Perc&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Minute&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="MONTH"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Hónap&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Month&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="LITER"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Liter&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Liter&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="KILOMETER"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Kilométer&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Kilometer&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="CUBIC_METER"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Köbméter&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Cubic meter&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="SQUARE_METER"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Négyzetméter&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Square meter&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="METER"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Méter&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Meter&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="LINEAR_METER"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Folyóméter&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Linear meter&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="CARTON"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Karton&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Carton&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="PACK"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Csomag&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Pack&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="OWN"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Saját mennyiségi egység megnevezés&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Own unit of measure&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="facets" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Facets:</b></td>
+            </tr>
+            <tr id="facets_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Facet</td>
+                        <td class="last">Value</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>PIECE</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>KILOGRAM</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>TON</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>KWH</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>DAY</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>HOUR</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>MINUTE</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>MONTH</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>LITER</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>KILOMETER</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>CUBIC_METER</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>SQUARE_METER</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>METER</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>LINEAR_METER</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>CARTON</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>PACK</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>OWN</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul><li><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="atomicstringtype15.html">AtomicStringType15</a><ul>
+                     <li><b><i>UnitOfMeasureType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="unitofmeasure.html">unitOfMeasure</a></li>
+                     </ul></ul></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_communicationdata.html">communication</a>:<a href="unitofmeasure.html">unitOfMeasure</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eDocumentStoreApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

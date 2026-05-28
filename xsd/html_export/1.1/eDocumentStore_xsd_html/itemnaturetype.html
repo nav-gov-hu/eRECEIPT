@@ -1,0 +1,247 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item ItemNatureType in eDocumentStoreApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('SimpleType', 'itemnaturetype');
+                        --></script><div class="pageheader">
+         Documentation for eDocumentStoreApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>SimpleType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>ItemNatureType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_ereceipt_1_1_base.html">http://schemas.nav.gov.hu/ERECEIPT/1.1/base</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="ereceiptbase_xsd.html">eReceiptBase.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Az adott tétel jellege típus
+Nature type of the current item</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap"></map><img src="images/itemnaturetype.png" border="0" alt="XSD Diagram of ItemNatureType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:simpleType name="ItemNatureType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Az adott tétel jellege típus&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Nature type of the current item&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:restriction base="xs:string"&gt;
+    &lt;xs:maxLength value="5" /&gt;
+    &lt;xs:enumeration value="n"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Értékesítés&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Product or service sales&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="ns"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Értékesítés sztornó&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Cancellation of product or service sales&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="e"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Engedmény&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Discount&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="es"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Engedmény sztornó&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Cancellation of discount&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="k"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Nem üzletpolitikai kedvezmény&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Non-business policy preferences&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="ks"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Nem üzletpolitikai kedvezmény sztornó&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Cancellation of non-business policy preferences&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="f"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Felár&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Extra charge&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="fs"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Felár sztornó&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Cancellation of extra charge&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="g"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Göngyöleg visszaváltás&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Returnable packing&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="gs"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Göngyöleg visszaváltás sztornó&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Cancellation of returnable packing&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="v"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Visszáru&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Returned goods&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="vs"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Visszáru sztornó&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Cancellation of returned goods&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="x"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Fogyasztási összesítő&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Consumption summary&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="xs"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Fogyasztási összesítő sztornó&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Cancellation of consumption summary&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="p"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Pénzmozgás bizonylat (vevőt érintő tranzakció esetén)&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Cashflow document (if a transaction involving a customer)&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="facets" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Facets:</b></td>
+            </tr>
+            <tr id="facets_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Facet</td>
+                        <td class="last">Value</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>n</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>ns</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>e</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>es</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>k</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>ks</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>f</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>fs</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>g</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>gs</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>v</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>vs</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>x</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>xs</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>p</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>MaxLength</b></td>
+                        <td>5</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eDocumentStoreApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>

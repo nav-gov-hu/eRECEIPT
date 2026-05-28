@@ -1,0 +1,161 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs for schema item MarginSchemeType in eReceiptApi</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('SimpleType', 'marginschemetype');
+                        --></script><div class="pageheader">
+         Documentation for eReceiptApi
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>SimpleType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>MarginSchemeType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">http://schemas.nav.gov.hu/OSA/3.0/data</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="invoicedata_xsd.html">invoiceData.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Különbözet szerinti szabályozás típus
+Field type for inputting margin-scheme taxation</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap"></map><img src="images/marginschemetype.png" border="0" alt="XSD Diagram of MarginSchemeType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:simpleType name="MarginSchemeType"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation xml:lang="hu"&gt;Különbözet szerinti szabályozás típus&lt;/xs:documentation&gt;
+    &lt;xs:documentation xml:lang="en"&gt;Field type for inputting margin-scheme taxation&lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  &lt;xs:restriction base="common:AtomicStringType15"&gt;
+    &lt;xs:enumeration value="TRAVEL_AGENCY"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Utazási irodák&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Travel agencies&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="SECOND_HAND"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Használt cikkek&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Second-hand goods&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="ARTWORK"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Műalkotások&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Works of art&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+    &lt;xs:enumeration value="ANTIQUES"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="hu"&gt;Gyűjteménydarabok és régiségek&lt;/xs:documentation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;Collector’s items and antiques&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:enumeration&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="facets" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Facets:</b></td>
+            </tr>
+            <tr id="facets_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Facet</td>
+                        <td class="last">Value</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>TRAVEL_AGENCY</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>SECOND_HAND</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>ARTWORK</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>ANTIQUES</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul><li><a href="http___schemas_nav_gov_hu_ntca_1_0_common.html">common</a>:<a href="atomicstringtype15.html">AtomicStringType15</a><ul>
+                     <li><b><i>MarginSchemeType</i></b></li>
+                     <ul>
+                        <li><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="marginschemeindicator.html">marginSchemeIndicator</a></li>
+                     </ul></ul></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___schemas_nav_gov_hu_osa_3_0_data.html">data</a>:<a href="marginschemeindicator.html">marginSchemeIndicator</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         Documentation for eReceiptApi<br/>
+         Generated using
+         <a href="https://www.liquid-technologies.com/" target="_blank" rel="nofollow">Liquid Studio - XML Editor Edition 20.7.17.13201</a></div>
+   </body>
+</html>
