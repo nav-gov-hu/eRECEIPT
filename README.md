@@ -31,3 +31,7 @@ Kérjük figyelembe venni, hogy bár a tárhely publikusan elérhető, a vélem�
 ## Moderálás
 
 A NAV fenntartja a jogot, hogy az általános etikettet vagy jó ízlést sértő hozzászólásokat, kommenteket a tárhelyről kérdés nélkül eltávolítsa.
+
+## Gyakran ismételt kérdések
+
+Az általános érdeklődésre számottartó kérdések folyamatosan bővülő listája elérhető a következő wiki oldalon: [Gyakran ismételt kérdések](https://github.com/nav-gov-hu/eRECEIPT/wiki)
